@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belgian Fauna & Flora | Premium Nature Quiz</title>
+    <meta name="description"
+        content="Explore and test your knowledge of the incredible flora, fauna, and fungi of Belgium.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Background Elements for Premium Look -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-overlay"></div>
+
+    <main id="app-container" class="glass-panel">
+
+        <!-- 1. Home / Menu Screen -->
+        <section id="screen-home" class="screen active">
+            <div class="lang-selector">
+                <button class="btn-lang active" data-lang="nl">NL</button>
+                <button class="btn-lang" data-lang="en">EN</button>
+                <button class="btn-lang" data-lang="fr">FR</button>
+            </div>
+            <header>
+                <div class="subtitle" data-i18n="discover">Discover Nature</div>
+                <h1 data-i18n="title">Belgian<br><span class="highlight">Fauna & Flora</span></h1>
+                <p data-i18n="desc">Test your knowledge or explore the encyclopedia of Belgium's natural wonders.</p>
+                <div class="home-illustration">
+                    <img src="forest_home_illustration_1773406798680.png" alt="Belgian Forest Illustration"
+                        id="home-forest-img" referrerpolicy="no-referrer">
+                </div>
+            </header>
+            <div class="action-buttons">
+                <button id="btn-play" class="btn btn-primary">
+                    <span class="icon">🌿</span> Play Quiz
+                </button>
+                <button id="btn-learn" class="btn btn-secondary">
+                    <span class="icon">📖</span> Encyclopedia
+                </button>
+                <button id="preview-btn" class="btn btn-outline" style="grid-column: span 2; margin-top: 10px; background: rgba(255,255,255,0.05);">
+                    <span class="icon">📸</span> View New High-Res Images
+                </button>
+            </div>
+        </section>
+
+        <!-- 2. Quiz Configuration Screen -->
+        <section id="screen-config" class="screen hidden">
+            <header>
+                <button class="btn-back" data-target="screen-home">← Back</button>
+                <h2>Setup Quiz</h2>
+            </header>
+            <div class="config-options">
+                <div class="form-group">
+                    <label>Select Category</label>
+                    <div class="custom-select-grid" id="category-selector">
+                        <button class="select-chip active" data-val="all" data-i18n="all">🌍 All</button>
+                        <button class="select-chip" data-val="fauna" data-i18n="fauna">🦊 Zoogdieren</button>
+                        <button class="select-chip" data-val="birds" data-i18n="birds">🐦 Vogels</button>
+                        <button class="select-chip" data-val="insects" data-i18n="insects">🦋 Insecten</button>
+                        <button class="select-chip" data-val="flora" data-i18n="flora">🌸 Flora</button>
+                        <button class="select-chip" data-val="fungi" data-i18n="fungi">🍄 Fungi</button>
+                        <button class="select-chip" data-val="trees" data-i18n="trees">🌲 Trees</button>
+                        <button class="select-chip" data-val="agriculture" data-i18n="agriculture">🌾
+                            Agriculture</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Select Difficulty</label>
+                    <div class="custom-select-grid" id="difficulty-selector">
+                        <button class="select-chip active" data-val="easy">Easy (Common)</button>
+                        <button class="select-chip" data-val="hard">Hard (Rare)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons bottom">
+                <button id="btn-start-quiz" class="btn btn-primary w-100">Start Quiz</button>
+            </div>
+        </section>
+
+        <!-- 3. Active Quiz Screen -->
+        <section id="screen-quiz" class="screen hidden">
+            <header class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-text">Question <span id="current-q-num">1</span> of 10</div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
+                    </div>
+                </div>
+                <div class="score-pill">Score: <span id="current-score">0</span></div>
+                <button id="btn-stop-quiz" class="btn-stop">✕</button>
+            </header>
+
+            <div class="question-container">
+                <h3 id="question-text">Identify this species</h3>
+                <div class="image-wrapper glass-panel-inner">
+                    <img id="question-image" src="" alt="Mystery Species" referrerpolicy="no-referrer" />
+                    <!-- Loading overlay for smooth UX -->
+                    <div id="image-loader" class="loader"></div>
+                </div>
+            </div>
+
+            <div class="answers-grid" id="answers-container">
+                <!-- Answer widgets injected dynamically by JS -->
+            </div>
+
+            <div class="quiz-controls">
+                <button id="btn-hint" class="btn btn-secondary btn-hint">
+                    <span class="icon">💡</span> <span data-i18n="hint">Tip</span>
+                </button>
+                <button id="btn-next-question" class="btn btn-primary btn-next hidden">
+                    <span data-i18n="next">Next</span> →
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. Score Result Screen -->
+        <section id="screen-results" class="screen hidden">
+            <header>
+                <h2>Quiz Complete!</h2>
+            </header>
+            <div class="results-card glass-panel-inner">
+                <div class="score-circle">
+                    <span id="final-score">0</span><span class="out-of">/10</span>
+                </div>
+                <h3 id="score-message">Great job!</h3>
+                <p id="score-details">You're becoming a true nature expert.</p>
+            </div>
+            <div class="action-buttons">
+                <button id="btn-play-again" class="btn btn-primary">Play Again</button>
+                <button id="btn-results-home" class="btn btn-secondary">Main Menu</button>
+            </div>
+        </section>
+
+        <!-- 5. Encyclopedia (Learn) Screen -->
+        <section id="screen-learn" class="screen hidden">
+            <header>
+                <button class="btn-back" data-target="screen-home">← Home</button>
+                <h2>Encyclopedia</h2>
+                <div class="filter-tabs" id="learn-filters">
+                    <button class="tab active" data-filter="all" data-i18n="all">All</button>
+                    <button class="tab" data-filter="fauna" data-i18n="fauna">Fauna</button>
+                    <button class="tab" data-filter="birds" data-i18n="birds">Birds</button>
+                    <button class="tab" data-filter="insects" data-i18n="insects">Insects</button>
+                    <button class="tab" data-filter="flora" data-i18n="flora">Flora</button>
+                    <button class="tab" data-filter="fungi" data-i18n="fungi">Fungi</button>
+                    <button class="tab" data-filter="trees" data-i18n="trees">Trees</button>
+                    <button class="tab" data-filter="agriculture" data-i18n="agriculture">Agriculture</button>
+                </div>
+            </header>
+
+            <div class="grid-container" id="learn-grid">
+                <!-- Items injected by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Wikipedia-style Details Modal for Encyclopedia -->
+    <div id="details-modal" class="modal-backdrop hidden">
+        <div class="modal wikipedia-article glass-panel">
+            <button id="btn-close-modal" class="btn-close">×</button>
+            <div class="article-header">
+                <div class="tag" id="modal-tag">Category</div>
+                <h1 id="modal-title">Species Name</h1>
+                <h4 id="modal-scientific">Scientific Name</h4>
+            </div>
+
+            <div class="article-body">
+                <div class="article-main">
+                    <p id="modal-description">Description goes here.</p>
+
+                    <div class="article-section">
+                        <h3><span class="icon">🏘️</span> Habitat</h3>
+                        <p id="modal-habitat-text">Habitat details here...</p>
+                    </div>
+
+                    <div class="article-section">
+                        <h3><span class="icon">💎</span> <span id="label-rarity">Rarity</span></h3>
+                        <p id="modal-rarity-text">Rarity details here...</p>
+                    </div>
+
+                    <div class="article-section">
+                        <h3><span class="icon">📏</span> <span id="label-size">Size</span></h3>
+                        <p id="modal-size-text">Size details here...</p>
+                    </div>
+
+                    <div class="article-section">
+                        <h3><span class="icon">🍽️</span> <span id="label-diet">Diet</span></h3>
+                        <p id="modal-diet-text">Diet details here...</p>
+                    </div>
+                </div>
+
+                <aside class="infobox">
+                    <div class="infobox-image">
+                        <img id="modal-image" src="" alt="Species Detail" referrerpolicy="no-referrer">
+                    </div>
+                    <div class="infobox-title">Scientific Classification</div>
+                    <table class="infobox-table">
+                        <tr>
+                            <th>Family</th>
+                            <td id="modal-infobox-family">Family Name</td>
+                        </tr>
+                        <tr>
+                            <th>Category</th>
+                            <td id="modal-infobox-category">Category</td>
+                        </tr>
+                        <tr>
+                            <th id="label-info-habitat">Habitat</th>
+                            <td id="modal-habitat">Forest</td>
+                        </tr>
+                        <tr>
+                            <th id="label-info-rarity">Rarity</th>
+                            <td id="modal-rarity">Common</td>
+                        </tr>
+                        <tr>
+                            <th id="label-info-size">Size</th>
+                            <td id="modal-infobox-size">---</td>
+                        </tr>
+                        <tr>
+                            <th id="label-info-diet">Diet</th>
+                            <td id="modal-infobox-diet">---</td>
+                        </tr>
+                    </table>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Logic -->
+    <script src="js/data/init.js"></script>
+    <script src="js/data/fauna.js"></script>
+    <script src="js/data/birds.js"></script>
+    <script src="js/data/insects.js"></script>
+    <script src="js/data/flora.js"></script>
+    <script src="js/data/fungi.js"></script>
+    <script src="js/data/trees.js"></script>
+    <script src="js/data/agriculture.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
