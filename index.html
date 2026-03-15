@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belgian Fauna & Flora | Premium Nature Quiz</title>
+    <title data-i18n="title">Belgian Fauna & Flora</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2a9d8f">
     <meta name="description"
         content="Explore and test your knowledge of the incredible flora, fauna, and fungi of Belgium.">
     <!-- Google Fonts -->
@@ -31,6 +33,11 @@
                 <button class="btn-lang active" data-lang="nl">NL</button>
                 <button class="btn-lang" data-lang="en">EN</button>
                 <button class="btn-lang" data-lang="fr">FR</button>
+                <button id="btn-audio" class="icon-btn transition" style="margin-left: auto;">
+                    <span id="audio-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                    </span>
+                </button>
             </div>
             <header>
                 <div class="subtitle" data-i18n="discover">Discover Nature</div>
@@ -43,13 +50,16 @@
             </header>
             <div class="action-buttons">
                 <button id="btn-play" class="btn btn-primary">
-                    <span class="icon">🌿</span> Play Quiz
+                    <span class="play-svg-target" style="margin-right: 8px;"></span> Play Quiz
                 </button>
                 <button id="btn-learn" class="btn btn-secondary">
-                    <span class="icon">📖</span> Encyclopedia
+                    <span class="learn-svg-target" style="margin-right: 8px;"></span> Encyclopedia
                 </button>
                 <button id="preview-btn" class="btn btn-outline" style="grid-column: span 2; margin-top: 10px; background: rgba(255,255,255,0.05);">
                     <span class="icon">📸</span> View New High-Res Images
+                </button>
+                <button id="btn-badges" class="btn btn-outline" style="grid-column: span 2; margin-top: 5px; background: rgba(255,255,255,0.05);">
+                    <span class="icon">🏆</span> My Badges
                 </button>
             </div>
         </section>
@@ -142,13 +152,25 @@
             </div>
         </section>
 
-        <!-- 5. Encyclopedia (Learn) Screen -->
-        <section id="screen-learn" class="screen hidden">
-            <header>
-                <button class="btn-back" data-target="screen-home">← Home</button>
-                <h2>Encyclopedia</h2>
-                <div class="filter-tabs" id="learn-filters">
+        <section id="learn" class="screen hidden">
+            <div class="header-content">
+                <button class="icon-btn transition back-btn" data-target="screen-home">
+                    <span class="back-svg-target"></span>
+                </button>
+                <h1 data-i18n="learn">Encyclopedia</h1>
+            </div>
+
+            <div class="search-container" style="padding: 0 20px 15px 20px;">
+                <div class="search-wrapper" style="position: relative;">
+                    <span class="search-svg-target" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--accent); opacity: 0.7;"></span>
+                    <input type="text" id="species-search" placeholder="Search by name, scientific name or family..." 
+                           style="width: 100%; padding: 12px 15px 12px 45px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: inherit; transition: border-color 0.3s;">
+                </div>
+            </div>
+
+            <div class="filter-tabs" id="learn-filters">
                     <button class="tab active" data-filter="all" data-i18n="all">All</button>
+                    <button class="tab" data-filter="collected" style="border-color: var(--accent); color: var(--accent);">🏆 Collection</button>
                     <button class="tab" data-filter="fauna" data-i18n="fauna">Fauna</button>
                     <button class="tab" data-filter="birds" data-i18n="birds">Birds</button>
                     <button class="tab" data-filter="insects" data-i18n="insects">Insects</button>
@@ -240,13 +262,33 @@
     <!-- Application Logic -->
     <script src="js/data/init.js"></script>
     <script src="js/data/fauna.js"></script>
+    <script src="js/data/expanded_fauna.js"></script>
+    <script src="js/data/expansion_fauna_2.js"></script>
     <script src="js/data/birds.js"></script>
+    <script src="js/data/expanded_birds.js"></script>
+    <script src="js/data/expansion_birds_2.js"></script>
     <script src="js/data/insects.js"></script>
+    <script src="js/data/expanded_insects.js"></script>
+    <script src="js/data/expansion_insects_2.js"></script>
     <script src="js/data/flora.js"></script>
+    <script src="js/data/expanded_flora.js"></script>
+    <script src="js/data/expansion_flora_2.js"></script>
     <script src="js/data/fungi.js"></script>
+    <script src="js/data/expanded_fungi.js"></script>
     <script src="js/data/trees.js"></script>
+    <script src="js/data/expanded_trees.js"></script>
     <script src="js/data/agriculture.js"></script>
+    <script src="js/data/hundreds_expanded.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW Registered', reg))
+                    .catch(err => console.log('SW Fail', err));
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "Belgian Fauna & Flora Quiz",
+  "short_name": "FaunaFlora",
+  "description": "Learn about Belgian nature with this high-res quiz.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#264653",
+  "theme_color": "#2a9d8f",
+  "icons": [
+    {
+      "src": "assets/images/european-robin-birds.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/images/european-robin-birds.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

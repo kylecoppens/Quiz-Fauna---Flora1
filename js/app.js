@@ -3,6 +3,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("App.js: DOMContentLoaded triggered");
 
+    // --- SVG Icons ---
+    const ICONS = {
+        search: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`,
+        play: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"></path></svg>`,
+        learn: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`,
+        back: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>`,
+        check: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`,
+        audio: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`,
+        audioMuted: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`
+    };
+
+    // --- Audio Logic ---
+    const bgAudio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3'); // Fallback track for now
+    bgAudio.loop = true;
+    let audioEnabled = false;
+
     // --- Localization Data ---
     const i18n = {
         nl: {
@@ -161,6 +177,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
     let currentCorrectAnswer = null;
     let hintUsed = false;
+    let collectedSpecies = JSON.parse(localStorage.getItem('collectedSpecies') || '[]');
+
+    function saveCollection() {
+        localStorage.setItem('collectedSpecies', JSON.stringify(collectedSpecies));
+    }
+
+    function addToCollection(speciesId) {
+        if (!collectedSpecies.includes(speciesId)) {
+            collectedSpecies.push(speciesId);
+            saveCollection();
+            updateCollectionUI();
+            checkBadges();
+        }
+    }
+
+    function updateCollectionUI() {
+        // This will be used to highlight found species in Encyclopedia
+    }
 
     const QUIZ_LENGTH = 10;
 
@@ -204,10 +238,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modal elements
     const detailsModal = document.getElementById('details-modal');
     const btnCloseModal = document.getElementById('btn-close-modal');
+    const btnBadges = document.getElementById('btn-badges');
+    const badgesModal = document.getElementById('badges-modal');
+    const btnCloseBadges = document.getElementById('btn-close-badges');
+    const badgesList = document.getElementById('badges-list');
 
     // Encyclopedia elements
     const learnGrid = document.getElementById('learn-grid');
     const learnTabs = document.querySelectorAll('#learn-filters .tab');
+    const speciesSearch = document.getElementById('species-search');
+    const btnAudio = document.getElementById('btn-audio');
+    const audioIcon = document.getElementById('audio-icon');
 
     // --- Language Logic ---
     function updateLanguage(lang) {
@@ -362,10 +403,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    if (btnStopQuiz) {
-        btnStopQuiz.addEventListener('click', () => {
-            if (confirm(i18n[currentLang].stopConfirm || "Stop quiz?")) {
-                showScreen('screen-home');
+    if (speciesSearch) {
+        speciesSearch.addEventListener('input', () => {
+            const activeTab = document.querySelector('#learn-filters .tab.active');
+            renderEncyclopedia(activeTab ? activeTab.dataset.filter : 'all');
+        });
+    }
+
+    if (btnBadges) {
+        btnBadges.addEventListener('click', () => {
+            renderBadges();
+            badgesModal.classList.remove('hidden');
+        });
+    }
+
+    if (btnCloseBadges) {
+        btnCloseBadges.addEventListener('click', () => badgesModal.classList.add('hidden'));
+    }
+
+    function renderBadges() {
+        if (!badgesList) return;
+        badgesList.innerHTML = '';
+        const earned = JSON.parse(localStorage.getItem('earnedBadges') || '[]');
+
+        BADGES.forEach(badge => {
+            const isEarned = earned.includes(badge.id);
+            const item = document.createElement('div');
+            item.className = `badge-item ${isEarned ? 'earned' : 'locked'}`;
+            item.style.opacity = isEarned ? '1' : '0.3';
+            item.style.textAlign = 'center';
+            item.style.padding = '10px';
+            item.style.background = 'rgba(255,255,255,0.05)';
+            item.style.borderRadius = '10px';
+            
+            item.innerHTML = `
+                <div class="badge-icon" style="font-size: 2rem; margin-bottom: 5px;">${badge.icon}</div>
+                <div class="badge-name" style="font-size: 0.8rem; font-weight: bold;">${badge[currentLang]}</div>
+                ${!isEarned ? `<div class="badge-goal" style="font-size: 0.7rem; color: #999;">Goal: ${badge.goal}</div>` : ''}
+            `;
+            badgesList.appendChild(item);
+        });
+    }
+
+    if (btnAudio) {
+        btnAudio.addEventListener('click', () => {
+            audioEnabled = !audioEnabled;
+            if (audioEnabled) {
+                bgAudio.play().catch(e => console.log("Audio block", e));
+                audioIcon.innerHTML = ICONS.audio;
+                btnAudio.classList.add('active');
+            } else {
+                bgAudio.pause();
+                audioIcon.innerHTML = ICONS.audioMuted;
+                btnAudio.classList.remove('active');
             }
         });
     }
@@ -540,8 +630,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btnHint.disabled = true;
 
         if (isCorrect) {
-            clickedBtn.classList.add('correct');
             score++;
+            addToCollection(currentCorrectAnswer.id);
+            clickedBtn.classList.add('correct');
             scoreText.textContent = score;
         } else {
             clickedBtn.classList.add('wrong');
@@ -589,9 +680,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderEncyclopedia(filter) {
         learnGrid.innerHTML = '';
         const allData = window.speciesData || [];
-        const items = filter === 'all'
-            ? allData
-            : allData.filter(i => i.category === filter);
+        const searchTerm = speciesSearch ? speciesSearch.value.toLowerCase().trim() : '';
+
+        let items = [];
+        if (filter === 'all') {
+            items = allData;
+        } else if (filter === 'collected') {
+            items = allData.filter(i => collectedSpecies.includes(i.id));
+        } else {
+            items = allData.filter(i => i.category === filter);
+        }
+
+        if (searchTerm) {
+            items = items.filter(i => {
+                const name = typeof i.name === 'object' ? i.name[currentLang].toLowerCase() : i.name.toLowerCase();
+                const sci = i.scientific.toLowerCase();
+                const fam = i.family.toLowerCase();
+                return name.includes(searchTerm) || sci.includes(searchTerm) || fam.includes(searchTerm);
+            });
+        }
 
         items.forEach(item => {
             const card = document.createElement('div');
@@ -599,7 +706,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = typeof item.name === 'object' ? item.name[currentLang] : item.name;
             const catName = i18n[currentLang][item.category] || item.category;
 
+            const isCollected = collectedSpecies.includes(item.id);
+            if (isCollected) card.classList.add('collected');
+
             card.innerHTML = `
+                <div class="collected-badge ${isCollected ? '' : 'hidden'}">✓</div>
                 <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer">
                 <div class="learn-card-info">
                     <div class="learn-card-title">${name}</div>
@@ -655,8 +766,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Icon Injection ---
+    function injectIcons() {
+        document.querySelectorAll('.back-svg-target').forEach(el => el.innerHTML = ICONS.back);
+        document.querySelectorAll('.search-svg-target').forEach(el => el.innerHTML = ICONS.search);
+        document.querySelectorAll('.play-svg-target').forEach(el => el.innerHTML = ICONS.play);
+        document.querySelectorAll('.learn-svg-target').forEach(el => el.innerHTML = ICONS.learn);
+    }
+
+    // --- Badges & Milestones ---
+    const BADGES = [
+        { id: 'first_find', icon: '🌱', nl: 'Beginner Ontdekker', en: 'First Discovery', fr: 'Première Découverte', goal: 1 },
+        { id: 'bird_lover', icon: '🐦', nl: 'Vogelvriend', en: 'Bird Lover', fr: 'Ami des oiseaux', goal: 5, category: 'birds' },
+        { id: 'nature_master', icon: '🌳', nl: 'Natuurmeester', en: 'Nature Master', fr: 'Maître de la nature', goal: 50 }
+    ];
+
+    function checkBadges() {
+        const earned = JSON.parse(localStorage.getItem('earnedBadges') || '[]');
+        let newlyEarned = [];
+
+        BADGES.forEach(badge => {
+            if (earned.includes(badge.id)) return;
+
+            let count = 0;
+            if (badge.category) {
+                count = window.speciesData.filter(s => collectedSpecies.includes(s.id) && s.category === badge.category).length;
+            } else {
+                count = collectedSpecies.length;
+            }
+
+            if (count >= badge.goal) {
+                earned.push(badge.id);
+                newlyEarned.push(badge);
+            }
+        });
+
+        if (newlyEarned.length > 0) {
+            localStorage.setItem('earnedBadges', JSON.stringify(earned));
+            newlyEarned.forEach(b => alert(`🏆 Badge Earned: ${b[currentLang]}`));
+        }
+    }
+
     // Initialize
     console.log("App.js: Initializing first screen");
-    updateLanguage('nl'); // Explicitly set Dutch as default
+    injectIcons();
+    updateLanguage('nl'); 
     showScreen('screen-home');
 });
