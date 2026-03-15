@@ -125,5 +125,19 @@ window.speciesData.push(
         size: { nl: "1.2-1.5 cm", en: "1.2-1.5 cm", fr: "1.2-1.5 cm" },
         diet: { nl: "Planten, dode insecten", en: "Plants, dead insects", fr: "Plantes, insectes morts" },
         image: "assets/images/european-earwig-insects.jpg"
+    },
+    {
+        id: "i16",
+        scientific: "Aeshna juncea",
+        family: "Aeshnidae",
+        category: "insects",
+        difficulty: "hard",
+        name: { nl: "Venglazenmaker", en: "Common Hawker", fr: "Aeschne des joncs" },
+        habitat: { nl: "Vennen, hoogvenen", en: "Moorland pools, bogs", fr: "Étangs de landes, tourbières" },
+        rarity: { nl: "Vrij algemeen", en: "Fairly Common", fr: "Assez commun" },
+        description: { nl: "Een grote, snelle libel met mozaïekvlekjes op het achterlijf.", en: "A large, fast dragonfly with mosaic spots on the abdomen.", fr: "Une libellule grande et rapide avec des taches en mosaïque sur l'abdomen." },
+        size: { nl: "7-8 cm", en: "7-8 cm", fr: "7-8 cm" },
+        diet: { nl: "Insecten", en: "Insects", fr: "Insects" },
+        image: "assets/images/common-hawker-insects.jpg"
     }
 );

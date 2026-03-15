@@ -97,5 +97,47 @@ window.speciesData.push(
         size: { nl: "30-60 cm", en: "30-60 cm", fr: "30-60 cm" },
         diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
         image: "assets/images/cornflower-flora.jpg"
+    },
+    {
+        id: "fl12",
+        scientific: "Glechoma hederacea",
+        family: "Lamiaceae",
+        category: "flora",
+        difficulty: "medium",
+        name: { nl: "Hondsdraf", en: "Ground Ivy", fr: "Lierre terrestre" },
+        habitat: { nl: "Bossen, hegvoeten, gazons", en: "Woods, hedge bottoms, lawns", fr: "Bois, bas de haies, pelouses" },
+        rarity: { nl: "Zeer algemeen", en: "Very Common", fr: "Très commun" },
+        description: { nl: "Kruipende plant met nier- tot hartvormige blaadjes en paars-blauwe bloemen.", en: "Creeping plant with kidney- to heart-shaped leaves and purple-blue flowers.", fr: "Plante rampante aux feuilles en forme de rein ou de cœur et fleurs bleu-violet." },
+        size: { nl: "10-20 cm", en: "10-20 cm", fr: "10-20 cm" },
+        diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
+        image: "assets/images/ground-ivy-flora.jpg"
+    },
+    {
+        id: "fl13",
+        scientific: "Lamium album",
+        family: "Lamiaceae",
+        category: "flora",
+        difficulty: "easy",
+        name: { nl: "Witte dovenetel", en: "White Dead-nettle", fr: "Lamier blanc" },
+        habitat: { nl: "Wegbermen, puinhopen", en: "Roadsides, waste ground", fr: "Bords de routes, friches" },
+        rarity: { nl: "Zeer algemeen", en: "Very Common", fr: "Très commun" },
+        description: { nl: "Lijkt op een brandnetel maar kan niet prikken. Heeft witte bloemen.", en: "Resembles a stinging nettle but cannot sting. Has white flowers.", fr: "Ressemble à une ortie mais ne pique pas. A des fleurs blanches." },
+        size: { nl: "20-50 cm", en: "20-50 cm", fr: "20-50 cm" },
+        diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
+        image: "assets/images/white-dead-nettle-flora.jpg"
+    },
+    {
+        id: "fl14",
+        scientific: "Galium odoratum",
+        family: "Rubiaceae",
+        category: "flora",
+        difficulty: "medium",
+        name: { nl: "Lievevrouwebedstro", en: "Sweet Woodruff", fr: "Gaillet odorant" },
+        habitat: { nl: "Schaduwrijke beukenbossen", en: "Shady beech forests", fr: "Hêtraies ombragées" },
+        rarity: { nl: "Algemeen", en: "Common", fr: "Commun" },
+        description: { nl: "Heeft kransen van bladeren en kleine witte sterbloemetjes. Ruikt heerlijk (cumarine).", en: "Has whorls of leaves and small white star flowers. Smells wonderful (coumarin).", fr: "Possède des verticilles de feuilles et de petites fleurs blanches en étoile. Sent merveilleusement bon (coumarine)." },
+        size: { nl: "15-30 cm", en: "15-30 cm", fr: "15-30 cm" },
+        diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
+        image: "assets/images/sweet-woodruff-flora.jpg"
     }
 );
