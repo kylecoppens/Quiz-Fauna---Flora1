@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,16 +49,42 @@
                 <div class="subtitle" data-i18n="discover">Discover Nature</div>
                 <h1 data-i18n="title">Belgian<br><span class="highlight">Fauna & Flora</span></h1>
                 <p data-i18n="desc">Test your knowledge or explore the encyclopedia of Belgium's natural wonders.</p>
-                <div class="home-illustration">
-                    <img src="juncala-forest-homepage.jpg" alt="Belgian Forest Illustration" id="home-forest-img"
-                        referrerpolicy="no-referrer">
+
+                <!-- Hero image with parallax -->
+                <div class="hero-parallax-container" id="hero-parallax">
+                    <div class="hero-parallax-inner" id="hero-parallax-inner">
+                        <img src="juncala-forest-homepage.jpg"
+                             alt="Belgian Forest Illustration"
+                             id="home-forest-img"
+                             referrerpolicy="no-referrer"
+                             onerror="this.parentElement.parentElement.classList.add('hero-fallback')">
+                        <div class="hero-overlay-text">
+                            <span class="hero-badge">🌿 Belgium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species of the Day -->
+                <div id="sotd-card" class="sotd-card hidden">
+                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Species of the Day</span></div>
+                    <div class="sotd-body">
+                        <img id="sotd-img" src="" alt="" referrerpolicy="no-referrer">
+                        <div class="sotd-info">
+                            <div id="sotd-name" class="sotd-name"></div>
+                            <div id="sotd-scientific" class="sotd-scientific"></div>
+                            <div id="sotd-fact" class="sotd-fact"></div>
+                        </div>
+                    </div>
                 </div>
             </header>
+
             <div class="action-buttons">
+                <!-- Primary: filled green -->
                 <button id="btn-play" class="btn btn-primary">
                     <span class="play-svg-target" style="margin-right: 8px;"></span> Play Quiz
                 </button>
-                <button id="btn-learn" class="btn btn-secondary">
+                <!-- Secondary: outlined -->
+                <button id="btn-learn" class="btn btn-outline">
                     <span class="learn-svg-target" style="margin-right: 8px;"></span> Encyclopedia
                 </button>
             </div>
@@ -81,7 +108,7 @@
                         <button class="select-chip" data-val="fungi" data-i18n="fungi">🍄 Fungi</button>
                         <button class="select-chip" data-val="trees" data-i18n="trees">🌲 Trees</button>
                         <button class="select-chip" data-val="agriculture" data-i18n="agriculture">🌾
-                            Agriculture</button>
+                            Cultivated Species</button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -102,12 +129,19 @@
             <header class="quiz-header">
                 <div class="progress-container">
                     <div class="progress-text">Question <span id="current-q-num">1</span> of 10</div>
-                    <div class="progress-bar">
-                        <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
+                    <!-- XP-style progress bar -->
+                    <div class="xp-bar-wrapper">
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
+                        </div>
+                        <div class="xp-label">
+                            <span class="xp-icon">⚡</span>
+                            <span id="xp-display">0 XP</span>
+                        </div>
                     </div>
                 </div>
-                <div class="score-pill">Score: <span id="current-score">0</span></div>
-                <button id="btn-stop-quiz" class="btn-stop">✕</button>
+                <div class="score-pill">🏅 <span id="current-score">0</span></div>
+                <button id="btn-stop-quiz" class="btn-stop" title="Stop quiz">✕</button>
             </header>
 
             <div class="question-container">
@@ -115,14 +149,11 @@
                 <div class="image-wrapper glass-panel-inner">
                     <img id="question-image" src="" alt="Mystery Species" referrerpolicy="no-referrer" />
                     <img id="range-image" src="" alt="Species Range" class="hidden" referrerpolicy="no-referrer" />
-                    <!-- Loading overlay for smooth UX -->
                     <div id="image-loader" class="loader"></div>
                 </div>
             </div>
 
-            <div class="answers-grid" id="answers-container">
-                <!-- Answer widgets injected dynamically by JS -->
-            </div>
+            <div class="answers-grid" id="answers-container"></div>
 
             <div class="quiz-controls">
                 <button id="btn-hint" class="btn btn-secondary btn-hint">
@@ -136,6 +167,19 @@
                 </button>
             </div>
         </section>
+
+        <!-- Stop Quiz Confirmation Modal -->
+        <div id="stop-confirm-modal" class="stop-modal hidden">
+            <div class="stop-modal-box glass-panel-inner">
+                <div class="stop-modal-icon">🛑</div>
+                <h3 id="stop-modal-title">Stop the quiz?</h3>
+                <p id="stop-modal-desc">Your progress will be lost.</p>
+                <div class="stop-modal-actions">
+                    <button id="btn-stop-confirm" class="btn btn-primary">Yes, stop</button>
+                    <button id="btn-stop-cancel" class="btn btn-secondary">Keep playing</button>
+                </div>
+            </div>
+        </div>
 
         <!-- 4. Score Result Screen -->
         <section id="screen-results" class="screen hidden">
@@ -151,10 +195,11 @@
             </div>
             <div class="action-buttons">
                 <button id="btn-play-again" class="btn btn-primary">Play Again</button>
-                <button id="btn-results-home" class="btn btn-secondary">Main Menu</button>
+                <button id="btn-results-home" class="btn btn-outline">Main Menu</button>
             </div>
         </section>
 
+        <!-- 5. Encyclopedia Screen -->
         <section id="screen-learn" class="screen hidden">
             <div class="header-content">
                 <button class="icon-btn transition back-btn" data-target="screen-home">
@@ -166,7 +211,7 @@
             <div class="search-container" style="padding: 0 20px 15px 20px;">
                 <div class="search-wrapper" style="position: relative;">
                     <span class="search-svg-target"
-                        style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--accent); opacity: 0.7;"></span>
+                        style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--accent-primary); opacity: 0.7;"></span>
                     <input type="text" id="species-search" placeholder="Search by name, scientific name or family..."
                         style="width: 100%; padding: 12px 15px 12px 45px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: inherit; transition: border-color 0.3s;">
                 </div>
@@ -175,19 +220,18 @@
             <div class="filter-tabs" id="learn-filters">
                 <button class="tab active" data-filter="all" data-i18n="all">All</button>
                 <button class="tab" data-filter="collected"
-                    style="border-color: var(--accent); color: var(--accent);">🏆 Collection</button>
+                    style="border-color: var(--accent-primary); color: var(--accent-primary);">🏆 Collection</button>
                 <button class="tab" data-filter="fauna" data-i18n="fauna">Fauna</button>
                 <button class="tab" data-filter="birds" data-i18n="birds">Birds</button>
                 <button class="tab" data-filter="insects" data-i18n="insects">Insects</button>
                 <button class="tab" data-filter="flora" data-i18n="flora">Flora</button>
                 <button class="tab" data-filter="fungi" data-i18n="fungi">Fungi</button>
                 <button class="tab" data-filter="trees" data-i18n="trees">Trees</button>
-                <button class="tab" data-filter="agriculture" data-i18n="agriculture">Agriculture</button>
+                <button class="tab" data-filter="agriculture" data-i18n="agriculture">Cultivated</button>
             </div>
-            </header>
 
             <div class="grid-container" id="learn-grid">
-                <!-- Items injected by JS -->
+                <!-- Skeleton placeholders injected by JS -->
             </div>
         </section>
 
@@ -206,6 +250,12 @@
             <div class="article-body">
                 <div class="article-main">
                     <p id="modal-description">Description goes here.</p>
+
+                    <!-- Fun Fact section -->
+                    <div class="article-section fun-fact-section" id="modal-funfact-section" style="display:none;">
+                        <h3><span class="icon">💡</span> <span id="label-funfact">Did you know?</span></h3>
+                        <p id="modal-funfact-text" class="fun-fact-text"></p>
+                    </div>
 
                     <div class="article-section">
                         <h3><span class="icon">🏘️</span> Habitat</h3>
@@ -265,7 +315,6 @@
     </div>
 
     <!-- Application Logic -->
-    <!-- Species Data -->
     <script src="js/data/species_data.js"></script>
     <script src="js/app.js"></script>
     <script>
