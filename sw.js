@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fauna-flora-v2';
+const CACHE_NAME = 'fauna-flora-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

@@ -55,12 +55,6 @@
                 <button id="btn-learn" class="btn btn-secondary">
                     <span class="learn-svg-target" style="margin-right: 8px;"></span> Encyclopedia
                 </button>
-                <button id="preview-btn" class="btn btn-outline" style="grid-column: span 2; margin-top: 10px; background: rgba(255,255,255,0.05);">
-                    <span class="icon">📸</span> View New High-Res Images
-                </button>
-                <button id="btn-badges" class="btn btn-outline" style="grid-column: span 2; margin-top: 5px; background: rgba(255,255,255,0.05);">
-                    <span class="icon">🏆</span> My Badges
-                </button>
             </div>
         </section>
 
@@ -115,6 +109,7 @@
                 <h3 id="question-text">Identify this species</h3>
                 <div class="image-wrapper glass-panel-inner">
                     <img id="question-image" src="" alt="Mystery Species" referrerpolicy="no-referrer" />
+                    <img id="range-image" src="" alt="Species Range" class="hidden" referrerpolicy="no-referrer" />
                     <!-- Loading overlay for smooth UX -->
                     <div id="image-loader" class="loader"></div>
                 </div>
@@ -127,6 +122,9 @@
             <div class="quiz-controls">
                 <button id="btn-hint" class="btn btn-secondary btn-hint">
                     <span class="icon">💡</span> <span data-i18n="hint">Tip</span>
+                </button>
+                <button id="btn-range" class="btn btn-secondary btn-range hidden">
+                    <span class="icon">🗺️</span> <span data-i18n="range">Kaart</span>
                 </button>
                 <button id="btn-next-question" class="btn btn-primary btn-next hidden">
                     <span data-i18n="next">Next</span> →
@@ -260,30 +258,8 @@
     </div>
 
     <!-- Application Logic -->
-    <script src="js/data/init.js"></script>
-    <script src="js/data/fauna.js"></script>
-    <script src="js/data/expanded_fauna.js"></script>
-    <script src="js/data/expansion_fauna_2.js"></script>
-    <script src="js/data/birds.js"></script>
-    <script src="js/data/expanded_birds.js"></script>
-    <script src="js/data/expansion_birds_2.js"></script>
-    <script src="js/data/insects.js"></script>
-    <script src="js/data/expanded_insects.js"></script>
-    <script src="js/data/expansion_insects_2.js"></script>
-    <script src="js/data/flora.js"></script>
-    <script src="js/data/expanded_flora.js"></script>
-    <script src="js/data/expansion_flora_2.js"></script>
-    <script src="js/data/fungi.js"></script>
-    <script src="js/data/expanded_fungi.js"></script>
-    <script src="js/data/expansion_fungi_2.js"></script>
-    <script src="js/data/trees.js"></script>
-    <script src="js/data/expanded_trees.js"></script>
-    <script src="js/data/expansion_trees_2.js"></script>
-    <script src="js/data/agriculture.js"></script>
-    <script src="js/data/hundreds_expanded.js"></script>
-    <script src="js/data/expansion_batch_3.js"></script>
-    <script src="js/data/expansion_batch_4.js"></script>
-    <script src="js/data/expansion_batch_5.js"></script>
+    <!-- Species Data -->
+    <script src="js/data/species_data.js"></script>
     <script src="js/app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {

@@ -67,7 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
             practice: "Meer oefening nodig!",
             practiceDesc: "Probeer de Encyclopedie om meer te leren.",
             noSpecies: "Geen soorten gevonden voor deze categorie. Probeer een andere!",
-            hintText: "Dit behoort tot de familie: "
+            hintText: "Dit behoort tot de familie: ",
+            range: "Toon Kaart",
+            species: "Toon Soort"
         },
         en: {
             play: "Play Quiz",
@@ -115,7 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
             practice: "Need more practice!",
             practiceDesc: "Try the Encyclopedia section to learn more.",
             noSpecies: "No species found for this category! Try another one.",
-            hintText: "This belongs to the family: "
+            hintText: "This belongs to the family: ",
+            range: "Show Range",
+            species: "Show Species"
         },
         fr: {
             play: "Jouer au Quiz",
@@ -163,7 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
             practice: "Besoin d'entraînement !",
             practiceDesc: "Essayez l'Encyclopédie pour en apprendre davantage.",
             noSpecies: "Aucune espèce trouvée pour cette catégorie ! Essayez-en une autre.",
-            hintText: "Ceci appartient à la famille : "
+            hintText: "Ceci appartient à la famille : ",
+            range: "Carte",
+            species: "Espèce"
         }
     };
 
@@ -211,16 +217,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Buttons
     const btnPlay = document.getElementById('btn-play');
     const btnLearn = document.getElementById('btn-learn');
-    const btnBacks = document.querySelectorAll('.btn-back');
+    const btnBacks = document.querySelectorAll('.btn-back, .back-btn');
     const btnStartQuiz = document.getElementById('btn-start-quiz');
     const btnNextQuestion = document.getElementById('btn-next-question');
     const btnPlayAgain = document.getElementById('btn-play-again');
     const btnResultsHome = document.getElementById('btn-results-home');
     const btnHint = document.getElementById('btn-hint');
+    const btnRange = document.getElementById('btn-range');
     const langBtns = document.querySelectorAll('.btn-lang');
     const btnStopQuiz = document.getElementById('btn-stop-quiz');
-    const btnPreview = document.getElementById('preview-btn');
-    const previewGrid = document.getElementById('image-preview-grid');
+    const rangeImage = document.getElementById('range-image');
 
     // Config options
     const categoryChips = document.querySelectorAll('#category-selector .select-chip');
@@ -238,10 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modal elements
     const detailsModal = document.getElementById('details-modal');
     const btnCloseModal = document.getElementById('btn-close-modal');
-    const btnBadges = document.getElementById('btn-badges');
-    const badgesModal = document.getElementById('badges-modal');
-    const btnCloseBadges = document.getElementById('btn-close-badges');
-    const badgesList = document.getElementById('badges-list');
 
     // Encyclopedia elements
     const learnGrid = document.getElementById('learn-grid');
@@ -290,6 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.progress-text').innerHTML = `${dict.question} <span id="current-q-num">${currentQuestionIndex + 1}</span> ${dict.of} 10`;
         document.querySelector('.score-pill').innerHTML = `${dict.score}: <span id="current-score">${score}</span>`;
         btnHint.innerHTML = `<span class="icon">💡</span> ${dict.hint}`;
+        if (btnRange) btnRange.textContent = btnRange.classList.contains('active-range') ? dict.species : dict.range;
         btnNextQuestion.innerHTML = `${dict.next} →`;
 
         // Results
@@ -348,46 +351,10 @@ document.addEventListener('DOMContentLoaded', () => {
         renderEncyclopedia('all');
     });
 
-    if (btnPreview) {
-        btnPreview.addEventListener('click', () => {
-            showScreen('screen-preview');
-            renderPreviewGallery();
-        });
-    }
-
-    function renderPreviewGallery() {
-        if (!previewGrid) return;
-        previewGrid.innerHTML = '';
-        
-        // Filter species that have the renamed high-res images
-        const newImagesSpecies = window.speciesData.filter(s => 
-            s.image.includes('-birds') || 
-            s.image.includes('-fauna') || 
-            s.image.includes('-insects') || 
-            s.image.includes('-fungi') ||
-            s.image.includes('common-kingfisher')
-        );
-
-        newImagesSpecies.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'species-card transition';
-            card.innerHTML = `
-                <div class="card-image">
-                    <img src="${item.image}" alt="${item.name[currentLang]}" loading="lazy">
-                </div>
-                <div class="card-info">
-                    <h3>${item.name[currentLang]}</h3>
-                    <p class="scientific">${item.scientific}</p>
-                    <div class="tag">${item.category}</div>
-                </div>
-            `;
-            previewGrid.appendChild(card);
-        });
-    }
-
     btnBacks.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            showScreen(e.currentTarget.dataset.target);
+            const target = e.currentTarget.dataset.target || 'screen-home';
+            showScreen(target);
         });
     });
 
@@ -410,40 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (btnBadges) {
-        btnBadges.addEventListener('click', () => {
-            renderBadges();
-            badgesModal.classList.remove('hidden');
-        });
-    }
-
-    if (btnCloseBadges) {
-        btnCloseBadges.addEventListener('click', () => badgesModal.classList.add('hidden'));
-    }
-
-    function renderBadges() {
-        if (!badgesList) return;
-        badgesList.innerHTML = '';
-        const earned = JSON.parse(localStorage.getItem('earnedBadges') || '[]');
-
-        BADGES.forEach(badge => {
-            const isEarned = earned.includes(badge.id);
-            const item = document.createElement('div');
-            item.className = `badge-item ${isEarned ? 'earned' : 'locked'}`;
-            item.style.opacity = isEarned ? '1' : '0.3';
-            item.style.textAlign = 'center';
-            item.style.padding = '10px';
-            item.style.background = 'rgba(255,255,255,0.05)';
-            item.style.borderRadius = '10px';
-            
-            item.innerHTML = `
-                <div class="badge-icon" style="font-size: 2rem; margin-bottom: 5px;">${badge.icon}</div>
-                <div class="badge-name" style="font-size: 0.8rem; font-weight: bold;">${badge[currentLang]}</div>
-                ${!isEarned ? `<div class="badge-goal" style="font-size: 0.7rem; color: #999;">Goal: ${badge.goal}</div>` : ''}
-            `;
-            badgesList.appendChild(item);
-        });
-    }
 
     if (btnAudio) {
         btnAudio.addEventListener('click', () => {
@@ -479,6 +412,22 @@ document.addEventListener('DOMContentLoaded', () => {
     btnStartQuiz.addEventListener('click', startQuiz);
     btnNextQuestion.addEventListener('click', loadNextQuestion);
     btnHint.addEventListener('click', showHint);
+    if (btnRange) {
+        btnRange.addEventListener('click', () => {
+            const isShowingRange = btnRange.classList.toggle('active-range');
+            const dict = i18n[currentLang];
+            
+            if (isShowingRange) {
+                btnRange.textContent = dict.species;
+                qImage.classList.add('hidden');
+                rangeImage.classList.remove('hidden');
+            } else {
+                btnRange.textContent = dict.range;
+                qImage.classList.remove('hidden');
+                rangeImage.classList.add('hidden');
+            }
+        });
+    }
 
     function startQuiz() {
         score = 0;
@@ -494,8 +443,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         activeQuizPool = uniqueData.filter(species => {
-            return currentCategory === 'all' || species.category === currentCategory;
+            const matchesCategory = currentCategory === 'all' || species.category === currentCategory;
+            const matchesDifficulty = currentDifficulty === 'all' || species.difficulty === currentDifficulty || !species.difficulty;
+            return matchesCategory && matchesDifficulty;
         });
+
+        if (activeQuizPool.length === 0) {
+            // Fallback: if no matches with difficulty, try just category
+            activeQuizPool = uniqueData.filter(species => {
+                return currentCategory === 'all' || species.category === currentCategory;
+            });
+        }
 
         if (activeQuizPool.length === 0) {
             alert(i18n[currentLang].noSpecies);
@@ -557,6 +515,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fallback to a secondary source or placeholder
             qImage.style.opacity = '0.5';
         };
+
+        // Range map logic
+        if (currentItem.rangeMap) {
+            btnRange.classList.remove('hidden');
+            btnRange.classList.remove('active-range');
+            btnRange.textContent = i18n[currentLang].range;
+            rangeImage.src = currentItem.rangeMap;
+            rangeImage.classList.add('hidden');
+            qImage.classList.remove('hidden');
+        } else {
+            btnRange.classList.add('hidden');
+            rangeImage.classList.add('hidden');
+            qImage.classList.remove('hidden');
+        }
 
         generateAnswers(currentItem);
     }
@@ -693,9 +665,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (searchTerm) {
             items = items.filter(i => {
-                const name = typeof i.name === 'object' ? i.name[currentLang].toLowerCase() : i.name.toLowerCase();
-                const sci = i.scientific.toLowerCase();
-                const fam = i.family.toLowerCase();
+                const name = (typeof i.name === 'object' ? i.name[currentLang] : (i.name || '')).toLowerCase();
+                const sci = (i.scientific || '').toLowerCase();
+                const fam = (i.family || '').toLowerCase();
                 return name.includes(searchTerm) || sci.includes(searchTerm) || fam.includes(searchTerm);
             });
         }
@@ -722,7 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function openModal(item) {
+    async function openModal(item) {
         if (!detailsModal) return;
 
         const lang = currentLang;
@@ -739,10 +711,36 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-size-text').textContent = item.size ? getName(item.size) : '---';
         document.getElementById('modal-diet-text').textContent = item.diet ? getName(item.diet) : '---';
 
-        // Infobox
-        const mImg = document.getElementById('modal-image');
-        mImg.referrerPolicy = "no-referrer";
-        mImg.src = item.image;
+        // Infobox and Image Gallery
+        const infoboxImageContainer = document.querySelector('.infobox-image');
+        infoboxImageContainer.innerHTML = `<img id="modal-image" src="${item.image}" alt="Species Detail" referrerpolicy="no-referrer">`;
+        
+        // Manual Image Support: Check for common manual image names in the dataset folder
+        const folderName = item.scientific.replace(/ /g, '_');
+        const basePath = `Belgium_species_dataset/${folderName}/`;
+        
+        // Potential manual images
+        const manualImages = ['manual.jpg', 'custom.jpg', '1.jpg', '2.jpg', '3.jpg'];
+        
+        for (const imgName of manualImages) {
+            const imgPath = basePath + imgName;
+            const testImg = new Image();
+            testImg.src = imgPath;
+            testImg.onload = () => {
+                const galleryImg = document.createElement('img');
+                galleryImg.src = imgPath;
+                galleryImg.alt = "Manual Image";
+                galleryImg.className = "gallery-image";
+                galleryImg.style.marginTop = "10px";
+                galleryImg.style.borderRadius = "8px";
+                galleryImg.style.cursor = "pointer";
+                galleryImg.addEventListener('click', () => {
+                    document.getElementById('modal-image').src = imgPath;
+                });
+                infoboxImageContainer.appendChild(galleryImg);
+            };
+        }
+
         document.getElementById('modal-infobox-family').textContent = item.family || '---';
         document.getElementById('modal-infobox-category').textContent = i18n[lang][item.category] || item.category;
         document.getElementById('modal-habitat').textContent = getName(item.habitat) || '---';
