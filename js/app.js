@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Audio Logic ---
-    const bgAudio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3'); // Fallback track for now
+    const bgAudio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3');
     bgAudio.loop = true;
     let audioEnabled = false;
 
@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Test je kennis of verken de encyclopedie van de Belgische natuurwonderen.",
             back: "← Terug",
             stopConfirm: "Weet je zeker dat je wilt stoppen?",
+            stopDesc: "Je voortgang gaat verloren.",
+            stopYes: "Ja, stop",
+            stopNo: "Doorgaan",
             home: "← Home",
             setup: "Quiz Instellen",
             category: "Kies Categorie",
@@ -41,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             flora: "🌸 Wilde Bloemen",
             fungi: "🍄 Paddenstoelen",
             trees: "🌲 Bomen",
-            agriculture: "🌾 Landbouw",
+            agriculture: "🌾 Gekweekte Soorten",
             easy: "Gemakkelijk (Algemeen)",
             hard: "Moeilijk (Zeldzaam)",
             question: "Identificeer deze soort",
@@ -58,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             family: "Familie",
             size: "Grootte",
             diet: "Dieet",
+            funfact: "Wist je dat?",
             perfect: "Perfecte Score!",
             perfectDesc: "Je bent een echte meester van de Belgische biodiversiteit.",
             great: "Goed gedaan!",
@@ -67,9 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
             practice: "Meer oefening nodig!",
             practiceDesc: "Probeer de Encyclopedie om meer te leren.",
             noSpecies: "Geen soorten gevonden voor deze categorie. Probeer een andere!",
+            noResults: "Geen soorten gevonden",
+            noResultsSub: "Probeer een andere zoekopdracht of categorie.",
             hintText: "Dit behoort tot de familie: ",
             range: "Toon Kaart",
-            species: "Toon Soort"
+            species: "Toon Soort",
+            sotdLabel: "Soort van de Dag",
+            xpLabel: "XP"
         },
         en: {
             play: "Play Quiz",
@@ -78,7 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Belgian Fauna & Flora",
             desc: "Test your knowledge or explore the encyclopedia of Belgium's natural wonders.",
             back: "← Back",
-            stopConfirm: "Are you sure you want to stop?",
+            stopConfirm: "Stop the quiz?",
+            stopDesc: "Your progress will be lost.",
+            stopYes: "Yes, stop",
+            stopNo: "Keep playing",
             home: "← Home",
             setup: "Setup Quiz",
             category: "Select Category",
@@ -91,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             flora: "🌸 Wildflowers",
             fungi: "🍄 Fungi",
             trees: "🌲 Trees",
-            agriculture: "🌾 Agriculture",
+            agriculture: "🌾 Cultivated Species",
             easy: "Easy (Common)",
             hard: "Hard (Rare)",
             question: "Identify this species",
@@ -108,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             family: "Family",
             size: "Size",
             diet: "Diet",
+            funfact: "Did you know?",
             perfect: "Perfect Score!",
             perfectDesc: "You are a true master of Belgian biodiversity.",
             great: "Great job!",
@@ -117,9 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
             practice: "Need more practice!",
             practiceDesc: "Try the Encyclopedia section to learn more.",
             noSpecies: "No species found for this category! Try another one.",
+            noResults: "No species found",
+            noResultsSub: "Try a different search term or category.",
             hintText: "This belongs to the family: ",
             range: "Show Range",
-            species: "Show Species"
+            species: "Show Species",
+            sotdLabel: "Species of the Day",
+            xpLabel: "XP"
         },
         fr: {
             play: "Jouer au Quiz",
@@ -128,7 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Faune & Flore Belges",
             desc: "Testez vos connaissances ou explorez l'encyclopédie des merveilles naturelles de la Belgique.",
             back: "← Retour",
-            stopConfirm: "Êtes-vous sûr de vouloir arrêter ?",
+            stopConfirm: "Arrêter le quiz ?",
+            stopDesc: "Votre progression sera perdue.",
+            stopYes: "Oui, arrêter",
+            stopNo: "Continuer",
             home: "← Accueil",
             setup: "Configuration du Quiz",
             category: "Choisir la Catégorie",
@@ -141,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             flora: "🌸 Fleurs sauvages",
             fungi: "🍄 Champignons",
             trees: "🌲 Arbres",
-            agriculture: "🌾 Agriculture",
+            agriculture: "🌾 Espèces Cultivées",
             easy: "Facile (Commun)",
             hard: "Difficile (Rare)",
             question: "Identifiez cette espèce",
@@ -158,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
             family: "Famille",
             size: "Taille",
             diet: "Régime",
+            funfact: "Le saviez-vous ?",
             perfect: "Score Parfait !",
             perfectDesc: "Vous êtes un véritable maître de la biodiversité belge.",
             great: "Bon travail !",
@@ -167,42 +187,46 @@ document.addEventListener('DOMContentLoaded', () => {
             practice: "Besoin d'entraînement !",
             practiceDesc: "Essayez l'Encyclopédie pour en apprendre davantage.",
             noSpecies: "Aucune espèce trouvée pour cette catégorie ! Essayez-en une autre.",
+            noResults: "Aucune espèce trouvée",
+            noResultsSub: "Essayez un autre terme de recherche ou une autre catégorie.",
             hintText: "Ceci appartient à la famille : ",
             range: "Carte",
-            species: "Espèce"
+            species: "Espèce",
+            sotdLabel: "Espèce du Jour",
+            xpLabel: "XP"
         }
     };
 
     // --- State Variables ---
-    let currentLang = 'nl'; // Dutch is standard
+    let currentLang = 'nl';
     let currentCategory = 'all';
     let currentDifficulty = 'easy';
-
     let activeQuizPool = [];
     let currentQuestionIndex = 0;
     let score = 0;
     let currentCorrectAnswer = null;
     let hintUsed = false;
     let collectedSpecies = JSON.parse(localStorage.getItem('collectedSpecies') || '[]');
+    let currentXP = parseInt(localStorage.getItem('currentXP') || '0');
+
+    const XP_PER_CORRECT = 10;
+    const QUIZ_LENGTH = 10;
 
     function saveCollection() {
         localStorage.setItem('collectedSpecies', JSON.stringify(collectedSpecies));
+    }
+
+    function saveXP() {
+        localStorage.setItem('currentXP', String(currentXP));
     }
 
     function addToCollection(speciesId) {
         if (!collectedSpecies.includes(speciesId)) {
             collectedSpecies.push(speciesId);
             saveCollection();
-            updateCollectionUI();
             checkBadges();
         }
     }
-
-    function updateCollectionUI() {
-        // This will be used to highlight found species in Encyclopedia
-    }
-
-    const QUIZ_LENGTH = 10;
 
     // --- DOM Elements ---
     const screens = {
@@ -211,10 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
         quiz: document.getElementById('screen-quiz'),
         results: document.getElementById('screen-results'),
         learn: document.getElementById('screen-learn'),
-        preview: document.getElementById('preview-screen')
     };
 
-    // Buttons
     const btnPlay = document.getElementById('btn-play');
     const btnLearn = document.getElementById('btn-learn');
     const btnBacks = document.querySelectorAll('.btn-back, .back-btn');
@@ -228,123 +250,215 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnStopQuiz = document.getElementById('btn-stop-quiz');
     const rangeImage = document.getElementById('range-image');
 
-    // Config options
+    // Stop modal
+    const stopConfirmModal = document.getElementById('stop-confirm-modal');
+    const btnStopConfirm = document.getElementById('btn-stop-confirm');
+    const btnStopCancel = document.getElementById('btn-stop-cancel');
+
     const categoryChips = document.querySelectorAll('#category-selector .select-chip');
     const difficultyChips = document.querySelectorAll('#difficulty-selector .select-chip');
 
-    // Quiz elements
     const qNumText = document.getElementById('current-q-num');
     const progressFill = document.getElementById('progress-fill');
+    const xpDisplay = document.getElementById('xp-display');
     const scoreText = document.getElementById('current-score');
     const qText = document.getElementById('question-text');
     const qImage = document.getElementById('question-image');
     const imageLoader = document.getElementById('image-loader');
     const answersContainer = document.getElementById('answers-container');
 
-    // Modal elements
     const detailsModal = document.getElementById('details-modal');
     const btnCloseModal = document.getElementById('btn-close-modal');
 
-    // Encyclopedia elements
     const learnGrid = document.getElementById('learn-grid');
     const learnTabs = document.querySelectorAll('#learn-filters .tab');
     const speciesSearch = document.getElementById('species-search');
     const btnAudio = document.getElementById('btn-audio');
     const audioIcon = document.getElementById('audio-icon');
 
+    // --- Parallax Hero ---
+    function initParallax() {
+        const container = document.getElementById('hero-parallax');
+        const inner = document.getElementById('hero-parallax-inner');
+        if (!container || !inner) return;
+
+        // Scroll-based parallax on the home screen
+        const homeScreen = document.getElementById('screen-home');
+        if (homeScreen) {
+            homeScreen.addEventListener('scroll', updateParallax);
+        }
+        // Also use mouse/device motion as a subtle effect
+        document.addEventListener('mousemove', (e) => {
+            if (!screens.home.classList.contains('active')) return;
+            const rect = container.getBoundingClientRect();
+            if (rect.width === 0) return;
+            const xRatio = (e.clientX - rect.left) / rect.width - 0.5;
+            const yRatio = (e.clientY - rect.top) / rect.height - 0.5;
+            inner.style.transform = `translate(${xRatio * 12}px, ${yRatio * 8}px) scale(1.05)`;
+        });
+
+        function updateParallax() {
+            const scrollY = homeScreen.scrollTop;
+            inner.style.transform = `translateY(${scrollY * 0.35}px) scale(1.05)`;
+        }
+    }
+
+    // --- Species of the Day ---
+    function renderSpeciesOfTheDay() {
+        const allData = window.speciesData || [];
+        if (!allData.length) return;
+
+        // Pick deterministically based on the current date so it changes daily
+        const today = new Date();
+        const dayIndex = (today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate()) % allData.length;
+        const species = allData[dayIndex];
+
+        const card = document.getElementById('sotd-card');
+        const img = document.getElementById('sotd-img');
+        const nameEl = document.getElementById('sotd-name');
+        const sciEl = document.getElementById('sotd-scientific');
+        const factEl = document.getElementById('sotd-fact');
+
+        if (!card || !species) return;
+
+        const name = typeof species.name === 'object' ? species.name[currentLang] : species.name;
+        const funfact = species.funfact
+            ? (typeof species.funfact === 'object' ? species.funfact[currentLang] : species.funfact)
+            : (typeof species.description === 'object' ? species.description[currentLang] : species.description);
+
+        img.src = species.image || '';
+        img.alt = name;
+        img.onerror = () => { img.style.display = 'none'; };
+
+        nameEl.textContent = name;
+        sciEl.textContent = species.scientific || '';
+        factEl.textContent = funfact || '';
+
+        card.classList.remove('hidden');
+    }
+
     // --- Language Logic ---
     function updateLanguage(lang) {
         currentLang = lang;
         document.documentElement.lang = lang;
 
-        // Update active class on buttons
         langBtns.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
         });
 
-        // Update UI Text
         const dict = i18n[lang];
 
-        // Header / Home
-        document.querySelector('#screen-home .subtitle').textContent = dict.discover;
-        document.querySelector('#screen-home h1').innerHTML = dict.title.replace(' ', '<br><span class="highlight">') + '</span>';
-        document.querySelector('#screen-home p').textContent = dict.desc;
-        btnPlay.innerHTML = `<span class="icon">🌿</span> ${dict.play}`;
-        btnLearn.innerHTML = `<span class="icon">📖</span> ${dict.learn}`;
+        // Home screen
+        const subtitleEl = document.querySelector('#screen-home .subtitle');
+        if (subtitleEl) subtitleEl.textContent = dict.discover;
+
+        const h1El = document.querySelector('#screen-home h1');
+        if (h1El) h1El.innerHTML = dict.title.replace(' ', '<br><span class="highlight">') + '</span>';
+
+        const descEl = document.querySelector('#screen-home p');
+        if (descEl) descEl.textContent = dict.desc;
+
+        if (btnPlay) btnPlay.innerHTML = `<span class="icon">🌿</span> ${dict.play}`;
+        if (btnLearn) btnLearn.innerHTML = `<span class="icon">📖</span> ${dict.learn}`;
+
+        // SOTD label
+        const sotdLabelEl = document.querySelector('.sotd-label [data-i18n="sotdLabel"]');
+        if (sotdLabelEl) sotdLabelEl.textContent = dict.sotdLabel;
 
         // Config
-        document.querySelector('#screen-config h2').textContent = dict.setup;
-        document.querySelector('#category-selector').previousElementSibling.textContent = dict.category;
-        document.querySelector('#difficulty-selector').previousElementSibling.textContent = dict.difficulty;
-        btnStartQuiz.textContent = dict.start;
+        const configH2 = document.querySelector('#screen-config h2');
+        if (configH2) configH2.textContent = dict.setup;
 
-        // Chips
+        const catLabel = document.querySelector('#category-selector') && document.querySelector('#category-selector').previousElementSibling;
+        if (catLabel) catLabel.textContent = dict.category;
+
+        const diffLabel = document.querySelector('#difficulty-selector') && document.querySelector('#difficulty-selector').previousElementSibling;
+        if (diffLabel) diffLabel.textContent = dict.difficulty;
+
+        if (btnStartQuiz) btnStartQuiz.textContent = dict.start;
+
         categoryChips.forEach(chip => {
             const v = chip.dataset.val;
-            chip.textContent = dict[v] || chip.textContent;
+            if (dict[v]) chip.textContent = dict[v];
         });
+
         difficultyChips.forEach(chip => {
             const v = chip.dataset.val;
-            chip.textContent = dict[v] || chip.textContent;
+            if (dict[v]) chip.textContent = dict[v];
         });
 
         // Quiz
-        document.querySelector('.progress-text').innerHTML = `${dict.question} <span id="current-q-num">${currentQuestionIndex + 1}</span> ${dict.of} 10`;
-        document.querySelector('.score-pill').innerHTML = `${dict.score}: <span id="current-score">${score}</span>`;
-        btnHint.innerHTML = `<span class="icon">💡</span> ${dict.hint}`;
+        const progressTextEl = document.querySelector('.progress-text');
+        if (progressTextEl) {
+            progressTextEl.innerHTML = `${dict.question} <span id="current-q-num">${currentQuestionIndex + 1}</span> ${dict.of} 10`;
+        }
+
+        const scorePillEl = document.querySelector('.score-pill');
+        if (scorePillEl) scorePillEl.innerHTML = `🏅 <span id="current-score">${score}</span>`;
+
+        if (btnHint) btnHint.innerHTML = `<span class="icon">💡</span> ${dict.hint}`;
         if (btnRange) btnRange.textContent = btnRange.classList.contains('active-range') ? dict.species : dict.range;
-        btnNextQuestion.innerHTML = `${dict.next} →`;
+        if (btnNextQuestion) btnNextQuestion.innerHTML = `${dict.next} →`;
 
         // Results
-        document.querySelector('#screen-results h2').textContent = dict.complete;
-        btnPlayAgain.textContent = dict.again;
-        btnResultsHome.textContent = dict.menu;
+        const resultsH2 = document.querySelector('#screen-results h2');
+        if (resultsH2) resultsH2.textContent = dict.complete;
+        if (btnPlayAgain) btnPlayAgain.textContent = dict.again;
+        if (btnResultsHome) btnResultsHome.textContent = dict.menu;
 
-        // Encyclopedia / Learn
-        document.querySelector('#screen-learn h2').textContent = dict.learn;
+        // Stop modal
+        const stopTitle = document.getElementById('stop-modal-title');
+        if (stopTitle) stopTitle.textContent = dict.stopConfirm;
+        const stopDesc = document.getElementById('stop-modal-desc');
+        if (stopDesc) stopDesc.textContent = dict.stopDesc;
+        if (btnStopConfirm) btnStopConfirm.textContent = dict.stopYes;
+        if (btnStopCancel) btnStopCancel.textContent = dict.stopNo;
+
+        // Encyclopedia
         document.querySelectorAll('#learn-filters .tab').forEach(tab => {
             const v = tab.dataset.filter;
-            tab.textContent = dict[v] || tab.textContent;
+            if (v && dict[v]) tab.textContent = dict[v];
         });
 
-        // Update modal labels if they exist
-        const lblRarity = document.getElementById('label-rarity');
-        if (lblRarity) lblRarity.textContent = dict.rarity;
-        const lblSize = document.getElementById('label-size');
-        if (lblSize) lblSize.textContent = dict.size;
-        const lblDiet = document.getElementById('label-diet');
-        if (lblDiet) lblDiet.textContent = dict.diet;
+        // Modal labels
+        const labelMap = {
+            'label-rarity': 'rarity',
+            'label-size': 'size',
+            'label-diet': 'diet',
+            'label-funfact': 'funfact',
+            'label-info-habitat': 'habitat',
+            'label-info-rarity': 'rarity',
+            'label-info-size': 'size',
+            'label-info-diet': 'diet',
+        };
+        for (const [id, key] of Object.entries(labelMap)) {
+            const el = document.getElementById(id);
+            if (el && dict[key]) el.textContent = dict[key];
+        }
 
-        const lblInfoHab = document.getElementById('label-info-habitat');
-        if (lblInfoHab) lblInfoHab.textContent = dict.habitat;
-        const lblInfoRty = document.getElementById('label-info-rarity');
-        if (lblInfoRty) lblInfoRty.textContent = dict.rarity;
-        const lblInfoSz = document.getElementById('label-info-size');
-        if (lblInfoSz) lblInfoSz.textContent = dict.size;
-        const lblInfoDt = document.getElementById('label-info-diet');
-        if (lblInfoDt) lblInfoDt.textContent = dict.diet;
+        // Refresh SOTD names if already rendered
+        renderSpeciesOfTheDay();
     }
 
     langBtns.forEach(btn => {
         btn.addEventListener('click', () => updateLanguage(btn.dataset.lang));
     });
 
-    // --- Navigation Functions ---
+    // --- Navigation ---
     function showScreen(screenId) {
-        Object.values(screens).forEach(screen => {
-            if (screen) {
+        const key = screenId.replace('screen-', '');
+        Object.entries(screens).forEach(([k, screen]) => {
+            if (!screen) return;
+            if (k === key) {
+                screen.classList.remove('hidden');
+                screen.classList.add('active');
+            } else {
                 screen.classList.remove('active');
                 screen.classList.add('hidden');
             }
         });
-        const target = screens[screenId.replace('screen-', '')];
-        if (target) {
-            target.classList.remove('hidden');
-            target.classList.add('active');
-        }
     }
 
-    // Event Listeners for Navigation
     btnPlay.addEventListener('click', () => showScreen('screen-config'));
     btnLearn.addEventListener('click', () => {
         showScreen('screen-learn');
@@ -361,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnResultsHome.addEventListener('click', () => showScreen('screen-home'));
     btnPlayAgain.addEventListener('click', () => showScreen('screen-config'));
 
-    // Encyclopedia filter logic
+    // Encyclopedia filter
     learnTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             learnTabs.forEach(t => t.classList.remove('active'));
@@ -376,7 +490,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderEncyclopedia(activeTab ? activeTab.dataset.filter : 'all');
         });
     }
-
 
     if (btnAudio) {
         btnAudio.addEventListener('click', () => {
@@ -393,7 +506,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Configuration Logic ---
+    // --- Stop Quiz Button (with confirmation modal) ---
+    if (btnStopQuiz) {
+        btnStopQuiz.addEventListener('click', () => {
+            if (stopConfirmModal) stopConfirmModal.classList.remove('hidden');
+        });
+    }
+
+    if (btnStopConfirm) {
+        btnStopConfirm.addEventListener('click', () => {
+            if (stopConfirmModal) stopConfirmModal.classList.add('hidden');
+            showScreen('screen-home');
+        });
+    }
+
+    if (btnStopCancel) {
+        btnStopCancel.addEventListener('click', () => {
+            if (stopConfirmModal) stopConfirmModal.classList.add('hidden');
+        });
+    }
+
+    // Close stop modal on backdrop click
+    if (stopConfirmModal) {
+        stopConfirmModal.addEventListener('click', (e) => {
+            if (e.target === stopConfirmModal) stopConfirmModal.classList.add('hidden');
+        });
+    }
+
+    // --- Config ---
     function setupChips(chipsList, callback) {
         chipsList.forEach(chip => {
             chip.addEventListener('click', (e) => {
@@ -412,11 +552,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnStartQuiz.addEventListener('click', startQuiz);
     btnNextQuestion.addEventListener('click', loadNextQuestion);
     btnHint.addEventListener('click', showHint);
+
     if (btnRange) {
         btnRange.addEventListener('click', () => {
             const isShowingRange = btnRange.classList.toggle('active-range');
             const dict = i18n[currentLang];
-            
             if (isShowingRange) {
                 btnRange.textContent = dict.species;
                 qImage.classList.add('hidden');
@@ -434,7 +574,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentQuestionIndex = 0;
         const allData = window.speciesData || [];
 
-        // Filter and remove duplicates based on scientific name just in case
         const seen = new Set();
         const uniqueData = allData.filter(item => {
             const isDuplicate = seen.has(item.scientific);
@@ -449,10 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (activeQuizPool.length === 0) {
-            // Fallback: if no matches with difficulty, try just category
-            activeQuizPool = uniqueData.filter(species => {
-                return currentCategory === 'all' || species.category === currentCategory;
-            });
+            activeQuizPool = uniqueData.filter(species => currentCategory === 'all' || species.category === currentCategory);
         }
 
         if (activeQuizPool.length === 0) {
@@ -460,18 +596,38 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Shuffle
         activeQuizPool.sort(() => 0.5 - Math.random());
-
-        // Limit to available or QUIZ_LENGTH
         const actualLength = Math.min(activeQuizPool.length, QUIZ_LENGTH);
         activeQuizPool = activeQuizPool.slice(0, actualLength);
 
-        // Update quiz length in state/UI if needed (calculated dynamically now)
-        this.currentQuizLength = actualLength;
-
         showScreen('screen-quiz');
+        updateXPDisplay();
         renderQuestion();
+    }
+
+    // --- XP System ---
+    function updateXPDisplay() {
+        if (xpDisplay) {
+            xpDisplay.textContent = `${currentXP} ${i18n[currentLang].xpLabel}`;
+        }
+    }
+
+    function awardXP(amount, originEl) {
+        currentXP += amount;
+        saveXP();
+        updateXPDisplay();
+
+        // Floating +XP pop animation
+        if (originEl) {
+            const rect = originEl.getBoundingClientRect();
+            const pop = document.createElement('div');
+            pop.className = 'xp-gain-pop';
+            pop.textContent = `+${amount} XP`;
+            pop.style.left = `${rect.left + rect.width / 2}px`;
+            pop.style.top = `${rect.top}px`;
+            document.body.appendChild(pop);
+            setTimeout(() => pop.remove(), 900);
+        }
     }
 
     function renderQuestion() {
@@ -479,23 +635,27 @@ document.addEventListener('DOMContentLoaded', () => {
         btnHint.disabled = false;
         hintUsed = false;
 
-        // Clear previous hints
         const oldHint = document.querySelector('.hint-text');
         if (oldHint) oldHint.remove();
 
         const currentItem = activeQuizPool[currentQuestionIndex];
         currentCorrectAnswer = currentItem;
 
-        // Update UI
         const dict = i18n[currentLang];
         const totalQs = activeQuizPool.length;
 
-        qNumText.textContent = currentQuestionIndex + 1;
-        progressFill.style.width = `${((currentQuestionIndex) / totalQs) * 100}%`;
-        scoreText.textContent = score;
+        // Update question number
+        const qNumEl = document.getElementById('current-q-num');
+        if (qNumEl) qNumEl.textContent = currentQuestionIndex + 1;
 
-        // Update question text with total
-        document.querySelector('.progress-text').innerHTML = `${dict.question} <span id="current-q-num">${currentQuestionIndex + 1}</span> ${dict.of} ${totalQs}`;
+        // Update progress text
+        const progressTextEl = document.querySelector('.progress-text');
+        if (progressTextEl) {
+            progressTextEl.innerHTML = `${dict.question} <span id="current-q-num">${currentQuestionIndex + 1}</span> ${dict.of} ${totalQs}`;
+        }
+
+        progressFill.style.width = `${(currentQuestionIndex / totalQs) * 100}%`;
+        scoreText.textContent = score;
 
         const catName = dict[currentItem.category] || currentItem.category;
         qText.innerHTML = `${dict.question} (<span class="highlight">${catName}</span>)`;
@@ -505,22 +665,19 @@ document.addEventListener('DOMContentLoaded', () => {
         qImage.referrerPolicy = "no-referrer";
         qImage.src = currentItem.image;
         qImage.onload = () => {
-            console.log("Image loaded successfully: " + currentItem.image);
             imageLoader.style.display = 'none';
             qImage.style.opacity = '1';
         };
         qImage.onerror = () => {
-            console.error("Failed to load image: " + currentItem.image);
             imageLoader.style.display = 'none';
-            // Fallback to a secondary source or placeholder
             qImage.style.opacity = '0.5';
         };
 
-        // Range map logic
+        // Range map
         if (currentItem.rangeMap) {
             btnRange.classList.remove('hidden');
             btnRange.classList.remove('active-range');
-            btnRange.textContent = i18n[currentLang].range;
+            btnRange.textContent = dict.range;
             rangeImage.src = currentItem.rangeMap;
             rangeImage.classList.add('hidden');
             qImage.classList.remove('hidden');
@@ -540,10 +697,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const hintDiv = document.createElement('div');
         hintDiv.className = 'hint-text';
-        const family = currentCorrectAnswer.family || "Inconnue/Onbekend";
+        const family = currentCorrectAnswer.family || "Onbekend/Unknown";
         hintDiv.innerHTML = `<span class="icon">🌿</span> ${i18n[currentLang].hintText} <strong>${family}</strong>`;
-
-        // Insert after question container
         document.querySelector('.question-container').after(hintDiv);
     }
 
@@ -551,8 +706,6 @@ document.addEventListener('DOMContentLoaded', () => {
         answersContainer.innerHTML = '';
         const allData = window.speciesData || [];
 
-        // Ensure we don't have duplicates in the wrong answers
-        // We filter by ID and by Name (to prevent "Same name, different ID" issues)
         const getLocalizedName = (item) => typeof item.name === 'object' ? item.name[currentLang] : item.name;
         const correctName = getLocalizedName(correctItem);
 
@@ -562,14 +715,12 @@ document.addEventListener('DOMContentLoaded', () => {
             getLocalizedName(i) !== correctName
         );
 
-        // Prefer same category for wrong answers
         let sameCatWrong = wrongAnswersPool.filter(i => i.category === correctItem.category);
-
         let selectedWrong = [];
+
         if (sameCatWrong.length >= 2) {
             selectedWrong = sameCatWrong.sort(() => 0.5 - Math.random()).slice(0, 2);
         } else {
-            // Mix with others if not enough in same category
             selectedWrong = [...sameCatWrong];
             const others = wrongAnswersPool
                 .filter(i => !selectedWrong.includes(i))
@@ -583,9 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
         options.forEach(option => {
             const btn = document.createElement('button');
             btn.className = 'answer-widget';
-
             const name = getLocalizedName(option);
-
             btn.innerHTML = `
                 <span>${name}</span>
                 <span style="font-size:0.8rem; color:var(--text-secondary); font-style:italic;">${option.scientific}</span>
@@ -606,19 +755,20 @@ document.addEventListener('DOMContentLoaded', () => {
             addToCollection(currentCorrectAnswer.id);
             clickedBtn.classList.add('correct');
             scoreText.textContent = score;
+            awardXP(XP_PER_CORRECT, clickedBtn);
         } else {
             clickedBtn.classList.add('wrong');
             const correctBtn = answersContainer.querySelector(`.answer-widget[data-id="${currentCorrectAnswer.id}"]`);
             if (correctBtn) correctBtn.classList.add('correct');
         }
 
-        progressFill.style.width = `${((currentQuestionIndex + 1) / QUIZ_LENGTH) * 100}%`;
+        progressFill.style.width = `${((currentQuestionIndex + 1) / activeQuizPool.length) * 100}%`;
         btnNextQuestion.classList.remove('hidden');
     }
 
     function loadNextQuestion() {
         currentQuestionIndex++;
-        if (currentQuestionIndex < QUIZ_LENGTH) {
+        if (currentQuestionIndex < activeQuizPool.length) {
             renderQuestion();
         } else {
             showResults();
@@ -630,14 +780,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const msgElem = document.getElementById('score-message');
         const detElem = document.getElementById('score-details');
         const dict = i18n[currentLang];
+        const total = activeQuizPool.length;
 
-        if (score === QUIZ_LENGTH) {
+        if (score === total) {
             msgElem.textContent = dict.perfect;
             detElem.textContent = dict.perfectDesc;
-        } else if (score >= QUIZ_LENGTH * 0.7) {
+        } else if (score >= total * 0.7) {
             msgElem.textContent = dict.great;
             detElem.textContent = dict.greatDesc;
-        } else if (score >= QUIZ_LENGTH * 0.4) {
+        } else if (score >= total * 0.4) {
             msgElem.textContent = dict.notbad;
             detElem.textContent = dict.notbadDesc;
         } else {
@@ -649,79 +800,118 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Encyclopedia ---
-    function renderEncyclopedia(filter) {
+    function renderSkeletons(count = 8) {
         learnGrid.innerHTML = '';
-        const allData = window.speciesData || [];
-        const searchTerm = speciesSearch ? speciesSearch.value.toLowerCase().trim() : '';
-
-        let items = [];
-        if (filter === 'all') {
-            items = allData;
-        } else if (filter === 'collected') {
-            items = allData.filter(i => collectedSpecies.includes(i.id));
-        } else {
-            items = allData.filter(i => i.category === filter);
+        for (let i = 0; i < count; i++) {
+            learnGrid.innerHTML += `
+                <div class="skeleton-card">
+                    <div class="skeleton-img"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                </div>`;
         }
+    }
 
-        if (searchTerm) {
-            items = items.filter(i => {
-                const name = (typeof i.name === 'object' ? i.name[currentLang] : (i.name || '')).toLowerCase();
-                const sci = (i.scientific || '').toLowerCase();
-                const fam = (i.family || '').toLowerCase();
-                return name.includes(searchTerm) || sci.includes(searchTerm) || fam.includes(searchTerm);
+    function renderEncyclopedia(filter) {
+        // Show skeletons first
+        renderSkeletons(8);
+
+        // Small delay to show skeleton (simulates async load feel)
+        setTimeout(() => {
+            learnGrid.innerHTML = '';
+            const allData = window.speciesData || [];
+            const searchTerm = speciesSearch ? speciesSearch.value.toLowerCase().trim() : '';
+
+            let items = [];
+            if (filter === 'all') {
+                items = allData;
+            } else if (filter === 'collected') {
+                items = allData.filter(i => collectedSpecies.includes(i.id));
+            } else {
+                items = allData.filter(i => i.category === filter);
+            }
+
+            if (searchTerm) {
+                items = items.filter(i => {
+                    const name = (typeof i.name === 'object' ? i.name[currentLang] : (i.name || '')).toLowerCase();
+                    const sci = (i.scientific || '').toLowerCase();
+                    const fam = (i.family || '').toLowerCase();
+                    return name.includes(searchTerm) || sci.includes(searchTerm) || fam.includes(searchTerm);
+                });
+            }
+
+            // No results state
+            if (items.length === 0) {
+                const dict = i18n[currentLang];
+                learnGrid.innerHTML = `
+                    <div class="no-results-state">
+                        <div class="no-results-icon">🔍</div>
+                        <div class="no-results-title">${dict.noResults}</div>
+                        <div class="no-results-sub">${dict.noResultsSub}</div>
+                    </div>`;
+                return;
+            }
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'learn-card';
+                const name = typeof item.name === 'object' ? item.name[currentLang] : item.name;
+                const catName = i18n[currentLang][item.category] || item.category;
+                const isCollected = collectedSpecies.includes(item.id);
+                if (isCollected) card.classList.add('collected');
+
+                card.innerHTML = `
+                    <div class="collected-badge ${isCollected ? '' : 'hidden'}">✓</div>
+                    <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer"
+                         onerror="this.style.background='rgba(61,184,99,0.1)'; this.src='';">
+                    <div class="learn-card-info">
+                        <div class="learn-card-title">${name}</div>
+                        <div class="learn-card-type">${catName}</div>
+                    </div>`;
+                card.addEventListener('click', () => openModal(item));
+                learnGrid.appendChild(card);
             });
-        }
-
-        items.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'learn-card';
-            const name = typeof item.name === 'object' ? item.name[currentLang] : item.name;
-            const catName = i18n[currentLang][item.category] || item.category;
-
-            const isCollected = collectedSpecies.includes(item.id);
-            if (isCollected) card.classList.add('collected');
-
-            card.innerHTML = `
-                <div class="collected-badge ${isCollected ? '' : 'hidden'}">✓</div>
-                <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer">
-                <div class="learn-card-info">
-                    <div class="learn-card-title">${name}</div>
-                    <div class="learn-card-type">${catName}</div>
-                </div>
-            `;
-            card.addEventListener('click', () => openModal(item));
-            learnGrid.appendChild(card);
-        });
+        }, 300); // 300ms skeleton flash — feels snappy but visible
     }
 
     async function openModal(item) {
         if (!detailsModal) return;
 
         const lang = currentLang;
-        const getName = (obj) => typeof obj === 'object' ? obj[lang] : obj;
+        const getName = (obj) => typeof obj === 'object' ? (obj[lang] || obj['en'] || Object.values(obj)[0]) : (obj || '---');
 
-        // Header
         document.getElementById('modal-title').textContent = getName(item.name);
-        document.getElementById('modal-scientific').textContent = item.scientific;
+        document.getElementById('modal-scientific').textContent = item.scientific || '';
         document.getElementById('modal-tag').textContent = i18n[lang][item.category] || item.category;
-
-        document.getElementById('modal-description').textContent = getName(item.description);
+        document.getElementById('modal-description').textContent = getName(item.description) || '---';
         document.getElementById('modal-habitat-text').textContent = getName(item.habitat) || '---';
         document.getElementById('modal-rarity-text').textContent = getName(item.rarity) || '---';
         document.getElementById('modal-size-text').textContent = item.size ? getName(item.size) : '---';
         document.getElementById('modal-diet-text').textContent = item.diet ? getName(item.diet) : '---';
 
-        // Infobox and Image Gallery
+        // Fun Fact
+        const funfactSection = document.getElementById('modal-funfact-section');
+        const funfactText = document.getElementById('modal-funfact-text');
+        if (item.funfact) {
+            const fact = getName(item.funfact);
+            funfactText.textContent = fact;
+            funfactSection.style.display = 'block';
+            // Update the section label for current language
+            const lbl = document.getElementById('label-funfact');
+            if (lbl) lbl.textContent = i18n[lang].funfact;
+        } else {
+            funfactSection.style.display = 'none';
+        }
+
+        // Infobox image
         const infoboxImageContainer = document.querySelector('.infobox-image');
         infoboxImageContainer.innerHTML = `<img id="modal-image" src="${item.image}" alt="Species Detail" referrerpolicy="no-referrer">`;
-        
-        // Manual Image Support: Check for common manual image names in the dataset folder
+
+        // Manual gallery images
         const folderName = item.scientific.replace(/ /g, '_');
         const basePath = `Belgium_species_dataset/${folderName}/`;
-        
-        // Potential manual images
         const manualImages = ['manual.jpg', 'custom.jpg', '1.jpg', '2.jpg', '3.jpg'];
-        
+
         for (const imgName of manualImages) {
             const imgPath = basePath + imgName;
             const testImg = new Image();
@@ -730,10 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const galleryImg = document.createElement('img');
                 galleryImg.src = imgPath;
                 galleryImg.alt = "Manual Image";
-                galleryImg.className = "gallery-image";
-                galleryImg.style.marginTop = "10px";
-                galleryImg.style.borderRadius = "8px";
-                galleryImg.style.cursor = "pointer";
+                galleryImg.style.cssText = "margin-top:10px; border-radius:8px; cursor:pointer; width:100%;";
                 galleryImg.addEventListener('click', () => {
                     document.getElementById('modal-image').src = imgPath;
                 });
@@ -750,17 +937,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         detailsModal.classList.remove('hidden');
 
-        btnCloseModal.onclick = () => {
-            detailsModal.classList.add('hidden');
-        };
+        btnCloseModal.onclick = () => detailsModal.classList.add('hidden');
     }
 
-    // Close modal on background click
     if (detailsModal) {
         detailsModal.addEventListener('click', (e) => {
-            if (e.target === detailsModal) {
-                detailsModal.classList.add('hidden');
-            }
+            if (e.target === detailsModal) detailsModal.classList.add('hidden');
         });
     }
 
@@ -772,7 +954,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.learn-svg-target').forEach(el => el.innerHTML = ICONS.learn);
     }
 
-    // --- Badges & Milestones ---
+    // --- Badges ---
     const BADGES = [
         { id: 'first_find', icon: '🌱', nl: 'Beginner Ontdekker', en: 'First Discovery', fr: 'Première Découverte', goal: 1 },
         { id: 'bird_lover', icon: '🐦', nl: 'Vogelvriend', en: 'Bird Lover', fr: 'Ami des oiseaux', goal: 5, category: 'birds' },
@@ -785,14 +967,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         BADGES.forEach(badge => {
             if (earned.includes(badge.id)) return;
-
             let count = 0;
             if (badge.category) {
-                count = window.speciesData.filter(s => collectedSpecies.includes(s.id) && s.category === badge.category).length;
+                count = (window.speciesData || []).filter(s => collectedSpecies.includes(s.id) && s.category === badge.category).length;
             } else {
                 count = collectedSpecies.length;
             }
-
             if (count >= badge.goal) {
                 earned.push(badge.id);
                 newlyEarned.push(badge);
@@ -805,9 +985,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initialize
-    console.log("App.js: Initializing first screen");
+    // --- Initialize ---
     injectIcons();
-    updateLanguage('nl'); 
+    updateLanguage('nl');
     showScreen('screen-home');
+    initParallax();
+
+    // Render SOTD after data is available
+    if (window.speciesData && window.speciesData.length > 0) {
+        renderSpeciesOfTheDay();
+    } else {
+        // Wait for data script to load
+        window.addEventListener('load', renderSpeciesOfTheDay);
+    }
 });
