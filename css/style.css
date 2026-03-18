@@ -1221,3 +1221,303 @@ p { color: var(--text-secondary); line-height: 1.6; }
     color: var(--accent-primary);
     border: 1px solid rgba(61,184,99,0.25);
 }
+
+/* ==========================================================================
+   Encyclopedia: sub-filter row
+   ========================================================================== */
+.sub-filter-row {
+    display: flex;
+    align-items: center;
+    padding: 0 4px 10px 4px;
+    gap: 6px;
+    overflow-x: auto;
+    animation: fadeIn 0.2s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 10px;
+}
+
+.sub-filter-row::-webkit-scrollbar { height: 3px; }
+.sub-filter-row::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+.sub-group { display: flex; gap: 6px; }
+
+.sub-tab {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.sub-tab:hover {
+    background: rgba(255,255,255,0.07);
+    color: var(--text-primary);
+}
+
+.sub-tab.active {
+    background: rgba(61,184,99,0.18);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+/* Parent tab styling when it has sub-tabs */
+.tab-has-sub {
+    position: relative;
+}
+
+.tab-has-sub.active {
+    border-radius: 8px 8px 0 0;
+    border-bottom: 2px solid var(--accent-primary);
+}
+
+/* ==========================================================================
+   Phylogeny link bar in encyclopedia
+   ========================================================================== */
+.phylo-link-bar {
+    padding: 0 2px 14px 2px;
+}
+
+.phylo-link-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, rgba(61,184,99,0.08), rgba(61,184,99,0.04));
+    border: 1px solid rgba(61,184,99,0.2);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.phylo-link-btn:hover {
+    background: linear-gradient(135deg, rgba(61,184,99,0.15), rgba(61,184,99,0.08));
+    border-color: rgba(61,184,99,0.4);
+    transform: translateY(-1px);
+}
+
+.phylo-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.phylo-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.phylo-text strong {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+}
+
+.phylo-text span {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.phylo-arrow {
+    color: var(--accent-primary);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.phylo-link-btn:hover .phylo-arrow { transform: translateX(4px); }
+
+/* Remove old phylo tab style */
+.tab-phylo { display: none; }
+
+/* ==========================================================================
+   Search container (encyclopedia)
+   ========================================================================== */
+.search-container {
+  padding: 0 20px 14px 20px;
+}
+.search-wrapper {
+  position: relative;
+}
+.search-icon-abs {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-primary);
+  opacity: 0.7;
+}
+#species-search {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  color: white;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+#species-search:focus { border-color: var(--accent-primary); }
+
+/* ==========================================================================
+   Tab — "has sub" indicator
+   ========================================================================== */
+.tab-has-sub { position: relative; }
+.tab-has-sub.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--accent-primary);
+}
+
+/* ==========================================================================
+   Sub-filter row
+   ========================================================================== */
+.sub-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px 12px 20px;
+  background: rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+  animation: slideDown 0.25s ease;
+}
+.sub-filter-row.hidden { display: none !important; }
+
+.sub-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.sub-group.hidden { display: none; }
+
+.sub-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+.sub-tab {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.sub-tab:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+}
+.sub-tab.active {
+  background: rgba(61, 184, 99, 0.2);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Phylogeny Banner  (separate block, NOT a tab)
+   ========================================================================== */
+.phylo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 12px 20px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(61,184,99,0.08), rgba(240,192,90,0.04));
+  border: 1px solid rgba(61,184,99,0.25);
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.phylo-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.phylo-banner-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.phylo-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.phylo-banner-text strong {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+.phylo-banner-text span {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.phylo-banner-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.phylo-banner-btn:hover {
+  background: var(--accent-primary-hover);
+  transform: translateX(2px);
+}
+
+@media (max-width: 480px) {
+  .phylo-banner { flex-direction: column; align-items: flex-start; }
+  .phylo-banner-btn { width: 100%; justify-content: center; }
+}
+
+/* Plant grade badges in encyclopedia cards */
+.plant-grade-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-top: 2px;
+}
+.plant-grade-monocot { background: rgba(240,192,90,0.2); color: var(--accent-secondary); border: 1px solid rgba(240,192,90,0.3); }
+.plant-grade-dicot   { background: rgba(61,184,99,0.15);  color: var(--accent-primary);   border: 1px solid rgba(61,184,99,0.25); }
