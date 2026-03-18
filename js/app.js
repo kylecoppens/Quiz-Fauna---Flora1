@@ -230,14 +230,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- DOM Elements ---
-   const screens = {
-    home: document.getElementById('screen-home'),
-    config: document.getElementById('screen-config'),
-    quiz: document.getElementById('screen-quiz'),
-    results: document.getElementById('screen-results'),
-    learn: document.getElementById('screen-learn'),
-    phylo: document.getElementById('screen-phylo')
-};
+    const screens = {
+        home: document.getElementById('screen-home'),
+        config: document.getElementById('screen-config'),
+        quiz: document.getElementById('screen-quiz'),
+        results: document.getElementById('screen-results'),
+        learn: document.getElementById('screen-learn'),
+        phylo: document.getElementById('screen-phylo'),
+    };
 
     const btnPlay = document.getElementById('btn-play');
     const btnLearn = document.getElementById('btn-learn');
@@ -1096,103 +1096,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ─── IN-APP PHYLOGENY ────────────────────────────────────────────────────
-    const PHYLO_TAXONOMY = [
-      {id:'animalia',icon:'🐾',label:'Dieren',sci:'Animalia',color:'#3db863',children:[
-        {id:'mammalia',icon:'🦊',label:'Zoogdieren',sci:'Mammalia',color:'#3db863',cats:['fauna'],children:[
-          {id:'carnivora',icon:'🦊',label:'Vleeseters',sci:'Carnivora',color:'#3db863',families:['Canidae','Felidae','Mustelidae','Phocidae','Phocoenidae']},
-          {id:'rodentia',icon:'🐿️',label:'Knaagdieren',sci:'Rodentia',color:'#5ec87a',families:['Sciuridae','Muridae','Cricetidae','Castoridae']},
-          {id:'lagomorpha',icon:'🐇',label:'Haasachtigen',sci:'Lagomorpha',color:'#5ec87a',families:['Leporidae']},
-          {id:'artiodactyla',icon:'🐗',label:'Evenhoevigen',sci:'Artiodactyla',color:'#5ec87a',families:['Cervidae','Suidae']},
-          {id:'chiroptera',icon:'🦇',label:'Vleermuizen',sci:'Chiroptera',color:'#8ad4b0',families:['Vespertilionidae']},
-          {id:'eulipotyphla',icon:'🦔',label:'Insecteneters',sci:'Eulipotyphla',color:'#8ad4b0',families:['Erinaceidae','Talpidae']},
-          {id:'cetacea',icon:'🐬',label:'Zeezoogdieren',sci:'Cetartiodactyla',color:'#56c4e8',families:['Phocoenidae']},
-        ]},
-        {id:'aves',icon:'🐦',label:'Vogels',sci:'Aves',color:'#56c4e8',cats:['birds'],children:[
-          {id:'passeriformes',icon:'🎵',label:'Zangvogels',sci:'Passeriformes',color:'#56c4e8',families:['Turdidae','Muscicapidae','Sylviidae','Fringillidae','Corvidae','Paridae','Alaudidae','Hirundinidae','Motacillidae','Sturnidae','Troglodytidae','Regulidae','Prunellidae','Emberizidae','Sittidae','Certhiidae','Phylloscopidae','Aegithalidae','Passeridae']},
-          {id:'accipitriformes',icon:'🦅',label:'Roofvogels',sci:'Accipitriformes/Falconiformes',color:'#a0d8ef',families:['Accipitridae','Falconidae']},
-          {id:'anseriformes',icon:'🦆',label:'Eendachtigen',sci:'Anseriformes',color:'#78c8e8',families:['Anatidae']},
-          {id:'pelecaniformes',icon:'🕊️',label:'Reigers',sci:'Pelecaniformes',color:'#78c8e8',families:['Ardeidae']},
-          {id:'strigiformes',icon:'🦉',label:'Uilen',sci:'Strigiformes',color:'#a0d8ef',families:['Strigidae']},
-          {id:'piciformes',icon:'🪵',label:'Spechten',sci:'Piciformes',color:'#a0d8ef',families:['Picidae']},
-          {id:'coraciiformes',icon:'💎',label:'IJsvogels',sci:'Coraciiformes',color:'#78c8e8',families:['Alcedinidae']},
-          {id:'gruiformes',icon:'🐦',label:'Rallen',sci:'Gruiformes',color:'#78c8e8',families:['Rallidae']},
-          {id:'charadriiformes',icon:'🕊️',label:'Meeuwen',sci:'Charadriiformes',color:'#78c8e8',families:['Laridae']},
-          {id:'cuculiformes',icon:'🐦',label:'Koekoeken',sci:'Cuculiformes',color:'#a0d8ef',families:['Cuculidae']},
-          {id:'columbiformes',icon:'🕊️',label:'Duiven',sci:'Columbiformes',color:'#a0d8ef',families:['Columbidae']},
-          {id:'galliformes',icon:'🐔',label:'Hoenders',sci:'Galliformes',color:'#a0d8ef',families:['Phasianidae']},
-          {id:'apodiformes',icon:'✈️',label:'Gierzwaluwen',sci:'Apodiformes',color:'#a0d8ef',families:['Apodidae']},
-        ]},
-        {id:'reptilia',icon:'🦎',label:'Reptielen',sci:'Reptilia',color:'#8de87a',cats:['fauna'],children:[
-          {id:'squamata_l',icon:'🦎',label:'Hagedissen',sci:'Squamata–Lacertilia',color:'#8de87a',families:['Anguidae','Lacertidae']},
-          {id:'squamata_s',icon:'🐍',label:'Slangen',sci:'Squamata–Serpentes',color:'#8de87a',families:['Colubridae','Viperidae']},
-        ]},
-        {id:'amphibia',icon:'🐸',label:'Amfibieën',sci:'Amphibia',color:'#60d4a0',cats:['fauna'],children:[
-          {id:'anura',icon:'🐸',label:'Kikkers & Padden',sci:'Anura',color:'#60d4a0',families:['Ranidae','Bufonidae']},
-          {id:'urodela',icon:'🦎',label:'Salamanders',sci:'Urodela',color:'#60d4a0',families:['Salamandridae']},
-        ]},
-        {id:'insecta',icon:'🦋',label:'Insecten',sci:'Insecta',color:'#f0c05a',cats:['insects'],children:[
-          {id:'lepidoptera',icon:'🦋',label:'Vlinders & Motten',sci:'Lepidoptera',color:'#f0c05a',families:['Nymphalidae','Pieridae','Lycaenidae','Papilionidae','Hesperiidae','Sphingidae','Saturniidae']},
-          {id:'coleoptera',icon:'🪲',label:'Kevers',sci:'Coleoptera',color:'#e8a030',families:['Coccinellidae','Lucanidae','Carabidae','Scarabaeidae','Lampyridae','Forficulidae','Geotrupidae']},
-          {id:'hymenoptera',icon:'🐝',label:'Vliesvleugeligen',sci:'Hymenoptera',color:'#f8d070',families:['Apidae','Vespidae','Formicidae','Siricidae']},
-          {id:'diptera',icon:'🪰',label:'Vliegen & Muggen',sci:'Diptera',color:'#d8b060',families:['Syrphidae','Calliphoridae','Muscidae','Culicidae']},
-          {id:'odonata',icon:'💙',label:'Libellen & Juffers',sci:'Odonata',color:'#80d8f8',families:['Aeshnidae','Libellulidae','Coenagrionidae']},
-          {id:'orthoptera',icon:'🦗',label:'Sprinkhanen',sci:'Orthoptera',color:'#d8c860',families:['Acrididae','Gryllidae','Tettigoniidae']},
-          {id:'hemiptera',icon:'🔴',label:'Wantsen',sci:'Hemiptera',color:'#e87070',families:['Pentatomidae','Pyrrhocoridae']},
-          {id:'mecoptera',icon:'🦂',label:'Schorpioenvliegen',sci:'Mecoptera',color:'#d8a060',families:['Panorpidae']},
-        ]},
-      ]},
-      {id:'plantae',icon:'🌿',label:'Planten',sci:'Plantae',color:'#a8d870',children:[
-        {id:'gymnospermae',icon:'🌲',label:'Naaktzadigen (Naaldbomen)',sci:'Gymnospermae',color:'#7ab860',cats:['trees'],children:[
-          {id:'pinales',icon:'🌲',label:'Naaldbomen – Pinales',sci:'Pinales',color:'#7ab860',families:['Pinaceae','Taxaceae']},
-        ]},
-        {id:'angiospermae',icon:'🌸',label:'Bedektzadigen',sci:'Angiospermae',color:'#a8d870',children:[
-          {id:'monocots',icon:'🌷',label:'Monocotylen',sci:'Liliopsida',color:'#f0c05a',cats:['flora'],plantGrade:'monocot',children:[
-            {id:'asparagales',icon:'🌸',label:'Asparagales',sci:'Asparagales',color:'#f0c05a',families:['Amaryllidaceae','Asparagaceae','Orchidaceae']},
-          ]},
-          {id:'dicots',icon:'🌼',label:'Dicotylen (Eudicoten)',sci:'Eudicotyledones',color:'#7ec860',cats:['flora','trees','agriculture'],plantGrade:'dicot',children:[
-            {id:'fagales',icon:'🍂',label:'Beukachtigen (Loofbomen)',sci:'Fagales',color:'#6ab850',families:['Fagaceae','Betulaceae']},
-            {id:'sapindales',icon:'🍁',label:'Esdoornachtigen (Loofbomen)',sci:'Sapindales',color:'#e07840',families:['Sapindaceae']},
-            {id:'malvales',icon:'🌳',label:'Lindeachtigen (Loofbomen)',sci:'Malvales',color:'#90d870',families:['Malvaceae','Adoxaceae']},
-            {id:'rosales_arb',icon:'🌳',label:'Rozenachtigen – Bomen/Struiken',sci:'Rosales (arborescent)',color:'#90d870',families:['Rosaceae','Ulmaceae','Cannabaceae']},
-            {id:'oleales_arb',icon:'🌳',label:'Olijfachtigen – Bomen',sci:'Lamiales (arborescent)',color:'#90d870',families:['Oleaceae']},
-            {id:'aquifoliales',icon:'🌿',label:'Hulstfamilie',sci:'Aquifoliales',color:'#50a840',families:['Aquifoliaceae']},
-            {id:'asterales_d',icon:'🌻',label:'Composieten',sci:'Asterales',color:'#e8d040',families:['Asteraceae','Caprifoliaceae']},
-            {id:'lamiales_d',icon:'🌿',label:'Lipbloemigen',sci:'Lamiales',color:'#90d870',families:['Lamiaceae','Plantaginaceae','Boraginaceae']},
-            {id:'caryophyllales_d',icon:'🌸',label:'Anjerfamilie e.a.',sci:'Caryophyllales',color:'#e89090',families:['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae']},
-            {id:'ranunculales_d',icon:'🌼',label:'Boterbloemen e.a.',sci:'Ranunculales',color:'#f8e050',families:['Ranunculaceae','Papaveraceae']},
-            {id:'fabales_d',icon:'🫘',label:'Vlinderbloemigen',sci:'Fabales',color:'#70c890',families:['Fabaceae']},
-            {id:'brassicales_d',icon:'🥦',label:'Kruisbloemigen',sci:'Brassicales',color:'#90d870',families:['Brassicaceae']},
-            {id:'apiales_d',icon:'☂️',label:'Schermbloemigen',sci:'Apiales',color:'#e8f0a0',families:['Apiaceae','Araliaceae']},
-            {id:'ericales_d',icon:'🌸',label:'Heidefamilie e.a.',sci:'Ericales',color:'#c060d8',families:['Ericaceae','Primulaceae']},
-            {id:'saxifragales_d',icon:'🌿',label:'Steenbreek e.a.',sci:'Saxifragales',color:'#90d870',families:['Saxifragaceae','Grossulariaceae','Crassulaceae']},
-            {id:'malpighiales_d',icon:'🌸',label:'Vioolachtigen e.a.',sci:'Malpighiales',color:'#a060d0',families:['Violaceae','Salicaceae']},
-            {id:'santalales_d',icon:'🌿',label:'Maretak',sci:'Santalales',color:'#80c060',families:['Santalaceae']},
-            {id:'gentianales_d',icon:'🌿',label:'Walstro',sci:'Gentianales',color:'#90d870',families:['Rubiaceae']},
-            {id:'celastrales_d',icon:'🌿',label:'Bitterzoet e.a.',sci:'Celastrales',color:'#90d870',families:['Celastraceae']},
-            {id:'solanales_d',icon:'🍅',label:'Nachtschadefamilie',sci:'Solanales',color:'#e06050',families:['Solanaceae']},
-            {id:'rosales_herb',icon:'🌿',label:'Brandnetelachtigen',sci:'Rosales (herbaceous)',color:'#90d870',families:['Urticaceae']},
-          ]},
-        ]},
-      ]},
-      {id:'fungi_k',icon:'🍄',label:'Schimmels',sci:'Fungi',color:'#c87ef0',cats:['fungi'],children:[
-        {id:'basidiomycota',icon:'🍄',label:'Basidiomycota',sci:'Basidiomycota',color:'#c87ef0',children:[
-          {id:'agaricales',icon:'🍄',label:'Plaatjeszwammen',sci:'Agaricales',color:'#d090f8',families:['Agaricaceae','Physalacriaceae','Pleurotaceae','Psathyrellaceae','Hymenogastraceae','Hydnangiaceae','Tricholomataceae','Marasmiaceae','Bolbitiaceae']},
-          {id:'boletales',icon:'🍄',label:'Boleten',sci:'Boletales',color:'#c070e0',families:['Boletaceae','Sclerodermataceae','Fomitopsidaceae']},
-          {id:'polyporales',icon:'🍄',label:'Poriezwammen',sci:'Polyporales',color:'#d090f8',families:['Polyporaceae','Fistulinaceae','Cantharellaceae']},
-          {id:'russulales',icon:'🍄',label:'Melkzwammen',sci:'Russulales',color:'#e0a0f0',families:['Russulaceae']},
-          {id:'amanitales',icon:'🍄',label:'Amaniten',sci:'Amanitales',color:'#d090f8',families:['Amanitaceae']},
-          {id:'auriculariales',icon:'🍄',label:'Trilzwammen e.a.',sci:'Auriculariales/Tremellales',color:'#e0b8f8',families:['Auriculariaceae','Tremellaceae','Schizophyllaceae']},
-          {id:'phallales',icon:'🍄',label:'Stinkzwammen',sci:'Phallales',color:'#a060c8',families:['Phallaceae']},
-          {id:'xylariales',icon:'🍄',label:'Houtzwammen',sci:'Xylariales',color:'#c070e0',families:['Xylariaceae','Hypoxylaceae']},
-        ]},
-        {id:'ascomycota',icon:'🧫',label:'Ascomycota',sci:'Ascomycota',color:'#a060c8',children:[
-          {id:'pezizales',icon:'🧫',label:'Bekerzwammen',sci:'Pezizales',color:'#b878d8',families:['Pezizaceae','Pyronemataceae','Sarcoscyphaceae','Discinaceae','Helvellaceae','Morchellaceae','Tuberaceae']},
-          {id:'hypocreales',icon:'🧫',label:'Hypocreales',sci:'Hypocreales',color:'#a060c8',families:['Nectriaceae']},
-          {id:'teloschistales',icon:'🟡',label:'Korstmossen',sci:'Teloschistales',color:'#f0d850',families:['Teloschistaceae']},
-        ]},
-      ]},
-    ];
-
     function initPhylo() {
         const allData = window.speciesData || [];
         const pFamIdx = {};
@@ -1307,7 +1210,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pRender();
     }
     // --- Initialize ---
-    let phyloInitialized = false;
     injectIcons();
     updateLanguage('nl');
     showScreen('screen-home');
