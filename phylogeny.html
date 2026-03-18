@@ -145,7 +145,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:
 <div class="tree-scroll" id="tree-root"></div>
 <div class="empty-state" id="empty-state"><div class="empty-icon">🔍</div><div>Geen soorten gevonden</div></div>
 
-<script src="../js/data/species_data.js"></script>
+<script src="js/data/species_data.js"></script>
 <script>
 const SP = window.speciesData || [];
 function getName(sp){const n=sp.name;if(!n)return sp.scientific;return typeof n==='object'?(n.nl||n.en||Object.values(n)[0]):n}

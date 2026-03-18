@@ -238,7 +238,7 @@
                 <button class="tab" data-filter="insects">🦋 Insecten</button>
                 <button class="tab tab-has-sub" data-filter="flora">🌸 Flora ▾</button>
                 <button class="tab" data-filter="fungi">🍄 Fungi</button>
-                <button class="tab" data-filter="trees">🌲 Bomen</button>
+                <button class="tab tab-has-sub" data-filter="trees">🌲 Bomen ▾</button>
                 <button class="tab" data-filter="agriculture">🌾 Gekweekt</button>
             </div>
 
@@ -275,10 +275,16 @@
                     <button class="sub-tab" data-subfilter="flora_dicot">🌼 Dicotylen</button>
                     <button class="sub-tab" data-subfilter="flora_monocot">🌷 Monocotylen</button>
                 </div>
+                <!-- Trees sub-groups (naaldbomen vs loofbomen) -->
+                <div class="sub-group hidden" data-parent="trees">
+                    <span class="sub-label">Onderverdeling</span>
+                    <button class="sub-tab active" data-subfilter="trees_all">Alle bomen</button>
+                    <button class="sub-tab" data-subfilter="trees_conifer">🌲 Naaldbomen</button>
+                    <button class="sub-tab" data-subfilter="trees_deciduous">🍂 Loofbomen</button>
+                </div>
             </div>
 
-            <!-- ── PHYLOGENY BANNER — clearly separate from filters ────────
-                 This is NOT a filter tab. It opens a separate page.         -->
+            <!-- ── PHYLOGENY BANNER — navigates to screen-phylo in-app ────────────── -->
             <div class="phylo-banner">
                 <div class="phylo-banner-left">
                     <div class="phylo-banner-icon">🌳</div>
@@ -294,6 +300,46 @@
 
             <!-- Species grid -->
             <div class="grid-container" id="learn-grid"></div>
+        </section>
+
+        <!-- ══ PHYLOGENY SCREEN ══════════════════════════════════════════ -->
+        <section id="screen-phylo" class="screen hidden phylo-screen">
+            <div class="phylo-screen-topbar">
+                <button class="btn-back-phylo back-btn" data-target="screen-learn">← Encyclopedie</button>
+                <h2>🌳 Fylogenetische boom</h2>
+                <div class="phylo-sp-count" id="phylo-sp-count"></div>
+            </div>
+
+            <div class="phylo-filter-bar" id="phylo-filter-bar">
+                <button class="phylo-chip active" data-g="all">🌍 Alles</button>
+                <button class="phylo-chip" data-g="fauna">🦊 Zoogdieren</button>
+                <button class="phylo-chip" data-g="birds">🐦 Vogels</button>
+                <button class="phylo-chip" data-g="insects">🦋 Insecten</button>
+                <button class="phylo-chip" data-g="flora">🌸 Flora</button>
+                <button class="phylo-chip" data-g="fungi">🍄 Fungi</button>
+                <button class="phylo-chip" data-g="trees">🌲 Bomen</button>
+                <button class="phylo-chip" data-g="agriculture">🌾 Gekweekt</button>
+                <div class="phylo-search-wrap">
+                    <input class="phylo-search-input" id="phylo-search" type="text" placeholder="Zoek soort…">
+                </div>
+            </div>
+
+            <div class="phylo-legend">
+                <span class="phylo-leg"><span class="phylo-leg-dot" style="background:#3db863"></span>Zoogdieren</span>
+                <span class="phylo-leg"><span class="phylo-leg-dot" style="background:#56c4e8"></span>Vogels</span>
+                <span class="phylo-leg"><span class="phylo-leg-dot" style="background:#f0c05a"></span>Insecten</span>
+                <span class="phylo-leg"><span class="phylo-leg-dot" style="background:#7ec860"></span>Dicotylen</span>
+                <span class="phylo-leg"><span class="phylo-leg-dot" style="background:#f0c05a;border:1px dashed #c89030"></span>Monocotylen</span>
+                <span class="phylo-leg"><span class="phylo-leg-dot" style="background:#c87ef0"></span>Fungi</span>
+                <span class="phylo-leg"><span class="phylo-leg-dot" style="background:#8de87a"></span>Reptielen/Amfibieën</span>
+            </div>
+
+            <div class="phylo-tree-wrap" id="phylo-tree-wrap">
+                <div class="phylo-empty" id="phylo-empty" style="display:none">
+                    <div class="phylo-empty-icon">🌱</div>
+                    <p>Geen soorten gevonden</p>
+                </div>
+            </div>
         </section>
 
     </main>
