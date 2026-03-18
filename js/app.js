@@ -484,6 +484,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Phylogeny button
+    const btnOpenPhylo = document.getElementById('btn-open-phylo');
+    if (btnOpenPhylo) {
+        btnOpenPhylo.addEventListener('click', () => {
+            window.open('phylogeny.html', '_blank');
+        });
+    }
+
     if (speciesSearch) {
         speciesSearch.addEventListener('input', () => {
             const activeTab = document.querySelector('#learn-filters .tab.active');
@@ -860,13 +868,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isCollected = collectedSpecies.includes(item.id);
                 if (isCollected) card.classList.add('collected');
 
-                card.innerHTML = `
+                const gradeTag = item.plantGrade
+                ? `<span class="plant-grade-badge plant-grade-${item.plantGrade}">${item.plantGrade === 'monocot' ? 'Monocot' : 'Dicot'}</span>`
+                : '';
+            card.innerHTML = `
                     <div class="collected-badge ${isCollected ? '' : 'hidden'}">✓</div>
                     <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer"
                          onerror="this.style.background='rgba(61,184,99,0.1)'; this.src='';">
                     <div class="learn-card-info">
                         <div class="learn-card-title">${name}</div>
                         <div class="learn-card-type">${catName}</div>
+                        ${gradeTag}
                     </div>`;
                 card.addEventListener('click', () => openModal(item));
                 learnGrid.appendChild(card);
@@ -934,6 +946,19 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-rarity').textContent = getName(item.rarity) || '---';
         document.getElementById('modal-infobox-size').textContent = item.size ? getName(item.size) : '---';
         document.getElementById('modal-infobox-diet').textContent = item.diet ? getName(item.diet) : '---';
+
+        // Plant grade row
+        const existingGradeRow = document.getElementById('modal-grade-row');
+        if (existingGradeRow) existingGradeRow.remove();
+        if (item.plantGrade) {
+            const table = document.querySelector('.infobox-table');
+            if (table) {
+                const tr = document.createElement('tr');
+                tr.id = 'modal-grade-row';
+                tr.innerHTML = `<th>Type</th><td><span style="font-weight:700;color:${item.plantGrade==='monocot'?'#c8870a':'#2a7a44'}">${item.plantGrade === 'monocot' ? '🌷 Monocotyl' : '🌼 Dicotyl'}</span></td>`;
+                table.appendChild(tr);
+            }
+        }
 
         detailsModal.classList.remove('hidden');
 
