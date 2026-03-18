@@ -955,8 +955,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const gradeTag = item.plantGrade
                 ? `<span class="plant-grade-badge plant-grade-${item.plantGrade}">${item.plantGrade === 'monocot' ? 'Monocot' : 'Dicot'}</span>`
                 : '';
+            const iucnColors = { LC:'#00b450', NT:'#7cc800', VU:'#c8960a', EN:'#d05000', CR:'#c81414' };
+            const iucnBg = { LC:'rgba(0,180,80,0.12)', NT:'rgba(150,210,0,0.12)', VU:'rgba(240,170,0,0.12)', EN:'rgba(240,100,0,0.12)', CR:'rgba(220,20,20,0.12)' };
+            const iucnTag = item.iucn && item.iucn !== 'LC'
+                ? `<span class="iucn-card-badge" style="background:${iucnBg[item.iucn]||''};color:${iucnColors[item.iucn]||'#aaa'};border:1px solid ${iucnColors[item.iucn]||'#aaa'}33">${item.iucn}</span>`
+                : '';
             card.innerHTML = `
                     <div class="collected-badge ${isCollected ? '' : 'hidden'}">✓</div>
+                    ${iucnTag}
                     <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer"
                          onerror="this.style.background='rgba(61,184,99,0.1)'; this.src='';">
                     <div class="learn-card-info">
@@ -1042,6 +1048,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 tr.innerHTML = `<th>Type</th><td><span style="font-weight:700;color:${item.plantGrade==='monocot'?'#c8870a':'#2a7a44'}">${item.plantGrade === 'monocot' ? '🌷 Monocotyl' : '🌼 Dicotyl'}</span></td>`;
                 table.appendChild(tr);
             }
+        }
+
+        // ── IUCN Status ────────────────────────────────────────────────────
+        const iucnRow = document.getElementById('modal-iucn-row');
+        const iucnBadge = document.getElementById('modal-iucn-badge');
+        if (item.iucn && iucnRow && iucnBadge) {
+            iucnBadge.textContent = item.iucn;
+            iucnBadge.className = 'iucn-badge iucn-' + item.iucn.toLowerCase().replace('/', '-');
+            iucnRow.style.display = '';
+        } else if (iucnRow) {
+            iucnRow.style.display = 'none';
+        }
+
+        // ── Xeno-canto link (birds only) ────────────────────────────────────
+        const xenoSection = document.getElementById('modal-xeno-section');
+        const xenoLink = document.getElementById('modal-xeno-link');
+        const xenoLabel = document.getElementById('xeno-label');
+        if (item.xenoCanto && xenoSection && xenoLink) {
+            xenoLink.href = item.xenoCanto;
+            if (xenoLabel) {
+                xenoLabel.textContent = currentLang === 'fr'
+                    ? 'Écouter sur Xeno-canto'
+                    : currentLang === 'en'
+                    ? 'Listen on Xeno-canto'
+                    : 'Beluister geluiden op Xeno-canto';
+            }
+            xenoSection.style.display = '';
+        } else if (xenoSection) {
+            xenoSection.style.display = 'none';
         }
 
         detailsModal.classList.remove('hidden');
@@ -1167,7 +1202,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {id:'fabales_d',icon:'🫘',label:'Vlinderbloemigen',sci:'Fabales',color:'#70c890',families:['Fabaceae']},
                 {id:'brassicales_d',icon:'🥦',label:'Kruisbloemigen',sci:'Brassicales',color:'#90d870',families:['Brassicaceae']},
                 {id:'apiales_d',icon:'☂️',label:'Schermbloemigen',sci:'Apiales',color:'#e8f0a0',families:['Apiaceae','Araliaceae']},
-                {id:'ericales_d',icon:'🌸',label:'Heidefamilie',sci:'Ericales',color:'#c060d8',families:['Ericaceae','Primulaceae','Hypericaceae','Onagraceae']},
+                {id:'ericales_d',icon:'🌸',label:'Heidefamilie e.a.',sci:'Ericales',color:'#c060d8',families:['Ericaceae','Primulaceae','Hypericaceae','Onagraceae','Lythraceae']},
                 {id:'saxifragales_d',icon:'🌿',label:'Steenbreek',sci:'Saxifragales',color:'#90d870',families:['Saxifragaceae','Grossulariaceae','Crassulaceae']},
                 {id:'malpighiales_d',icon:'🌸',label:'Vioolachtigen',sci:'Malpighiales',color:'#a060d0',families:['Violaceae','Geraniaceae']},
                 {id:'santalales_d',icon:'🌿',label:'Maretak',sci:'Santalales',color:'#80c060',families:['Santalaceae']},
@@ -1279,9 +1314,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const cnt = pCountUnder(top); if (!cnt) return;
                 total += cnt;
                 const el = pBuildNode(top, 0); if (!el) return;
+                // Filter: only show branches that contain matching species
                 if (pGroup !== 'all' && !pSearch) {
-                    const cats = pGcats[pGroup]; const branchCats = pCollectCats(top);
-                    if (!branchCats.some(c => cats.includes(c))) el.classList.add('dim');
+                    const cats = pGcats[pGroup];
+                    const branchCats = pCollectCats(top);
+                    if (!branchCats.some(c => cats.includes(c))) return; // hide entirely
                 }
                 ul.appendChild(el);
             });
