@@ -1,1 +1,1 @@
-npx repopack
+repomix --remote https://github.com/kylecoppens/Quiz-Fauna---Flora 
