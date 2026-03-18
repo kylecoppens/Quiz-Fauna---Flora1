@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phylogenetic Tree — Belgian Fauna & Flora</title>
+<style>
+  :root {
+    --bg: #0f1610;
+    --panel: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.08);
+    --accent: #3db863;
+    --accent2: #f0c05a;
+    --text: #ffffff;
+    --muted: #8aaa90;
+    --font-h: 'Outfit', sans-serif;
+    --font-b: 'Inter', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-b);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  /* Import same fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap');
+
+  header.top {
+    background: rgba(0,0,0,0.5);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .back-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: var(--font-h);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    transition: background 0.2s;
+  }
+  .back-link:hover { background: rgba(61,184,99,0.15); }
+
+  header.top h1 {
+    font-family: var(--font-h);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .subtitle-tag {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-left: auto;
+    display: none;
+  }
+
+  .controls {
+    padding: 16px 24px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-btn {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-h);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: rgba(61,184,99,0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .search-box {
+    margin-left: auto;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-b);
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    border-radius: 20px;
+    width: 220px;
+    outline: none;
+  }
+  .search-box:focus { border-color: var(--accent); }
+
+  .legend {
+    padding: 12px 24px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+
+  .tree-container {
+    padding: 24px;
+    overflow-x: auto;
+    min-height: calc(100vh - 160px);
+  }
+
+  /* Tree nodes */
+  .tree-root { list-style: none; }
+  .tree-node { list-style: none; margin: 0; }
+  .node-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0 5px 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .node-row:hover { background: rgba(255,255,255,0.04); }
+  .node-row.highlighted { background: rgba(61,184,99,0.1); }
+
+  .node-indent {
+    display: flex;
+    align-items: center;
+  }
+  .node-line {
+    width: 20px; height: 1px;
+    background: rgba(255,255,255,0.15);
+    flex-shrink: 0;
+  }
+  .node-vline {
+    width: 1px; background: rgba(255,255,255,0.1);
+    align-self: stretch; flex-shrink: 0; margin-right: 3px;
+  }
+  .toggle-btn {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.3);
+    color: var(--muted);
+    font-size: 11px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .spacer { width: 18px; flex-shrink: 0; }
+
+  .node-icon { font-size: 1rem; flex-shrink: 0; }
+  .node-label {
+    font-family: var(--font-h);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  .node-sci {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+  .node-count {
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: rgba(255,255,255,0.06);
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 4px;
+  }
+  .node-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Species leaf node */
+  .species-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .species-row:hover { background: rgba(255,255,255,0.05); }
+  .species-row.hidden { display: none; }
+
+  .sp-thumb {
+    width: 36px; height: 36px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.3);
+    flex-shrink: 0;
+  }
+  .sp-info { flex: 1; min-width: 0; }
+  .sp-name {
+    font-weight: 600;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sp-sci {
+    font-style: italic;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .sp-grade {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+  .grade-monocot { background: rgba(240,192,90,0.2); color: var(--accent2); border: 1px solid rgba(240,192,90,0.3); }
+  .grade-dicot { background: rgba(61,184,99,0.15); color: var(--accent); border: 1px solid rgba(61,184,99,0.25); }
+
+  .children { padding-left: 20px; }
+  .collapsed > .children { display: none; }
+
+  /* Stats bar */
+  .stats-bar {
+    padding: 10px 24px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .stats-bar span { color: var(--accent); font-weight: 700; }
+
+  /* No results */
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .no-results .icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.4; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="back-link" href="javascript:history.back()">← Encyclopedie</a>
+  <h1>🌳 Fylogenie — Belgische Soorten</h1>
+</header>
+
+<div class="controls">
+  <button class="filter-btn active" data-filter="all">🌍 Alles</button>
+  <button class="filter-btn" data-filter="fauna">🦊 Zoogdieren</button>
+  <button class="filter-btn" data-filter="birds">🐦 Vogels</button>
+  <button class="filter-btn" data-filter="insects">🦋 Insecten</button>
+  <button class="filter-btn" data-filter="flora">🌸 Flora</button>
+  <button class="filter-btn" data-filter="fungi">🍄 Fungi</button>
+  <button class="filter-btn" data-filter="trees">🌲 Bomen</button>
+  <input class="search-box" type="text" placeholder="Zoek op naam…" id="phylo-search">
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#3db863"></div> Zoogdieren / Vogels / Reptielen</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f0c05a"></div> Insecten / Ongewervelden</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#7ec8a0"></div> Planten (dicotylen)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c8a07e"></div> Planten (monocotylen)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#a07ec8"></div> Fungi / Schimmels</div>
+</div>
+
+<div class="stats-bar" id="stats-bar">Laden…</div>
+
+<div class="tree-container" id="tree-container">
+  <div class="no-results" id="no-results" style="display:none">
+    <div class="icon">🔍</div>
+    <div>Geen soorten gevonden</div>
+  </div>
+</div>
+
+<script src="../js/data/species_data.js"></script>
+<script>
+// ─── Phylogenetic tree structure ────────────────────────────────────────
+// Maps scientific names → their position in the tree
+// Structure: Kingdom > Phylum/Division > Class > Order > Family > Species
+
+const TREE_TEMPLATE = {
+  id: 'root',
+  label: 'Leven op Aarde', icon: '🌍', sci: 'Biota',
+  children: [
+    {
+      id: 'animalia', label: 'Dieren', icon: '🐾', sci: 'Animalia',
+      children: [
+        {
+          id: 'mammalia', label: 'Zoogdieren', icon: '🦊', sci: 'Mammalia', cat: 'fauna',
+          children: [
+            { id: 'carnivora', label: 'Carnivora', icon: '🦊', sci: 'Carnivora',
+              families: ['Canidae','Felidae','Mustelidae','Phocidae','Phocoenidae'] },
+            { id: 'rodentia', label: 'Knaagdieren', icon: '🐿️', sci: 'Rodentia',
+              families: ['Sciuridae','Muridae','Cricetidae','Castoridae'] },
+            { id: 'lagomorpha', label: 'Haasachtigen', icon: '🐇', sci: 'Lagomorpha',
+              families: ['Leporidae'] },
+            { id: 'artiodactyla', label: 'Evenhoevigen', icon: '🐗', sci: 'Artiodactyla',
+              families: ['Cervidae','Suidae'] },
+            { id: 'chiroptera', label: 'Vleermuizen', icon: '🦇', sci: 'Chiroptera',
+              families: ['Vespertilionidae'] },
+            { id: 'insectivora', label: 'Insecteneters', icon: '🦔', sci: 'Eulipotyphla',
+              families: ['Erinaceidae','Talpidae'] },
+            { id: 'cetacea', label: 'Zeezoogdieren', icon: '🐬', sci: 'Cetartiodactyla',
+              families: ['Phocoenidae'] },
+          ]
+        },
+        {
+          id: 'aves', label: 'Vogels', icon: '🐦', sci: 'Aves', cat: 'birds',
+          children: [
+            { id: 'passeriformes', label: 'Zangvogels', icon: '🎵', sci: 'Passeriformes',
+              families: ['Turdidae','Muscicapidae','Sylviidae','Fringillidae','Corvidae',
+                         'Paridae','Alaudidae','Hirundinidae','Motacillidae','Sturnidae',
+                         'Troglodytidae','Regulidae','Prunellidae','Emberizidae',
+                         'Sittidae','Certhiidae','Phylloscopidae','Aegithalidae'] },
+            { id: 'accipitriformes', label: 'Roofvogels', icon: '🦅', sci: 'Accipitriformes / Falconiformes',
+              families: ['Accipitridae','Falconidae'] },
+            { id: 'anseriformes', label: 'Eendachtigen', icon: '🦆', sci: 'Anseriformes',
+              families: ['Anatidae'] },
+            { id: 'coraciiformes', label: 'Ijsvogels e.a.', icon: '💎', sci: 'Coraciiformes',
+              families: ['Alcedinidae'] },
+            { id: 'strigiformes', label: 'Uilen', icon: '🦉', sci: 'Strigiformes',
+              families: ['Strigidae'] },
+            { id: 'piciformes', label: 'Spechten', icon: '🪵', sci: 'Piciformes',
+              families: ['Picidae'] },
+            { id: 'ciconiiformes', label: 'Reigers', icon: '🕊️', sci: 'Pelecaniformes',
+              families: ['Ardeidae'] },
+            { id: 'gruiformes', label: 'Kraanvogels e.a.', icon: '🐦', sci: 'Gruiformes',
+              families: ['Rallidae'] },
+            { id: 'charadriiformes', label: 'Steltlopers / Meeuwen', icon: '🕊️', sci: 'Charadriiformes',
+              families: ['Laridae'] },
+            { id: 'cuculiformes', label: 'Koekoeken', icon: '🐦', sci: 'Cuculiformes',
+              families: ['Cuculidae'] },
+            { id: 'columbiformes', label: 'Duiven', icon: '🕊️', sci: 'Columbiformes',
+              families: ['Columbidae'] },
+            { id: 'galliformes', label: 'Hoenderachtigen', icon: '🐔', sci: 'Galliformes',
+              families: ['Phasianidae'] },
+            { id: 'apodiformes', label: 'Gierzwaluwen', icon: '✈️', sci: 'Apodiformes',
+              families: ['Apodidae'] },
+          ]
+        },
+        {
+          id: 'reptilia', label: 'Reptielen', icon: '🦎', sci: 'Reptilia', cat: 'fauna',
+          children: [
+            { id: 'squamata_s', label: 'Hagedissen', icon: '🦎', sci: 'Squamata (Lacertilia)',
+              families: ['Anguidae','Lacertidae'] },
+            { id: 'squamata_o', label: 'Slangen', icon: '🐍', sci: 'Squamata (Serpentes)',
+              families: ['Colubridae','Viperidae'] },
+          ]
+        },
+        {
+          id: 'amphibia', label: 'Amfibieën', icon: '🐸', sci: 'Amphibia', cat: 'fauna',
+          children: [
+            { id: 'anura', label: 'Kikkers & Padden', icon: '🐸', sci: 'Anura',
+              families: ['Ranidae','Bufonidae'] },
+            { id: 'urodela', label: 'Salamanders', icon: '🦎', sci: 'Urodela',
+              families: ['Salamandridae'] },
+          ]
+        },
+        {
+          id: 'insecta', label: 'Insecten', icon: '🦋', sci: 'Insecta', cat: 'insects',
+          children: [
+            { id: 'lepidoptera', label: 'Vlinders & Motten', icon: '🦋', sci: 'Lepidoptera',
+              families: ['Nymphalidae','Pieridae','Lycaenidae','Papilionidae',
+                         'Hesperiidae','Sphingidae','Saturniidae'] },
+            { id: 'coleoptera', label: 'Kevers', icon: '🪲', sci: 'Coleoptera',
+              families: ['Coccinellidae','Lucanidae','Carabidae','Scarabaeidae',
+                         'Lampyridae','Forficulidae'] },
+            { id: 'hymenoptera', label: 'Vliesvleugeligen', icon: '🐝', sci: 'Hymenoptera',
+              families: ['Apidae','Vespidae','Formicidae','Siricidae'] },
+            { id: 'diptera', label: 'Vliegen & Muggen', icon: '🪰', sci: 'Diptera',
+              families: ['Syrphidae','Calliphoridae','Muscidae','Culicidae'] },
+            { id: 'odonata', label: 'Libellen & Juffers', icon: '🪲', sci: 'Odonata',
+              families: ['Aeshnidae','Libellulidae','Coenagrionidae'] },
+            { id: 'orthoptera', label: 'Sprinkhanen & Krekels', icon: '🦗', sci: 'Orthoptera',
+              families: ['Acrididae','Gryllidae','Tettigoniidae'] },
+            { id: 'hemiptera', label: 'Wantsen', icon: '🔴', sci: 'Hemiptera',
+              families: ['Pentatomidae','Pyrrhocoridae'] },
+            { id: 'mecoptera', label: 'Schorpioenvliegen', icon: '🦂', sci: 'Mecoptera',
+              families: ['Panorpidae'] },
+          ]
+        },
+      ]
+    },
+    {
+      id: 'plantae', label: 'Planten', icon: '🌿', sci: 'Plantae',
+      children: [
+        {
+          id: 'gymnospermae', label: 'Naaktzadigen', icon: '🌲', sci: 'Gymnospermae', cat: 'trees',
+          children: [
+            { id: 'pinales', label: 'Naaldbomen', icon: '🌲', sci: 'Pinales',
+              families: ['Pinaceae','Taxaceae'] },
+          ]
+        },
+        {
+          id: 'angiospermae', label: 'Bedektzadigen', icon: '🌸', sci: 'Angiospermae',
+          children: [
+            {
+              id: 'monocots', label: 'Monocotylen', icon: '🌷', sci: 'Liliopsida',
+              plantGrade: 'monocot',
+              children: [
+                { id: 'asparagales', label: 'Asparagales', icon: '🌸', sci: 'Asparagales',
+                  families: ['Amaryllidaceae','Asparagaceae','Orchidaceae'] },
+              ]
+            },
+            {
+              id: 'dicots', label: 'Dicotylen (Eudicoten)', icon: '🌼', sci: 'Eudicotyledones',
+              plantGrade: 'dicot',
+              children: [
+                { id: 'rosales', label: 'Rozenachtigen', icon: '🌹', sci: 'Rosales',
+                  families: ['Rosaceae','Cannabaceae','Ulmaceae'] },
+                { id: 'asterales', label: 'Composieten', icon: '🌻', sci: 'Asterales',
+                  families: ['Asteraceae','Caprifoliaceae'] },
+                { id: 'lamiales', label: 'Lipbloemigen', icon: '🌿', sci: 'Lamiales',
+                  families: ['Lamiaceae','Oleaceae','Plantaginaceae','Boraginaceae'] },
+                { id: 'caryophyllales', label: 'Anjerfamilie e.a.', icon: '🌸', sci: 'Caryophyllales',
+                  families: ['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae'] },
+                { id: 'ranunculales', label: 'Boterbloemen e.a.', icon: '🌼', sci: 'Ranunculales',
+                  families: ['Ranunculaceae','Papaveraceae'] },
+                { id: 'fabales', label: 'Vlinderbloemigen', icon: '🫘', sci: 'Fabales',
+                  families: ['Fabaceae'] },
+                { id: 'brassicales', label: 'Kruisbloemigen', icon: '🌿', sci: 'Brassicales',
+                  families: ['Brassicaceae'] },
+                { id: 'apiaceae_order', label: 'Schermbloemigen', icon: '🌿', sci: 'Apiales',
+                  families: ['Apiaceae','Araliaceae'] },
+                { id: 'ericales_order', label: 'Heidefamilie e.a.', icon: '🌿', sci: 'Ericales',
+                  families: ['Ericaceae','Primulaceae'] },
+                { id: 'saxifragales', label: 'Steenbreekfamilie e.a.', icon: '🌿', sci: 'Saxifragales',
+                  families: ['Saxifragaceae','Grossulariaceae','Crassulaceae'] },
+                { id: 'malpighiales', label: 'Vioolachtigen e.a.', icon: '🌸', sci: 'Malpighiales',
+                  families: ['Violaceae','Salicaceae'] },
+                { id: 'santalales', label: 'Maretak e.a.', icon: '🌿', sci: 'Santalales',
+                  families: ['Santalaceae'] },
+                { id: 'gentianales', label: 'Walstrofamilie e.a.', icon: '🌿', sci: 'Gentianales',
+                  families: ['Rubiaceae'] },
+                { id: 'celastrales', label: 'Hemelsleutelbloem e.a.', icon: '🌿', sci: 'Celastrales',
+                  families: ['Celastraceae'] },
+                { id: 'fagales', label: 'Beukachtigen', icon: '🌳', sci: 'Fagales', cat: 'trees',
+                  families: ['Fagaceae','Betulaceae'] },
+                { id: 'sapindales', label: 'Esdoorn e.a.', icon: '🍁', sci: 'Sapindales', cat: 'trees',
+                  families: ['Sapindaceae'] },
+                { id: 'malvales', label: 'Linde e.a.', icon: '🌳', sci: 'Malvales', cat: 'trees',
+                  families: ['Malvaceae'] },
+                { id: 'cornales', label: 'Kornoelje e.a.', icon: '🌿', sci: 'Cornales',
+                  families: ['Adoxaceae'] },
+                { id: 'aquifoliales', label: 'Hulstfamilie', icon: '🌿', sci: 'Aquifoliales', cat: 'trees',
+                  families: ['Aquifoliaceae'] },
+                { id: 'solanales', label: 'Nachtschadefamilie', icon: '🍅', sci: 'Solanales', cat: 'agriculture',
+                  families: ['Solanaceae'] },
+                { id: 'urticales', label: 'Brandnetelachtigen', icon: '🌿', sci: 'Rosales',
+                  families: ['Urticaceae'] },
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'fungi_kingdom', label: 'Schimmels', icon: '🍄', sci: 'Fungi', cat: 'fungi',
+      children: [
+        {
+          id: 'basidiomycota', label: 'Basidiomycota', icon: '🍄', sci: 'Basidiomycota',
+          children: [
+            { id: 'agaricales', label: 'Plaatjeszwammen', icon: '🍄', sci: 'Agaricales',
+              families: ['Agaricaceae','Physalacriaceae','Pleurotaceae','Psathyrellaceae',
+                         'Hymenogastraceae','Hydnangiaceae','Tricholomataceae','Marasmiaceae'] },
+            { id: 'boletales', label: 'Boleten', icon: '🍄', sci: 'Boletales',
+              families: ['Boletaceae','Sclerodermataceae','Fomitopsidaceae'] },
+            { id: 'polyporales', label: 'Poriezwammen', icon: '🍄', sci: 'Polyporales',
+              families: ['Polyporaceae','Fistulinaceae','Cantharellaceae'] },
+            { id: 'russulales', label: 'Melkzwammen e.a.', icon: '🍄', sci: 'Russulales',
+              families: ['Russulaceae'] },
+            { id: 'amanitales', label: 'Amaniten', icon: '🍄', sci: 'Amanitales',
+              families: ['Amanitaceae'] },
+            { id: 'auriculariales', label: 'Trilzwammen', icon: '🍄', sci: 'Auriculariales / Tremellales',
+              families: ['Auriculariaceae','Tremellaceae','Schizophyllaceae'] },
+            { id: 'phallales', label: 'Stinkzwammen', icon: '🍄', sci: 'Phallales',
+              families: ['Phallaceae'] },
+            { id: 'xylariales', label: 'Houtzwammen', icon: '🍄', sci: 'Xylariales',
+              families: ['Xylariaceae','Hypoxylaceae'] },
+          ]
+        },
+        {
+          id: 'ascomycota', label: 'Ascomycota', icon: '🧫', sci: 'Ascomycota',
+          children: [
+            { id: 'pezizales', label: 'Bekerzwammen', icon: '🧫', sci: 'Pezizales',
+              families: ['Pezizaceae','Pyronemataceae','Sarcoscyphaceae','Discinaceae',
+                         'Helvellaceae','Morchellaceae','Tuberaceae'] },
+            { id: 'hypocreales', label: 'Hypocreales', icon: '🧫', sci: 'Hypocreales',
+              families: ['Nectriaceae'] },
+            { id: 'teloschistales', label: 'Korstmossen', icon: '🟡', sci: 'Teloschistales',
+              families: ['Teloschistaceae'] },
+            { id: 'bolbitiaceae_order', label: 'Bolbitiaceae e.a.', icon: '🍄', sci: 'Agaricales',
+              families: ['Bolbitiaceae'] },
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// ── Build family → species map ───────────────────────────────────────────
+const speciesData = window.speciesData || [];
+const familyMap = {};
+speciesData.forEach(sp => {
+  const fam = sp.family || 'Unknown';
+  if (!familyMap[fam]) familyMap[fam] = [];
+  familyMap[fam].push(sp);
+});
+
+let currentFilter = 'all';
+let searchTerm = '';
+let totalVisible = 0;
+
+// ── Render tree ──────────────────────────────────────────────────────────
+function getLang() {
+  // Try to read language from parent window or default to NL
+  try { return window.opener?.currentLang || 'nl'; } catch(e) { return 'nl'; }
+}
+
+function getName(sp) {
+  const name = sp.name;
+  if (!name) return sp.scientific;
+  if (typeof name === 'object') return name['nl'] || name['en'] || sp.scientific;
+  return name;
+}
+
+function matchesFilter(sp) {
+  if (currentFilter === 'all') return true;
+  return sp.category === currentFilter;
+}
+
+function matchesSearch(sp) {
+  if (!searchTerm) return true;
+  const q = searchTerm.toLowerCase();
+  const n = getName(sp).toLowerCase();
+  return n.includes(q) || sp.scientific.toLowerCase().includes(q) || (sp.family||'').toLowerCase().includes(q);
+}
+
+function renderSpecies(sp) {
+  if (!matchesFilter(sp) || !matchesSearch(sp)) return null;
+  totalVisible++;
+
+  const el = document.createElement('div');
+  el.className = 'species-row';
+  el.dataset.spId = sp.id;
+
+  const catColors = {
+    fauna:'#3db863', birds:'#56c4e8', insects:'#f0c05a',
+    flora:'#7ec8a0', fungi:'#a07ec8', trees:'#8aaa90', agriculture:'#c8a07e'
+  };
+  const grade = sp.plantGrade;
+
+  el.innerHTML = `
+    <img class="sp-thumb" src="${sp.image || ''}" alt="" loading="lazy" onerror="this.style.opacity='0.3'">
+    <div class="sp-info">
+      <div class="sp-name">${getName(sp)}</div>
+      <div class="sp-sci">${sp.scientific}</div>
+    </div>
+    ${grade ? `<span class="sp-grade grade-${grade}">${grade === 'monocot' ? 'Monocot' : 'Dicot'}</span>` : ''}
+  `;
+
+  el.addEventListener('click', () => {
+    // Highlight + optionally open modal in parent
+    document.querySelectorAll('.species-row').forEach(r => r.style.background = '');
+    el.style.background = 'rgba(61,184,99,0.12)';
+  });
+  return el;
+}
+
+function renderFamilyGroup(familyName, depth) {
+  const species = (familyMap[familyName] || []).filter(sp => matchesFilter(sp) && matchesSearch(sp));
+  if (species.length === 0) return null;
+
+  const wrap = document.createElement('li');
+  wrap.className = 'tree-node';
+
+  const row = document.createElement('div');
+  row.className = 'node-row';
+  row.innerHTML = `
+    <div class="node-indent">${'  '.repeat(depth)}</div>
+    <span class="node-icon">📦</span>
+    <span class="node-label">${familyName}</span>
+    <span class="node-count">${species.length}</span>
+  `;
+  wrap.appendChild(row);
+
+  const childrenEl = document.createElement('ul');
+  childrenEl.className = 'children';
+  species.forEach(sp => {
+    const li = document.createElement('li');
+    li.className = 'tree-node';
+    const rendered = renderSpecies(sp);
+    if (rendered) { li.appendChild(rendered); childrenEl.appendChild(li); }
+  });
+  if (childrenEl.children.length > 0) wrap.appendChild(childrenEl);
+  return wrap;
+}
+
+function countDescendants(node) {
+  let count = 0;
+  if (node.families) {
+    node.families.forEach(f => {
+      (familyMap[f] || []).forEach(sp => {
+        if (matchesFilter(sp) && matchesSearch(sp)) count++;
+      });
+    });
+  }
+  if (node.children) {
+    node.children.forEach(c => { count += countDescendants(c); });
+  }
+  return count;
+}
+
+function renderNode(node, depth = 0) {
+  const count = countDescendants(node);
+  if (count === 0 && node.families) return null;
+  if (count === 0 && !node.children) return null;
+
+  const li = document.createElement('li');
+  li.className = 'tree-node';
+
+  const hasChildren = (node.children || []).length > 0 || (node.families || []).length > 0;
+
+  const row = document.createElement('div');
+  row.className = 'node-row';
+
+  const padding = depth * 20;
+
+  const catColors = {
+    fauna: '#3db863', birds: '#56c4e8', insects: '#f0c05a',
+    flora: '#7ec8a0', fungi: '#a07ec8', trees: '#8aaa90'
+  };
+  const tagColor = node.cat ? catColors[node.cat] : null;
+
+  row.innerHTML = `
+    <div style="width:${padding}px;flex-shrink:0"></div>
+    ${hasChildren && count > 0 ? `<button class="toggle-btn" onclick="toggleNode(this)">−</button>` : '<div class="spacer"></div>'}
+    <span class="node-icon">${node.icon || '•'}</span>
+    <span class="node-label">${node.label}</span>
+    <span class="node-sci">${node.sci}</span>
+    ${count > 0 ? `<span class="node-count">${count}</span>` : ''}
+    ${tagColor ? `<span class="node-tag" style="background:${tagColor}22;color:${tagColor};border:1px solid ${tagColor}44">${node.cat}</span>` : ''}
+  `;
+  li.appendChild(row);
+
+  if (hasChildren) {
+    const childrenEl = document.createElement('ul');
+    childrenEl.className = 'children tree-root';
+    childrenEl.style.paddingLeft = '0';
+
+    // Render family leaves
+    if (node.families) {
+      node.families.forEach(fam => {
+        const famNode = renderFamilyGroup(fam, depth + 1);
+        if (famNode) childrenEl.appendChild(famNode);
+      });
+    }
+
+    // Render child nodes
+    if (node.children) {
+      node.children.forEach(child => {
+        const childEl = renderNode(child, depth + 1);
+        if (childEl) childrenEl.appendChild(childEl);
+      });
+    }
+
+    if (childrenEl.children.length > 0) {
+      li.appendChild(childrenEl);
+    }
+  }
+
+  return li;
+}
+
+function toggleNode(btn) {
+  const li = btn.closest('.tree-node');
+  const isCollapsed = li.classList.toggle('collapsed');
+  btn.textContent = isCollapsed ? '+' : '−';
+}
+
+function renderTree() {
+  totalVisible = 0;
+  const container = document.getElementById('tree-container');
+  const noResults = document.getElementById('no-results');
+  container.innerHTML = '';
+  container.appendChild(noResults);
+  noResults.style.display = 'none';
+
+  const ul = document.createElement('ul');
+  ul.className = 'tree-root';
+
+  TREE_TEMPLATE.children.forEach(child => {
+    const el = renderNode(child, 0);
+    if (el) ul.appendChild(el);
+  });
+
+  container.appendChild(ul);
+
+  if (totalVisible === 0) {
+    noResults.style.display = 'block';
+  }
+
+  document.getElementById('stats-bar').innerHTML =
+    `<span>${totalVisible}</span> soorten zichtbaar · <span>${speciesData.length}</span> totaal in dataset`;
+}
+
+// ── Controls ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderTree();
+  });
+});
+
+document.getElementById('phylo-search').addEventListener('input', e => {
+  searchTerm = e.target.value.trim();
+  renderTree();
+  // Auto-expand all when searching
+  if (searchTerm) {
+    document.querySelectorAll('.tree-node.collapsed').forEach(n => {
+      n.classList.remove('collapsed');
+      const btn = n.querySelector('.toggle-btn');
+      if (btn) btn.textContent = '−';
+    });
+  }
+});
+
+// Initial render
+renderTree();
+</script>
+</body>
+</html>
