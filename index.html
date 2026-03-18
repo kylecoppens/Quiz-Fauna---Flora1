@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Belgian Fauna & Flora</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2a9d8f">
-    <meta name="description"
-        content="Explore and test your knowledge of the incredible flora, fauna, and fungi of Belgium.">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700;900&display=swap"
-        rel="stylesheet">
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Background Elements for Premium Look -->
     <div class="bg-shape bg-shape-1"></div>
     <div class="bg-shape bg-shape-2"></div>
     <div class="bg-overlay"></div>
 
     <main id="app-container" class="glass-panel">
 
-        <!-- 1. Home / Menu Screen -->
+        <!-- ══ 1. HOME ══════════════════════════════════════════════════════ -->
         <section id="screen-home" class="screen active">
             <div class="lang-selector">
                 <button class="btn-lang active" data-lang="nl">NL</button>
                 <button class="btn-lang" data-lang="en">EN</button>
                 <button class="btn-lang" data-lang="fr">FR</button>
-                <button id="btn-audio" class="icon-btn transition" style="margin-left: auto;">
+                <button id="btn-audio" class="icon-btn transition" style="margin-left:auto">
                     <span id="audio-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                             <line x1="23" y1="9" x2="17" y2="15"></line>
                             <line x1="17" y1="9" x2="23" y2="15"></line>
@@ -44,26 +35,44 @@
                     </span>
                 </button>
             </div>
+
             <header>
                 <div class="subtitle" data-i18n="discover">Discover Nature</div>
-                <h1 data-i18n="title">Belgian<br><span class="highlight">Fauna & Flora</span></h1>
+                <h1 data-i18n="title">Belgian<br><span class="highlight">Fauna &amp; Flora</span></h1>
                 <p data-i18n="desc">Test your knowledge or explore the encyclopedia of Belgium's natural wonders.</p>
 
-                <!-- ╔═══════════════════════════════════════════════════╗
-                     ║  HERO IMAGE — place your file here:               ║
-                     ║  📁 root of your project (same folder as          ║
-                     ║     index.html), named:                           ║
-                     ║                                                   ║
-                     ║     juncala-forest-homepage.jpg                   ║
-                     ║                                                   ║
-                     ║  The src below points to that file.               ║
-                     ║  On Netlify it must be in the /public folder or   ║
-                     ║  the repo root — wherever index.html lives.       ║
-                     ╚═══════════════════════════════════════════════════╝ -->
+                <!--
+                ╔══════════════════════════════════════════════════════════════╗
+                ║  HOW TO ADD YOUR HERO IMAGE                                  ║
+                ║                                                              ║
+                ║  File name:  juncala-forest-homepage.jpg                     ║
+                ║                                                              ║
+                ║  Where to put it:                                            ║
+                ║    Place the file in the SAME FOLDER as index.html.          ║
+                ║                                                              ║
+                ║    Your project structure should look like this:             ║
+                ║                                                              ║
+                ║    📁 your-project/   (= your repo root)                     ║
+                ║    ├── 📄 index.html                                         ║
+                ║    ├── 🖼️  juncala-forest-homepage.jpg   ← PUT IT HERE      ║
+                ║    ├── 📁 css/                                               ║
+                ║    ├── 📁 js/                                                ║
+                ║    └── 📁 assets/                                            ║
+                ║                                                              ║
+                ║  On Netlify:                                                 ║
+                ║    Your "Publish directory" in Site Settings > Build & Deploy║
+                ║    must point to the folder containing index.html.           ║
+                ║    Put the image in that same folder.                        ║
+                ║    If Publish directory is blank or "." → repo root is fine. ║
+                ║                                                              ║
+                ║  The src below is a relative path. The browser looks for     ║
+                ║  the file in the same directory as index.html.               ║
+                ╚══════════════════════════════════════════════════════════════╝
+                -->
                 <div class="hero-parallax-container" id="hero-parallax">
                     <div class="hero-parallax-inner" id="hero-parallax-inner">
                         <img src="juncala-forest-homepage.jpg"
-                             alt="Belgian Forest Illustration"
+                             alt="Belgian Forest"
                              id="home-forest-img"
                              referrerpolicy="no-referrer"
                              onerror="this.parentElement.parentElement.classList.add('hero-fallback')">
@@ -73,9 +82,8 @@
                     </div>
                 </div>
 
-                <!-- Species of the Day -->
                 <div id="sotd-card" class="sotd-card hidden">
-                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Species of the Day</span></div>
+                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span></div>
                     <div class="sotd-body">
                         <img id="sotd-img" src="" alt="" referrerpolicy="no-referrer">
                         <div class="sotd-info">
@@ -88,18 +96,16 @@
             </header>
 
             <div class="action-buttons">
-                <!-- Primary: filled green -->
                 <button id="btn-play" class="btn btn-primary">
-                    <span class="play-svg-target" style="margin-right: 8px;"></span> Play Quiz
+                    <span class="play-svg-target" style="margin-right:8px"></span> Play Quiz
                 </button>
-                <!-- Secondary: outlined -->
                 <button id="btn-learn" class="btn btn-outline">
-                    <span class="learn-svg-target" style="margin-right: 8px;"></span> Encyclopedia
+                    <span class="learn-svg-target" style="margin-right:8px"></span> Encyclopedie
                 </button>
             </div>
         </section>
 
-        <!-- 2. Quiz Configuration Screen -->
+        <!-- ══ 2. QUIZ CONFIG ══════════════════════════════════════════════ -->
         <section id="screen-config" class="screen hidden">
             <header>
                 <button class="btn-back" data-target="screen-home">← Back</button>
@@ -109,15 +115,14 @@
                 <div class="form-group">
                     <label>Select Category</label>
                     <div class="custom-select-grid" id="category-selector">
-                        <button class="select-chip active" data-val="all" data-i18n="all">🌍 All</button>
-                        <button class="select-chip" data-val="fauna" data-i18n="fauna">🦊 Zoogdieren</button>
-                        <button class="select-chip" data-val="birds" data-i18n="birds">🐦 Vogels</button>
-                        <button class="select-chip" data-val="insects" data-i18n="insects">🦋 Insecten</button>
-                        <button class="select-chip" data-val="flora" data-i18n="flora">🌸 Flora</button>
-                        <button class="select-chip" data-val="fungi" data-i18n="fungi">🍄 Fungi</button>
-                        <button class="select-chip" data-val="trees" data-i18n="trees">🌲 Trees</button>
-                        <button class="select-chip" data-val="agriculture" data-i18n="agriculture">🌾
-                            Cultivated Species</button>
+                        <button class="select-chip active" data-val="all">🌍 Alles</button>
+                        <button class="select-chip" data-val="fauna">🦊 Zoogdieren</button>
+                        <button class="select-chip" data-val="birds">🐦 Vogels</button>
+                        <button class="select-chip" data-val="insects">🦋 Insecten</button>
+                        <button class="select-chip" data-val="flora">🌸 Flora</button>
+                        <button class="select-chip" data-val="fungi">🍄 Fungi</button>
+                        <button class="select-chip" data-val="trees">🌲 Bomen</button>
+                        <button class="select-chip" data-val="agriculture">🌾 Gekweekt</button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -133,15 +138,14 @@
             </div>
         </section>
 
-        <!-- 3. Active Quiz Screen -->
+        <!-- ══ 3. ACTIVE QUIZ ══════════════════════════════════════════════ -->
         <section id="screen-quiz" class="screen hidden">
             <header class="quiz-header">
                 <div class="progress-container">
                     <div class="progress-text">Question <span id="current-q-num">1</span> of 10</div>
-                    <!-- XP-style progress bar -->
                     <div class="xp-bar-wrapper">
                         <div class="progress-bar">
-                            <div id="progress-fill" class="progress-fill" style="width: 10%"></div>
+                            <div id="progress-fill" class="progress-fill" style="width:10%"></div>
                         </div>
                         <div class="xp-label">
                             <span class="xp-icon">⚡</span>
@@ -156,8 +160,8 @@
             <div class="question-container">
                 <h3 id="question-text">Identify this species</h3>
                 <div class="image-wrapper glass-panel-inner">
-                    <img id="question-image" src="" alt="Mystery Species" referrerpolicy="no-referrer" />
-                    <img id="range-image" src="" alt="Species Range" class="hidden" referrerpolicy="no-referrer" />
+                    <img id="question-image" src="" alt="Mystery Species" referrerpolicy="no-referrer"/>
+                    <img id="range-image" src="" alt="Species Range" class="hidden" referrerpolicy="no-referrer"/>
                     <div id="image-loader" class="loader"></div>
                 </div>
             </div>
@@ -177,7 +181,7 @@
             </div>
         </section>
 
-        <!-- Stop Quiz Confirmation Modal -->
+        <!-- Stop modal -->
         <div id="stop-confirm-modal" class="stop-modal hidden">
             <div class="stop-modal-box glass-panel-inner">
                 <div class="stop-modal-icon">🛑</div>
@@ -190,11 +194,9 @@
             </div>
         </div>
 
-        <!-- 4. Score Result Screen -->
+        <!-- ══ 4. RESULTS ══════════════════════════════════════════════════ -->
         <section id="screen-results" class="screen hidden">
-            <header>
-                <h2>Quiz Complete!</h2>
-            </header>
+            <header><h2>Quiz Complete!</h2></header>
             <div class="results-card glass-panel-inner">
                 <div class="score-circle">
                     <span id="final-score">0</span><span class="out-of">/10</span>
@@ -208,46 +210,95 @@
             </div>
         </section>
 
-        <!-- 5. Encyclopedia Screen -->
+        <!-- ══ 5. ENCYCLOPEDIE ════════════════════════════════════════════ -->
         <section id="screen-learn" class="screen hidden">
+
             <div class="header-content">
                 <button class="icon-btn transition back-btn" data-target="screen-home">
                     <span class="back-svg-target"></span>
                 </button>
-                <h1 data-i18n="learn">Encyclopedia</h1>
+                <h1 data-i18n="learn">Encyclopedie</h1>
             </div>
 
-            <div class="search-container" style="padding: 0 20px 15px 20px;">
-                <div class="search-wrapper" style="position: relative;">
-                    <span class="search-svg-target"
-                        style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--accent-primary); opacity: 0.7;"></span>
-                    <input type="text" id="species-search" placeholder="Search by name, scientific name or family..."
-                        style="width: 100%; padding: 12px 15px 12px 45px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: inherit; transition: border-color 0.3s;">
+            <!-- Search -->
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <span class="search-svg-target search-icon-abs"></span>
+                    <input type="text" id="species-search"
+                           placeholder="Zoek op naam, wetenschappelijke naam of familie...">
                 </div>
             </div>
 
+            <!-- ── PRIMARY CATEGORY TABS ─────────────────────────────────── -->
             <div class="filter-tabs" id="learn-filters">
-                <button class="tab active" data-filter="all" data-i18n="all">All</button>
-                <button class="tab" data-filter="collected"
-                    style="border-color: var(--accent-primary); color: var(--accent-primary);">🏆 Collection</button>
-                <button class="tab" data-filter="fauna" data-i18n="fauna">Fauna</button>
-                <button class="tab" data-filter="birds" data-i18n="birds">Birds</button>
-                <button class="tab" data-filter="insects" data-i18n="insects">Insects</button>
-                <button class="tab" data-filter="flora" data-i18n="flora">Flora</button>
-                <button class="tab" data-filter="fungi" data-i18n="fungi">Fungi</button>
-                <button class="tab" data-filter="trees" data-i18n="trees">Trees</button>
-                <button class="tab" data-filter="agriculture" data-i18n="agriculture">Cultivated</button>
-                <button class="tab tab-phylo" id="btn-open-phylo">🌳 Fylogenie</button>
+                <button class="tab active" data-filter="all">🌍 Alles</button>
+                <button class="tab" data-filter="collected">🏆 Collectie</button>
+                <button class="tab tab-has-sub" data-filter="fauna">🦊 Zoogdieren ▾</button>
+                <button class="tab tab-has-sub" data-filter="birds">🐦 Vogels ▾</button>
+                <button class="tab" data-filter="insects">🦋 Insecten</button>
+                <button class="tab tab-has-sub" data-filter="flora">🌸 Flora ▾</button>
+                <button class="tab" data-filter="fungi">🍄 Fungi</button>
+                <button class="tab" data-filter="trees">🌲 Bomen</button>
+                <button class="tab" data-filter="agriculture">🌾 Gekweekt</button>
             </div>
 
-            <div class="grid-container" id="learn-grid">
-                <!-- Skeleton placeholders injected by JS -->
+            <!-- ── SUB-FILTER ROW ─────────────────────────────────────────
+                 Appears below primary tabs only when a ▾ tab is selected.
+                 Each .sub-group is shown/hidden based on data-parent.       -->
+            <div class="sub-filter-row hidden" id="sub-filters">
+
+                <!-- Fauna sub-groups -->
+                <div class="sub-group" data-parent="fauna">
+                    <span class="sub-label">Onderverdeling</span>
+                    <button class="sub-tab active" data-subfilter="fauna_all">Alles</button>
+                    <button class="sub-tab" data-subfilter="fauna_mammal">🦊 Zoogdieren</button>
+                    <button class="sub-tab" data-subfilter="fauna_reptile">🦎 Reptielen</button>
+                    <button class="sub-tab" data-subfilter="fauna_amphibian">🐸 Amfibieën</button>
+                    <button class="sub-tab" data-subfilter="fauna_aquatic">🦭 Zeezoogdieren</button>
+                </div>
+
+                <!-- Birds sub-groups -->
+                <div class="sub-group hidden" data-parent="birds">
+                    <span class="sub-label">Onderverdeling</span>
+                    <button class="sub-tab active" data-subfilter="birds_all">Alle vogels</button>
+                    <button class="sub-tab" data-subfilter="birds_passerine">🎵 Zangvogels</button>
+                    <button class="sub-tab" data-subfilter="birds_raptor">🦅 Roofvogels</button>
+                    <button class="sub-tab" data-subfilter="birds_water">🦆 Watervogels</button>
+                    <button class="sub-tab" data-subfilter="birds_dove">🕊️ Duiven &amp; Uilen</button>
+                    <button class="sub-tab" data-subfilter="birds_other">🐦 Overige</button>
+                </div>
+
+                <!-- Flora sub-groups -->
+                <div class="sub-group hidden" data-parent="flora">
+                    <span class="sub-label">Onderverdeling</span>
+                    <button class="sub-tab active" data-subfilter="flora_all">Alle flora</button>
+                    <button class="sub-tab" data-subfilter="flora_dicot">🌼 Dicotylen</button>
+                    <button class="sub-tab" data-subfilter="flora_monocot">🌷 Monocotylen</button>
+                </div>
             </div>
+
+            <!-- ── PHYLOGENY BANNER — clearly separate from filters ────────
+                 This is NOT a filter tab. It opens a separate page.         -->
+            <div class="phylo-banner">
+                <div class="phylo-banner-left">
+                    <div class="phylo-banner-icon">🌳</div>
+                    <div class="phylo-banner-text">
+                        <strong>Fylogenetische boom</strong>
+                        <span>Bekijk de evolutionaire verwantschappen van alle soorten</span>
+                    </div>
+                </div>
+                <button id="btn-open-phylo" class="phylo-banner-btn">
+                    Bekijk boom <span>→</span>
+                </button>
+            </div>
+
+            <!-- Species grid -->
+            <div class="grid-container" id="learn-grid"></div>
         </section>
 
     </main>
 
-    <!-- Wikipedia-style Details Modal for Encyclopedia -->
+    <!-- ══ SPECIES DETAIL MODAL ══════════════════════════════════════════ -->
     <div id="details-modal" class="modal-backdrop hidden">
         <div class="modal wikipedia-article glass-panel">
             <button id="btn-close-modal" class="btn-close">×</button>
@@ -256,86 +307,58 @@
                 <h1 id="modal-title">Species Name</h1>
                 <h4 id="modal-scientific">Scientific Name</h4>
             </div>
-
             <div class="article-body">
                 <div class="article-main">
                     <p id="modal-description">Description goes here.</p>
-
-                    <!-- Fun Fact section -->
-                    <div class="article-section fun-fact-section" id="modal-funfact-section" style="display:none;">
-                        <h3><span class="icon">💡</span> <span id="label-funfact">Did you know?</span></h3>
+                    <div class="article-section fun-fact-section" id="modal-funfact-section" style="display:none">
+                        <h3><span class="icon">💡</span> <span id="label-funfact">Wist je dat?</span></h3>
                         <p id="modal-funfact-text" class="fun-fact-text"></p>
                     </div>
-
                     <div class="article-section">
                         <h3><span class="icon">🏘️</span> Habitat</h3>
-                        <p id="modal-habitat-text">Habitat details here...</p>
+                        <p id="modal-habitat-text"></p>
                     </div>
-
                     <div class="article-section">
                         <h3><span class="icon">💎</span> <span id="label-rarity">Rarity</span></h3>
-                        <p id="modal-rarity-text">Rarity details here...</p>
+                        <p id="modal-rarity-text"></p>
                     </div>
-
                     <div class="article-section">
                         <h3><span class="icon">📏</span> <span id="label-size">Size</span></h3>
-                        <p id="modal-size-text">Size details here...</p>
+                        <p id="modal-size-text"></p>
                     </div>
-
                     <div class="article-section">
                         <h3><span class="icon">🍽️</span> <span id="label-diet">Diet</span></h3>
-                        <p id="modal-diet-text">Diet details here...</p>
+                        <p id="modal-diet-text"></p>
                     </div>
                 </div>
-
                 <aside class="infobox">
                     <div class="infobox-image">
                         <img id="modal-image" src="" alt="Species Detail" referrerpolicy="no-referrer">
                     </div>
                     <div class="infobox-title">Scientific Classification</div>
                     <table class="infobox-table">
-                        <tr>
-                            <th>Family</th>
-                            <td id="modal-infobox-family">Family Name</td>
-                        </tr>
-                        <tr>
-                            <th>Category</th>
-                            <td id="modal-infobox-category">Category</td>
-                        </tr>
-                        <tr>
-                            <th id="label-info-habitat">Habitat</th>
-                            <td id="modal-habitat">Forest</td>
-                        </tr>
-                        <tr>
-                            <th id="label-info-rarity">Rarity</th>
-                            <td id="modal-rarity">Common</td>
-                        </tr>
-                        <tr>
-                            <th id="label-info-size">Size</th>
-                            <td id="modal-infobox-size">---</td>
-                        </tr>
-                        <tr>
-                            <th id="label-info-diet">Diet</th>
-                            <td id="modal-infobox-diet">---</td>
-                        </tr>
+                        <tr><th>Family</th><td id="modal-infobox-family">—</td></tr>
+                        <tr><th>Category</th><td id="modal-infobox-category">—</td></tr>
+                        <tr><th id="label-info-habitat">Habitat</th><td id="modal-habitat">—</td></tr>
+                        <tr><th id="label-info-rarity">Rarity</th><td id="modal-rarity">—</td></tr>
+                        <tr><th id="label-info-size">Size</th><td id="modal-infobox-size">—</td></tr>
+                        <tr><th id="label-info-diet">Diet</th><td id="modal-infobox-diet">—</td></tr>
                     </table>
                 </aside>
             </div>
         </div>
     </div>
 
-    <!-- Application Logic -->
     <script src="js/data/species_data.js"></script>
     <script src="js/app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('SW Registered', reg))
-                    .catch(err => console.log('SW Fail', err));
+                    .then(r => console.log('SW OK', r))
+                    .catch(e => console.log('SW fail', e));
             });
         }
     </script>
 </body>
-
 </html>
