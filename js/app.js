@@ -230,16 +230,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- DOM Elements ---
-    const screens = {
-        home: document.getElementById('screen-home'),
-        config: document.getElementById('screen-config'),
-        quiz: document.getElementById('screen-quiz'),
-        results: document.getElementById('screen-results'),
-        learn: document.getElementById('screen-learn'),
-        phylo: document.getElementById('screen-phylo'),
-    ,
-        phylo: document.getElementById('screen-phylo'),
-    };
+   const screens = {
+    home: document.getElementById('screen-home'),
+    config: document.getElementById('screen-config'),
+    quiz: document.getElementById('screen-quiz'),
+    results: document.getElementById('screen-results'),
+    learn: document.getElementById('screen-learn'),
+    phylo: document.getElementById('screen-phylo')
+};
 
     const btnPlay = document.getElementById('btn-play');
     const btnLearn = document.getElementById('btn-learn');
