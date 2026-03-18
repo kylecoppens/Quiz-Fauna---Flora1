@@ -1,763 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phylogenetic Tree — Belgian Fauna & Flora</title>
+<title>Fylogenie — Belgische Fauna &amp; Flora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0f1610;
-    --panel: rgba(255,255,255,0.04);
-    --border: rgba(255,255,255,0.08);
-    --accent: #3db863;
-    --accent2: #f0c05a;
-    --text: #ffffff;
-    --muted: #8aaa90;
-    --font-h: 'Outfit', sans-serif;
-    --font-b: 'Inter', sans-serif;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-b);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  /* Import same fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap');
+:root {
+  --bg:#0c1410;--surface:#131f17;--card:#192318;--border:rgba(255,255,255,.07);
+  --border2:rgba(255,255,255,.12);--green:#3db863;--gold:#f0c05a;--blue:#56c4e8;
+  --purple:#b07ee8;--text:#e8f0ea;--muted:#7a9980;--faint:rgba(255,255,255,.04);
+  --font-h:'Outfit',sans-serif;--font-b:'Inter',sans-serif;--r:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:14px;min-height:100vh}
 
-  header.top {
-    background: rgba(0,0,0,0.5);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(12px);
-  }
-  .back-link {
-    color: var(--accent);
-    text-decoration: none;
-    font-family: var(--font-h);
-    font-weight: 700;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 14px;
-    border: 1px solid var(--accent);
-    border-radius: 20px;
-    transition: background 0.2s;
-  }
-  .back-link:hover { background: rgba(61,184,99,0.15); }
+/* TOPBAR */
+.topbar{display:flex;align-items:center;gap:16px;padding:14px 24px;background:rgba(0,0,0,.45);
+  border-bottom:1px solid var(--border2);backdrop-filter:blur(16px);position:sticky;top:0;z-index:200}
+.back-btn{display:flex;align-items:center;gap:6px;color:var(--green);text-decoration:none;
+  font-family:var(--font-h);font-weight:700;font-size:13px;padding:6px 14px;border:1px solid var(--green);
+  border-radius:20px;transition:background .2s;cursor:pointer;background:transparent}
+.back-btn:hover{background:rgba(61,184,99,.14)}
+.topbar-title{font-family:var(--font-h);font-weight:700;font-size:1.15rem}
+.topbar-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.isolate-notice{margin-left:auto;display:none;align-items:center;gap:10px;
+  background:rgba(240,192,90,.12);border:1px solid rgba(240,192,90,.3);border-radius:8px;
+  padding:6px 14px;font-size:12px;color:var(--gold);font-weight:600}
+.isolate-notice.visible{display:flex}
+.reset-btn{background:var(--gold);color:#000;border:none;border-radius:6px;padding:3px 10px;
+  font-size:11px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.reset-btn:hover{opacity:.85}
 
-  header.top h1 {
-    font-family: var(--font-h);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .subtitle-tag {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-left: auto;
-    display: none;
-  }
+/* FILTER BAR */
+.filter-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 24px;
+  border-bottom:1px solid var(--border);background:var(--surface)}
+.filter-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-right:4px}
+.filt-btn{display:flex;align-items:center;gap:5px;background:transparent;border:1px solid var(--border2);
+  color:var(--muted);font-family:var(--font-h);font-weight:600;font-size:12px;padding:5px 13px;
+  border-radius:16px;cursor:pointer;transition:all .2s}
+.filt-btn:hover{border-color:var(--green);color:var(--text)}
+.filt-btn.active{background:rgba(61,184,99,.16);border-color:var(--green);color:var(--green)}
+.search-box{margin-left:auto;background:var(--card);border:1px solid var(--border2);color:var(--text);
+  font-family:var(--font-b);font-size:13px;padding:6px 14px;border-radius:16px;width:200px;outline:none;transition:border-color .2s}
+.search-box:focus{border-color:var(--green)}
+.search-box::placeholder{color:var(--muted)}
 
-  .controls {
-    padding: 16px 24px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-  }
-  .filter-btn {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: var(--font-h);
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 7px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    background: rgba(61,184,99,0.15);
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-  .search-box {
-    margin-left: auto;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: var(--font-b);
-    font-size: 0.85rem;
-    padding: 7px 14px;
-    border-radius: 20px;
-    width: 220px;
-    outline: none;
-  }
-  .search-box:focus { border-color: var(--accent); }
+/* STATS */
+.stats-bar{padding:8px 24px;font-size:12px;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:4px}
+.stats-bar b{color:var(--green)}
 
-  .legend {
-    padding: 12px 24px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 0.8rem;
-    color: var(--muted);
-    border-bottom: 1px solid var(--border);
-  }
-  .legend-item { display: flex; align-items: center; gap: 6px; }
-  .legend-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-  }
+/* SCROLL */
+.tree-scroll{padding:28px 24px 80px}
 
-  .tree-container {
-    padding: 24px;
-    overflow-x: auto;
-    min-height: calc(100vh - 160px);
-  }
+/* KINGDOM */
+.kingdom-block{margin-bottom:28px;border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;transition:opacity .35s}
+.kingdom-block.dimmed{opacity:.15;pointer-events:none}
+.kingdom-header{display:flex;align-items:center;gap:12px;padding:14px 20px;cursor:pointer;user-select:none;transition:background .2s}
+.kingdom-header:hover{background:var(--faint)}
+.kh-icon{font-size:1.5rem}
+.kh-name{font-family:var(--font-h);font-weight:900;font-size:1.1rem}
+.kh-sci{font-style:italic;font-size:12px;color:var(--muted)}
+.kh-count{margin-left:auto;font-size:12px;color:var(--muted);background:var(--faint);border:1px solid var(--border2);padding:2px 10px;border-radius:10px}
+.kh-toggle{font-size:13px;color:var(--muted);transition:transform .25s}
+.kingdom-block.collapsed .kh-toggle{transform:rotate(-90deg)}
+.kingdom-body{padding:0 16px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;border-top:1px solid var(--border)}
+.kingdom-block.collapsed .kingdom-body{display:none}
 
-  /* Tree nodes */
-  .tree-root { list-style: none; }
-  .tree-node { list-style: none; margin: 0; }
-  .node-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 0 5px 0;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background 0.15s;
-    user-select: none;
-  }
-  .node-row:hover { background: rgba(255,255,255,0.04); }
-  .node-row.highlighted { background: rgba(61,184,99,0.1); }
+/* CLASS CARD */
+.class-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;transition:opacity .35s,border-color .2s}
+.class-card.dimmed{opacity:.12;pointer-events:none}
+.class-card.focused{border-color:var(--green);box-shadow:0 0 0 1px rgba(61,184,99,.3)}
+.class-header{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;user-select:none;transition:background .2s;border-radius:var(--r) var(--r) 0 0}
+.class-header:hover{background:rgba(255,255,255,.04)}
+.class-header.is-focused{background:rgba(61,184,99,.08)}
+.ch-icon{font-size:1.1rem}
+.ch-name{font-family:var(--font-h);font-weight:700;font-size:.88rem}
+.ch-sci{font-style:italic;font-size:11px;color:var(--muted)}
+.ch-count{margin-left:auto;font-size:11px;color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--border);padding:1px 8px;border-radius:8px}
+.ch-arrow{font-size:11px;color:var(--muted);transition:transform .2s}
+.class-card.collapsed .ch-arrow{transform:rotate(-90deg)}
+.class-body{padding:0 10px 10px}
+.class-card.collapsed .class-body{display:none}
 
-  .node-indent {
-    display: flex;
-    align-items: center;
-  }
-  .node-line {
-    width: 20px; height: 1px;
-    background: rgba(255,255,255,0.15);
-    flex-shrink: 0;
-  }
-  .node-vline {
-    width: 1px; background: rgba(255,255,255,0.1);
-    align-self: stretch; flex-shrink: 0; margin-right: 3px;
-  }
-  .toggle-btn {
-    width: 18px; height: 18px; border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(0,0,0,0.3);
-    color: var(--muted);
-    font-size: 11px; line-height: 1;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; cursor: pointer;
-    transition: all 0.2s;
-  }
-  .toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .spacer { width: 18px; flex-shrink: 0; }
+/* ORDER */
+.order-group{margin-top:8px}
+.order-header{display:flex;align-items:center;gap:6px;padding:5px 4px;font-size:11px;color:var(--muted);cursor:pointer;user-select:none;border-bottom:1px solid var(--border);margin-bottom:4px}
+.order-name{font-family:var(--font-h);font-weight:700;font-size:11px;color:var(--text)}
+.order-sci{font-style:italic;font-size:10px;color:var(--muted)}
+.order-count{margin-left:auto;font-size:10px;background:var(--faint);border:1px solid var(--border);padding:0 6px;border-radius:6px}
+.order-toggle{font-size:10px;color:var(--muted);transition:transform .2s}
+.order-group.collapsed .order-toggle{transform:rotate(-90deg)}
+.order-group.collapsed .order-species{display:none}
+.order-species{display:flex;flex-direction:column;gap:3px;margin-top:2px}
 
-  .node-icon { font-size: 1rem; flex-shrink: 0; }
-  .node-label {
-    font-family: var(--font-h);
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--text);
-  }
-  .node-sci {
-    font-style: italic;
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-left: 4px;
-  }
-  .node-count {
-    font-size: 0.75rem;
-    color: var(--muted);
-    background: rgba(255,255,255,0.06);
-    padding: 1px 7px;
-    border-radius: 10px;
-    margin-left: 4px;
-  }
-  .node-tag {
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 1px 7px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+/* SPECIES PILL */
+.sp-pill{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:7px;cursor:pointer;transition:background .15s}
+.sp-pill:hover{background:rgba(255,255,255,.06)}
+.sp-thumb{width:32px;height:32px;border-radius:5px;object-fit:cover;flex-shrink:0;background:rgba(0,0,0,.4);border:1px solid var(--border)}
+.sp-names{flex:1;min-width:0}
+.sp-common{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sp-sci{font-style:italic;font-size:10px;color:var(--muted)}
+.sp-badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:1px 7px;border-radius:6px;flex-shrink:0}
+.badge-monocot{background:rgba(240,192,90,.18);color:var(--gold);border:1px solid rgba(240,192,90,.3)}
+.badge-dicot{background:rgba(61,184,99,.14);color:var(--green);border:1px solid rgba(61,184,99,.25)}
 
-  /* Species leaf node */
-  .species-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .species-row:hover { background: rgba(255,255,255,0.05); }
-  .species-row.hidden { display: none; }
+/* COLOUR ACCENTS */
+.k-animalia{border-color:rgba(86,196,232,.25)}.k-animalia .kingdom-header{background:linear-gradient(135deg,rgba(86,196,232,.06),transparent)}
+.k-plantae{border-color:rgba(61,184,99,.25)}.k-plantae .kingdom-header{background:linear-gradient(135deg,rgba(61,184,99,.07),transparent)}
+.k-fungi{border-color:rgba(176,126,232,.25)}.k-fungi .kingdom-header{background:linear-gradient(135deg,rgba(176,126,232,.08),transparent)}
 
-  .sp-thumb {
-    width: 36px; height: 36px;
-    border-radius: 6px;
-    object-fit: cover;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(0,0,0,0.3);
-    flex-shrink: 0;
-  }
-  .sp-info { flex: 1; min-width: 0; }
-  .sp-name {
-    font-weight: 600;
-    font-size: 0.88rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .sp-sci {
-    font-style: italic;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-  .sp-grade {
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 1px 7px;
-    border-radius: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    flex-shrink: 0;
-  }
-  .grade-monocot { background: rgba(240,192,90,0.2); color: var(--accent2); border: 1px solid rgba(240,192,90,0.3); }
-  .grade-dicot { background: rgba(61,184,99,0.15); color: var(--accent); border: 1px solid rgba(61,184,99,0.25); }
-
-  .children { padding-left: 20px; }
-  .collapsed > .children { display: none; }
-
-  /* Stats bar */
-  .stats-bar {
-    padding: 10px 24px;
-    font-size: 0.8rem;
-    color: var(--muted);
-    border-bottom: 1px solid var(--border);
-  }
-  .stats-bar span { color: var(--accent); font-weight: 700; }
-
-  /* No results */
-  .no-results {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--muted);
-  }
-  .no-results .icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.4; }
+/* EMPTY */
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);display:none}
+.empty-state.visible{display:block}
+.empty-icon{font-size:3rem;margin-bottom:12px;opacity:.4}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <a class="back-link" href="javascript:history.back()">← Encyclopedie</a>
-  <h1>🌳 Fylogenie — Belgische Soorten</h1>
-</header>
-
-<div class="controls">
-  <button class="filter-btn active" data-filter="all">🌍 Alles</button>
-  <button class="filter-btn" data-filter="fauna">🦊 Zoogdieren</button>
-  <button class="filter-btn" data-filter="birds">🐦 Vogels</button>
-  <button class="filter-btn" data-filter="insects">🦋 Insecten</button>
-  <button class="filter-btn" data-filter="flora">🌸 Flora</button>
-  <button class="filter-btn" data-filter="fungi">🍄 Fungi</button>
-  <button class="filter-btn" data-filter="trees">🌲 Bomen</button>
-  <input class="search-box" type="text" placeholder="Zoek op naam…" id="phylo-search">
-</div>
-
-<div class="legend">
-  <div class="legend-item"><div class="legend-dot" style="background:#3db863"></div> Zoogdieren / Vogels / Reptielen</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#f0c05a"></div> Insecten / Ongewervelden</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#7ec8a0"></div> Planten (dicotylen)</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#c8a07e"></div> Planten (monocotylen)</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#a07ec8"></div> Fungi / Schimmels</div>
-</div>
-
-<div class="stats-bar" id="stats-bar">Laden…</div>
-
-<div class="tree-container" id="tree-container">
-  <div class="no-results" id="no-results" style="display:none">
-    <div class="icon">🔍</div>
-    <div>Geen soorten gevonden</div>
+<div class="topbar">
+  <button class="back-btn" onclick="history.back()">← Encyclopedie</button>
+  <div><div class="topbar-title">🌳 Fylogenetische boom</div><div class="topbar-sub">Belgische Fauna &amp; Flora — evolutionaire verwantschappen</div></div>
+  <div class="isolate-notice" id="isolate-notice">
+    <span>Gefilterd op branch</span>
+    <button class="reset-btn" id="reset-isolate">Alles tonen ×</button>
   </div>
 </div>
 
+<div class="filter-bar">
+  <span class="filter-label">Toon</span>
+  <button class="filt-btn active" data-cat="all">🌍 Alles</button>
+  <button class="filt-btn" data-cat="fauna">🦊 Zoogdieren</button>
+  <button class="filt-btn" data-cat="birds">🐦 Vogels</button>
+  <button class="filt-btn" data-cat="insects">🦋 Insecten</button>
+  <button class="filt-btn" data-cat="flora">🌸 Flora</button>
+  <button class="filt-btn" data-cat="fungi">🍄 Fungi</button>
+  <button class="filt-btn" data-cat="trees">🌲 Bomen</button>
+  <input class="search-box" type="text" id="phylo-search" placeholder="Zoek soort…">
+</div>
+
+<div class="stats-bar" id="stats-bar">Laden…</div>
+<div class="tree-scroll" id="tree-root"></div>
+<div class="empty-state" id="empty-state"><div class="empty-icon">🔍</div><div>Geen soorten gevonden</div></div>
+
 <script src="../js/data/species_data.js"></script>
 <script>
-// ─── Phylogenetic tree structure ────────────────────────────────────────
-// Maps scientific names → their position in the tree
-// Structure: Kingdom > Phylum/Division > Class > Order > Family > Species
+const SP = window.speciesData || [];
+function getName(sp){const n=sp.name;if(!n)return sp.scientific;return typeof n==='object'?(n.nl||n.en||Object.values(n)[0]):n}
 
-const TREE_TEMPLATE = {
-  id: 'root',
-  label: 'Leven op Aarde', icon: '🌍', sci: 'Biota',
-  children: [
-    {
-      id: 'animalia', label: 'Dieren', icon: '🐾', sci: 'Animalia',
-      children: [
-        {
-          id: 'mammalia', label: 'Zoogdieren', icon: '🦊', sci: 'Mammalia', cat: 'fauna',
-          children: [
-            { id: 'carnivora', label: 'Carnivora', icon: '🦊', sci: 'Carnivora',
-              families: ['Canidae','Felidae','Mustelidae','Phocidae','Phocoenidae'] },
-            { id: 'rodentia', label: 'Knaagdieren', icon: '🐿️', sci: 'Rodentia',
-              families: ['Sciuridae','Muridae','Cricetidae','Castoridae'] },
-            { id: 'lagomorpha', label: 'Haasachtigen', icon: '🐇', sci: 'Lagomorpha',
-              families: ['Leporidae'] },
-            { id: 'artiodactyla', label: 'Evenhoevigen', icon: '🐗', sci: 'Artiodactyla',
-              families: ['Cervidae','Suidae'] },
-            { id: 'chiroptera', label: 'Vleermuizen', icon: '🦇', sci: 'Chiroptera',
-              families: ['Vespertilionidae'] },
-            { id: 'insectivora', label: 'Insecteneters', icon: '🦔', sci: 'Eulipotyphla',
-              families: ['Erinaceidae','Talpidae'] },
-            { id: 'cetacea', label: 'Zeezoogdieren', icon: '🐬', sci: 'Cetartiodactyla',
-              families: ['Phocoenidae'] },
-          ]
-        },
-        {
-          id: 'aves', label: 'Vogels', icon: '🐦', sci: 'Aves', cat: 'birds',
-          children: [
-            { id: 'passeriformes', label: 'Zangvogels', icon: '🎵', sci: 'Passeriformes',
-              families: ['Turdidae','Muscicapidae','Sylviidae','Fringillidae','Corvidae',
-                         'Paridae','Alaudidae','Hirundinidae','Motacillidae','Sturnidae',
-                         'Troglodytidae','Regulidae','Prunellidae','Emberizidae',
-                         'Sittidae','Certhiidae','Phylloscopidae','Aegithalidae'] },
-            { id: 'accipitriformes', label: 'Roofvogels', icon: '🦅', sci: 'Accipitriformes / Falconiformes',
-              families: ['Accipitridae','Falconidae'] },
-            { id: 'anseriformes', label: 'Eendachtigen', icon: '🦆', sci: 'Anseriformes',
-              families: ['Anatidae'] },
-            { id: 'coraciiformes', label: 'Ijsvogels e.a.', icon: '💎', sci: 'Coraciiformes',
-              families: ['Alcedinidae'] },
-            { id: 'strigiformes', label: 'Uilen', icon: '🦉', sci: 'Strigiformes',
-              families: ['Strigidae'] },
-            { id: 'piciformes', label: 'Spechten', icon: '🪵', sci: 'Piciformes',
-              families: ['Picidae'] },
-            { id: 'ciconiiformes', label: 'Reigers', icon: '🕊️', sci: 'Pelecaniformes',
-              families: ['Ardeidae'] },
-            { id: 'gruiformes', label: 'Kraanvogels e.a.', icon: '🐦', sci: 'Gruiformes',
-              families: ['Rallidae'] },
-            { id: 'charadriiformes', label: 'Steltlopers / Meeuwen', icon: '🕊️', sci: 'Charadriiformes',
-              families: ['Laridae'] },
-            { id: 'cuculiformes', label: 'Koekoeken', icon: '🐦', sci: 'Cuculiformes',
-              families: ['Cuculidae'] },
-            { id: 'columbiformes', label: 'Duiven', icon: '🕊️', sci: 'Columbiformes',
-              families: ['Columbidae'] },
-            { id: 'galliformes', label: 'Hoenderachtigen', icon: '🐔', sci: 'Galliformes',
-              families: ['Phasianidae'] },
-            { id: 'apodiformes', label: 'Gierzwaluwen', icon: '✈️', sci: 'Apodiformes',
-              families: ['Apodidae'] },
-          ]
-        },
-        {
-          id: 'reptilia', label: 'Reptielen', icon: '🦎', sci: 'Reptilia', cat: 'fauna',
-          children: [
-            { id: 'squamata_s', label: 'Hagedissen', icon: '🦎', sci: 'Squamata (Lacertilia)',
-              families: ['Anguidae','Lacertidae'] },
-            { id: 'squamata_o', label: 'Slangen', icon: '🐍', sci: 'Squamata (Serpentes)',
-              families: ['Colubridae','Viperidae'] },
-          ]
-        },
-        {
-          id: 'amphibia', label: 'Amfibieën', icon: '🐸', sci: 'Amphibia', cat: 'fauna',
-          children: [
-            { id: 'anura', label: 'Kikkers & Padden', icon: '🐸', sci: 'Anura',
-              families: ['Ranidae','Bufonidae'] },
-            { id: 'urodela', label: 'Salamanders', icon: '🦎', sci: 'Urodela',
-              families: ['Salamandridae'] },
-          ]
-        },
-        {
-          id: 'insecta', label: 'Insecten', icon: '🦋', sci: 'Insecta', cat: 'insects',
-          children: [
-            { id: 'lepidoptera', label: 'Vlinders & Motten', icon: '🦋', sci: 'Lepidoptera',
-              families: ['Nymphalidae','Pieridae','Lycaenidae','Papilionidae',
-                         'Hesperiidae','Sphingidae','Saturniidae'] },
-            { id: 'coleoptera', label: 'Kevers', icon: '🪲', sci: 'Coleoptera',
-              families: ['Coccinellidae','Lucanidae','Carabidae','Scarabaeidae',
-                         'Lampyridae','Forficulidae'] },
-            { id: 'hymenoptera', label: 'Vliesvleugeligen', icon: '🐝', sci: 'Hymenoptera',
-              families: ['Apidae','Vespidae','Formicidae','Siricidae'] },
-            { id: 'diptera', label: 'Vliegen & Muggen', icon: '🪰', sci: 'Diptera',
-              families: ['Syrphidae','Calliphoridae','Muscidae','Culicidae'] },
-            { id: 'odonata', label: 'Libellen & Juffers', icon: '🪲', sci: 'Odonata',
-              families: ['Aeshnidae','Libellulidae','Coenagrionidae'] },
-            { id: 'orthoptera', label: 'Sprinkhanen & Krekels', icon: '🦗', sci: 'Orthoptera',
-              families: ['Acrididae','Gryllidae','Tettigoniidae'] },
-            { id: 'hemiptera', label: 'Wantsen', icon: '🔴', sci: 'Hemiptera',
-              families: ['Pentatomidae','Pyrrhocoridae'] },
-            { id: 'mecoptera', label: 'Schorpioenvliegen', icon: '🦂', sci: 'Mecoptera',
-              families: ['Panorpidae'] },
-          ]
-        },
-      ]
-    },
-    {
-      id: 'plantae', label: 'Planten', icon: '🌿', sci: 'Plantae',
-      children: [
-        {
-          id: 'gymnospermae', label: 'Naaktzadigen', icon: '🌲', sci: 'Gymnospermae', cat: 'trees',
-          children: [
-            { id: 'pinales', label: 'Naaldbomen', icon: '🌲', sci: 'Pinales',
-              families: ['Pinaceae','Taxaceae'] },
-          ]
-        },
-        {
-          id: 'angiospermae', label: 'Bedektzadigen', icon: '🌸', sci: 'Angiospermae',
-          children: [
-            {
-              id: 'monocots', label: 'Monocotylen', icon: '🌷', sci: 'Liliopsida',
-              plantGrade: 'monocot',
-              children: [
-                { id: 'asparagales', label: 'Asparagales', icon: '🌸', sci: 'Asparagales',
-                  families: ['Amaryllidaceae','Asparagaceae','Orchidaceae'] },
-              ]
-            },
-            {
-              id: 'dicots', label: 'Dicotylen (Eudicoten)', icon: '🌼', sci: 'Eudicotyledones',
-              plantGrade: 'dicot',
-              children: [
-                { id: 'rosales', label: 'Rozenachtigen', icon: '🌹', sci: 'Rosales',
-                  families: ['Rosaceae','Cannabaceae','Ulmaceae'] },
-                { id: 'asterales', label: 'Composieten', icon: '🌻', sci: 'Asterales',
-                  families: ['Asteraceae','Caprifoliaceae'] },
-                { id: 'lamiales', label: 'Lipbloemigen', icon: '🌿', sci: 'Lamiales',
-                  families: ['Lamiaceae','Oleaceae','Plantaginaceae','Boraginaceae'] },
-                { id: 'caryophyllales', label: 'Anjerfamilie e.a.', icon: '🌸', sci: 'Caryophyllales',
-                  families: ['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae'] },
-                { id: 'ranunculales', label: 'Boterbloemen e.a.', icon: '🌼', sci: 'Ranunculales',
-                  families: ['Ranunculaceae','Papaveraceae'] },
-                { id: 'fabales', label: 'Vlinderbloemigen', icon: '🫘', sci: 'Fabales',
-                  families: ['Fabaceae'] },
-                { id: 'brassicales', label: 'Kruisbloemigen', icon: '🌿', sci: 'Brassicales',
-                  families: ['Brassicaceae'] },
-                { id: 'apiaceae_order', label: 'Schermbloemigen', icon: '🌿', sci: 'Apiales',
-                  families: ['Apiaceae','Araliaceae'] },
-                { id: 'ericales_order', label: 'Heidefamilie e.a.', icon: '🌿', sci: 'Ericales',
-                  families: ['Ericaceae','Primulaceae'] },
-                { id: 'saxifragales', label: 'Steenbreekfamilie e.a.', icon: '🌿', sci: 'Saxifragales',
-                  families: ['Saxifragaceae','Grossulariaceae','Crassulaceae'] },
-                { id: 'malpighiales', label: 'Vioolachtigen e.a.', icon: '🌸', sci: 'Malpighiales',
-                  families: ['Violaceae','Salicaceae'] },
-                { id: 'santalales', label: 'Maretak e.a.', icon: '🌿', sci: 'Santalales',
-                  families: ['Santalaceae'] },
-                { id: 'gentianales', label: 'Walstrofamilie e.a.', icon: '🌿', sci: 'Gentianales',
-                  families: ['Rubiaceae'] },
-                { id: 'celastrales', label: 'Hemelsleutelbloem e.a.', icon: '🌿', sci: 'Celastrales',
-                  families: ['Celastraceae'] },
-                { id: 'fagales', label: 'Beukachtigen', icon: '🌳', sci: 'Fagales', cat: 'trees',
-                  families: ['Fagaceae','Betulaceae'] },
-                { id: 'sapindales', label: 'Esdoorn e.a.', icon: '🍁', sci: 'Sapindales', cat: 'trees',
-                  families: ['Sapindaceae'] },
-                { id: 'malvales', label: 'Linde e.a.', icon: '🌳', sci: 'Malvales', cat: 'trees',
-                  families: ['Malvaceae'] },
-                { id: 'cornales', label: 'Kornoelje e.a.', icon: '🌿', sci: 'Cornales',
-                  families: ['Adoxaceae'] },
-                { id: 'aquifoliales', label: 'Hulstfamilie', icon: '🌿', sci: 'Aquifoliales', cat: 'trees',
-                  families: ['Aquifoliaceae'] },
-                { id: 'solanales', label: 'Nachtschadefamilie', icon: '🍅', sci: 'Solanales', cat: 'agriculture',
-                  families: ['Solanaceae'] },
-                { id: 'urticales', label: 'Brandnetelachtigen', icon: '🌿', sci: 'Rosales',
-                  families: ['Urticaceae'] },
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'fungi_kingdom', label: 'Schimmels', icon: '🍄', sci: 'Fungi', cat: 'fungi',
-      children: [
-        {
-          id: 'basidiomycota', label: 'Basidiomycota', icon: '🍄', sci: 'Basidiomycota',
-          children: [
-            { id: 'agaricales', label: 'Plaatjeszwammen', icon: '🍄', sci: 'Agaricales',
-              families: ['Agaricaceae','Physalacriaceae','Pleurotaceae','Psathyrellaceae',
-                         'Hymenogastraceae','Hydnangiaceae','Tricholomataceae','Marasmiaceae'] },
-            { id: 'boletales', label: 'Boleten', icon: '🍄', sci: 'Boletales',
-              families: ['Boletaceae','Sclerodermataceae','Fomitopsidaceae'] },
-            { id: 'polyporales', label: 'Poriezwammen', icon: '🍄', sci: 'Polyporales',
-              families: ['Polyporaceae','Fistulinaceae','Cantharellaceae'] },
-            { id: 'russulales', label: 'Melkzwammen e.a.', icon: '🍄', sci: 'Russulales',
-              families: ['Russulaceae'] },
-            { id: 'amanitales', label: 'Amaniten', icon: '🍄', sci: 'Amanitales',
-              families: ['Amanitaceae'] },
-            { id: 'auriculariales', label: 'Trilzwammen', icon: '🍄', sci: 'Auriculariales / Tremellales',
-              families: ['Auriculariaceae','Tremellaceae','Schizophyllaceae'] },
-            { id: 'phallales', label: 'Stinkzwammen', icon: '🍄', sci: 'Phallales',
-              families: ['Phallaceae'] },
-            { id: 'xylariales', label: 'Houtzwammen', icon: '🍄', sci: 'Xylariales',
-              families: ['Xylariaceae','Hypoxylaceae'] },
-          ]
-        },
-        {
-          id: 'ascomycota', label: 'Ascomycota', icon: '🧫', sci: 'Ascomycota',
-          children: [
-            { id: 'pezizales', label: 'Bekerzwammen', icon: '🧫', sci: 'Pezizales',
-              families: ['Pezizaceae','Pyronemataceae','Sarcoscyphaceae','Discinaceae',
-                         'Helvellaceae','Morchellaceae','Tuberaceae'] },
-            { id: 'hypocreales', label: 'Hypocreales', icon: '🧫', sci: 'Hypocreales',
-              families: ['Nectriaceae'] },
-            { id: 'teloschistales', label: 'Korstmossen', icon: '🟡', sci: 'Teloschistales',
-              families: ['Teloschistaceae'] },
-            { id: 'bolbitiaceae_order', label: 'Bolbitiaceae e.a.', icon: '🍄', sci: 'Agaricales',
-              families: ['Bolbitiaceae'] },
-          ]
-        }
-      ]
-    }
-  ]
-};
+const TAXONOMY=[
+  {id:'animalia',label:'Animalia',icon:'🐾',cssClass:'k-animalia',classes:[
+    {id:'mammalia',label:'Zoogdieren',icon:'🦊',sci:'Mammalia',cat:'fauna',orders:[
+      {id:'carnivora',label:'Carnivora',icon:'🦊',sci:'Carnivora',families:['Canidae','Felidae','Mustelidae']},
+      {id:'pinnipedia',label:'Zeehonden & Walvissen',icon:'🦭',sci:'Pinnipedia / Cetacea',families:['Phocidae','Phocoenidae']},
+      {id:'rodentia',label:'Knaagdieren',icon:'🐿️',sci:'Rodentia',families:['Sciuridae','Muridae','Cricetidae','Castoridae']},
+      {id:'lagomorpha',label:'Haasachtigen',icon:'🐇',sci:'Lagomorpha',families:['Leporidae']},
+      {id:'artiodactyla',label:'Evenhoevigen',icon:'🦌',sci:'Artiodactyla',families:['Cervidae','Suidae']},
+      {id:'chiroptera',label:'Vleermuizen',icon:'🦇',sci:'Chiroptera',families:['Vespertilionidae']},
+      {id:'insectivora',label:'Insecteneters',icon:'🦔',sci:'Eulipotyphla',families:['Erinaceidae','Talpidae']},
+    ]},
+    {id:'aves',label:'Vogels',icon:'🐦',sci:'Aves',cat:'birds',orders:[
+      {id:'passeriformes',label:'Zangvogels',icon:'🎵',sci:'Passeriformes',families:['Turdidae','Muscicapidae','Sylviidae','Fringillidae','Corvidae','Paridae','Alaudidae','Hirundinidae','Motacillidae','Sturnidae','Troglodytidae','Regulidae','Prunellidae','Emberizidae','Sittidae','Certhiidae','Phylloscopidae','Aegithalidae','Passeridae']},
+      {id:'accipitriformes',label:'Roofvogels',icon:'🦅',sci:'Accipitriformes / Falconiformes',families:['Accipitridae','Falconidae']},
+      {id:'anseriformes',label:'Eendachtigen',icon:'🦆',sci:'Anseriformes',families:['Anatidae']},
+      {id:'coraciiformes',label:'IJsvogels',icon:'💎',sci:'Coraciiformes',families:['Alcedinidae']},
+      {id:'strigiformes',label:'Uilen',icon:'🦉',sci:'Strigiformes',families:['Strigidae']},
+      {id:'piciformes',label:'Spechten',icon:'🌲',sci:'Piciformes',families:['Picidae']},
+      {id:'pelecaniformes',label:'Reigerachtigen',icon:'🕊️',sci:'Pelecaniformes',families:['Ardeidae']},
+      {id:'gruiformes',label:'Koetachtigen',icon:'🐦',sci:'Gruiformes',families:['Rallidae']},
+      {id:'charadriiformes',label:'Meeuwen',icon:'🕊️',sci:'Charadriiformes',families:['Laridae']},
+      {id:'columbiformes',label:'Duiven',icon:'🕊️',sci:'Columbiformes',families:['Columbidae']},
+      {id:'cuculiformes',label:'Koekoeken',icon:'🐦',sci:'Cuculiformes',families:['Cuculidae']},
+      {id:'galliformes',label:'Hoenderachtigen',icon:'🐔',sci:'Galliformes',families:['Phasianidae']},
+      {id:'apodiformes',label:'Gierzwaluwen',icon:'✈️',sci:'Apodiformes',families:['Apodidae']},
+    ]},
+    {id:'reptilia',label:'Reptielen',icon:'🦎',sci:'Reptilia',cat:'fauna',orders:[
+      {id:'squamata_l',label:'Hagedissen',icon:'🦎',sci:'Squamata — Lacertilia',families:['Anguidae','Lacertidae']},
+      {id:'squamata_s',label:'Slangen',icon:'🐍',sci:'Squamata — Serpentes',families:['Colubridae','Viperidae']},
+    ]},
+    {id:'amphibia',label:'Amfibieën',icon:'🐸',sci:'Amphibia',cat:'fauna',orders:[
+      {id:'anura',label:'Kikkers & Padden',icon:'🐸',sci:'Anura',families:['Ranidae','Bufonidae']},
+      {id:'urodela',label:'Salamanders',icon:'🦎',sci:'Urodela',families:['Salamandridae']},
+    ]},
+    {id:'insecta',label:'Insecten',icon:'🦋',sci:'Insecta',cat:'insects',orders:[
+      {id:'lepidoptera',label:'Vlinders & Motten',icon:'🦋',sci:'Lepidoptera',families:['Nymphalidae','Pieridae','Lycaenidae','Papilionidae','Hesperiidae','Sphingidae','Saturniidae']},
+      {id:'coleoptera',label:'Kevers',icon:'🪲',sci:'Coleoptera',families:['Coccinellidae','Lucanidae','Carabidae','Scarabaeidae','Lampyridae','Forficulidae','Geotrupidae']},
+      {id:'hymenoptera',label:'Vliesvleugeligen',icon:'🐝',sci:'Hymenoptera',families:['Apidae','Vespidae','Formicidae','Siricidae']},
+      {id:'diptera',label:'Vliegen & Muggen',icon:'🪰',sci:'Diptera',families:['Syrphidae','Calliphoridae','Muscidae','Culicidae']},
+      {id:'odonata',label:'Libellen & Juffers',icon:'🔵',sci:'Odonata',families:['Aeshnidae','Libellulidae','Coenagrionidae']},
+      {id:'orthoptera',label:'Sprinkhanen & Krekels',icon:'🦗',sci:'Orthoptera',families:['Acrididae','Gryllidae','Tettigoniidae']},
+      {id:'hemiptera',label:'Wantsen',icon:'🔴',sci:'Hemiptera',families:['Pentatomidae','Pyrrhocoridae']},
+      {id:'mecoptera',label:'Schorpioenvliegen',icon:'🦂',sci:'Mecoptera',families:['Panorpidae']},
+    ]},
+  ]},
+  {id:'plantae',label:'Plantae',icon:'🌿',cssClass:'k-plantae',classes:[
+    {id:'gymnospermae',label:'Naaktzadigen',icon:'🌲',sci:'Gymnospermae',cat:'trees',orders:[
+      {id:'pinales',label:'Naaldbomen',icon:'🌲',sci:'Pinales',families:['Pinaceae','Taxaceae']},
+    ]},
+    {id:'monocotyledones',label:'Monocotylen',icon:'🌷',sci:'Liliopsida',cat:'flora',orders:[
+      {id:'asparagales_m',label:'Asparagales',icon:'🌸',sci:'Asparagales',families:['Amaryllidaceae','Asparagaceae','Orchidaceae']},
+    ]},
+    {id:'eudicotyledones',label:'Dicotylen (Eudicoten)',icon:'🌼',sci:'Eudicotyledones',cat:'flora',orders:[
+      {id:'rosales',label:'Rozenachtigen',icon:'🌹',sci:'Rosales',families:['Rosaceae','Cannabaceae','Ulmaceae','Urticaceae']},
+      {id:'asterales',label:'Composieten',icon:'🌻',sci:'Asterales',families:['Asteraceae','Caprifoliaceae']},
+      {id:'lamiales',label:'Lipbloemigen',icon:'💜',sci:'Lamiales',families:['Lamiaceae','Oleaceae','Plantaginaceae','Boraginaceae']},
+      {id:'fabales',label:'Vlinderbloemigen',icon:'🫘',sci:'Fabales',families:['Fabaceae']},
+      {id:'brassicales',label:'Kruisbloemigen',icon:'🌿',sci:'Brassicales',families:['Brassicaceae']},
+      {id:'apiales',label:'Schermbloemigen',icon:'🌿',sci:'Apiales',families:['Apiaceae','Araliaceae']},
+      {id:'ericales',label:'Heidefamilie',icon:'🌿',sci:'Ericales',families:['Ericaceae','Primulaceae']},
+      {id:'saxifragales',label:'Steenbreek e.a.',icon:'🌿',sci:'Saxifragales',families:['Saxifragaceae','Grossulariaceae','Crassulaceae']},
+      {id:'ranunculales',label:'Boterbloemen',icon:'🌼',sci:'Ranunculales',families:['Ranunculaceae','Papaveraceae']},
+      {id:'caryophyllales',label:'Anjerfamilie',icon:'🌸',sci:'Caryophyllales',families:['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae']},
+      {id:'malpighiales',label:'Vioolachtigen',icon:'💜',sci:'Malpighiales',families:['Violaceae','Salicaceae']},
+      {id:'gentianales',label:'Walstrofamilie',icon:'🌿',sci:'Gentianales',families:['Rubiaceae']},
+      {id:'santalales',label:'Maretak',icon:'🌿',sci:'Santalales',families:['Santalaceae']},
+      {id:'celastrales',label:'Celastrales',icon:'🌿',sci:'Celastrales',families:['Celastraceae']},
+      {id:'fagales',label:'Beukachtigen',icon:'🌳',sci:'Fagales',families:['Fagaceae','Betulaceae']},
+      {id:'sapindales',label:'Esdoorn',icon:'🍁',sci:'Sapindales',families:['Sapindaceae']},
+      {id:'malvales',label:'Linde',icon:'🌳',sci:'Malvales',families:['Malvaceae']},
+      {id:'aquifoliales',label:'Hulst',icon:'🌿',sci:'Aquifoliales',families:['Aquifoliaceae']},
+      {id:'solanales',label:'Nachtschadefamilie',icon:'🍅',sci:'Solanales',families:['Solanaceae']},
+      {id:'cornales',label:'Vlier & Gelderse roos',icon:'🌿',sci:'Dipsacales',families:['Adoxaceae']},
+    ]},
+    {id:'agriculture_cls',label:'Gekweekte soorten',icon:'🌾',sci:'Cultuurplanten',cat:'agriculture',orders:[
+      {id:'agri_all',label:'Landbouwgewassen',icon:'🌾',sci:'—',families:['Amaranthaceae','Cannabaceae','Solanaceae']},
+    ]},
+  ]},
+  {id:'fungi_k',label:'Fungi',icon:'🍄',cssClass:'k-fungi',classes:[
+    {id:'basidiomycota',label:'Basidiomycota',icon:'🍄',sci:'Basidiomycota',cat:'fungi',orders:[
+      {id:'agaricales',label:'Plaatjeszwammen',icon:'🍄',sci:'Agaricales',families:['Agaricaceae','Physalacriaceae','Pleurotaceae','Psathyrellaceae','Hymenogastraceae','Hydnangiaceae','Tricholomataceae','Marasmiaceae','Bolbitiaceae']},
+      {id:'boletales',label:'Boleten',icon:'🍄',sci:'Boletales',families:['Boletaceae','Sclerodermataceae','Fomitopsidaceae']},
+      {id:'polyporales',label:'Poriezwammen',icon:'🍄',sci:'Polyporales',families:['Polyporaceae','Fistulinaceae','Cantharellaceae']},
+      {id:'russulales',label:'Russula e.a.',icon:'🍄',sci:'Russulales',families:['Russulaceae']},
+      {id:'amanitales',label:'Amaniten',icon:'🍄',sci:'Amanitales',families:['Amanitaceae']},
+      {id:'auriculariales',label:'Trilzwammen',icon:'🍄',sci:'Auriculariales / Tremellales',families:['Auriculariaceae','Tremellaceae','Schizophyllaceae']},
+      {id:'phallales',label:'Stinkzwammen',icon:'🍄',sci:'Phallales',families:['Phallaceae']},
+      {id:'xylariales',label:'Houtzwammen',icon:'🍄',sci:'Xylariales',families:['Xylariaceae','Hypoxylaceae']},
+    ]},
+    {id:'ascomycota',label:'Ascomycota',icon:'🧫',sci:'Ascomycota',cat:'fungi',orders:[
+      {id:'pezizales',label:'Bekerzwammen',icon:'🧫',sci:'Pezizales',families:['Pezizaceae','Pyronemataceae','Sarcoscyphaceae','Discinaceae','Helvellaceae','Morchellaceae','Tuberaceae']},
+      {id:'hypocreales',label:'Hypocreales',icon:'🧫',sci:'Hypocreales',families:['Nectriaceae']},
+      {id:'teloschistales',label:'Korstmossen',icon:'🟡',sci:'Teloschistales',families:['Teloschistaceae']},
+    ]},
+  ]},
+];
 
-// ── Build family → species map ───────────────────────────────────────────
-const speciesData = window.speciesData || [];
-const familyMap = {};
-speciesData.forEach(sp => {
-  const fam = sp.family || 'Unknown';
-  if (!familyMap[fam]) familyMap[fam] = [];
-  familyMap[fam].push(sp);
-});
+const familyMap={};
+SP.forEach(sp=>{const f=sp.family||'Unknown';if(!familyMap[f])familyMap[f]=[];familyMap[f].push(sp)});
 
-let currentFilter = 'all';
-let searchTerm = '';
-let totalVisible = 0;
+let activeCat='all',searchQ='',isolatedKingdom=null,isolatedClass=null;
 
-// ── Render tree ──────────────────────────────────────────────────────────
-function getLang() {
-  // Try to read language from parent window or default to NL
-  try { return window.opener?.currentLang || 'nl'; } catch(e) { return 'nl'; }
+function spMatches(sp){
+  if(activeCat!=='all'&&sp.category!==activeCat)return false;
+  if(searchQ){const q=searchQ.toLowerCase();const n=getName(sp).toLowerCase();if(!n.includes(q)&&!sp.scientific.toLowerCase().includes(q))return false}
+  return true;
 }
+function orderHasResults(o){return o.families.some(f=>(familyMap[f]||[]).some(spMatches))}
+function classHasResults(c){return c.orders.some(orderHasResults)}
+function kingdomHasResults(k){return k.classes.some(classHasResults)}
 
-function getName(sp) {
-  const name = sp.name;
-  if (!name) return sp.scientific;
-  if (typeof name === 'object') return name['nl'] || name['en'] || sp.scientific;
-  return name;
-}
+function render(){
+  const root=document.getElementById('tree-root');
+  root.innerHTML='';
+  let totalVisible=0;
 
-function matchesFilter(sp) {
-  if (currentFilter === 'all') return true;
-  return sp.category === currentFilter;
-}
+  TAXONOMY.forEach(kingdom=>{
+    if(!kingdomHasResults(kingdom))return;
+    const kBlock=document.createElement('div');
+    kBlock.className='kingdom-block '+(kingdom.cssClass||'');
+    kBlock.dataset.kid=kingdom.id;
+    if(isolatedKingdom&&isolatedKingdom!==kingdom.id)kBlock.classList.add('dimmed');
 
-function matchesSearch(sp) {
-  if (!searchTerm) return true;
-  const q = searchTerm.toLowerCase();
-  const n = getName(sp).toLowerCase();
-  return n.includes(q) || sp.scientific.toLowerCase().includes(q) || (sp.family||'').toLowerCase().includes(q);
-}
+    let kCount=0;
+    kingdom.classes.forEach(cls=>cls.orders.forEach(ord=>ord.families.forEach(f=>(familyMap[f]||[]).forEach(sp=>{if(spMatches(sp))kCount++}))));
+    totalVisible+=kCount;
 
-function renderSpecies(sp) {
-  if (!matchesFilter(sp) || !matchesSearch(sp)) return null;
-  totalVisible++;
+    kBlock.innerHTML=`<div class="kingdom-header" onclick="this.closest('.kingdom-block').classList.toggle('collapsed')"><span class="kh-icon">${kingdom.icon}</span><span class="kh-name">${kingdom.label}</span><span class="kh-sci">&nbsp;Regnum</span><span class="kh-count">${kCount} soorten</span><span class="kh-toggle">▾</span></div><div class="kingdom-body" id="kbody-${kingdom.id}"></div>`;
+    root.appendChild(kBlock);
+    const kBody=kBlock.querySelector('.kingdom-body');
 
-  const el = document.createElement('div');
-  el.className = 'species-row';
-  el.dataset.spId = sp.id;
+    kingdom.classes.forEach(cls=>{
+      if(!classHasResults(cls))return;
+      const seenInClass=new Set();
+      const card=document.createElement('div');
+      card.className='class-card';
+      card.dataset.kid=kingdom.id;card.dataset.cid=cls.id;
+      if(isolatedClass&&isolatedClass!==cls.id&&isolatedKingdom===kingdom.id)card.classList.add('dimmed');
+      if(isolatedClass===cls.id)card.classList.add('focused');
 
-  const catColors = {
-    fauna:'#3db863', birds:'#56c4e8', insects:'#f0c05a',
-    flora:'#7ec8a0', fungi:'#a07ec8', trees:'#8aaa90', agriculture:'#c8a07e'
-  };
-  const grade = sp.plantGrade;
+      let clsCount=0;
+      cls.orders.forEach(ord=>ord.families.forEach(f=>(familyMap[f]||[]).forEach(sp=>{if(spMatches(sp)&&!seenInClass.has(sp.id))clsCount++})));
 
-  el.innerHTML = `
-    <img class="sp-thumb" src="${sp.image || ''}" alt="" loading="lazy" onerror="this.style.opacity='0.3'">
-    <div class="sp-info">
-      <div class="sp-name">${getName(sp)}</div>
-      <div class="sp-sci">${sp.scientific}</div>
-    </div>
-    ${grade ? `<span class="sp-grade grade-${grade}">${grade === 'monocot' ? 'Monocot' : 'Dicot'}</span>` : ''}
-  `;
+      const isFocused=isolatedClass===cls.id;
+      card.innerHTML=`<div class="class-header${isFocused?' is-focused':''}" onclick="isolateClass('${kingdom.id}','${cls.id}')"><span class="ch-icon">${cls.icon}</span><span class="ch-name">${cls.label}</span><span class="ch-sci">${cls.sci||''}</span><span class="ch-count">${clsCount}</span><span class="ch-arrow">▾</span></div><div class="class-body" id="cbody-${cls.id}"></div>`;
+      kBody.appendChild(card);
+      const cBody=card.querySelector('.class-body');
 
-  el.addEventListener('click', () => {
-    // Highlight + optionally open modal in parent
-    document.querySelectorAll('.species-row').forEach(r => r.style.background = '');
-    el.style.background = 'rgba(61,184,99,0.12)';
-  });
-  return el;
-}
-
-function renderFamilyGroup(familyName, depth) {
-  const species = (familyMap[familyName] || []).filter(sp => matchesFilter(sp) && matchesSearch(sp));
-  if (species.length === 0) return null;
-
-  const wrap = document.createElement('li');
-  wrap.className = 'tree-node';
-
-  const row = document.createElement('div');
-  row.className = 'node-row';
-  row.innerHTML = `
-    <div class="node-indent">${'  '.repeat(depth)}</div>
-    <span class="node-icon">📦</span>
-    <span class="node-label">${familyName}</span>
-    <span class="node-count">${species.length}</span>
-  `;
-  wrap.appendChild(row);
-
-  const childrenEl = document.createElement('ul');
-  childrenEl.className = 'children';
-  species.forEach(sp => {
-    const li = document.createElement('li');
-    li.className = 'tree-node';
-    const rendered = renderSpecies(sp);
-    if (rendered) { li.appendChild(rendered); childrenEl.appendChild(li); }
-  });
-  if (childrenEl.children.length > 0) wrap.appendChild(childrenEl);
-  return wrap;
-}
-
-function countDescendants(node) {
-  let count = 0;
-  if (node.families) {
-    node.families.forEach(f => {
-      (familyMap[f] || []).forEach(sp => {
-        if (matchesFilter(sp) && matchesSearch(sp)) count++;
+      cls.orders.forEach(ord=>{
+        if(!orderHasResults(ord))return;
+        const seenInOrder=new Set();
+        const rows=[];
+        ord.families.forEach(fam=>{
+          (familyMap[fam]||[]).filter(sp=>spMatches(sp)&&!seenInClass.has(sp.id)&&!seenInOrder.has(sp.id)).forEach(sp=>{
+            seenInOrder.add(sp.id);seenInClass.add(sp.id);
+            const g=sp.plantGrade;
+            rows.push(`<div class="sp-pill"><img class="sp-thumb" src="${sp.image||''}" alt="" loading="lazy" onerror="this.style.opacity='0.2'"><div class="sp-names"><div class="sp-common">${getName(sp)}</div><div class="sp-sci">${sp.scientific}</div></div>${g?`<span class="sp-badge badge-${g}">${g==='monocot'?'Mono':'Dicot'}</span>`:''}</div>`);
+          });
+        });
+        if(!rows.length)return;
+        const el=document.createElement('div');
+        el.className='order-group';
+        el.innerHTML=`<div class="order-header" onclick="this.parentElement.classList.toggle('collapsed')"><span>${ord.icon}</span><span class="order-name">${ord.label}</span><span class="order-sci">${ord.sci}</span><span class="order-count">${rows.length}</span><span class="order-toggle">▾</span></div><div class="order-species">${rows.join('')}</div>`;
+        cBody.appendChild(el);
       });
     });
-  }
-  if (node.children) {
-    node.children.forEach(c => { count += countDescendants(c); });
-  }
-  return count;
-}
-
-function renderNode(node, depth = 0) {
-  const count = countDescendants(node);
-  if (count === 0 && node.families) return null;
-  if (count === 0 && !node.children) return null;
-
-  const li = document.createElement('li');
-  li.className = 'tree-node';
-
-  const hasChildren = (node.children || []).length > 0 || (node.families || []).length > 0;
-
-  const row = document.createElement('div');
-  row.className = 'node-row';
-
-  const padding = depth * 20;
-
-  const catColors = {
-    fauna: '#3db863', birds: '#56c4e8', insects: '#f0c05a',
-    flora: '#7ec8a0', fungi: '#a07ec8', trees: '#8aaa90'
-  };
-  const tagColor = node.cat ? catColors[node.cat] : null;
-
-  row.innerHTML = `
-    <div style="width:${padding}px;flex-shrink:0"></div>
-    ${hasChildren && count > 0 ? `<button class="toggle-btn" onclick="toggleNode(this)">−</button>` : '<div class="spacer"></div>'}
-    <span class="node-icon">${node.icon || '•'}</span>
-    <span class="node-label">${node.label}</span>
-    <span class="node-sci">${node.sci}</span>
-    ${count > 0 ? `<span class="node-count">${count}</span>` : ''}
-    ${tagColor ? `<span class="node-tag" style="background:${tagColor}22;color:${tagColor};border:1px solid ${tagColor}44">${node.cat}</span>` : ''}
-  `;
-  li.appendChild(row);
-
-  if (hasChildren) {
-    const childrenEl = document.createElement('ul');
-    childrenEl.className = 'children tree-root';
-    childrenEl.style.paddingLeft = '0';
-
-    // Render family leaves
-    if (node.families) {
-      node.families.forEach(fam => {
-        const famNode = renderFamilyGroup(fam, depth + 1);
-        if (famNode) childrenEl.appendChild(famNode);
-      });
-    }
-
-    // Render child nodes
-    if (node.children) {
-      node.children.forEach(child => {
-        const childEl = renderNode(child, depth + 1);
-        if (childEl) childrenEl.appendChild(childEl);
-      });
-    }
-
-    if (childrenEl.children.length > 0) {
-      li.appendChild(childrenEl);
-    }
-  }
-
-  return li;
-}
-
-function toggleNode(btn) {
-  const li = btn.closest('.tree-node');
-  const isCollapsed = li.classList.toggle('collapsed');
-  btn.textContent = isCollapsed ? '+' : '−';
-}
-
-function renderTree() {
-  totalVisible = 0;
-  const container = document.getElementById('tree-container');
-  const noResults = document.getElementById('no-results');
-  container.innerHTML = '';
-  container.appendChild(noResults);
-  noResults.style.display = 'none';
-
-  const ul = document.createElement('ul');
-  ul.className = 'tree-root';
-
-  TREE_TEMPLATE.children.forEach(child => {
-    const el = renderNode(child, 0);
-    if (el) ul.appendChild(el);
   });
 
-  container.appendChild(ul);
-
-  if (totalVisible === 0) {
-    noResults.style.display = 'block';
-  }
-
-  document.getElementById('stats-bar').innerHTML =
-    `<span>${totalVisible}</span> soorten zichtbaar · <span>${speciesData.length}</span> totaal in dataset`;
+  document.getElementById('stats-bar').innerHTML=`<b>${totalVisible}</b> soorten zichtbaar &nbsp;·&nbsp; <b>${SP.length}</b> totaal in dataset`;
+  const e=document.getElementById('empty-state');
+  e.className='empty-state'+(totalVisible===0?' visible':'');
 }
 
-// ── Controls ─────────────────────────────────────────────────────────────
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentFilter = btn.dataset.filter;
-    renderTree();
+function isolateClass(kid,cid){
+  if(isolatedKingdom===kid&&isolatedClass===cid){resetIsolate();return}
+  isolatedKingdom=kid;isolatedClass=cid;
+  document.getElementById('isolate-notice').classList.add('visible');
+  render();
+}
+function resetIsolate(){
+  isolatedKingdom=null;isolatedClass=null;
+  document.getElementById('isolate-notice').classList.remove('visible');
+  render();
+}
+document.getElementById('reset-isolate').addEventListener('click',resetIsolate);
+document.querySelectorAll('.filt-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filt-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');activeCat=btn.dataset.cat;resetIsolate();
   });
 });
-
-document.getElementById('phylo-search').addEventListener('input', e => {
-  searchTerm = e.target.value.trim();
-  renderTree();
-  // Auto-expand all when searching
-  if (searchTerm) {
-    document.querySelectorAll('.tree-node.collapsed').forEach(n => {
-      n.classList.remove('collapsed');
-      const btn = n.querySelector('.toggle-btn');
-      if (btn) btn.textContent = '−';
-    });
-  }
-});
-
-// Initial render
-renderTree();
+document.getElementById('phylo-search').addEventListener('input',e=>{searchQ=e.target.value.trim();render()});
+render();
 </script>
 </body>
 </html>
