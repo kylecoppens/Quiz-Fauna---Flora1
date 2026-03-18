@@ -1663,7 +1663,7 @@ p { color: var(--text-secondary); line-height: 1.6; }
 /* Tree nodes */
 ul.phylo-clade { list-style: none; }
 li.phylo-ci { list-style: none; transition: opacity 0.2s; }
-li.phylo-ci.dim { opacity: 0.08; pointer-events: none; }
+li.phylo-ci.dim { display: none; }
 
 .phylo-nrow {
     display: flex;
@@ -1732,3 +1732,60 @@ li.phylo-ci.dim { opacity: 0.08; pointer-events: none; }
 
 li.phylo-ci.collapsed > .phylo-children { display: none; }
 .phylo-children { padding-left: 0; }
+/* ── IUCN Status Badges ─────────────────────────────────────────────────── */
+.iucn-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    padding: 2px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.iucn-lc  { background: rgba(0,180,80,0.15);  color: #00b450; border: 1px solid rgba(0,180,80,0.3); }
+.iucn-nt  { background: rgba(150,210,0,0.15); color: #7cc800; border: 1px solid rgba(150,210,0,0.3); }
+.iucn-vu  { background: rgba(240,170,0,0.15); color: #c8960a; border: 1px solid rgba(240,170,0,0.3); }
+.iucn-en  { background: rgba(240,100,0,0.15); color: #d05000; border: 1px solid rgba(240,100,0,0.3); }
+.iucn-cr  { background: rgba(220,20,20,0.15); color: #c81414; border: 1px solid rgba(220,20,20,0.3); }
+
+/* IUCN badge on encyclopedia cards */
+.iucn-card-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    letter-spacing: 0.4px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+/* ── Xeno-canto button ──────────────────────────────────────────────────── */
+.xeno-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, rgba(86,196,232,0.1), rgba(86,196,232,0.05));
+    border: 1px solid rgba(86,196,232,0.3);
+    border-radius: var(--border-radius-sm, 10px);
+    color: #56c4e8;
+    text-decoration: none;
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    width: 100%;
+    justify-content: space-between;
+}
+.xeno-btn:hover {
+    background: linear-gradient(135deg, rgba(86,196,232,0.18), rgba(86,196,232,0.1));
+    border-color: rgba(86,196,232,0.55);
+    transform: translateY(-1px);
+    text-decoration: none;
+    color: #80d8f8;
+}
+.xeno-icon { font-size: 1.1rem; flex-shrink: 0; }
+.xeno-arrow { font-size: 0.9rem; opacity: 0.7; }
