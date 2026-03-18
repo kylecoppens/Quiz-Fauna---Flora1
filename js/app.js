@@ -475,12 +475,49 @@ document.addEventListener('DOMContentLoaded', () => {
     btnResultsHome.addEventListener('click', () => showScreen('screen-home'));
     btnPlayAgain.addEventListener('click', () => showScreen('screen-config'));
 
-    // Encyclopedia filter
+    // ── Encyclopedia filter with sub-tabs ──────────────────────────────────
+    const subFilterRow = document.getElementById('sub-filters');
+    const subGroups = document.querySelectorAll('.sub-group');
+    let currentSubFilter = null; // e.g. "fauna_mammal"
+
+    function showSubGroup(parentFilter) {
+        if (!subFilterRow) return;
+        const hasSubGroup = document.querySelector(`.sub-group[data-parent="${parentFilter}"]`);
+        if (hasSubGroup) {
+            subFilterRow.classList.remove('hidden');
+            subGroups.forEach(g => {
+                g.classList.toggle('hidden', g.dataset.parent !== parentFilter);
+            });
+            // Reset sub-tab selection to "all"
+            const allSubTabs = hasSubGroup.querySelectorAll('.sub-tab');
+            allSubTabs.forEach(t => t.classList.remove('active'));
+            if (allSubTabs[0]) allSubTabs[0].classList.add('active');
+            currentSubFilter = allSubTabs[0]?.dataset.subfilter || null;
+        } else {
+            subFilterRow.classList.add('hidden');
+            currentSubFilter = null;
+        }
+    }
+
     learnTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             learnTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            renderEncyclopedia(tab.dataset.filter);
+            const filter = tab.dataset.filter;
+            showSubGroup(filter);
+            renderEncyclopedia(filter, currentSubFilter);
+        });
+    });
+
+    // Sub-tab clicks
+    document.querySelectorAll('.sub-tab').forEach(subTab => {
+        subTab.addEventListener('click', () => {
+            const parentGroup = subTab.closest('.sub-group');
+            parentGroup.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+            subTab.classList.add('active');
+            currentSubFilter = subTab.dataset.subfilter;
+            const activeTab = document.querySelector('#learn-filters .tab.active');
+            renderEncyclopedia(activeTab?.dataset.filter || 'all', currentSubFilter);
         });
     });
 
@@ -495,7 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (speciesSearch) {
         speciesSearch.addEventListener('input', () => {
             const activeTab = document.querySelector('#learn-filters .tab.active');
-            renderEncyclopedia(activeTab ? activeTab.dataset.filter : 'all');
+            renderEncyclopedia(activeTab ? activeTab.dataset.filter : 'all', currentSubFilter);
         });
     }
 
@@ -820,7 +857,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function renderEncyclopedia(filter) {
+    function renderEncyclopedia(filter, subFilter) {
         // Show skeletons first
         renderSkeletons(8);
 
@@ -837,6 +874,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 items = allData.filter(i => collectedSpecies.includes(i.id));
             } else {
                 items = allData.filter(i => i.category === filter);
+            }
+
+            // Sub-filter logic
+            if (subFilter && subFilter !== 'all') {
+                const MAMMAL_FAMILIES = ['Canidae','Felidae','Mustelidae','Sciuridae','Muridae',
+                    'Cricetidae','Castoridae','Leporidae','Cervidae','Suidae',
+                    'Vespertilionidae','Erinaceidae','Talpidae'];
+                const AQUATIC_FAMILIES = ['Phocidae','Phocoenidae'];
+                const REPTILE_FAMILIES = ['Anguidae','Lacertidae','Colubridae','Viperidae'];
+                const AMPHIBIAN_FAMILIES = ['Ranidae','Bufonidae','Salamandridae'];
+                const PASSERINE_FAMILIES = ['Turdidae','Muscicapidae','Sylviidae','Fringillidae',
+                    'Corvidae','Paridae','Alaudidae','Hirundinidae','Motacillidae','Sturnidae',
+                    'Troglodytidae','Regulidae','Prunellidae','Emberizidae','Sittidae',
+                    'Certhiidae','Phylloscopidae','Aegithalidae','Passeridae'];
+                const RAPTOR_FAMILIES = ['Accipitridae','Falconidae'];
+                const WATER_FAMILIES = ['Anatidae','Rallidae','Laridae','Ardeidae'];
+                items = items.filter(i => {
+                    const fam = i.family || '';
+                    switch(subFilter) {
+                        case 'fauna_mammal':    return MAMMAL_FAMILIES.includes(fam) && !AQUATIC_FAMILIES.includes(fam);
+                        case 'fauna_reptile':   return REPTILE_FAMILIES.includes(fam);
+                        case 'fauna_amphibian': return AMPHIBIAN_FAMILIES.includes(fam);
+                        case 'fauna_aquatic':   return AQUATIC_FAMILIES.includes(fam);
+                        case 'birds_passerine': return PASSERINE_FAMILIES.includes(fam);
+                        case 'birds_raptor':    return RAPTOR_FAMILIES.includes(fam);
+                        case 'birds_water':     return WATER_FAMILIES.includes(fam);
+                        case 'birds_other': {
+                            const allBirdFams = [...PASSERINE_FAMILIES,...RAPTOR_FAMILIES,...WATER_FAMILIES];
+                            return !allBirdFams.includes(fam);
+                        }
+                        case 'flora_monocot':   return i.plantGrade === 'monocot';
+                        case 'flora_dicot':     return i.plantGrade === 'dicot';
+                        default: return true;
+                    }
+                });
             }
 
             if (searchTerm) {
