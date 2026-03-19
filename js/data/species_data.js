@@ -28,7 +28,7 @@ window.speciesData = [
     size: { nl: "28–38 cm", en: "28–38 cm", fr: "28–38 cm" },
     diet: { nl: "Kleine vogels", en: "Small birds", fr: "Petits oiseaux" },
     funfact: { nl: "Het vrouwtje kan vogels tot 500 g doden — groter dan zichzelf!", en: "The female can kill birds weighing up to 500 g — bigger than itself!", fr: "La femelle peut tuer des oiseaux pesant jusqu'à 500 g, plus lourd qu'elle !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Accipiter_nisus_-_1.jpg/640px-Accipiter_nisus_-_1.jpg",
+    image: "assets/images/accipiter_nisus_fauna.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Eurasian_Sparrowhawk_by_Steve_Ward.jpg/640px-Eurasian_Sparrowhawk_by_Steve_Ward.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Eurasian_Sparrowhawk_female.jpg/640px-Eurasian_Sparrowhawk_female.jpg"
@@ -51,7 +51,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 35 m", en: "Up to 35 m", fr: "Jusqu'à 35 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Acer_pseudoplatanus_foliage.jpg/640px-Acer_pseudoplatanus_foliage.jpg"
+    image: "assets/images/acer_pseudoplatanus_trees.jpg"
 },
 {
     id: "i22",
@@ -71,7 +71,7 @@ window.speciesData = [
     size: { nl: "8–12 cm spanwijdte", en: "8–12 cm wingspan", fr: "8–12 cm d'envergure" },
     diet: { nl: "Honing, boomsappen", en: "Honey, tree sap", fr: "Miel, sève" },
     funfact: { nl: "Deze vlinder kan bijenkorfven binnendringen om honing te stelen!", en: "This moth can invade beehives to steal honey!", fr: "Ce sphinx peut envahir les ruches pour voler du miel !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Acherontia_atropos_%28Linnaeus%2C_1758%29.jpg/640px-Acherontia_atropos_%28Linnaeus%2C_1758%29.jpg",
+    image: "assets/images/acherontia_atropos_insects.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Acherontia_atropos.jpg/640px-Acherontia_atropos.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Death%27s_Head_Hawk_Moth_%28Acherontia_atropos%29.jpg/640px-Death%27s_Head_Hawk_Moth_%28Acherontia_atropos%29.jpg"
@@ -95,7 +95,7 @@ window.speciesData = [
     },
     size: { nl: "20–80 cm", en: "20–80 cm", fr: "20–80 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Achillea_millefolium_s._l._sl4.jpg/640px-Achillea_millefolium_s._l._sl4.jpg"
+    image: "assets/images/achillea_millefolium_flora.jpg"
 },
 {
     id: "gen_adalia_bipunctata",
@@ -115,7 +115,7 @@ window.speciesData = [
     },
     size: { nl: "3.5–5.5 mm", en: "3.5–5.5 mm", fr: "3.5–5.5 mm" },
     diet: { nl: "Bladluizen", en: "Aphids", fr: "Pucerons" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adalia_bipunctata_LC0170.jpg/640px-Adalia_bipunctata_LC0170.jpg"
+    image: "assets/images/adalia_bipunctata_fauna.jpg"
 },
 {
     id: "gen_aegithalos_caudatus",
@@ -135,7 +135,7 @@ window.speciesData = [
     },
     size: { nl: "13–15 cm (waarvan 7–9 cm staart)", en: "13–15 cm (of which 7–9 cm tail)", fr: "13–15 cm (dont 7–9 cm de queue)" },
     diet: { nl: "Insecten, spinnen", en: "Insects, spiders", fr: "Insectes, araignées" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Aegithalos_caudatus_1_%28Marek_Szczepanek%29.jpg/640px-Aegithalos_caudatus_1_%28Marek_Szczepanek%29.jpg"
+    image: "assets/images/aegithalos_caudatus_fauna.jpg"
 },
 {
     id: "t10",
@@ -154,7 +154,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 30 m", en: "Up to 30 m", fr: "Jusqu'à 30 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Aesculus_hippocastanum_03.jpg/640px-Aesculus_hippocastanum_03.jpg"
+    image: "assets/images/aesculus_hippocastanum_trees.jpg"
 },
 {
     id: "gen_aeshna_cyanea",
@@ -173,7 +173,7 @@ window.speciesData = [
     },
     size: { nl: "6.7–7.6 cm", en: "6.7–7.6 cm", fr: "6.7–7.6 cm" },
     diet: { nl: "Insecten", en: "Insects", fr: "Insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Aeshna_cyanea_%28male%29_%28alias_Blue_Hawker%29.jpg/640px-Aeshna_cyanea_%28male%29_%28alias_Blue_Hawker%29.jpg"
+    image: "assets/images/aeshna_cyanea_fauna.jpg"
 },
 {
     id: "i16",
@@ -192,7 +192,7 @@ window.speciesData = [
     },
     size: { nl: "7–8 cm", en: "7–8 cm", fr: "7–8 cm" },
     diet: { nl: "Insecten", en: "Insects", fr: "Insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Aeshna_juncea_%28Common_Hawker%29.jpg/640px-Aeshna_juncea_%28Common_Hawker%29.jpg"
+    image: "assets/images/aeshna_juncea_insects.jpg"
 },
 {
     id: "ext_agaricus_campestris",
@@ -211,7 +211,7 @@ window.speciesData = [
     },
     size: { nl: "Hoed 5–10 cm", en: "Cap 5–10 cm", fr: "Chapeau 5–10 cm" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Agaricus_campestris_LC0196.jpg/640px-Agaricus_campestris_LC0196.jpg"
+    image: "assets/images/agaricus_campestris_fungi.jpg"
 },
 {
     id: "i7",
@@ -231,7 +231,7 @@ window.speciesData = [
     size: { nl: "5–6 cm spanwijdte", en: "5–6 cm wingspan", fr: "5–6 cm d'envergure" },
     diet: { nl: "Nectar; rupsen eten brandnetels", en: "Nectar; caterpillars eat nettles", fr: "Nectar; les chenilles mangent des orties" },
     funfact: { nl: "De oogvlekken lijken op de ogen van een uil om vijanden te verschrikken!", en: "The eyespots mimic owl eyes to frighten away predators!", fr: "Les taches oculaires imitent des yeux de hibou pour effrayer les prédateurs !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Aglais_io_qtl1.jpg/640px-Aglais_io_qtl1.jpg",
+    image: "assets/images/aglais_io_insects.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Aglais_io_top.jpg/640px-Aglais_io_top.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Aglais_io_European_Peacock_Butterfly_underside.jpg/640px-Aglais_io_European_Peacock_Butterfly_underside.jpg"
@@ -255,7 +255,7 @@ window.speciesData = [
     },
     size: { nl: "16–18 cm", en: "16–18 cm", fr: "16–18 cm" },
     diet: { nl: "Zaden, insecten", en: "Seeds, insects", fr: "Graines, insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Alauda_arvensis_-_01.jpg/640px-Alauda_arvensis_-_01.jpg"
+    image: "assets/images/alauda_arvensis_fauna.jpg"
 },
 {
     id: "b8",
@@ -276,7 +276,7 @@ window.speciesData = [
     size: { nl: "16–17 cm", en: "16–17 cm", fr: "16–17 cm" },
     diet: { nl: "Kleine vissen, waterinsecten", en: "Small fish, aquatic insects", fr: "Petits poissons, insectes aquatiques" },
     funfact: { nl: "De ijsvogel kan tot 7 meter per seconde duiken om een vis te vangen!", en: "The kingfisher dives at up to 40 km/h to catch a fish!", fr: "Le martin-pêcheur plonge à jusqu'à 40 km/h pour attraper un poisson !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Alcedo_atthis_-_Riserva_Naturale_del_Lago_di_Candia.jpg/640px-Alcedo_atthis_-_Riserva_Naturale_del_Lago_di_Candia.jpg",
+    image: "assets/images/alcedo_atthis_birds.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Alcedo_atthis_-_Riserve_naturali_della_Lombardia.jpg/640px-Alcedo_atthis_-_Riserve_naturali_della_Lombardia.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Alcedo_atthis_2_(Bohuš_Číčel).jpg/640px-Alcedo_atthis_2_(Bohuš_Číčel).jpg"
@@ -301,7 +301,7 @@ window.speciesData = [
     },
     size: { nl: "15–45 cm", en: "15–45 cm", fr: "15–45 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Alchemilla_vulgaris_%28Gew%C3%B6hnlicher_Frauenmantel%29.jpg/640px-Alchemilla_vulgaris_%28Gew%C3%B6hnlicher_Frauenmantel%29.jpg"
+    image: "assets/images/alchemilla_vulgaris_fauna.jpg"
 },
 {
     id: "gen_aleuria_aurantia",
@@ -321,7 +321,7 @@ window.speciesData = [
     },
     size: { nl: "2–10 cm breed", en: "2–10 cm wide", fr: "2–10 cm de large" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Aleuria_aurantia_Luc_Viatour.jpg/640px-Aleuria_aurantia_Luc_Viatour.jpg"
+    image: "assets/images/aleuria_aurantia_fauna.jpg"
 },
 {
     id: "gen_alliaria_petiolata",
@@ -340,7 +340,7 @@ window.speciesData = [
     },
     size: { nl: "20–100 cm", en: "20–100 cm", fr: "20–100 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Alliaria_petiolata.jpg/640px-Alliaria_petiolata.jpg"
+    image: "assets/images/alliaria_petiolata_fauna.jpg"
 },
 {
     id: "fl16",
@@ -361,7 +361,7 @@ window.speciesData = [
     size: { nl: "20–40 cm", en: "20–40 cm", fr: "20–40 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
     funfact: { nl: "Het Zoniënwoud bij Brussel heeft prachtige daslookbloeiers in april!", en: "The Sonian Forest near Brussels has stunning wild garlic carpets in April!", fr: "La forêt de Soignes près de Bruxelles a de magnifiques tapis d'ail des ours en avril !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Allium_ursinum_kz.jpg/640px-Allium_ursinum_kz.jpg"
+    image: "assets/images/allium_ursinum_flora.jpg"
 },
 {
     id: "t17",
@@ -380,7 +380,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 25 m", en: "Up to 25 m", fr: "Jusqu'à 25 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Alnus_glutinosa_male_catkins.jpg/640px-Alnus_glutinosa_male_catkins.jpg"
+    image: "assets/images/alnus_glutinosa_trees.jpg"
 },
 {
     id: "f1",
@@ -400,7 +400,7 @@ window.speciesData = [
     size: { nl: "8–20 cm breed", en: "8–20 cm wide", fr: "8–20 cm de large" },
     diet: { nl: "Symbiose met boomwortels", en: "Symbiosis with tree roots", fr: "Symbiose avec les racines des arbres" },
     funfact: { nl: "De witte stippen op de hoed zijn resten van de eierschaal waaruit de paddenstoel groeide!", en: "The white spots are remnants of the egg-like veil the mushroom grew inside!", fr: "Les points blancs sont des restes du voile universel dans lequel le champignon s'est développé !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Amanita_muscaria_%28fly_agaric%29.jpg/640px-Amanita_muscaria_%28fly_agaric%29.jpg",
+    image: "assets/images/amanita_muscaria_fungi.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Amanita_muscaria_3_vliegenzwammen_op_rij.jpg/640px-Amanita_muscaria_3_vliegenzwammen_op_rij.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Amanita_muscaria_LC0119.jpg/640px-Amanita_muscaria_LC0119.jpg"
@@ -424,7 +424,7 @@ window.speciesData = [
     },
     size: { nl: "50–65 cm", en: "50–65 cm", fr: "50–65 cm" },
     diet: { nl: "Planten, insecten, kleine vissen", en: "Plants, insects, small fish", fr: "Plantes, insectes, petits poissons" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Mallard_-_Anas_platyrhynchos_%28adult_male%29.jpg/640px-Mallard_-_Anas_platyrhynchos_%28adult_male%29.jpg"
+    image: "assets/images/anas_platyrhynchos_birds.jpg"
 },
 {
     id: "p2",
@@ -445,7 +445,7 @@ window.speciesData = [
     },
     size: { nl: "5–30 cm", en: "5–30 cm", fr: "5–30 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Anemone_nemorosa_LC0058.jpg/640px-Anemone_nemorosa_LC0058.jpg"
+    image: "assets/images/anemone_nemorosa_flora.jpg"
 },
 {
     id: "ext_anguis_fragilis",
@@ -464,7 +464,7 @@ window.speciesData = [
     },
     size: { nl: "30–50 cm", en: "30–50 cm", fr: "30–50 cm" },
     diet: { nl: "Slakken, wormen, insecten", en: "Slugs, worms, insects", fr: "Limaces, vers, insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Anguis_fragilis_03.jpg/640px-Anguis_fragilis_03.jpg"
+    image: "assets/images/anguis_fragilis_fauna.jpg"
 },
 {
     id: "gen_anser_anser",
@@ -484,7 +484,7 @@ window.speciesData = [
     },
     size: { nl: "74–91 cm", en: "74–91 cm", fr: "74–91 cm" },
     diet: { nl: "Grassen, waterplanten", en: "Grasses, aquatic plants", fr: "Graminées, plantes aquatiques" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Anser_anser_1_%28Piotr_Kuczynski%29.jpg/640px-Anser_anser_1_%28Piotr_Kuczynski%29.jpg"
+    image: "assets/images/anser_anser_fauna.jpg"
 },
 {
     id: "gen_anthocharis_cardamines",
@@ -503,7 +503,7 @@ window.speciesData = [
     },
     size: { nl: "4–5 cm spanwijdte", en: "4–5 cm wingspan", fr: "4–5 cm d'envergure" },
     diet: { nl: "Nectar van look-zonder-look e.a.", en: "Nectar from garlic mustard etc.", fr: "Nectar de l'alliaire et autres" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Anthocharis_cardamines_male.jpg/640px-Anthocharis_cardamines_male.jpg"
+    image: "assets/images/anthocharis_cardamines_fauna.jpg"
 },
 {
     id: "fl24",
@@ -523,7 +523,7 @@ window.speciesData = [
     },
     size: { nl: "60–150 cm", en: "60–150 cm", fr: "60–150 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Anthriscus_sylvestris_close_up.jpg/640px-Anthriscus_sylvestris_close_up.jpg"
+    image: "assets/images/anthriscus_sylvestris_flora.jpg"
 },
 {
     id: "i20",
@@ -543,7 +543,7 @@ window.speciesData = [
     size: { nl: "11–15 mm", en: "11–15 mm", fr: "11–15 mm" },
     diet: { nl: "Nectar, stuifmeel", en: "Nectar, pollen", fr: "Nectar, pollen" },
     funfact: { nl: "Een bij bezoekt 1.500 bloemen om één theelepel honing te maken!", en: "A bee visits 1,500 flowers to make one teaspoon of honey!", fr: "Une abeille visite 1 500 fleurs pour produire une cuillère à café de miel !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Apis_mellifera_Western_honey_bee.jpg/640px-Apis_mellifera_Western_honey_bee.jpg"
+    image: "assets/images/apis_mellifera_insects.jpg"
 },
 {
     id: "b7",
@@ -563,7 +563,7 @@ window.speciesData = [
     },
     size: { nl: "90–98 cm", en: "90–98 cm", fr: "90–98 cm" },
     diet: { nl: "Vis, amfibieën, kleine zoogdieren", en: "Fish, amphibians, small mammals", fr: "Poissons, amphibiens, petits mammifères" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ardea_cinerea_2_%28Piotr_Kuczynski%29.jpg/640px-Ardea_cinerea_2_%28Piotr_Kuczynski%29.jpg"
+    image: "assets/images/ardea_cinerea_birds.jpg"
 },
 {
     id: "fu18",
@@ -582,7 +582,7 @@ window.speciesData = [
     },
     size: { nl: "Hoed 3–15 cm breed", en: "Cap 3–15 cm wide", fr: "Chapeau 3–15 cm de large" },
     diet: { nl: "Parasiet/Saprofyt", en: "Parasite/Saprophyte", fr: "Parasite/Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Armillaria_mellea_JPG5.jpg/640px-Armillaria_mellea_JPG5.jpg"
+    image: "assets/images/armillaria_mellea_fungi.jpg"
 },
 {
     id: "fu21",
@@ -601,7 +601,7 @@ window.speciesData = [
     },
     size: { nl: "2–10 cm", en: "2–10 cm", fr: "2–10 cm" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Auricularia_auricula-judae_%28Holunder%29.jpg/640px-Auricularia_auricula-judae_%28Holunder%29.jpg"
+    image: "assets/images/auricularia_auricula-judae_fungi.jpg"
 },
 {
     id: "gen_aythya_fuligula",
@@ -643,7 +643,7 @@ window.speciesData = [
     },
     size: { nl: "2–15 cm", en: "2–15 cm", fr: "2–15 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bellis_perennis_white_%28aka%29.jpg/640px-Bellis_perennis_white_%28aka%29.jpg"
+    image: "assets/images/bellis_perennis_flora.jpg"
 },
 {
     id: "a1",
@@ -662,7 +662,7 @@ window.speciesData = [
     },
     size: { nl: "30–60 cm boven de grond", en: "30–60 cm above ground", fr: "30–60 cm au-dessus du sol" },
     diet: { nl: "Zonlicht, water, mineralen", en: "Sunlight, water, minerals", fr: "Lumière, eau, minéraux" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sugar_beet_raw.jpg/640px-Sugar_beet_raw.jpg"
+    image: "assets/images/beta_vulgaris_subsp._vulgaris_agriculture.jpg"
 },
 {
     id: "t3",
@@ -682,7 +682,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 30 m", en: "Up to 30 m", fr: "Jusqu'à 30 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Betula_pendula_Morton.jpg/640px-Betula_pendula_Morton.jpg"
+    image: "assets/images/betula_pendula_trees.jpg"
 },
 {
     id: "f2",
@@ -702,7 +702,7 @@ window.speciesData = [
     },
     size: { nl: "Hoed 7–30 cm breed", en: "Cap 7–30 cm wide", fr: "Chapeau 7–30 cm de large" },
     diet: { nl: "Symbiose met boomwortels (mycorrhiza)", en: "Symbiosis with tree roots (mycorrhiza)", fr: "Symbiose avec les racines des arbres (mycorhize)" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Boletus_edulis_IT.jpg/640px-Boletus_edulis_IT.jpg",
+    image: "assets/images/boletus_edulis_fungi.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Boletus_edulis_IT.jpg/640px-Boletus_edulis_IT.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Boletus_edulis_2.JPG/640px-Boletus_edulis_2.JPG"
@@ -725,7 +725,7 @@ window.speciesData = [
     },
     size: { nl: "1.5–1.8 cm", en: "1.5–1.8 cm", fr: "1.5–1.8 cm" },
     diet: { nl: "Nectar, stuifmeel", en: "Nectar, pollen", fr: "Nectar, pollen" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Bombus_pascuorum_-_Pszczo%C5%82a_%28Trzmiel%29_-_2009-07-10.jpg/640px-Bombus_pascuorum_-_Pszczo%C5%82a_%28Trzmiel%29_-_2009-07-10.jpg"
+    image: "assets/images/bombus_pascuorum_insects.jpg"
 },
 {
     id: "i12",
@@ -744,7 +744,7 @@ window.speciesData = [
     },
     size: { nl: "2–2.5 cm", en: "2–2.5 cm", fr: "2–2.5 cm" },
     diet: { nl: "Nectar, stuifmeel", en: "Nectar, pollen", fr: "Nectar, pollen" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bombus_terrestris_-_Bumblebee_2.jpg/640px-Bombus_terrestris_-_Bumblebee_2.jpg"
+    image: "assets/images/bombus_terrestris_insects.jpg"
 },
 {
     id: "ext_bufo_bufo",
@@ -763,7 +763,7 @@ window.speciesData = [
     },
     size: { nl: "6–15 cm", en: "6–15 cm", fr: "6–15 cm" },
     diet: { nl: "Slakken, wormen, insecten", en: "Slugs, worms, insects", fr: "Limaces, vers, insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bufo_bufo_Luc_Viatour.jpg/640px-Bufo_bufo_Luc_Viatour.jpg"
+    image: "assets/images/bufo_bufo_fauna.jpg"
 },
 {
     id: "b20",
@@ -784,7 +784,7 @@ window.speciesData = [
     },
     size: { nl: "50–57 cm", en: "50–57 cm", fr: "50–57 cm" },
     diet: { nl: "Muizen, konijnen, wormen, aas", en: "Mice, rabbits, worms, carrion", fr: "Souris, lapins, vers, charogne" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Buteo_buteo_1_%28Piotr_Kuczynski%29.jpg/640px-Buteo_buteo_1_%28Piotr_Kuczynski%29.jpg",
+    image: "assets/images/buteo_buteo_birds.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Buteo_buteo_-_01.jpg/640px-Buteo_buteo_-_01.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Buteo_buteo_in_flight.jpg/640px-Buteo_buteo_in_flight.jpg"
@@ -808,7 +808,7 @@ window.speciesData = [
     size: { nl: "Hoed 3–12 cm breed", en: "Cap 3–12 cm wide", fr: "Chapeau 3–12 cm de large" },
     diet: { nl: "Symbiose met boomwortels", en: "Symbiosis with tree roots", fr: "Symbiose avec les racines des arbres" },
     funfact: { nl: "De cantharel ruikt naar abrikozen en is een van de lekkerste paddenstoelen ter wereld!", en: "The chanterelle smells of apricots and is one of the world's most delicious mushrooms!", fr: "La chanterelle sent l'abricot et est l'un des champignons les plus délicieux du monde !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Cantharellus_cibarius_4.jpg/640px-Cantharellus_cibarius_4.jpg",
+    image: "assets/images/cantharellus_cibarius_fungi.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Cantharellus_cibarius_2009_G1.jpg/640px-Cantharellus_cibarius_2009_G1.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kantarellen.jpg/640px-Kantarellen.jpg"
@@ -831,7 +831,7 @@ window.speciesData = [
     },
     size: { nl: "95–135 cm", en: "95–135 cm", fr: "95–135 cm" },
     diet: { nl: "Kruiden, grassen, bladeren, knoppen", en: "Herbs, grasses, leaves, buds", fr: "Herbes, graminées, feuilles, bourgeons" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Ree.jpg/640px-Ree.jpg"
+    image: "assets/images/capreolus_capreolus_fauna.jpg"
 },
 {
     id: "fl11",
@@ -851,7 +851,7 @@ window.speciesData = [
     },
     size: { nl: "30–60 cm", en: "30–60 cm", fr: "30–60 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Centaurea_cyanus-P1010440-02.jpg/640px-Centaurea_cyanus-P1010440-02.jpg"
+    image: "assets/images/centaurea_cyanus_flora.jpg"
 },
 {
     id: "b5",
@@ -871,7 +871,7 @@ window.speciesData = [
     },
     size: { nl: "40–42 cm", en: "40–42 cm", fr: "40–42 cm" },
     diet: { nl: "Zaden, bladeren, knoppen", en: "Seeds, leaves, buds", fr: "Graines, feuilles, bourgeons" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Columba_palumbus_-_01.jpg/640px-Columba_palumbus_-_01.jpg"
+    image: "assets/images/columba_palumbus_birds.jpg"
 },
 {
     id: "fu11",
@@ -890,7 +890,7 @@ window.speciesData = [
     },
     size: { nl: "5–15 cm hoog", en: "5–15 cm high", fr: "5–15 cm de haut" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Coprinus_comatus_%28O.F.Mull.%29_Pers.%2813985569714%29.jpg/640px-Coprinus_comatus_%28O.F.Mull.%29_Pers.%2813985569714%29.jpg"
+    image: "assets/images/coprinus_comatus_fungi.jpg"
 },
 {
     id: "b16",
@@ -910,7 +910,7 @@ window.speciesData = [
     },
     size: { nl: "11–12 cm", en: "11–12 cm", fr: "11–12 cm" },
     diet: { nl: "Insecten, zaden", en: "Insects, seeds", fr: "Insectes, graines" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cyanistes_caeruleus_-_Parus_caeruleus_%28aka%29.jpg/640px-Cyanistes_caeruleus_-_Parus_caeruleus_%28aka%29.jpg"
+    image: "assets/images/cyanistes_caeruleus_birds.jpg"
 },
 {
     id: "fu14",
@@ -929,7 +929,7 @@ window.speciesData = [
     },
     size: { nl: "2–5 cm breed", en: "2–5 cm wide", fr: "2–5 cm de large" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Daldinia_concentrica_Schweden.jpg/640px-Daldinia_concentrica_Schweden.jpg"
+    image: "assets/images/daldinia_concentrica_fungi.jpg"
 },
 {
     id: "fl22",
@@ -949,7 +949,7 @@ window.speciesData = [
     },
     size: { nl: "30–90 cm", en: "30–90 cm", fr: "30–90 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Daucus_carota_ssp_carota_close_umbel.jpg/640px-Daucus_carota_ssp_carota_close_umbel.jpg"
+    image: "assets/images/daucus_carota_flora.jpg"
 },
 {
     id: "b1",
@@ -970,7 +970,7 @@ window.speciesData = [
     size: { nl: "12–14 cm", en: "12–14 cm", fr: "12–14 cm" },
     diet: { nl: "Insecten, zaden, bessen", en: "Insects, seeds, berries", fr: "Insectes, graines, baies" },
     funfact: { nl: "Het roodborstje is één van de enige vogels die 's nachts zingt in steden, aangetrokken door kunstlicht!", en: "The robin is one of the few birds that sings at night in cities, attracted by artificial light!", fr: "Le rouge-gorge est l'un des rares oiseaux à chanter la nuit en ville, attiré par la lumière artificielle !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Erithacus_rubecula_with_cocked_head.jpg/640px-Erithacus_rubecula_with_cocked_head.jpg",
+    image: "assets/images/erithacus_rubecula_birds.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Erithacus_rubecula_with_cocked_head.jpg/640px-Erithacus_rubecula_with_cocked_head.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/EuropeanRobin.jpg/640px-EuropeanRobin.jpg"
@@ -995,7 +995,7 @@ window.speciesData = [
     size: { nl: "Tot 40 m", en: "Up to 40 m", fr: "Jusqu'à 40 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
     funfact: { nl: "Het Hallerbos bij Brussel staat beroemd om zijn prachtige paarse tapijt van wilde hyacinten elke lente!", en: "The Hallerbos near Brussels is famous for its stunning purple carpet of bluebells every spring!", fr: "Le Hallerbos près de Bruxelles est célèbre pour son magnifique tapis violet de jacinthes des bois chaque printemps !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Fagus_sylvatica1.jpg/640px-Fagus_sylvatica1.jpg"
+    image: "assets/images/fagus_sylvatica_trees.jpg"
 },
 {
     id: "b19",
@@ -1015,7 +1015,7 @@ window.speciesData = [
     },
     size: { nl: "32–35 cm", en: "32–35 cm", fr: "32–35 cm" },
     diet: { nl: "Muizen, grote insecten", en: "Mice, large insects", fr: "Souris, gros insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Falco_tinnunculus_-_01.jpg/640px-Falco_tinnunculus_-_01.jpg"
+    image: "assets/images/falco_tinnunculus_birds.jpg"
 },
 {
     id: "fu12",
@@ -1034,7 +1034,7 @@ window.speciesData = [
     },
     size: { nl: "10–25 cm breed", en: "10–25 cm wide", fr: "10–25 cm de large" },
     diet: { nl: "Parasiet/Saprofyt", en: "Parasite/Saprophyte", fr: "Parasite/Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Fistulina_hepatica_JPG3.jpg/640px-Fistulina_hepatica_JPG3.jpg"
+    image: "assets/images/fistulina_hepatica_fungi.jpg"
 },
 {
     id: "i15",
@@ -1053,7 +1053,7 @@ window.speciesData = [
     },
     size: { nl: "1.2–1.5 cm", en: "1.2–1.5 cm", fr: "1.2–1.5 cm" },
     diet: { nl: "Planten, dode insecten", en: "Plants, dead insects", fr: "Plantes, insectes morts" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Forficula_auricularia.jpg/640px-Forficula_auricularia.jpg"
+    image: "assets/images/forficula_auricularia_insects.jpg"
 },
 {
     id: "t11",
@@ -1072,7 +1072,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 40 m", en: "Up to 40 m", fr: "Jusqu'à 40 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Fraxinus_excelsior_Morton.jpg/640px-Fraxinus_excelsior_Morton.jpg"
+    image: "assets/images/fraxinus_excelsior_trees.jpg"
 },
 {
     id: "b6",
@@ -1092,7 +1092,7 @@ window.speciesData = [
     },
     size: { nl: "14–16 cm", en: "14–16 cm", fr: "14–16 cm" },
     diet: { nl: "Zaden, insecten (voor jongen)", en: "Seeds, insects (for chicks)", fr: "Graines, insectes (pour les petits)" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Fringilla_coelebs_%28male_-_Canary_Islands%29.jpg/640px-Fringilla_coelebs_%28male_-_Canary_Islands%29.jpg"
+    image: "assets/images/fringilla_coelebs_birds.jpg"
 },
 {
     id: "b22",
@@ -1112,7 +1112,7 @@ window.speciesData = [
     },
     size: { nl: "32–35 cm", en: "32–35 cm", fr: "32–35 cm" },
     diet: { nl: "Alleseter, eikels", en: "Omnivore, acorns", fr: "Omnivore, glands" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Garrulus_glandarius_-_02.jpg/640px-Garrulus_glandarius_-_02.jpg"
+    image: "assets/images/garrulus_glandarius_birds.jpg"
 },
 {
     id: "fl14",
@@ -1132,7 +1132,7 @@ window.speciesData = [
     },
     size: { nl: "15–30 cm", en: "15–30 cm", fr: "15–30 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Galium_odoratum.jpg/640px-Galium_odoratum.jpg"
+    image: "assets/images/galium_odoratum_flora.jpg"
 },
 {
     id: "gen_gallinula_chloropus",
@@ -1153,7 +1153,7 @@ window.speciesData = [
     },
     size: { nl: "30–38 cm", en: "30–38 cm", fr: "30–38 cm" },
     diet: { nl: "Waterplanten, insecten, wormen", en: "Water plants, insects, worms", fr: "Plantes aquatiques, insectes, vers" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Gallinula_chloropus_-_Riserva_Naturale_del_Lago_di_Candia.jpg/640px-Gallinula_chloropus_-_Riserva_Naturale_del_Lago_di_Candia.jpg"
+    image: "assets/images/gallinula_chloropus_fauna.jpg"
 },
 {
     id: "fl12",
@@ -1173,7 +1173,7 @@ window.speciesData = [
     },
     size: { nl: "10–20 cm", en: "10–20 cm", fr: "10–20 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Glechoma_hederacea_close_up.jpg/640px-Glechoma_hederacea_close_up.jpg"
+    image: "assets/images/glechoma_hederacea_flora.jpg"
 },
 {
     id: "i8",
@@ -1192,7 +1192,7 @@ window.speciesData = [
     },
     size: { nl: "5–6 cm spanwijdte", en: "5–6 cm wingspan", fr: "5–6 cm d'envergure" },
     diet: { nl: "Nectar", en: "Nectar", fr: "Nectar" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Gonepteryx_rhamni_%28male%29.jpg/640px-Gonepteryx_rhamni_%28male%29.jpg"
+    image: "assets/images/gonepteryx_rhamni_insects.jpg"
 },
 {
     id: "fl28",
@@ -1212,7 +1212,7 @@ window.speciesData = [
     },
     size: { nl: "1–2 m", en: "1–2 m", fr: "1–2 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Heracleum_sphondylium_%28umbel%29.jpg/640px-Heracleum_sphondylium_%28umbel%29.jpg"
+    image: "assets/images/heracleum_sphondylium_flora.jpg"
 },
 {
     id: "b24",
@@ -1232,7 +1232,7 @@ window.speciesData = [
     },
     size: { nl: "17–19 cm", en: "17–19 cm", fr: "17–19 cm" },
     diet: { nl: "Vliegende insecten", en: "Flying insects", fr: "Insectes volants" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hirundo_rustica_-_2.jpg/640px-Hirundo_rustica_-_2.jpg"
+    image: "assets/images/hirundo_rustica_birds.jpg"
 },
 {
     id: "a7",
@@ -1251,7 +1251,7 @@ window.speciesData = [
     },
     size: { nl: "Klimmer tot 6 m", en: "Climber up to 6 m", fr: "Grimpant jusqu'à 6 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Humulus_lupulus_-_hops_-_female.jpg/640px-Humulus_lupulus_-_hops_-_female.jpg"
+    image: "assets/images/humulus_lupulus_agriculture.jpg"
 },
 {
     id: "fl5",
@@ -1272,7 +1272,7 @@ window.speciesData = [
     size: { nl: "20–50 cm", en: "20–50 cm", fr: "20–50 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
     funfact: { nl: "Het Hallerbos trekt elk jaar tienduizenden bezoekers voor het blauwe tapijt van wilde hyacinten!", en: "The Hallerbos attracts tens of thousands of visitors every year for the blue carpet of bluebells!", fr: "Le Hallerbos attire des dizaines de milliers de visiteurs chaque année pour son tapis bleu de jacinthes !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Bluebell_-_geograph.org.uk_-_1439093.jpg/640px-Bluebell_-_geograph.org.uk_-_1439093.jpg",
+    image: "assets/images/hyacinthoides_non-scripta_flora.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hallerbos_in_bloom_2013.jpg/640px-Hallerbos_in_bloom_2013.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hyacinthoides_non-scripta_%28Hallerbos%29.jpg/640px-Hyacinthoides_non-scripta_%28Hallerbos%29.jpg"
@@ -1296,7 +1296,7 @@ window.speciesData = [
     size: { nl: "5–8 cm", en: "5–8 cm", fr: "5–8 cm" },
     diet: { nl: "Sap van bomen (volwassenen); hout (larven)", en: "Tree sap (adults); wood (larvae)", fr: "Sève des arbres (adultes); bois (larves)" },
     funfact: { nl: "Het vliegend hert is met uitsterven bedreigd en wordt beschermd door Europese wetgeving.", en: "The stag beetle is threatened with extinction and protected under European law.", fr: "Le lucane cerf-volant est menacé d'extinction et protégé par la législation européenne." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Lucanus_cervus_male_Richard_Bartz.jpg/640px-Lucanus_cervus_male_Richard_Bartz.jpg",
+    image: "assets/images/lucanus_cervus_insects.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Lucanus_cervus_male_top_down.jpg/640px-Lucanus_cervus_male_top_down.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/LucanuscervusFemale.jpg/640px-LucanuscervusFemale.jpg"
@@ -1319,7 +1319,7 @@ window.speciesData = [
     },
     size: { nl: "4–5 cm spanwijdte", en: "4–5 cm wingspan", fr: "4–5 cm d'envergure" },
     diet: { nl: "Nectar", en: "Nectar", fr: "Nectar" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Macroglossum_stellatarum_%28Labrador%29.jpg/640px-Macroglossum_stellatarum_%28Labrador%29.jpg"
+    image: "assets/images/macroglossum_stellatarum_insects.jpg"
 },
 {
     id: "m3",
@@ -1339,7 +1339,7 @@ window.speciesData = [
     },
     size: { nl: "60–90 cm", en: "60–90 cm", fr: "60–90 cm" },
     diet: { nl: "Regenwormen, insecten, fruit, kleine zoogdieren", en: "Earthworms, insects, fruit, small mammals", fr: "Vers de terre, insectes, fruits, petits mammifères" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Meles_meles_2011.jpg/640px-Meles_meles_2011.jpg"
+    image: "assets/images/meles_meles_fauna.jpg"
 },
 {
     id: "m8",
@@ -1358,7 +1358,7 @@ window.speciesData = [
     },
     size: { nl: "50–70 cm", en: "50–70 cm", fr: "50–70 cm" },
     diet: { nl: "Grassen, kruiden, schors", en: "Grasses, herbs, bark", fr: "Graminées, herbes, écorce" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Lepus_europaeus_Pallas%2C_1778.jpg/640px-Lepus_europaeus_Pallas%2C_1778.jpg"
+    image: "assets/images/lepus_europaeus_fauna.jpg"
 },
 {
     id: "fl18",
@@ -1378,7 +1378,7 @@ window.speciesData = [
     },
     size: { nl: "30–60 cm", en: "30–60 cm", fr: "30–60 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Leucanthemum_vulgare_%27Maikonigin%27_Ox-eye_Daisy_1500px.jpg/640px-Leucanthemum_vulgare_%27Maikonigin%27_Ox-eye_Daisy_1500px.jpg"
+    image: "assets/images/leucanthemum_vulgare_flora.jpg"
 },
 {
     id: "fu22",
@@ -1397,7 +1397,7 @@ window.speciesData = [
     },
     size: { nl: "2–6 cm", en: "2–6 cm", fr: "2–6 cm" },
     diet: { nl: "Mycorrhiza", en: "Mycorrhiza", fr: "Mycorhize" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Laccaria_amethystina_JPG1.jpg/640px-Laccaria_amethystina_JPG1.jpg"
+    image: "assets/images/laccaria_amethystina_fungi.jpg"
 },
 {
     id: "fu23",
@@ -1416,7 +1416,7 @@ window.speciesData = [
     },
     size: { nl: "8–15 cm", en: "8–15 cm", fr: "8–15 cm" },
     diet: { nl: "Mycorrhiza", en: "Mycorrhiza", fr: "Mycorhize" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Leccinum_scabrum_Tl%281%29.jpg/640px-Leccinum_scabrum_Tl%281%29.jpg"
+    image: "assets/images/leccinum_scabrum_fungi.jpg"
 },
 {
     id: "fu13",
@@ -1435,7 +1435,7 @@ window.speciesData = [
     },
     size: { nl: "3–8 cm hoog", en: "3–8 cm high", fr: "3–8 cm de haut" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Lycoperdon_perlatum.JPG/640px-Lycoperdon_perlatum.JPG"
+    image: "assets/images/lycoperdon_perlatum_fungi.jpg"
 },
 {
     id: "fu17",
@@ -1454,7 +1454,7 @@ window.speciesData = [
     },
     size: { nl: "Hoed 15–30 cm breed", en: "Cap 15–30 cm wide", fr: "Chapeau 15–30 cm de large" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Macrolepiota_procera_Tl%281%29.jpg/640px-Macrolepiota_procera_Tl%281%29.jpg"
+    image: "assets/images/macrolepiota_procera_fungi.jpg"
 },
 {
     id: "m10",
@@ -1473,7 +1473,7 @@ window.speciesData = [
     },
     size: { nl: "40–50 cm", en: "40–50 cm", fr: "40–50 cm" },
     diet: { nl: "Kleine dieren, eieren, vruchten", en: "Small animals, eggs, fruits", fr: "Petits animaux, œufs, fruits" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Martes-foina-fcm.jpg/640px-Martes-foina-fcm.jpg"
+    image: "assets/images/martes_foina_fauna.jpg"
 },
 {
     id: "b25",
@@ -1493,7 +1493,7 @@ window.speciesData = [
     },
     size: { nl: "18 cm", en: "18 cm", fr: "18 cm" },
     diet: { nl: "Insecten", en: "Insects", fr: "Insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Motacilla_alba_alba_PCB.jpg/640px-Motacilla_alba_alba_PCB.jpg"
+    image: "assets/images/motacilla_alba_birds.jpg"
 },
 {
     id: "m16",
@@ -1512,7 +1512,7 @@ window.speciesData = [
     },
     size: { nl: "15–20 cm", en: "15–20 cm", fr: "15–20 cm" },
     diet: { nl: "Muizen, woelmuizen", en: "Mice, voles", fr: "Souris, campagnols" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Mustela_nivalis_-_weasel_wildlife.jpg/640px-Mustela_nivalis_-_weasel_wildlife.jpg"
+    image: "assets/images/mustela_nivalis_fauna.jpg"
 },
 {
     id: "m9",
@@ -1531,7 +1531,7 @@ window.speciesData = [
     },
     size: { nl: "35–50 cm", en: "35–50 cm", fr: "35–50 cm" },
     diet: { nl: "Grassen, wortels, planten", en: "Grasses, roots, plants", fr: "Graminées, racines, plantes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Oryctolagus_cuniculus_Rcdo.jpg/640px-Oryctolagus_cuniculus_Rcdo.jpg"
+    image: "assets/images/oryctolagus_cuniculus_fauna.jpg"
 },
 {
     id: "i14",
@@ -1550,7 +1550,7 @@ window.speciesData = [
     },
     size: { nl: "1.2–1.4 cm", en: "1.2–1.4 cm", fr: "1.2–1.4 cm" },
     diet: { nl: "Plantensappen", en: "Plant juices", fr: "Sucs végétaux" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Palomena_prasina_MHNT.jpg/640px-Palomena_prasina_MHNT.jpg"
+    image: "assets/images/palomena_prasina_insects.jpg"
 },
 {
     id: "fl3",
@@ -1570,7 +1570,7 @@ window.speciesData = [
     },
     size: { nl: "30–60 cm", en: "30–60 cm", fr: "30–60 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Papaver_rhoeas_%28aka%29.jpg/640px-Papaver_rhoeas_%28aka%29.jpg"
+    image: "assets/images/papaver_rhoeas_flora.jpg"
 },
 {
     id: "b3",
@@ -1590,7 +1590,7 @@ window.speciesData = [
     },
     size: { nl: "14 cm", en: "14 cm", fr: "14 cm" },
     diet: { nl: "Insecten, zaden, noten", en: "Insects, seeds, nuts", fr: "Insectes, graines, noix" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Parus_major_Luc_Viatour.jpg/640px-Parus_major_Luc_Viatour.jpg"
+    image: "assets/images/parus_major_birds.jpg"
 },
 {
     id: "ext_passer_domesticus",
@@ -1611,7 +1611,7 @@ window.speciesData = [
     },
     size: { nl: "14–16 cm", en: "14–16 cm", fr: "14–16 cm" },
     diet: { nl: "Zaden, insecten (voor jongen)", en: "Seeds, insects (for chicks)", fr: "Graines, insectes (pour les petits)" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Passer_domesticus_male_%281%29.jpg/640px-Passer_domesticus_male_%281%29.jpg"
+    image: "assets/images/passer_domesticus_fauna.jpg"
 },
 {
     id: "b4",
@@ -1632,7 +1632,7 @@ window.speciesData = [
     size: { nl: "40–50 cm", en: "40–50 cm", fr: "40–50 cm" },
     diet: { nl: "Omnivoor (insecten, eieren, afval)", en: "Omnivorous (insects, eggs, scraps)", fr: "Omnivore (insectes, œufs, déchets)" },
     funfact: { nl: "De ekster is een van de weinige dieren die zichzelf kan herkennen in een spiegel!", en: "The magpie is one of the very few animals that can recognise itself in a mirror!", fr: "La pie est l'un des très rares animaux capables de se reconnaître dans un miroir !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Pica_pica_1_%28Piotr_Kuczynski%29.jpg/640px-Pica_pica_1_%28Piotr_Kuczynski%29.jpg"
+    image: "assets/images/pica_pica_birds.jpg"
 },
 {
     id: "t19",
@@ -1651,7 +1651,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 40 m", en: "Up to 40 m", fr: "Jusqu'à 40 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Picea_abies_Szczecin_2008.jpg/640px-Picea_abies_Szczecin_2008.jpg"
+    image: "assets/images/picea_abies_trees.jpg"
 },
 {
     id: "b23",
@@ -1671,7 +1671,7 @@ window.speciesData = [
     },
     size: { nl: "30–33 cm", en: "30–33 cm", fr: "30–33 cm" },
     diet: { nl: "Mieren", en: "Ants", fr: "Fourmis" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Picus_viridis_-01.jpg/640px-Picus_viridis_-01.jpg"
+    image: "assets/images/picus_viridis_birds.jpg"
 },
 {
     id: "i9",
@@ -1690,7 +1690,7 @@ window.speciesData = [
     },
     size: { nl: "5–6 cm spanwijdte", en: "5–6 cm wingspan", fr: "5–6 cm d'envergure" },
     diet: { nl: "Nectar; rupsen eten kool", en: "Nectar; caterpillars eat cabbage", fr: "Nectar; les chenilles mangent du chou" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pieris_brassicae_2.jpg/640px-Pieris_brassicae_2.jpg"
+    image: "assets/images/pieris_brassicae_insects.jpg"
 },
 {
     id: "i10",
@@ -1709,7 +1709,7 @@ window.speciesData = [
     },
     size: { nl: "2.5–3 cm spanwijdte", en: "2.5–3 cm wingspan", fr: "2.5–3 cm d'envergure" },
     diet: { nl: "Nectar", en: "Nectar", fr: "Nectar" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Polyommatus_icarus_%28Common_blue%29.jpg/640px-Polyommatus_icarus_%28Common_blue%29.jpg"
+    image: "assets/images/polyommatus_icarus_insects.jpg"
 },
 {
     id: "i27",
@@ -1728,7 +1728,7 @@ window.speciesData = [
     },
     size: { nl: "9–12 mm", en: "9–12 mm", fr: "9–12 mm" },
     diet: { nl: "Plantensappen, zaden", en: "Plant juices, seeds", fr: "Sucs végétaux, graines" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Pyrrhocoris_apterus_-_mating.jpg/640px-Pyrrhocoris_apterus_-_mating.jpg"
+    image: "assets/images/pyrrhocoris_apterus_insects.jpg"
 },
 {
     id: "t1",
@@ -1748,7 +1748,7 @@ window.speciesData = [
     size: { nl: "Tot 40 m hoog", en: "Up to 40 m tall", fr: "Jusqu'à 40 m de haut" },
     diet: { nl: "Zonlicht, water, mineralen", en: "Sunlight, water, minerals", fr: "Lumière, eau, minéraux" },
     funfact: { nl: "Een zomereik kan meer dan 1.000 jaar oud worden en biedt een thuis voor honderden diersoorten!", en: "A pedunculate oak can live more than 1,000 years and provides a home for hundreds of animal species!", fr: "Un chêne pédonculé peut vivre plus de 1 000 ans et abrite des centaines d'espèces animales !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Quercus_robur_-_Eiche_-_Stieleiche.jpg/640px-Quercus_robur_-_Eiche_-_Stieleiche.jpg",
+    image: "assets/images/quercus_robur_trees.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Quercus_robur_-_summer.jpg/640px-Quercus_robur_-_summer.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Quercus_robur_acorn_and_leaves.jpg/640px-Quercus_robur_acorn_and_leaves.jpg"
@@ -1772,7 +1772,7 @@ window.speciesData = [
     },
     size: { nl: "30–100 cm", en: "30–100 cm", fr: "30–100 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ranunculus_acris_L._-_panoramio.jpg/640px-Ranunculus_acris_L._-_panoramio.jpg"
+    image: "assets/images/ranunculus_acris_flora.jpg"
 },
 {
     id: "fl26",
@@ -1792,7 +1792,7 @@ window.speciesData = [
     },
     size: { nl: "30–80 cm", en: "30–80 cm", fr: "30–80 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Reseda_lutea_-_yellow_mignonette.jpg/640px-Reseda_lutea_-_yellow_mignonette.jpg"
+    image: "assets/images/reseda_lutea_flora.jpg"
 },
 {
     id: "fu20",
@@ -1811,7 +1811,7 @@ window.speciesData = [
     },
     size: { nl: "1–5 cm breed", en: "1–5 cm wide", fr: "1–5 cm de large" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Sarcoscypha_coccinea_%28Scarlet_Elf_Cup%29.jpg/640px-Sarcoscypha_coccinea_%28Scarlet_Elf_Cup%29.jpg"
+    image: "assets/images/sarcoscypha_coccinea_fungi.jpg"
 },
 {
     id: "f11",
@@ -1832,7 +1832,7 @@ window.speciesData = [
     size: { nl: "18–25 cm (+ 15–20 cm staart)", en: "18–25 cm (+ 15–20 cm tail)", fr: "18–25 cm (+ 15–20 cm de queue)" },
     diet: { nl: "Noten, zaden, bessen, schors", en: "Nuts, seeds, berries, bark", fr: "Noix, graines, baies, écorce" },
     funfact: { nl: "Een eekhoorn begraaft duizenden noten per jaar en vindt er maar 70-80% van terug — de rest groeit uit tot nieuwe bomen!", en: "A squirrel buries thousands of nuts per year and only finds 70–80% of them — the rest grow into new trees!", fr: "Un écureuil enterre des milliers de noix par an et n'en retrouve que 70–80% — les autres deviennent de nouveaux arbres !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Sciurus_vulgaris_Aarau.jpg/640px-Sciurus_vulgaris_Aarau.jpg",
+    image: "assets/images/sciurus_vulgaris_fauna.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Eekhoorntje.jpg/640px-Eekhoorntje.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Sciurus_vulgaris_red_squirrel_in_autumn_tree.jpg/640px-Sciurus_vulgaris_red_squirrel_in_autumn_tree.jpg"
@@ -1856,7 +1856,7 @@ window.speciesData = [
     },
     size: { nl: "30–90 cm", en: "30–90 cm", fr: "30–90 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Silene_dioica_%281%29.jpg/640px-Silene_dioica_%281%29.jpg"
+    image: "assets/images/silene_dioica_flora.jpg"
 },
 {
     id: "a2",
@@ -1876,7 +1876,7 @@ window.speciesData = [
     size: { nl: "30–90 cm", en: "30–90 cm", fr: "30–90 cm" },
     diet: { nl: "Zonlicht, water, mineralen", en: "Sunlight, water, minerals", fr: "Lumière, eau, minéraux" },
     funfact: { nl: "België produceert meer dan 5 miljoen ton aardappelen per jaar en exporteert de meeste frietjes ter wereld!", en: "Belgium produces over 5 million tonnes of potatoes per year and exports the most fries in the world!", fr: "La Belgique produit plus de 5 millions de tonnes de pommes de terre par an et exporte le plus de frites au monde !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Potato_je.jpg/640px-Potato_je.jpg"
+    image: "assets/images/solanum_tuberosum_agriculture.jpg"
 },
 {
     id: "t20",
@@ -1896,7 +1896,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 15 m", en: "Up to 15 m", fr: "Jusqu'à 15 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sorbus_aucuparia_berries.jpg/640px-Sorbus_aucuparia_berries.jpg"
+    image: "assets/images/sorbus_aucuparia_trees.jpg"
 },
 {
     id: "b18",
@@ -1917,7 +1917,7 @@ window.speciesData = [
     size: { nl: "20–22 cm", en: "20–22 cm", fr: "20–22 cm" },
     diet: { nl: "Insecten, vruchten", en: "Insects, fruits", fr: "Insectes, fruits" },
     funfact: { nl: "Een murmuratie van spreeuwen kan uit meer dan een miljoen vogels bestaan en is een van de meest spectaculaire verschijnselen in de natuur!", en: "A starling murmuration can contain over a million birds and is one of nature's most spectacular phenomena!", fr: "Une murmuration d'étourneaux peut contenir plus d'un million d'oiseaux !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Common_starling_%28Sturnus_vulgaris%29.jpg/640px-Common_starling_%28Sturnus_vulgaris%29.jpg"
+    image: "assets/images/sturnus_vulgaris_birds.jpg"
 },
 {
     id: "f6",
@@ -1936,7 +1936,7 @@ window.speciesData = [
     },
     size: { nl: "100–180 cm", en: "100–180 cm", fr: "100–180 cm" },
     diet: { nl: "Wortels, eikels, insecten, aas", en: "Roots, acorns, insects, carrion", fr: "Racines, glands, insectes, charogne" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Wildschwein_Schwarzwald.jpg/640px-Wildschwein_Schwarzwald.jpg"
+    image: "assets/images/sus_scrofa_fauna.jpg"
 },
 {
     id: "fl4",
@@ -1956,7 +1956,7 @@ window.speciesData = [
     },
     size: { nl: "5–30 cm", en: "5–30 cm", fr: "5–30 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Dandelion_closeup.JPG/640px-Dandelion_closeup.JPG"
+    image: "assets/images/taraxacum_officinale_flora.jpg"
 },
 {
     id: "fu6",
@@ -1975,7 +1975,7 @@ window.speciesData = [
     },
     size: { nl: "3–10 cm breed", en: "3–10 cm wide", fr: "3–10 cm de large" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Trametes_versicolor_%28Turkeytail%29.jpg/640px-Trametes_versicolor_%28Turkeytail%29.jpg"
+    image: "assets/images/trametes_versicolor_fungi.jpg"
 },
 {
     id: "fu28",
@@ -1995,7 +1995,7 @@ window.speciesData = [
     },
     size: { nl: "2–10 cm breed", en: "2–10 cm wide", fr: "2–10 cm de large" },
     diet: { nl: "Parasiet op andere schimmels", en: "Parasite on other fungi", fr: "Parasite d'autres champignons" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Tremella_mesenterica_Ident_01.jpg/640px-Tremella_mesenterica_Ident_01.jpg"
+    image: "assets/images/tremella_mesenterica_fungi.jpg"
 },
 {
     id: "fl10_trifolium",
@@ -2015,7 +2015,7 @@ window.speciesData = [
     },
     size: { nl: "5–20 cm", en: "5–20 cm", fr: "5–20 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/White_clover_01.jpg/640px-White_clover_01.jpg"
+    image: "assets/images/trifolium_repens_flora.jpg"
 },
 {
     id: "b17",
@@ -2035,7 +2035,7 @@ window.speciesData = [
     },
     size: { nl: "24–25 cm", en: "24–25 cm", fr: "24–25 cm" },
     diet: { nl: "Wormen, insecten, bessen", en: "Worms, insects, berries", fr: "Vers, insectes, baies" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Amsel_%28Turdus_merula%29_Maennchen.jpg/640px-Amsel_%28Turdus_merula%29_Maennchen.jpg"
+    image: "assets/images/turdus_merula_birds.jpg"
 },
 {
     id: "t12",
@@ -2054,7 +2054,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 30 m", en: "Up to 30 m", fr: "Jusqu'à 30 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ulmus_procera_-_Hedgerow_Elm.jpg/640px-Ulmus_procera_-_Hedgerow_Elm.jpg"
+    image: "assets/images/ulmus_procera_trees.jpg"
 },
 {
     id: "fl17",
@@ -2074,7 +2074,7 @@ window.speciesData = [
     },
     size: { nl: "30–150 cm", en: "30–150 cm", fr: "30–150 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Urtica_dioica_-_stinging_nettle.jpg/640px-Urtica_dioica_-_stinging_nettle.jpg"
+    image: "assets/images/urtica_dioica_flora.jpg"
 },
 {
     id: "i6_vanessa",
@@ -2095,7 +2095,7 @@ window.speciesData = [
     size: { nl: "5–6 cm spanwijdte", en: "5–6 cm wingspan", fr: "5–6 cm d'envergure" },
     diet: { nl: "Nectar, rottend fruit", en: "Nectar, rotting fruit", fr: "Nectar, fruits pourrissants" },
     funfact: { nl: "De atalanta was de eerste vlinder die op de Mount Everest werd waargenomen!", en: "The Red Admiral was the first butterfly ever recorded on Mount Everest!", fr: "Le Vulcain est le premier papillon jamais observé sur l'Everest !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Vanessa_atalanta_Luc_Viatour.jpg/640px-Vanessa_atalanta_Luc_Viatour.jpg",
+    image: "assets/images/vanessa_atalanta_insects.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Vanessa_atalanta_Sottomarina.jpg/640px-Vanessa_atalanta_Sottomarina.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Vanessa_atalanta_underside.JPG/640px-Vanessa_atalanta_underside.JPG"
@@ -2120,7 +2120,7 @@ window.speciesData = [
     size: { nl: "18–35 mm", en: "18–35 mm", fr: "18–35 mm" },
     diet: { nl: "Insecten, nectar, sappen", en: "Insects, nectar, sap", fr: "Insectes, nectar, sève" },
     funfact: { nl: "De hoornaar is beschermd in België en Duitsland — het is verboden zijn nest te vernietigen!", en: "The European hornet is protected in Belgium and Germany — it is illegal to destroy its nest!", fr: "Le frelon européen est protégé en Belgique et en Allemagne — il est illégal de détruire son nid !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Vespa_crabro_%28European_hornet%29.jpg/640px-Vespa_crabro_%28European_hornet%29.jpg"
+    image: "assets/images/vespa_crabro_insects.jpg"
 },
 {
     id: "i19",
@@ -2139,7 +2139,7 @@ window.speciesData = [
     },
     size: { nl: "12–17 mm", en: "12–17 mm", fr: "12–17 mm" },
     diet: { nl: "Suikers, insecten", en: "Sugars, insects", fr: "Sucres, insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Vespula_vulgaris-2.jpg/640px-Vespula_vulgaris-2.jpg"
+    image: "assets/images/vespula_vulgaris_insects.jpg"
 },
 {
     id: "fl8",
@@ -2159,7 +2159,7 @@ window.speciesData = [
     },
     size: { nl: "5–15 cm", en: "5–15 cm", fr: "5–15 cm" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Viola_odorata_fg01.jpg/640px-Viola_odorata_fg01.jpg"
+    image: "assets/images/viola_odorata_flora.jpg"
 },
 {
     id: "f1_vulpes",
@@ -2178,7 +2178,7 @@ window.speciesData = [
     },
     size: { nl: "60–90 cm", en: "60–90 cm", fr: "60–90 cm" },
     diet: { nl: "Kleine zoogdieren, vogels, vruchten", en: "Small mammals, birds, fruits", fr: "Petits mammifères, oiseaux, fruits" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Vulpes_vulpes_ssp_fulvus.jpg/640px-Vulpes_vulpes_ssp_fulvus.jpg",
+    image: "assets/images/vulpes_vulpes_fauna.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Vulpes_vulpes_-_British_Wildlife_Centre-3.jpg/640px-Vulpes_vulpes_-_British_Wildlife_Centre-3.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat_November_2010-1a.jpg/640px-Cat_November_2010-1a.jpg"
@@ -2201,7 +2201,7 @@ window.speciesData = [
     },
     size: { nl: "3–10 cm hoog", en: "3–10 cm high", fr: "3–10 cm de haut" },
     diet: { nl: "Saprofyt", en: "Saprophyte", fr: "Saprophyte" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Xylaria_polymorpha_-_dead_mans_fingers.jpg/640px-Xylaria_polymorpha_-_dead_mans_fingers.jpg"
+    image: "assets/images/xylaria_polymorpha_fungi.jpg"
 },
 {
     id: "i29",
@@ -2220,7 +2220,7 @@ window.speciesData = [
     },
     size: { nl: "2–3 cm", en: "2–3 cm", fr: "2–3 cm" },
     diet: { nl: "Nectar, stuifmeel", en: "Nectar, pollen", fr: "Nectar, pollen" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Xylocopa_violacea_%28Purple_Carpenter_Bee%29.jpg/640px-Xylocopa_violacea_%28Purple_Carpenter_Bee%29.jpg"
+    image: "assets/images/xylocopa_violacea_insects.jpg"
 },
 // ============================================================
 // Additional key species from the original dataset retained
@@ -2244,7 +2244,7 @@ window.speciesData = [
     size: { nl: "80–100 cm (+ 25–35 cm staart)", en: "80–100 cm (+ 25–35 cm tail)", fr: "80–100 cm (+ 25–35 cm de queue)" },
     diet: { nl: "Boomschors, waterplanten, riet", en: "Tree bark, aquatic plants, reeds", fr: "Écorce d'arbres, plantes aquatiques, roseaux" },
     funfact: { nl: "Een beverdam kan tot 100 meter lang worden en houdt volledig een beek op!", en: "A beaver dam can be up to 100 metres long and completely holds back a stream!", fr: "Un barrage de castor peut atteindre 100 mètres de long et retenir entièrement un ruisseau !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Beaver_gnawing_tree.jpg/640px-Beaver_gnawing_tree.jpg"
+    image: "assets/images/castor_fiber_fauna.jpg"
 },
 {
     id: "f8",
@@ -2264,7 +2264,7 @@ window.speciesData = [
     size: { nl: "20–30 cm", en: "20–30 cm", fr: "20–30 cm" },
     diet: { nl: "Slakken, kevers, wormen, rupsen", en: "Slugs, beetles, worms, caterpillars", fr: "Limaces, coléoptères, vers, chenilles" },
     funfact: { nl: "Een egel kan tot 40 km per nacht lopen op zoek naar voedsel!", en: "A hedgehog can travel up to 40 km in a single night searching for food!", fr: "Un hérisson peut parcourir jusqu'à 40 km en une seule nuit à la recherche de nourriture !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Erinaceus_europaeus_LC0119.jpg/640px-Erinaceus_europaeus_LC0119.jpg",
+    image: "assets/images/erinaceus_europaeus_fauna.jpg",
     images: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/640px-24701-nature-natural-beauty.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Erinaceus_europaeus_LC0119.jpg/640px-Erinaceus_europaeus_LC0119.jpg"
@@ -2287,7 +2287,7 @@ window.speciesData = [
     },
     size: { nl: "0.8–1.2 cm", en: "0.8–1.2 cm", fr: "0.8–1.2 cm" },
     diet: { nl: "Nectar, stuifmeel", en: "Nectar, pollen", fr: "Nectar, pollen" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Episyrphus_balteatus_-_Marmalade_hoverfly.jpg/640px-Episyrphus_balteatus_-_Marmalade_hoverfly.jpg"
+    image: "assets/images/episyrphus_balteatus_insects.jpg"
 },
 {
     id: "i6_coc",
@@ -2306,7 +2306,7 @@ window.speciesData = [
     },
     size: { nl: "5–8 mm", en: "5–8 mm", fr: "5–8 mm" },
     diet: { nl: "Bladluizen", en: "Aphids", fr: "Pucerons" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Coccinella_septempunctata_LC0267.jpg/640px-Coccinella_septempunctata_LC0267.jpg"
+    image: "assets/images/coccinella_septempunctata_insects.jpg"
 },
 {
     id: "gen_corvus_corax",
@@ -2326,7 +2326,7 @@ window.speciesData = [
     },
     size: { nl: "56–69 cm", en: "56–69 cm", fr: "56–69 cm" },
     diet: { nl: "Aas, kleine dieren, afval", en: "Carrion, small animals, scraps", fr: "Charogne, petits animaux, déchets" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Common_raven_pair_%28Corvus_corax%29.jpg/640px-Common_raven_pair_%28Corvus_corax%29.jpg"
+    image: "assets/images/corvus_corax_birds.jpg"
 },
 {
     id: "t13",
@@ -2345,7 +2345,7 @@ window.speciesData = [
     },
     size: { nl: "3–6 m (vaak als struik)", en: "3–6 m (often shrubby)", fr: "3–6 m (souvent arbustif)" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Corylus_avellana_catkins.jpg/640px-Corylus_avellana_catkins.jpg"
+    image: "assets/images/corylus_avellana_trees.jpg"
 },
 {
     id: "t15",
@@ -2364,7 +2364,7 @@ window.speciesData = [
     },
     size: { nl: "Tot 30 m", en: "Up to 30 m", fr: "Jusqu'à 30 m" },
     diet: { nl: "Zonlicht, water", en: "Sunlight, water", fr: "Lumière, eau" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Castanea_sativa_%28Miller%29_fruits.jpg/640px-Castanea_sativa_%28Miller%29_fruits.jpg"
+    image: "assets/images/castanea_sativa_trees.jpg"
 },
 {
     id: "gen_cuculus_canorus",
@@ -2385,7 +2385,7 @@ window.speciesData = [
     size: { nl: "32–34 cm", en: "32–34 cm", fr: "32–34 cm" },
     diet: { nl: "Insecten, rupsen (ook harige)", en: "Insects, caterpillars (including hairy ones)", fr: "Insectes, chenilles (y compris poilues)" },
     funfact: { nl: "Een koekoeksjong produceert een smeekgeluid dat klinkt als een heel nest hongerige kuikens — de pleegouder voedt hem non-stop!", en: "A cuckoo chick produces begging calls that sound like a whole nest of hungry chicks — the foster parent feeds it non-stop!", fr: "Un coucou produit des cris qui ressemblent à tout un nid de poussins affamés !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Cuculus_canorus_vogelartinfo.jpg/640px-Cuculus_canorus_vogelartinfo.jpg"
+    image: "assets/images/cuculus_canorus_fauna.jpg"
 },
 {
     id: "m17",
@@ -2404,7 +2404,7 @@ window.speciesData = [
     },
     size: { nl: "12–16 cm", en: "12–16 cm", fr: "12–16 cm" },
     diet: { nl: "Regenwormen, insectenlarven", en: "Earthworms, insect larvae", fr: "Vers de terre, larves d'insectes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Talpa_europaea_%28Wald-%29.jpg/640px-Talpa_europaea_%28Wald-%29.jpg"
+    image: "assets/images/talpa_europaea_fauna.jpg"
 },
 {
     id: "gen_falco_peregrinus",
@@ -2425,7 +2425,7 @@ window.speciesData = [
     size: { nl: "36–48 cm", en: "36–48 cm", fr: "36–48 cm" },
     diet: { nl: "Vogels (vooral duiven)", en: "Birds (especially pigeons)", fr: "Oiseaux (surtout pigeons)" },
     funfact: { nl: "De slechtvalk duikt sneller dan 300 km/u — sneller dan een Formule 1-auto!", en: "The peregrine dives faster than 300 km/h — faster than a Formula 1 car!", fr: "Le faucon pèlerin plonge à plus de 300 km/h — plus vite qu'une voiture de F1 !" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Falco_peregrinus_-_01.jpg/640px-Falco_peregrinus_-_01.jpg"
+    image: "assets/images/falco_peregrinus_birds.jpg"
 },
     // ═══════════════════════════════════════════════════════════════
     // NEW SPECIES — added batch 2
@@ -2441,7 +2441,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Grove den", en: "Scots Pine", fr: "Pin sylvestre" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Pinus_sylvestris_Lozere.jpg/640px-Pinus_sylvestris_Lozere.jpg",
+        image: "assets/images/pinus_sylvestris_trees.jpg",
         images: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Pinus_sylvestris_Lozere.jpg/640px-Pinus_sylvestris_Lozere.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pinus_sylvestris_bark.jpg/640px-Pinus_sylvestris_bark.jpg"
@@ -2467,7 +2467,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Europese lork", en: "European Larch", fr: "Mélèze d'Europe" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Larix_decidua_2.jpg/640px-Larix_decidua_2.jpg",
+        image: "assets/images/larix_decidua_trees.jpg",
         images: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Larix_decidua_2.jpg/640px-Larix_decidua_2.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Larix_decidua_autumn.jpg/640px-Larix_decidua_autumn.jpg"
@@ -2493,7 +2493,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Taxus", en: "Common Yew", fr: "If commun" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Taxus_baccata_foliage.jpg/640px-Taxus_baccata_foliage.jpg",
+        image: "assets/images/taxus_baccata_trees.jpg",
         images: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Taxus_baccata_foliage.jpg/640px-Taxus_baccata_foliage.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Taxus_baccata_berries.jpg/640px-Taxus_baccata_berries.jpg"
@@ -2520,7 +2520,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Winterlinde", en: "Small-leaved Lime", fr: "Tilleul à petites feuilles" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Tilia_cordata_003.jpg/640px-Tilia_cordata_003.jpg",
+        image: "assets/images/tilia_cordata_trees.jpg",
         images: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Tilia_cordata_003.jpg/640px-Tilia_cordata_003.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Tilia_cordata_flowers.jpg/640px-Tilia_cordata_flowers.jpg"
@@ -2546,7 +2546,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Haagbeuk", en: "Common Hornbeam", fr: "Charme commun" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Carpinus_betulus3.jpg/640px-Carpinus_betulus3.jpg",
+        image: "assets/images/carpinus_betulus_trees.jpg",
         images: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Carpinus_betulus3.jpg/640px-Carpinus_betulus3.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Carpinus_betulus_catkins.jpg/640px-Carpinus_betulus_catkins.jpg"
@@ -2572,7 +2572,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Schietwilg", en: "White Willow", fr: "Saule blanc" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Salix_alba_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-252.jpg/640px-Salix_alba_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-252.jpg",
+        image: "assets/images/salix_alba_trees.jpg",
         rarity: { nl: "Algemeen", en: "Common", fr: "Commun" },
         habitat: { nl: "Rivieroevers, natte graslanden, polders", en: "Riverbanks, wet meadows, polders", fr: "Berges, prairies humides, polders" },
         size: { nl: "10–25 m", en: "10–25 m", fr: "10–25 m" },
@@ -2594,7 +2594,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Ratelpopulier", en: "European Aspen", fr: "Tremble commun" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Populus_tremula_002.jpg/640px-Populus_tremula_002.jpg",
+        image: "assets/images/populus_tremula_trees.jpg",
         rarity: { nl: "Vrij algemeen", en: "Fairly common", fr: "Assez commun" },
         habitat: { nl: "Bosranden, kapvlakten, natte gronden", en: "Forest edges, clearings, damp soils", fr: "Lisières, clairières, sols humides" },
         size: { nl: "15–25 m", en: "15–25 m", fr: "15–25 m" },
@@ -2616,7 +2616,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Zoete kers", en: "Wild Cherry", fr: "Merisier" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Prunus_avium_Prague_2016_1.jpg/640px-Prunus_avium_Prague_2016_1.jpg",
+        image: "assets/images/prunus_avium_fauna.jpg",
         images: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Prunus_avium_Prague_2016_1.jpg/640px-Prunus_avium_Prague_2016_1.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Prunus_avium_flowers.jpg/640px-Prunus_avium_flowers.jpg"
@@ -2644,7 +2644,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Gulden sleutelbloem", en: "Cowslip", fr: "Coucou" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Primula_veris_flowers.jpg/640px-Primula_veris_flowers.jpg",
+        image: "assets/images/primula_veris_flora.jpg",
         rarity: { nl: "Vrij algemeen", en: "Fairly common", fr: "Assez commun" },
         habitat: { nl: "Graslanden, bermen, kalkrijke bodems", en: "Grasslands, verges, calcareous soils", fr: "Prairies, talus, sols calcaires" },
         size: { nl: "10–30 cm", en: "10–30 cm", fr: "10–30 cm" },
@@ -2798,7 +2798,7 @@ window.speciesData = [
     iucn: "LC",
         plantGrade: "dicot",
         name: { nl: "Witte dovenetel", en: "White Dead-nettle", fr: "Lamier blanc" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Lamium_album_L.jpg/640px-Lamium_album_L.jpg",
+        image: "assets/images/lamium_album_flora.jpg",
         rarity: { nl: "Zeer algemeen", en: "Very common", fr: "Très commun" },
         habitat: { nl: "Wegbermen, tuinen, ruigtes, bosranden", en: "Roadsides, gardens, wasteland, forest edges", fr: "Bords de route, jardins, friches, lisières" },
         size: { nl: "20–60 cm", en: "20–60 cm", fr: "20–60 cm" },
@@ -2821,7 +2821,7 @@ window.speciesData = [
         difficulty: "hard",
     iucn: "LC",
         name: { nl: "Dwergmuis", en: "Harvest Mouse", fr: "Rat des moissons" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Micromys_minutus_-_Smallest_of_rodents.jpg/640px-Micromys_minutus_-_Smallest_of_rodents.jpg",
+        image: "assets/images/micromys_minutus_fauna.jpg",
         rarity: { nl: "Vrij zeldzaam", en: "Fairly rare", fr: "Assez rare" },
         habitat: { nl: "Graanvelden, rietmoerassen, hoge grassen", en: "Cornfields, reedbeds, tall grasslands", fr: "Champs de céréales, roselières, hautes herbes" },
         size: { nl: "5–7 cm", en: "5–7 cm", fr: "5–7 cm" },
@@ -2841,7 +2841,7 @@ window.speciesData = [
         difficulty: "hard",
     iucn: "LC",
         name: { nl: "Hermelijn", en: "Stoat", fr: "Hermine" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mustela_erminea_upright.jpg/640px-Mustela_erminea_upright.jpg",
+        image: "assets/images/mustela_erminea_fauna.jpg",
         rarity: { nl: "Vrij zeldzaam", en: "Fairly rare", fr: "Assez rare" },
         habitat: { nl: "Bossen, heggen, akkers, wegbermen", en: "Forests, hedgerows, farmland, roadsides", fr: "Forêts, haies, zones agricoles, bords de route" },
         size: { nl: "19–31 cm", en: "19–31 cm", fr: "19–31 cm" },
@@ -2864,7 +2864,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Cygnus+olor",
         name: { nl: "Knobbelzwaan", en: "Mute Swan", fr: "Cygne tuberculé" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Cygnus_olor_on_water.jpg/640px-Cygnus_olor_on_water.jpg",
+        image: "assets/images/cygnus_olor_fauna.jpg",
         images: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Cygnus_olor_on_water.jpg/640px-Cygnus_olor_on_water.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Cygnus_olor_in_flight.jpg/640px-Cygnus_olor_in_flight.jpg"
@@ -2889,7 +2889,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Larus+argentatus",
         name: { nl: "Zilvermeeuw", en: "Herring Gull", fr: "Goéland argenté" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Herring_gull_arp.jpg/640px-Herring_gull_arp.jpg",
+        image: "assets/images/larus_argentatus_fauna.jpg",
         rarity: { nl: "Algemeen", en: "Common", fr: "Commun" },
         habitat: { nl: "Kust, rivieren, steden, vuilnisbelten", en: "Coast, rivers, cities, landfills", fr: "Côte, rivières, villes, décharges" },
         size: { nl: "55–65 cm", en: "55–65 cm", fr: "55–65 cm" },
@@ -2910,7 +2910,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Emberiza+citrinella",
         name: { nl: "Geelgors", en: "Yellowhammer", fr: "Bruant jaune" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yellowhammer_male_edit2.jpg/640px-Yellowhammer_male_edit2.jpg",
+        image: "assets/images/emberiza_citrinella_fauna.jpg",
         rarity: { nl: "Vrij algemeen", en: "Fairly common", fr: "Assez commun" },
         habitat: { nl: "Landbouwgebied, heggen, bermen", en: "Farmland, hedgerows, verges", fr: "Zone agricole, haies, talus" },
         size: { nl: "16–17 cm", en: "16–17 cm", fr: "16–17 cm" },
@@ -2931,7 +2931,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Streptopelia+decaocto",
         name: { nl: "Turkse tortel", en: "Eurasian Collared Dove", fr: "Tourterelle turque" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Streptopelia_decaocto_-_Turtle_Dove_03.jpg/640px-Streptopelia_decaocto_-_Turtle_Dove_03.jpg",
+        image: "assets/images/streptopelia_decaocto_fauna.jpg",
         rarity: { nl: "Zeer algemeen", en: "Very common", fr: "Très commun" },
         habitat: { nl: "Tuinen, parken, stedelijk gebied", en: "Gardens, parks, urban areas", fr: "Jardins, parcs, zones urbaines" },
         size: { nl: "31–33 cm", en: "31–33 cm", fr: "31–33 cm" },
@@ -2953,7 +2953,7 @@ window.speciesData = [
         difficulty: "medium",
     iucn: "LC",
         name: { nl: "Rode bosmier", en: "Red Wood Ant", fr: "Fourmi des bois" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Formica_rufa_on_branch.jpg/640px-Formica_rufa_on_branch.jpg",
+        image: "assets/images/formica_rufa_insects.jpg",
         rarity: { nl: "Vrij algemeen", en: "Fairly common", fr: "Assez commun" },
         habitat: { nl: "Dennenbossen, gemengde bossen, zandige bodems", en: "Pine forests, mixed forests, sandy soils", fr: "Pinèdes, forêts mixtes, sols sableux" },
         size: { nl: "4–9 mm", en: "4–9 mm", fr: "4–9 mm" },
@@ -2994,7 +2994,7 @@ window.speciesData = [
         category: "fungi",
         difficulty: "easy",
         name: { nl: "Oesterzwam", en: "Oyster Mushroom", fr: "Pleurote en huître" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Pleurotus_ostreatus_JPG6.jpg/640px-Pleurotus_ostreatus_JPG6.jpg",
+        image: "assets/images/pleurotus_ostreatus_fungi.jpg",
         rarity: { nl: "Algemeen", en: "Common", fr: "Commun" },
         habitat: { nl: "Dode loofbomen, beukenstronken, herfst/winter", en: "Dead broadleaf trees, beech stumps, autumn/winter", fr: "Troncs d'arbres morts, souches de hêtre, automne/hiver" },
         size: { nl: "5–25 cm", en: "5–25 cm", fr: "5–25 cm" },
@@ -3014,7 +3014,7 @@ window.speciesData = [
         difficulty: "medium",
     iucn: "LC",
         name: { nl: "Fluweelepoot", en: "Velvet Shank", fr: "Collybie à pied velouté" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Flammulina_velutipes_AU01.jpg/640px-Flammulina_velutipes_AU01.jpg",
+        image: "assets/images/flammulina_velutipes_fungi.jpg",
         rarity: { nl: "Vrij algemeen", en: "Fairly common", fr: "Assez commun" },
         habitat: { nl: "Dode stronken van loofbomen, wintermaanden", en: "Dead broadleaf stumps and logs, winter months", fr: "Souches de feuillus morts, mois d'hiver" },
         size: { nl: "2–10 cm", en: "2–10 cm", fr: "2–10 cm" },
@@ -3034,7 +3034,7 @@ window.speciesData = [
         difficulty: "hard",
     iucn: "LC",
         name: { nl: "Gewone morielje", en: "Common Morel", fr: "Morille comestible" },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Morchella_esculenta_vulgaris_1.jpg/640px-Morchella_esculenta_vulgaris_1.jpg",
+        image: "assets/images/morchella_esculenta_fauna.jpg",
         rarity: { nl: "Zeldzaam", en: "Rare", fr: "Rare" },
         habitat: { nl: "Loofbossen, tuinen, wegbermen — vroege lente", en: "Broadleaf forests, gardens, verges — early spring", fr: "Forêts feuillues, jardins, talus — début de printemps" },
         size: { nl: "5–15 cm", en: "5–15 cm", fr: "5–15 cm" },
@@ -3077,7 +3077,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Phoenicurus+ochruros",
     name: { nl: "Zwarte roodstaart", en: "Black redstart", fr: "Rougequeue noir" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Phoenicurus_ochruros_male.jpg/640px-Phoenicurus_ochruros_male.jpg",
+    image: "assets/images/phoenicurus_ochruros_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Phoenicurus_ochruros_male.jpg/640px-Phoenicurus_ochruros_male.jpg"],
     description: { nl: "De zwarte roodstaart is herkenbaar aan zijn oranje-roodachtige staart die voortdurend trilt. Het mannetje is donkergrijs-zwart, het vrouwtje bruiner. Nestelt in steden, industriegebieden en rotswanden. Zingt al vroeg in de ochtend.", en: "The black redstart is recognised by its constantly quivering orange-red tail. Males are dark grey-black, females browner. Nests in towns, industrial sites and rocky faces. Sings very early.", fr: "Le rougequeue noir se reconnaît à sa queue orange-rouge qui tremble constamment. Mâle gris-noir foncé, femelle plus brunâtre. Niche en villes, sites industriels et falaises." },
     habitat: { nl: "Steden, industriegebieden, rotswanden", en: "Towns, industrial sites, rocky faces", fr: "Villes, sites industriels, falaises rocheuses" },
@@ -3104,7 +3104,7 @@ window.speciesData = [
     difficulty: "hard",
     iucn: "NT",
     name: { nl: "Gewone grootoorvleermuis", en: "Serotine bat", fr: "Grande sérotine" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Eptesicus_serotinus_01.jpg/640px-Eptesicus_serotinus_01.jpg",
+    image: "assets/images/eptesicus_serotinus_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Eptesicus_serotinus_01.jpg/640px-Eptesicus_serotinus_01.jpg"],
     description: { nl: "De grootoorvleermuis is een van de grootste vleermuizen van België. Donkerbruine vacht met lichtere buik. Vliegt laag over graslanden en parken op zoek naar grote kevers en nachtvlinders. Nestelt in dakruimten van gebouwen.", en: "The serotine is one of Belgium's largest bats. Dark brown fur with lighter belly. Flies low over grassland and parks hunting large beetles and moths. Roosts in building roof spaces.", fr: "La grande sérotine est l'une des plus grandes chauves-souris de Belgique. Pelage brun foncé, ventre plus clair. Vole bas sur prairies et parcs, chasse gros coléoptères et papillons de nuit." },
     habitat: { nl: "Gebouwen, tuinen, parken, graslanden", en: "Buildings, gardens, parks, grassland", fr: "Bâtiments, jardins, parcs, prairies" },
@@ -3122,7 +3122,7 @@ window.speciesData = [
     difficulty: "medium",
     iucn: "LC",
     name: { nl: "Ringslang", en: "Grass snake", fr: "Couleuvre à collier" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Natrix_natrix_01.jpg/640px-Natrix_natrix_01.jpg",
+    image: "assets/images/natrix_natrix_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Natrix_natrix_01.jpg/640px-Natrix_natrix_01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Natrix_natrix_collaris_LC0079.jpg/640px-Natrix_natrix_collaris_LC0079.jpg"],
     description: {
       nl: "De ringslang is de meest voorkomende slang van België. Herkenbaar aan de gele-witte halfmaan vlekken achter de kop. Volledig onschadelijk voor mensen. Leeft dicht bij water en eet voornamelijk kikkers en salamanders.",
@@ -3143,7 +3143,7 @@ window.speciesData = [
     difficulty: "hard",
     iucn: "LC",
     name: { nl: "Adder", en: "Common adder", fr: "Vipère péliade" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Vipera_berus_LC0119.jpg/640px-Vipera_berus_LC0119.jpg",
+    image: "assets/images/vipera_berus_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Vipera_berus_LC0119.jpg/640px-Vipera_berus_LC0119.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Vipera_berus_berus_male.jpg/640px-Vipera_berus_berus_male.jpg"],
     description: {
       nl: "De adder is de enige giftige slang van België en de meest noordelijk levende gifslang ter wereld. Herkenbaar aan het zigzagpatroon op de rug. De beet is zelden dodelijk maar vereist medische aandacht. Sterk bedreigd in België.",
@@ -3164,7 +3164,7 @@ window.speciesData = [
     difficulty: "hard",
     iucn: "LC",
     name: { nl: "Zandhagedis", en: "Sand lizard", fr: "Lézard des souches" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Lacerta_agilis_%28male%29.jpg/640px-Lacerta_agilis_%28male%29.jpg",
+    image: "assets/images/lacerta_agilis_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Lacerta_agilis_%28male%29.jpg/640px-Lacerta_agilis_%28male%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Lacerta_agilis_female_dsc00890.jpg/640px-Lacerta_agilis_female_dsc00890.jpg"],
     description: {
       nl: "De zandhagedis is de meest kleurrijke hagedis van België. Het mannetje heeft in de broedtijd felgroene flanken. Leeft op zonnige, droge plaatsen met open zand. Streng beschermd, zeldzaam en achteruitgaand.",
@@ -3206,7 +3206,7 @@ window.speciesData = [
     difficulty: "easy",
     iucn: "LC",
     name: { nl: "Bruine kikker", en: "Common frog", fr: "Grenouille rousse" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rana_temporaria_LC0073.jpg/640px-Rana_temporaria_LC0073.jpg",
+    image: "assets/images/rana_temporaria_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rana_temporaria_LC0073.jpg/640px-Rana_temporaria_LC0073.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Rana_temporaria_mating.jpg/640px-Rana_temporaria_mating.jpg"],
     description: {
       nl: "De bruine kikker is de meest algemene kikkersoort van België. Bruin tot roodbruin van kleur met een donker masker achter het oog. Trekt elk voorjaar massaal naar vijvers en poelen om te paaien. Het gekwaak is in maart en april overal te horen.",
@@ -3228,7 +3228,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Corvus+corone",
     name: { nl: "Zwarte kraai", en: "Carrion crow", fr: "Corneille noire" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Corvus_corone_Luc_Viatour.jpg/640px-Corvus_corone_Luc_Viatour.jpg",
+    image: "assets/images/corvus_corone_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Corvus_corone_Luc_Viatour.jpg/640px-Corvus_corone_Luc_Viatour.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Corvus_corone_1_%28Marek_Szczepanek%29.jpg/640px-Corvus_corone_1_%28Marek_Szczepanek%29.jpg"],
     description: {
       nl: "De zwarte kraai is een van de meest intelligente vogels ter wereld. Volledig gitzwart, groter dan een spreeuw en kleiner dan een raaf. Leeft overal — van stadscentrum tot boerenland. Geeft geen krimp voor mensen.",
@@ -3250,7 +3250,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Apus+apus",
     name: { nl: "Gierzwaluw", en: "Common swift", fr: "Martinet noir" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Apus_apus_01.jpg/640px-Apus_apus_01.jpg",
+    image: "assets/images/apus_apus_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Apus_apus_01.jpg/640px-Apus_apus_01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Apus_apus_flock.jpg/640px-Apus_apus_flock.jpg"],
     description: {
       nl: "De gierzwaluw brengt zijn hele leven vliegend door — hij eet, slaapt en paart in de lucht. Herkenbaar aan de sikkelachtige vleugels en het kenmerkende schril gillen 's avonds boven steden. Aanwezig van mei tot augustus.",
@@ -3272,7 +3272,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Turdus+philomelos",
     name: { nl: "Zanglijster", en: "Song thrush", fr: "Grive musicienne" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Song_thrush_2.jpg/640px-Song_thrush_2.jpg",
+    image: "assets/images/turdus_philomelos_birds.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Song_thrush_2.jpg/640px-Song_thrush_2.jpg"],
     description: {
       nl: "De zanglijster is kleiner dan de merel, met een bruine rug en gevlekte borst. Beroemd om zijn herhaald en gevarieerd gezang waarbij elke zin twee à vier keer wordt herhaald. Slaat slakkenhuizen open op een steen.",
@@ -3294,7 +3294,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Dendrocopos+major",
     name: { nl: "Grote bonte specht", en: "Great spotted woodpecker", fr: "Pic épeiche" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dendrocopos_major_-_01.jpg/640px-Dendrocopos_major_-_01.jpg",
+    image: "assets/images/dendrocopos_major_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dendrocopos_major_-_01.jpg/640px-Dendrocopos_major_-_01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Dendrocopos_major_male_2.jpg/640px-Dendrocopos_major_male_2.jpg"],
     description: {
       nl: "De grote bonte specht is de meest voorkomende specht van België. Zwart-wit met een felrode onderstuit. Mannetjes hebben ook een rode nekband. Trommelt luid op dode takken en hakt holen in bomen voor zijn nest.",
@@ -3316,7 +3316,7 @@ window.speciesData = [
     iucn: "LC",
     xenoCanto: "https://xeno-canto.org/explore?query=Sitta+europaea",
     name: { nl: "Boomklever", en: "Eurasian nuthatch", fr: "Sittelle torchepot" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Sitta-europaea-004.jpg/640px-Sitta-europaea-004.jpg",
+    image: "assets/images/sitta_europaea_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Sitta-europaea-004.jpg/640px-Sitta-europaea-004.jpg"],
     description: {
       nl: "De boomklever is de enige Europese vogel die ook kopje-onder langs boomstammen naar beneden loopt. Blauwgrijs bovenlichaam, zwart oogstreepje, oranje-roestbruine flanken. Plakt zijn nestingang dicht met modder tot precies de juiste grootte.",
@@ -3341,7 +3341,7 @@ window.speciesData = [
     iucn: "LC",
     name: { nl: "Pinksterbloem", en: "Cuckooflower", fr: "Cardamine des prés" },
     plantGrade: "dicot",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Cardamine_pratensis.jpg/640px-Cardamine_pratensis.jpg",
+    image: "assets/images/cardamine_pratensis_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Cardamine_pratensis.jpg/640px-Cardamine_pratensis.jpg"],
     description: {
       nl: "De pinksterbloem kleurt natte weiden lila-roze in april en mei. Slanke plant met geveerde bladeren en vier paarse tot witte bloemblaadjes. Waardplant voor de vlinder oranjetipje. Bloeit rond Pinksteren, vandaar de naam.",
@@ -3363,7 +3363,7 @@ window.speciesData = [
     difficulty: "hard",
     iucn: "LC",
     name: { nl: "Regenboogrussula", en: "Charcoal burner", fr: "Russule charbonnière" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Russula_cyanoxantha_LC0083.jpg/640px-Russula_cyanoxantha_LC0083.jpg",
+    image: "assets/images/russula_cyanoxantha_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Russula_cyanoxantha_LC0083.jpg/640px-Russula_cyanoxantha_LC0083.jpg"],
     description: {
       nl: "De regenboogrussula is een van de meest voorkomende en eetbare russulazwammen. Hoed veelkleurig — paars, groen, violet — vandaar de naam. Witte kieuwen die opmerkelijk soepel zijn en niet afbreken. Groeit in loofbossen.",
@@ -3384,7 +3384,7 @@ window.speciesData = [
     difficulty: "medium",
     iucn: "LC",
     name: { nl: "Zwavelkopje", en: "Sulphur tuft", fr: "Hypholome en touffes" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Hypholoma_fasciculare_LC0014.jpg/640px-Hypholoma_fasciculare_LC0014.jpg",
+    image: "assets/images/hypholoma_fasciculare_fauna.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Hypholoma_fasciculare_LC0014.jpg/640px-Hypholoma_fasciculare_LC0014.jpg"],
     description: {
       nl: "Het zwavelkopje groeit het hele jaar door in grote trossen op dood loofhout. Felgele tot okerkleurige hoed met groenachtige kieuwen op rijpere exemplaren. Giftig — bitter van smaak. Een van de meest voorkomende paddenstoelen van Europa.",
@@ -3405,7 +3405,7 @@ window.speciesData = [
     difficulty: "hard",
     iucn: "NT",
     name: { nl: "Koninginnepage", en: "Swallowtail butterfly", fr: "Machaon" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Papilio_machaon_04.jpg/640px-Papilio_machaon_04.jpg",
+    image: "assets/images/papilio_machaon_insects.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Papilio_machaon_04.jpg/640px-Papilio_machaon_04.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Papilio_machaon_caterpillar.jpg/640px-Papilio_machaon_caterpillar.jpg"],
     description: {
       nl: "De koninginnepage is de grootste dagvlinder van België. Geel met zwarte aders en opvallende staartaanhangsels. De felgekleurde rups eet schermbloemigen. Steeds zeldzamer in België door habitatverlies.",
@@ -3426,7 +3426,7 @@ window.speciesData = [
     difficulty: "medium",
     iucn: "LC",
     name: { nl: "Distelvlinder", en: "Painted lady", fr: "Belle-dame" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Vanessa_cardui_Luc_Viatour.jpg/640px-Vanessa_cardui_Luc_Viatour.jpg",
+    image: "assets/images/vanessa_cardui_insects.jpg",
     images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Vanessa_cardui_Luc_Viatour.jpg/640px-Vanessa_cardui_Luc_Viatour.jpg"],
     description: {
       nl: "De distelvlinder is roestoranje met zwarte en witte tekening. Een van de meest verspreide vlinders ter wereld — van Afrika tot de Arctis. Trekt elk jaar van Sub-Sahara Afrika naar Noord-Europa, een reis van meer dan 12.000 km.",
@@ -3506,4 +3506,4 @@ window.speciesData = [
     rarity: { nl: "Gecultiveerd, zeer algemeen", en: "Cultivated, very common", fr: "Cultivé, très commun" },
     funfact: "Tarwe is het resultaat van duizenden jaren van selectie door mensen — het heeft geen wilde voorouder meer en kan niet overleven zonder menselijke hulp bij de zaadverspreiding."
   }
- 
+];
