@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(comm -23 /tmp/species_with_images.txt /tmp/species_in_data.txt)",
+      "Bash(comm -12 /tmp/species_with_images.txt /tmp/species_in_data.txt)",
+      "Bash(grep -c 'image: \"\"PENDING\"\"' /Users/mac/Quiz-Fauna---Flora1/.claude/worktrees/frosty-ritchie/js/data/species_data.js)",
+      "Bash(grep -c 'image: \"\"assets/' /Users/mac/Quiz-Fauna---Flora1/.claude/worktrees/frosty-ritchie/js/data/species_data.js)",
+      "Bash(grep -c 'image: \"\"https://' /Users/mac/Quiz-Fauna---Flora1/.claude/worktrees/frosty-ritchie/js/data/species_data.js)"
+    ]
+  }
+}
