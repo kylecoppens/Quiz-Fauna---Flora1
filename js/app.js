@@ -642,10 +642,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const h1El = document.querySelector('#screen-home h1');
         if (h1El) {
-            const words = dict.title.split(' ');
-            const firstWord = words[0];
-            const rest = words.slice(1).join(' ');
-            h1El.innerHTML = `<span class="gradient-belgian">${firstWord}</span><br><span class="highlight">${rest}</span>`;
+            const title = dict.title;
+            const belgianKeywords = ['Belgian', 'Belgische', 'Belges'];
+            let belgianWord = null;
+            let belgianIndex = -1;
+
+            // Find which word contains Belgian/Belgische/Belges
+            for (const keyword of belgianKeywords) {
+                const index = title.indexOf(keyword);
+                if (index !== -1) {
+                    belgianWord = keyword;
+                    belgianIndex = title.split(' ').findIndex(w => w.includes(keyword));
+                    break;
+                }
+            }
+
+            if (belgianWord && belgianIndex !== -1) {
+                const words = title.split(' ');
+                const gradientWord = words[belgianIndex];
+                const beforeWords = words.slice(0, belgianIndex).join(' ');
+                const afterWords = words.slice(belgianIndex + 1).join(' ');
+
+                if (belgianIndex === 0) {
+                    // Gradient word is first
+                    h1El.innerHTML = `<span class="gradient-belgian">${gradientWord}</span><br><span class="highlight">${afterWords}</span>`;
+                } else {
+                    // Gradient word is later
+                    h1El.innerHTML = `${beforeWords}<br><span class="highlight">${gradientWord}</span> ${afterWords}`;
+                    // Better: put gradient on the word itself
+                    h1El.innerHTML = `${beforeWords}<br><span class="gradient-belgian">${gradientWord}</span> <span class="highlight">${afterWords}</span>`;
+                }
+            } else {
+                // Fallback: original logic
+                const words = title.split(' ');
+                const firstWord = words[0];
+                const rest = words.slice(1).join(' ');
+                h1El.innerHTML = `<span class="gradient-belgian">${firstWord}</span><br><span class="highlight">${rest}</span>`;
+            }
         }
 
         const descEl = document.querySelector('#screen-home p');
@@ -850,9 +883,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (speciesSearch) {
+        const suggestionsList = document.getElementById('species-suggestions');
+
         speciesSearch.addEventListener('input', () => {
+            const searchTerm = speciesSearch.value.toLowerCase().trim();
+
+            // Show/hide suggestions
+            if (searchTerm.length > 0) {
+                const matches = window.speciesData.filter(s =>
+                    s.name.nl?.toLowerCase().includes(searchTerm) ||
+                    s.name.en?.toLowerCase().includes(searchTerm) ||
+                    s.name.fr?.toLowerCase().includes(searchTerm) ||
+                    s.scientific?.toLowerCase().includes(searchTerm) ||
+                    s.family?.toLowerCase().includes(searchTerm)
+                ).slice(0, 8); // Limit to 8 suggestions
+
+                if (matches.length > 0) {
+                    suggestionsList.innerHTML = matches.map(s => `
+                        <div class="search-suggestion-item" data-species-id="${s.id}">
+                            <span class="search-suggestion-name">${s.name.nl || s.name.en}</span>
+                            <span class="search-suggestion-meta">${s.family || 'Onbekend'}</span>
+                        </div>
+                    `).join('');
+                    suggestionsList.classList.add('show');
+
+                    // Add click handlers to suggestions
+                    suggestionsList.querySelectorAll('.search-suggestion-item').forEach(item => {
+                        item.addEventListener('click', () => {
+                            const speciesId = item.dataset.speciesId;
+                            const species = window.speciesData.find(s => s.id === speciesId);
+                            if (species) openModal(species);
+                            suggestionsList.classList.remove('show');
+                            speciesSearch.value = '';
+                        });
+                    });
+                } else {
+                    suggestionsList.classList.remove('show');
+                }
+            } else {
+                suggestionsList.classList.remove('show');
+            }
+
+            // Filter encyclopedia results
             const activeTab = document.querySelector('#learn-filters .tab.active');
             renderEncyclopedia(activeTab ? activeTab.dataset.filter : 'all', currentSubFilter);
+        });
+
+        // Close suggestions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (e.target !== speciesSearch && !speciesSearch.contains(e.target)) {
+                suggestionsList.classList.remove('show');
+            }
         });
     }
 
@@ -1800,4 +1881,52 @@ document.addEventListener('DOMContentLoaded', () => {
         // Wait for data script to load
         window.addEventListener('load', renderSpeciesOfTheDay);
     }
+
+    // --- Keyboard Navigation ---
+    document.addEventListener('keydown', (e) => {
+        // Escape: Close modals
+        if (e.key === 'Escape') {
+            const modal = document.querySelector('[style*="display: flex"][class*="modal"]');
+            if (modal || detailsModal?.style.display === 'flex') {
+                if (detailsModal?.style.display === 'flex') detailsModal.style.display = 'none';
+                if (stopConfirmModal?.style.display === 'flex') stopConfirmModal.style.display = 'none';
+            }
+        }
+
+        // Ctrl/Cmd+/: Focus search
+        if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+            e.preventDefault();
+            const activeScreen = document.querySelector('.screen.active');
+            if (activeScreen === screens.learn) {
+                speciesSearch?.focus();
+            } else if (activeScreen === screens.biogids) {
+                document.getElementById('biogids-search')?.focus();
+            }
+        }
+
+        // Navigation between buttons with arrow keys (when focused on buttons)
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            const focusedElement = document.activeElement;
+            if (focusedElement?.classList?.contains('btn') || focusedElement?.classList?.contains('tab')) {
+                const siblings = Array.from(focusedElement.parentElement?.children || []);
+                const index = siblings.indexOf(focusedElement);
+
+                if ((e.key === 'ArrowRight' || e.key === 'ArrowDown') && index < siblings.length - 1) {
+                    e.preventDefault();
+                    siblings[index + 1]?.focus();
+                } else if ((e.key === 'ArrowLeft' || e.key === 'ArrowUp') && index > 0) {
+                    e.preventDefault();
+                    siblings[index - 1]?.focus();
+                }
+            }
+        }
+
+        // Enter: Activate focused button
+        if (e.key === 'Enter') {
+            const focusedElement = document.activeElement;
+            if (focusedElement?.classList?.contains('btn') || focusedElement?.classList?.contains('tab')) {
+                focusedElement.click();
+            }
+        }
+    });
 });
