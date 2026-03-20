@@ -135,7 +135,7 @@ window.bioguideData = [
                 correct: 2,
                 options: [
                     { nl: "De soort is al uitgestorven", en: "The species is already extinct", fr: "L'espèce est déjà éteinte" },
-                    { nl: "De soort has laag aantal bedreigingen", en: "The species has low threats", fr: "L'espèce a peu de menaces" },
+                    { nl: "De soort heeft een laag aantal bedreigingen", en: "The species has low threats", fr: "L'espèce a peu de menaces" },
                     { nl: "De soort staat op de rand van uitsterving", en: "Species on brink of extinction", fr: "L'espèce au bord de l'extinction" }
                 ]
             },
@@ -322,13 +322,13 @@ window.bioguideData = [
             fr: "Lumière + eau + CO₂ = sucre + oxygène"
         },
         content: {
-            nl: "Fotosynthese is het proces waarbij planten zonlicht omzetten in chemische energie (suiker) om mee te groeien. Dit is waarschijnlijk het belangrijkste biochemische proces op Aarde—het voorziet bijna alles van zuurstof en voedsel. Het vindt plaats in groene cellen, vooral in bladeren, in speciale organellen genaamd chloroplasten. De basisformule is eenvoudig: 6CO₂ + 6H₂O + zonlicht = C₆H₁₂O₆ (glucose) + 6O₂. Dit gebeurt in twee fasen. De lichtafhankelijke reacties gebruiken zonnenergie om water op te breken en zuurstof vrij te stellen. Dit gebeurt in de dag, en daarom zien we zuurstofbellen in onderwater-waterplanten in het zonlicht. De lichtafhankelijke reacties produceren ook ATP en NADPH—energiemoleculen. Deze energie wordt vervolgens gebruikt in de lichtafhankelijke reacties (ook genaamd Calvin-cyclus) om CO₂ om te zetten in glucose. Dit kan ook 's nachts gebeuren—vandaar de naam. In België en veel andere plaatsen zorgt fotosynthese van bossen, weiden, en waterplanten voor schoon water, schone lucht, en voedsel.",
+            nl: "Fotosynthese is het proces waarbij planten zonlicht omzetten in chemische energie (suiker) om mee te groeien. Dit is waarschijnlijk het belangrijkste biochemische proces op Aarde—het voorziet bijna alles van zuurstof en voedsel. Het vindt plaats in groene cellen, vooral in bladeren, in speciale organellen genaamd chloroplasten. De basisformule is eenvoudig: 6CO₂ + 6H₂O + zonlicht = C₆H₁₂O₆ (glucose) + 6O₂. Dit gebeurt in twee fasen. De lichtafhankelijke reacties gebruiken zonnenergie om water op te breken en zuurstof vrij te stellen. Dit gebeurt in de dag, en daarom zien we zuurstofbellen in onderwater waterplanten in het zonlicht. De lichtafhankelijke reacties produceren ook ATP en NADPH—energiemoleculen. Deze energie wordt vervolgens gebruikt in de lichtonafhankelijke reacties (ook genaamd Calvin-cyclus) om CO₂ om te zetten in glucose. Deze tweede fase kan ook 's nachts gebeuren—vandaar de naam 'lichtafhankelijk'. In België en veel andere plaatsen zorgt fotosynthese van bossen, weiden, en waterplanten voor schoon water, schone lucht, en voedsel.",
             en: "Photosynthesis is the process where plants convert sunlight into chemical energy (sugar) to grow. This is probably Earth's most important biochemical process—it supplies almost everything with oxygen and food. It occurs in green cells, especially in leaves, in special organelles called chloroplasts. The basic formula is simple: 6CO₂ + 6H₂O + sunlight = C₆H₁₂O₆ (glucose) + 6O₂. This happens in two stages. Light-dependent reactions use sun energy to break water and release oxygen. This happens during the day, which is why we see oxygen bubbles in underwater plants in sunlight. Light-dependent reactions also produce ATP and NADPH—energy molecules. This energy is then used in light-independent reactions (also called Calvin cycle) to convert CO₂ into glucose. This can happen at night too—hence the name. In Belgium and many places, photosynthesis from forests, meadows, and aquatic plants provides clean water, clean air, and food.",
             fr: "La photosynthèse est le processus où les plantes convertissent la lumière du soleil en énergie chimique (sucre) pour croître."
         },
         comparison: [
             { stage: "Lichtafhankelijke reacties", location: "Thylakoid membranen", input: "Licht + H₂O", output: "O₂ + ATP + NADPH" },
-            { stage: "Lichtafhankelijke reacties (Calvin-cyclus)", location: "Stroma", input: "CO₂ + ATP + NADPH", output: "Glucose (C₆H₁₂O₆)" }
+            { stage: "Lichtonafhankelijke reacties (Calvin-cyclus)", location: "Stroma", input: "CO₂ + ATP + NADPH", output: "Glucose (C₆H₁₂O₆)" }
         ],
         relatedSpecies: ["gen_hedera_helix", "gen_plantago_major"],
         quiz: [
