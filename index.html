@@ -116,30 +116,53 @@
                 </div>
             </header>
             <div class="config-options">
+                <!-- Category cards -->
                 <div class="form-group">
                     <label>Select Category</label>
-                    <div class="custom-select-grid" id="category-selector">
-                        <button class="select-chip active" data-val="all">🌍 Alles</button>
-
-                        <button class="select-chip group-header" data-val="dieren" style="--group-accent:#56c4e8">🐾 Dieren</button>
-                        <button class="select-chip child-chip" data-val="fauna">🦊 Zoogdieren</button>
-                        <button class="select-chip child-chip" data-val="birds">🐦 Vogels</button>
-                        <button class="select-chip child-chip" data-val="insects">🦋 Insecten</button>
-
-                        <button class="select-chip group-header" data-val="planten" style="--group-accent:#7ec860">🌿 Planten</button>
-                        <button class="select-chip child-chip" data-val="flora">🌸 Wilde Bloemen</button>
-                        <button class="select-chip child-chip" data-val="trees">🌲 Bomen</button>
-                        <button class="select-chip child-chip" data-val="agriculture">🌾 Gekweekt</button>
-
-                        <button class="select-chip group-header" data-val="fungi" style="--group-accent:#c87ef0">🍄 Fungi</button>
+                    <div id="category-selector" class="cat-cards-grid">
+                        <button class="cat-card active" data-val="all" style="--card-hue:160;--card-color:#3db863">
+                            <span class="cat-card-icon">🌍</span>
+                            <span class="cat-card-label">Alles</span>
+                        </button>
+                        <button class="cat-card" data-val="dieren" style="--card-hue:200;--card-color:#56c4e8">
+                            <span class="cat-card-icon">🐾</span>
+                            <span class="cat-card-label">Dieren</span>
+                        </button>
+                        <button class="cat-card" data-val="planten" style="--card-hue:110;--card-color:#7ec860">
+                            <span class="cat-card-icon">🌿</span>
+                            <span class="cat-card-label">Planten</span>
+                        </button>
+                        <button class="cat-card" data-val="fungi" style="--card-hue:275;--card-color:#c87ef0">
+                            <span class="cat-card-icon">🍄</span>
+                            <span class="cat-card-label">Fungi</span>
+                        </button>
+                    </div>
+                    <!-- Subcategory chips (shown when a group card is selected) -->
+                    <div id="sub-category-selector" class="sub-chips-row hidden">
+                        <button class="select-chip sub-chip" data-val="fauna">🦊 Zoogdieren</button>
+                        <button class="select-chip sub-chip" data-val="birds">🐦 Vogels</button>
+                        <button class="select-chip sub-chip" data-val="insects">🦋 Insecten</button>
+                        <button class="select-chip sub-chip" data-val="flora">🌸 Wilde Bloemen</button>
+                        <button class="select-chip sub-chip" data-val="trees">🌲 Bomen</button>
+                        <button class="select-chip sub-chip" data-val="agriculture">🌾 Gekweekt</button>
                     </div>
                 </div>
+                <!-- Difficulty -->
                 <div class="form-group">
                     <label>Select Difficulty</label>
-                    <div class="custom-select-grid" id="difficulty-selector">
-                        <button class="select-chip active" data-val="easy">Gemakkelijk (Algemeen)</button>
-                        <button class="select-chip" data-val="medium">Gemiddeld</button>
-                        <button class="select-chip" data-val="hard">Moeilijk (Zeldzaam)</button>
+                    <div class="difficulty-bar" id="difficulty-selector">
+                        <button class="diff-btn active" data-val="easy">
+                            <span class="diff-stars">★</span>
+                            <span class="diff-label">Gemakkelijk</span>
+                        </button>
+                        <button class="diff-btn" data-val="medium">
+                            <span class="diff-stars">★★</span>
+                            <span class="diff-label">Gemiddeld</span>
+                        </button>
+                        <button class="diff-btn" data-val="hard">
+                            <span class="diff-stars">★★★</span>
+                            <span class="diff-label">Moeilijk</span>
+                        </button>
                     </div>
                 </div>
             </div>

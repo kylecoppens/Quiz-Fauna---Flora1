@@ -292,8 +292,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnStopConfirm = document.getElementById('btn-stop-confirm');
     const btnStopCancel = document.getElementById('btn-stop-cancel');
 
-    const categoryChips = document.querySelectorAll('#category-selector .select-chip');
-    const difficultyChips = document.querySelectorAll('#difficulty-selector .select-chip');
+    const categoryChips = document.querySelectorAll('#category-selector .cat-card');
+    const difficultyChips = document.querySelectorAll('#difficulty-selector .diff-btn');
+    const subCategoryChips = document.querySelectorAll('#sub-category-selector .sub-chip');
+    const subCategoryRow = document.getElementById('sub-category-selector');
 
     const qNumText = document.getElementById('current-q-num');
     const progressFill = document.getElementById('progress-fill');
@@ -424,12 +426,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         categoryChips.forEach(chip => {
             const v = chip.dataset.val;
+            const labelEl = chip.querySelector('.cat-card-label');
+            if (dict[v] && labelEl) labelEl.textContent = dict[v];
+        });
+
+        subCategoryChips.forEach(chip => {
+            const v = chip.dataset.val;
             if (dict[v]) chip.textContent = dict[v];
         });
 
         difficultyChips.forEach(chip => {
             const v = chip.dataset.val;
-            if (dict[v]) chip.textContent = dict[v];
+            const labelEl = chip.querySelector('.diff-label');
+            if (dict[v] && labelEl) labelEl.textContent = dict[v];
         });
 
         // Quiz
@@ -670,7 +679,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    setupChips(categoryChips, val => { currentCategory = val; updateConfigPreview(); });
+    // Category cards with subcategory reveal
+    const SUB_CATS = {
+        dieren: ['fauna', 'birds', 'insects'],
+        planten: ['flora', 'trees', 'agriculture']
+    };
+
+    function showSubChips(group) {
+        if (!subCategoryRow) return;
+        const subs = SUB_CATS[group];
+        if (!subs) {
+            subCategoryRow.classList.add('hidden');
+            subCategoryChips.forEach(c => c.classList.remove('active'));
+            return;
+        }
+        subCategoryChips.forEach(chip => {
+            chip.classList.remove('active');
+            chip.style.display = subs.includes(chip.dataset.val) ? '' : 'none';
+        });
+        subCategoryRow.classList.remove('hidden');
+    }
+
+    setupChips(categoryChips, val => {
+        currentCategory = val;
+        showSubChips(val);
+        updateConfigPreview();
+    });
+
+    // Subcategory chips override group selection
+    subCategoryChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const val = chip.dataset.val;
+            subCategoryChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            currentCategory = val;
+            updateConfigPreview();
+        });
+    });
+
     setupChips(difficultyChips, val => { currentDifficulty = val; updateConfigPreview(); });
 
     // --- Quiz Engine ---
@@ -1122,20 +1168,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="gallery-dots">${uniqueImages.map((_, i) => `<span class="gallery-dot${i === 0 ? ' active' : ''}" data-idx="${i}"></span>`).join('')}</div>
                 <button class="gallery-arrow gallery-prev" aria-label="Previous">&#8249;</button>
                 <button class="gallery-arrow gallery-next" aria-label="Next">&#8250;</button>
-                <div class="gallery-counter"><span class="gallery-current">1</span> / ${uniqueImages.length}</div>
             `;
 
             const scrollEl = infoboxImageContainer.querySelector('.gallery-scroll');
             const dots = infoboxImageContainer.querySelectorAll('.gallery-dot');
-            const counterEl = infoboxImageContainer.querySelector('.gallery-current');
             const prevBtn = infoboxImageContainer.querySelector('.gallery-prev');
             const nextBtn = infoboxImageContainer.querySelector('.gallery-next');
 
-            // Update dots + counter on scroll
+            // Update dots on scroll
             scrollEl.addEventListener('scroll', () => {
                 const idx = Math.round(scrollEl.scrollLeft / scrollEl.clientWidth);
                 dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-                if (counterEl) counterEl.textContent = idx + 1;
             });
 
             // Dot click → scroll to image
