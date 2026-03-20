@@ -432,16 +432,20 @@ p { color: var(--text-secondary); line-height: 1.6; }
 }
 
 /* Light green styling for homepage action buttons */
-.action-buttons .btn-primary {
+.action-buttons .btn-primary,
+.action-buttons .btn-outline {
     background: #5ec87a;
     border-color: #5ec87a;
+    color: #fff;
     box-shadow: 0 4px 15px rgba(94, 200, 122, 0.3);
 }
 
-.action-buttons .btn-primary:hover {
+.action-buttons .btn-primary:hover,
+.action-buttons .btn-outline:hover {
     background: #70d18f;
     border-color: #70d18f;
     box-shadow: 0 6px 20px rgba(94, 200, 122, 0.4);
+    transform: translateY(-2px);
 }
 
 .bottom { margin-top: auto; }
