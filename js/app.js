@@ -641,7 +641,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (subtitleEl) subtitleEl.textContent = dict.discover;
 
         const h1El = document.querySelector('#screen-home h1');
-        if (h1El) h1El.innerHTML = dict.title.replace(' ', '<br><span class="highlight">') + '</span>';
+        if (h1El) {
+            const words = dict.title.split(' ');
+            const firstWord = words[0];
+            const rest = words.slice(1).join(' ');
+            h1El.innerHTML = `<span class="gradient-belgian">${firstWord}</span><br><span class="highlight">${rest}</span>`;
+        }
 
         const descEl = document.querySelector('#screen-home p');
         if (descEl) descEl.textContent = dict.desc;

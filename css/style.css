@@ -115,6 +115,15 @@ h3 { font-size: 1.5rem; margin-bottom: 10px; }
     -webkit-text-fill-color: transparent;
 }
 
+.gradient-belgian {
+    background: linear-gradient(90deg, #000000 0%, #FDDA24 45%, #EF3340 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
 .subtitle {
     text-transform: uppercase;
     letter-spacing: 3px;
