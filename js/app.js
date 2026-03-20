@@ -294,8 +294,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const categoryChips = document.querySelectorAll('#category-selector .cat-card');
     const difficultyChips = document.querySelectorAll('#difficulty-selector .diff-btn');
-    const subCategoryChips = document.querySelectorAll('#sub-category-selector .sub-chip');
-    const subCategoryRow = document.getElementById('sub-category-selector');
+    const subCategoryChips = document.querySelectorAll('#category-selector .sub-chip');
+    const catAccordions = document.querySelectorAll('#category-selector .cat-accordion');
 
     const qNumText = document.getElementById('current-q-num');
     const progressFill = document.getElementById('progress-fill');
@@ -427,7 +427,8 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryChips.forEach(chip => {
             const v = chip.dataset.val;
             const labelEl = chip.querySelector('.cat-card-label');
-            if (dict[v] && labelEl) labelEl.textContent = dict[v];
+            // Strip emoji prefix (e.g. "🌍 Alles" → "Alles") since cards have large icon
+            if (dict[v] && labelEl) labelEl.textContent = dict[v].replace(/^\S+\s/, '');
         });
 
         subCategoryChips.forEach(chip => {
@@ -679,30 +680,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Category cards with subcategory reveal
-    const SUB_CATS = {
-        dieren: ['fauna', 'birds', 'insects'],
-        planten: ['flora', 'trees', 'agriculture']
-    };
-
-    function showSubChips(group) {
-        if (!subCategoryRow) return;
-        const subs = SUB_CATS[group];
-        if (!subs) {
-            subCategoryRow.classList.add('hidden');
-            subCategoryChips.forEach(c => c.classList.remove('active'));
-            return;
-        }
-        subCategoryChips.forEach(chip => {
-            chip.classList.remove('active');
-            chip.style.display = subs.includes(chip.dataset.val) ? '' : 'none';
+    // Category cards with accordion subcategory panels
+    function toggleAccordion(group) {
+        catAccordions.forEach(acc => {
+            if (acc.dataset.for === group) {
+                acc.classList.add('open');
+            } else {
+                acc.classList.remove('open');
+            }
         });
-        subCategoryRow.classList.remove('hidden');
+        // Clear sub-chip selections when switching groups
+        subCategoryChips.forEach(c => c.classList.remove('active'));
     }
 
     setupChips(categoryChips, val => {
         currentCategory = val;
-        showSubChips(val);
+        toggleAccordion(val);
         updateConfigPreview();
     });
 
@@ -710,7 +703,9 @@ document.addEventListener('DOMContentLoaded', () => {
     subCategoryChips.forEach(chip => {
         chip.addEventListener('click', () => {
             const val = chip.dataset.val;
-            subCategoryChips.forEach(c => c.classList.remove('active'));
+            // Only deactivate siblings in the same accordion
+            const parent = chip.closest('.cat-accordion');
+            if (parent) parent.querySelectorAll('.sub-chip').forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
             currentCategory = val;
             updateConfigPreview();

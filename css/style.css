@@ -512,8 +512,13 @@ p { color: var(--text-secondary); line-height: 1.6; }
     letter-spacing: 0.02em;
 }
 
-/* ── Category Cards Grid ─────────────────────────────────────────── */
-.cat-cards-grid {
+/* ── Category Cards ──────────────────────────────────────────────── */
+.cat-cards-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cat-cards-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -575,19 +580,23 @@ p { color: var(--text-secondary); line-height: 1.6; }
     color: var(--card-color);
 }
 
-/* ── Subcategory chip row ────────────────────────────────────────── */
-.sub-chips-row {
+/* ── Subcategory accordion ────────────────────────────────────────── */
+.cat-accordion {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
-    animation: fadeSlideIn 0.3s ease-out;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease,
+                padding 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.sub-chips-row.hidden { display: none; }
-
-@keyframes fadeSlideIn {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
+.cat-accordion.open {
+    max-height: 120px;
+    opacity: 1;
+    padding: 10px 4px 4px;
 }
 
 .select-chip.sub-chip {

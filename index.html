@@ -119,32 +119,39 @@
                 <!-- Category cards -->
                 <div class="form-group">
                     <label>Select Category</label>
-                    <div id="category-selector" class="cat-cards-grid">
-                        <button class="cat-card active" data-val="all" style="--card-hue:160;--card-color:#3db863">
-                            <span class="cat-card-icon">🌍</span>
-                            <span class="cat-card-label">Alles</span>
-                        </button>
-                        <button class="cat-card" data-val="dieren" style="--card-hue:200;--card-color:#56c4e8">
-                            <span class="cat-card-icon">🐾</span>
-                            <span class="cat-card-label">Dieren</span>
-                        </button>
-                        <button class="cat-card" data-val="planten" style="--card-hue:110;--card-color:#7ec860">
-                            <span class="cat-card-icon">🌿</span>
-                            <span class="cat-card-label">Planten</span>
-                        </button>
-                        <button class="cat-card" data-val="fungi" style="--card-hue:275;--card-color:#c87ef0">
-                            <span class="cat-card-icon">🍄</span>
-                            <span class="cat-card-label">Fungi</span>
-                        </button>
-                    </div>
-                    <!-- Subcategory chips (shown when a group card is selected) -->
-                    <div id="sub-category-selector" class="sub-chips-row hidden">
-                        <button class="select-chip sub-chip" data-val="fauna">🦊 Zoogdieren</button>
-                        <button class="select-chip sub-chip" data-val="birds">🐦 Vogels</button>
-                        <button class="select-chip sub-chip" data-val="insects">🦋 Insecten</button>
-                        <button class="select-chip sub-chip" data-val="flora">🌸 Wilde Bloemen</button>
-                        <button class="select-chip sub-chip" data-val="trees">🌲 Bomen</button>
-                        <button class="select-chip sub-chip" data-val="agriculture">🌾 Gekweekt</button>
+                    <div id="category-selector" class="cat-cards-wrap">
+                        <!-- Row 1: Alles + Dieren -->
+                        <div class="cat-cards-row">
+                            <button class="cat-card active" data-val="all" style="--card-hue:160;--card-color:#3db863">
+                                <span class="cat-card-icon">🌍</span>
+                                <span class="cat-card-label">Alles</span>
+                            </button>
+                            <button class="cat-card" data-val="dieren" style="--card-hue:200;--card-color:#56c4e8">
+                                <span class="cat-card-icon">🐾</span>
+                                <span class="cat-card-label">Dieren</span>
+                            </button>
+                        </div>
+                        <div class="cat-accordion" data-for="dieren">
+                            <button class="select-chip sub-chip" data-val="fauna">🦊 Zoogdieren</button>
+                            <button class="select-chip sub-chip" data-val="birds">🐦 Vogels</button>
+                            <button class="select-chip sub-chip" data-val="insects">🦋 Insecten</button>
+                        </div>
+                        <!-- Row 2: Planten + Fungi -->
+                        <div class="cat-cards-row">
+                            <button class="cat-card" data-val="planten" style="--card-hue:110;--card-color:#7ec860">
+                                <span class="cat-card-icon">🌿</span>
+                                <span class="cat-card-label">Planten</span>
+                            </button>
+                            <button class="cat-card" data-val="fungi" style="--card-hue:275;--card-color:#c87ef0">
+                                <span class="cat-card-icon">🍄</span>
+                                <span class="cat-card-label">Fungi</span>
+                            </button>
+                        </div>
+                        <div class="cat-accordion" data-for="planten">
+                            <button class="select-chip sub-chip" data-val="flora">🌸 Wilde Bloemen</button>
+                            <button class="select-chip sub-chip" data-val="trees">🌲 Bomen</button>
+                            <button class="select-chip sub-chip" data-val="agriculture">🌾 Gekweekt</button>
+                        </div>
                     </div>
                 </div>
                 <!-- Difficulty -->
