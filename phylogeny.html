@@ -38,11 +38,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:
 .filter-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 24px;
   border-bottom:1px solid var(--border);background:var(--surface)}
 .filter-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-right:4px}
-.filt-btn{display:flex;align-items:center;gap:5px;background:transparent;border:1px solid var(--border2);
+.chip{display:flex;align-items:center;gap:5px;background:transparent;border:1px solid var(--border2);
   color:var(--muted);font-family:var(--font-h);font-weight:600;font-size:12px;padding:5px 13px;
   border-radius:16px;cursor:pointer;transition:all .2s}
-.filt-btn:hover{border-color:var(--green);color:var(--text)}
-.filt-btn.active{background:rgba(61,184,99,.16);border-color:var(--green);color:var(--green)}
+.chip:hover{border-color:var(--green);color:var(--text)}
+.chip.active{background:rgba(61,184,99,.16);border-color:var(--green);color:var(--green)}
 .search-box{margin-left:auto;background:var(--card);border:1px solid var(--border2);color:var(--text);
   font-family:var(--font-b);font-size:13px;padding:6px 14px;border-radius:16px;width:200px;outline:none;transition:border-color .2s}
 .search-box:focus{border-color:var(--green)}
@@ -131,19 +131,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:
 
 <div class="filter-bar">
   <span class="filter-label">Toon</span>
-  <button class="filt-btn active" data-cat="all">🌍 Alles</button>
-  <button class="filt-btn" data-cat="fauna">🦊 Zoogdieren</button>
-  <button class="filt-btn" data-cat="birds">🐦 Vogels</button>
-  <button class="filt-btn" data-cat="insects">🦋 Insecten</button>
-  <button class="filt-btn" data-cat="flora">🌸 Flora</button>
-  <button class="filt-btn" data-cat="fungi">🍄 Fungi</button>
-  <button class="filt-btn" data-cat="trees">🌲 Bomen</button>
-  <input class="search-box" type="text" id="phylo-search" placeholder="Zoek soort…">
+  <button class="chip active" data-g="all">🌍 Alles</button>
+  <button class="chip" data-g="dieren">🐾 Dieren</button>
+  <button class="chip" data-g="planten">🌿 Planten</button>
+  <button class="chip" data-g="fungi">🍄 Fungi</button>
+  <input class="search-box" type="text" id="search" placeholder="Zoek soort…">
 </div>
 
-<div class="stats-bar" id="stats-bar">Laden…</div>
-<div class="tree-scroll" id="tree-root"></div>
-<div class="empty-state" id="empty-state"><div class="empty-icon">🔍</div><div>Geen soorten gevonden</div></div>
+<div class="stats-bar" id="sp-count">Laden…</div>
+<div class="tree-scroll" id="tree"></div>
+<div class="empty-state" id="empty"><div class="empty-icon">🔍</div><div>Geen soorten gevonden</div></div>
 
 <script src="js/data/species_data.js"></script>
 <script>
@@ -152,7 +149,7 @@ const FI = {};
 ALL.forEach(sp => { const f=sp.family||'Unknown'; if(!FI[f]) FI[f]=[]; FI[f].push(sp); });
 
 let G='all', Q='';
-const GCATS={all:null,fauna:['fauna'],birds:['birds'],insects:['insects'],flora:['flora'],fungi:['fungi'],trees:['trees'],agriculture:['agriculture']};
+const GCATS={all:null,dieren:['fauna','birds','insects'],planten:['flora','trees','agriculture'],fungi:['fungi']};
 
 function spMatch(sp){
   const cats=GCATS[G]; if(cats&&!cats.includes(sp.category)) return false;

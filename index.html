@@ -116,13 +116,18 @@
                     <label>Select Category</label>
                     <div class="custom-select-grid" id="category-selector">
                         <button class="select-chip active" data-val="all">🌍 Alles</button>
-                        <button class="select-chip" data-val="fauna">🦊 Zoogdieren</button>
-                        <button class="select-chip" data-val="birds">🐦 Vogels</button>
-                        <button class="select-chip" data-val="insects">🦋 Insecten</button>
-                        <button class="select-chip" data-val="flora">🌸 Flora</button>
-                        <button class="select-chip" data-val="fungi">🍄 Fungi</button>
-                        <button class="select-chip" data-val="trees">🌲 Bomen</button>
-                        <button class="select-chip" data-val="agriculture">🌾 Gekweekt</button>
+
+                        <button class="select-chip group-header" data-val="dieren">🐾 Dieren</button>
+                        <button class="select-chip child-chip" data-val="fauna">🦊 Zoogdieren</button>
+                        <button class="select-chip child-chip" data-val="birds">🐦 Vogels</button>
+                        <button class="select-chip child-chip" data-val="insects">🦋 Insecten</button>
+
+                        <button class="select-chip group-header" data-val="planten">🌿 Planten</button>
+                        <button class="select-chip child-chip" data-val="flora">🌸 Wilde Bloemen</button>
+                        <button class="select-chip child-chip" data-val="trees">🌲 Bomen</button>
+                        <button class="select-chip child-chip" data-val="agriculture">🌾 Gekweekt</button>
+
+                        <button class="select-chip group-header" data-val="fungi">🍄 Fungi</button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -229,58 +234,46 @@
                 </div>
             </div>
 
-            <!-- ── PRIMARY CATEGORY TABS ─────────────────────────────────── -->
+            <!-- ── PRIMARY CATEGORY TABS (Hierarchical: Dieren / Planten / Fungi) ── -->
             <div class="filter-tabs" id="learn-filters">
                 <button class="tab active" data-filter="all">🌍 Alles</button>
                 <button class="tab" data-filter="collected">🏆 Collectie</button>
-                <button class="tab tab-has-sub" data-filter="fauna">🦊 Zoogdieren ▾</button>
-                <button class="tab tab-has-sub" data-filter="birds">🐦 Vogels ▾</button>
-                <button class="tab" data-filter="insects">🦋 Insecten</button>
-                <button class="tab tab-has-sub" data-filter="flora">🌸 Flora ▾</button>
-                <button class="tab" data-filter="fungi">🍄 Fungi</button>
-                <button class="tab tab-has-sub" data-filter="trees">🌲 Bomen ▾</button>
-                <button class="tab" data-filter="agriculture">🌾 Gekweekt</button>
+                <button class="tab tab-has-sub" data-filter="dieren">🐾 Dieren ▾</button>
+                <button class="tab tab-has-sub" data-filter="planten">🌿 Planten ▾</button>
+                <button class="tab tab-has-sub" data-filter="fungi">🍄 Fungi ▾</button>
             </div>
 
             <!-- ── SUB-FILTER ROW ─────────────────────────────────────────
-                 Appears below primary tabs only when a ▾ tab is selected.
-                 Each .sub-group is shown/hidden based on data-parent.       -->
+                 Level 2: children of Dieren / Planten / Fungi.
+                 Level 3: deeper filters shown when a child is selected.    -->
             <div class="sub-filter-row hidden" id="sub-filters">
 
-                <!-- Fauna sub-groups -->
-                <div class="sub-group" data-parent="fauna">
+                <!-- Dieren sub-groups (level 2) -->
+                <div class="sub-group" data-parent="dieren">
                     <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="fauna_all">Alles</button>
-                    <button class="sub-tab" data-subfilter="fauna_mammal">🦊 Zoogdieren</button>
-                    <button class="sub-tab" data-subfilter="fauna_reptile">🦎 Reptielen</button>
-                    <button class="sub-tab" data-subfilter="fauna_amphibian">🐸 Amfibieën</button>
-                    <button class="sub-tab" data-subfilter="fauna_aquatic">🦭 Zeezoogdieren</button>
+                    <button class="sub-tab active" data-subfilter="dieren_all">Alles</button>
+                    <button class="sub-tab" data-subfilter="dieren_mammals">🦊 Zoogdieren</button>
+                    <button class="sub-tab" data-subfilter="dieren_birds">🐦 Vogels</button>
+                    <button class="sub-tab" data-subfilter="dieren_reptiles">🦎 Reptielen</button>
+                    <button class="sub-tab" data-subfilter="dieren_amphibians">🐸 Amfibieën</button>
+                    <button class="sub-tab" data-subfilter="dieren_insects">🦋 Insecten</button>
                 </div>
 
-                <!-- Birds sub-groups -->
-                <div class="sub-group hidden" data-parent="birds">
+                <!-- Planten sub-groups (level 2) -->
+                <div class="sub-group hidden" data-parent="planten">
                     <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="birds_all">Alle vogels</button>
-                    <button class="sub-tab" data-subfilter="birds_passerine">🎵 Zangvogels</button>
-                    <button class="sub-tab" data-subfilter="birds_raptor">🦅 Roofvogels</button>
-                    <button class="sub-tab" data-subfilter="birds_water">🦆 Watervogels</button>
-                    <button class="sub-tab" data-subfilter="birds_dove">🕊️ Duiven &amp; Uilen</button>
-                    <button class="sub-tab" data-subfilter="birds_other">🐦 Overige</button>
+                    <button class="sub-tab active" data-subfilter="planten_all">Alles</button>
+                    <button class="sub-tab" data-subfilter="planten_flora">🌸 Wilde Bloemen</button>
+                    <button class="sub-tab" data-subfilter="planten_trees">🌲 Bomen</button>
+                    <button class="sub-tab" data-subfilter="planten_agriculture">🌾 Landbouwgewassen</button>
                 </div>
 
-                <!-- Flora sub-groups -->
-                <div class="sub-group hidden" data-parent="flora">
+                <!-- Fungi sub-groups (level 2) -->
+                <div class="sub-group hidden" data-parent="fungi">
                     <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="flora_all">Alle flora</button>
-                    <button class="sub-tab" data-subfilter="flora_dicot">🌼 Dicotylen</button>
-                    <button class="sub-tab" data-subfilter="flora_monocot">🌷 Monocotylen</button>
-                </div>
-                <!-- Trees sub-groups (naaldbomen vs loofbomen) -->
-                <div class="sub-group hidden" data-parent="trees">
-                    <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="trees_all">Alle bomen</button>
-                    <button class="sub-tab" data-subfilter="trees_conifer">🌲 Naaldbomen</button>
-                    <button class="sub-tab" data-subfilter="trees_deciduous">🍂 Loofbomen</button>
+                    <button class="sub-tab active" data-subfilter="fungi_all">Alles</button>
+                    <button class="sub-tab" data-subfilter="fungi_basidio">🍄 Basidiomyceten</button>
+                    <button class="sub-tab" data-subfilter="fungi_asco">🧫 Ascomyceten</button>
                 </div>
             </div>
 
@@ -312,13 +305,9 @@
 
             <div class="phylo-filter-bar" id="phylo-filter-bar">
                 <button class="phylo-chip active" data-g="all">🌍 Alles</button>
-                <button class="phylo-chip" data-g="fauna">🦊 Zoogdieren</button>
-                <button class="phylo-chip" data-g="birds">🐦 Vogels</button>
-                <button class="phylo-chip" data-g="insects">🦋 Insecten</button>
-                <button class="phylo-chip" data-g="flora">🌸 Flora</button>
+                <button class="phylo-chip" data-g="dieren">🐾 Dieren</button>
+                <button class="phylo-chip" data-g="planten">🌿 Planten</button>
                 <button class="phylo-chip" data-g="fungi">🍄 Fungi</button>
-                <button class="phylo-chip" data-g="trees">🌲 Bomen</button>
-                <button class="phylo-chip" data-g="agriculture">🌾 Gekweekt</button>
                 <div class="phylo-search-wrap">
                     <input class="phylo-search-input" id="phylo-search" type="text" placeholder="Zoek soort…">
                 </div>

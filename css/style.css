@@ -450,6 +450,27 @@ p { color: var(--text-secondary); line-height: 1.6; }
     color: #fff;
 }
 
+/* Group-header chips (Dieren / Planten / Fungi) */
+.select-chip.group-header {
+    grid-column: 1 / -1;
+    font-weight: 700;
+    font-size: 1.05em;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.02em;
+}
+.select-chip.group-header.active {
+    background: rgba(61, 184, 99, 0.18);
+    border-color: var(--accent-primary);
+    color: #fff;
+}
+
+/* Child chips (indented under group headers) */
+.select-chip.child-chip {
+    font-size: 0.9em;
+    padding: 10px 14px;
+}
+
 /* ==========================================================================
    Quiz Header & XP Bar
    ========================================================================== */
@@ -1608,14 +1629,10 @@ p { color: var(--text-secondary); line-height: 1.6; }
 }
 .phylo-chip:hover { border-color: rgba(255,255,255,0.18); color: var(--text-primary); }
 .phylo-chip.active { color: #fff; }
-.phylo-chip[data-g="all"].active    { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
-.phylo-chip[data-g="fauna"].active  { background: rgba(61,184,99,0.22);  border-color: #3db863; }
-.phylo-chip[data-g="birds"].active  { background: rgba(86,196,232,0.2);  border-color: #56c4e8; }
-.phylo-chip[data-g="insects"].active{ background: rgba(240,192,90,0.2);  border-color: #f0c05a; }
-.phylo-chip[data-g="flora"].active  { background: rgba(168,216,112,0.18);border-color: #a8d870; }
-.phylo-chip[data-g="fungi"].active  { background: rgba(200,126,240,0.2); border-color: #c87ef0; }
-.phylo-chip[data-g="trees"].active  { background: rgba(61,184,99,0.16);  border-color: #7ec860; }
-.phylo-chip[data-g="agriculture"].active { background: rgba(232,160,112,0.2); border-color: #e8a070; }
+.phylo-chip[data-g="all"].active     { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.phylo-chip[data-g="dieren"].active  { background: rgba(61,184,99,0.22);  border-color: #3db863; }
+.phylo-chip[data-g="planten"].active { background: rgba(168,216,112,0.18); border-color: #a8d870; }
+.phylo-chip[data-g="fungi"].active   { background: rgba(200,126,240,0.2); border-color: #c87ef0; }
 
 .phylo-search-wrap { margin-left: auto; flex-shrink: 0; }
 .phylo-search-input {

@@ -19,6 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     bgAudio.loop = true;
     let audioEnabled = false;
 
+    // --- Category Group Mapping (hierarchical: Dieren / Planten / Fungi) ---
+    const GROUP_TO_CATEGORIES = {
+        dieren:  ['fauna', 'birds', 'insects'],
+        planten: ['flora', 'trees', 'agriculture'],
+        fungi:   ['fungi'],
+        // Individual categories map to themselves:
+        fauna: ['fauna'], birds: ['birds'], insects: ['insects'],
+        flora: ['flora'], trees: ['trees'], agriculture: ['agriculture'],
+        all: null
+    };
+
     // --- Localization Data ---
     const i18n = {
         nl: {
@@ -38,8 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
             difficulty: "Kies Moeilijkheidsgraad",
             start: "Start Quiz",
             all: "🌍 Alles",
+            dieren: "🐾 Dieren",
+            planten: "🌿 Planten",
             fauna: "🦊 Zoogdieren",
             birds: "🐦 Vogels",
+            reptiles: "🦎 Reptielen",
+            amphibians: "🐸 Amfibieën",
             insects: "🦋 Insecten",
             flora: "🌸 Wilde Bloemen",
             fungi: "🍄 Paddenstoelen",
@@ -96,8 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
             difficulty: "Select Difficulty",
             start: "Start Quiz",
             all: "🌍 All",
+            dieren: "🐾 Animals",
+            planten: "🌿 Plants",
             fauna: "🦊 Mammals",
             birds: "🐦 Birds",
+            reptiles: "🦎 Reptiles",
+            amphibians: "🐸 Amphibians",
             insects: "🦋 Insects",
             flora: "🌸 Wildflowers",
             fungi: "🍄 Fungi",
@@ -154,8 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
             difficulty: "Choisir la Difficulté",
             start: "Commencer le Quiz",
             all: "🌍 Tout",
+            dieren: "🐾 Animaux",
+            planten: "🌿 Plantes",
             fauna: "🦊 Mammifères",
             birds: "🐦 Oiseaux",
+            reptiles: "🦎 Reptiles",
+            amphibians: "🐸 Amphibiens",
             insects: "🦋 Insectes",
             flora: "🌸 Fleurs sauvages",
             fungi: "🍄 Champignons",
@@ -419,7 +442,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Encyclopedia
         document.querySelectorAll('#learn-filters .tab').forEach(tab => {
             const v = tab.dataset.filter;
-            if (v && dict[v]) tab.textContent = dict[v];
+            if (v && dict[v]) {
+                const hasSub = tab.classList.contains('tab-has-sub');
+                tab.textContent = dict[v] + (hasSub ? ' \u25BE' : '');
+            }
         });
 
         // Modal labels
@@ -637,13 +663,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         activeQuizPool = uniqueData.filter(species => {
-            const matchesCategory = currentCategory === 'all' || species.category === currentCategory;
+            const cats = GROUP_TO_CATEGORIES[currentCategory];
+            const matchesCategory = !cats || cats.includes(species.category);
             const matchesDifficulty = currentDifficulty === 'all' || species.difficulty === currentDifficulty || !species.difficulty;
             return matchesCategory && matchesDifficulty;
         });
 
         if (activeQuizPool.length === 0) {
-            activeQuizPool = uniqueData.filter(species => currentCategory === 'all' || species.category === currentCategory);
+            const cats = GROUP_TO_CATEGORIES[currentCategory];
+            activeQuizPool = uniqueData.filter(species => !cats || cats.includes(species.category));
         }
 
         if (activeQuizPool.length === 0) {
@@ -883,7 +911,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (filter === 'collected') {
                 items = allData.filter(i => collectedSpecies.includes(i.id));
             } else {
-                items = allData.filter(i => i.category === filter);
+                const cats = GROUP_TO_CATEGORIES[filter];
+                if (cats) {
+                    items = allData.filter(i => cats.includes(i.category));
+                } else {
+                    items = allData.filter(i => i.category === filter);
+                }
             }
 
             // Sub-filter logic
@@ -900,9 +933,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Certhiidae','Phylloscopidae','Aegithalidae','Passeridae'];
                 const RAPTOR_FAMILIES = ['Accipitridae','Falconidae'];
                 const WATER_FAMILIES = ['Anatidae','Rallidae','Laridae','Ardeidae'];
+                const BASIDIOMYCOTA_FAMILIES = ['Agaricaceae','Physalacriaceae','Pleurotaceae','Psathyrellaceae',
+                    'Hymenogastraceae','Hydnangiaceae','Tricholomataceae','Marasmiaceae','Bolbitiaceae',
+                    'Boletaceae','Sclerodermataceae','Fomitopsidaceae','Polyporaceae','Fistulinaceae',
+                    'Cantharellus','Russulaceae','Amanitaceae','Auriculariaceae','Tremellaceae',
+                    'Schizophyllaceae','Phallaceae','Cantharellaceae'];
+                const ASCOMYCOTA_FAMILIES = ['Pezizaceae','Sarcoscyphaceae','Discinaceae',
+                    'Helvellaceae','Morchellaceae','Tuberaceae','Nectriaceae','Teloschistaceae',
+                    'Hypoxylaceae','Xylariaceae'];
                 items = items.filter(i => {
                     const fam = i.family || '';
                     switch(subFilter) {
+                        // --- Dieren group sub-filters ---
+                        case 'dieren_mammals':  return i.category === 'fauna' && (MAMMAL_FAMILIES.includes(fam) || AQUATIC_FAMILIES.includes(fam));
+                        case 'dieren_birds':    return i.category === 'birds';
+                        case 'dieren_reptiles': return i.category === 'fauna' && REPTILE_FAMILIES.includes(fam);
+                        case 'dieren_amphibians': return i.category === 'fauna' && AMPHIBIAN_FAMILIES.includes(fam);
+                        case 'dieren_insects':  return i.category === 'insects';
+                        // --- Planten group sub-filters ---
+                        case 'planten_flora':   return i.category === 'flora';
+                        case 'planten_trees':   return i.category === 'trees';
+                        case 'planten_agriculture': return i.category === 'agriculture';
+                        // --- Fungi group sub-filters ---
+                        case 'fungi_basidio':   return BASIDIOMYCOTA_FAMILIES.includes(fam);
+                        case 'fungi_asco':      return ASCOMYCOTA_FAMILIES.includes(fam);
+                        // --- Legacy / 3rd-level sub-filters ---
                         case 'fauna_mammal':    return MAMMAL_FAMILIES.includes(fam) && !AQUATIC_FAMILIES.includes(fam);
                         case 'fauna_reptile':   return REPTILE_FAMILIES.includes(fam);
                         case 'fauna_amphibian': return AMPHIBIAN_FAMILIES.includes(fam);
@@ -1233,7 +1288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         let pGroup = 'all', pSearch = '';
-        const pGcats = { all:null, fauna:['fauna'], birds:['birds'], insects:['insects'], flora:['flora'], fungi:['fungi'], trees:['trees'], agriculture:['agriculture'] };
+        const pGcats = { all:null, dieren:['fauna','birds','insects'], planten:['flora','trees','agriculture'], fungi:['fungi'] };
 
         function pSpMatch(sp) {
             const cats = pGcats[pGroup];
