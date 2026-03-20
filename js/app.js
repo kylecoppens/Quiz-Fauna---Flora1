@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             easy: "Gemakkelijk (Algemeen)",
             medium: "Gemiddeld",
             hard: "Moeilijk (Zeldzaam)",
+            mixed: "Gemengd",
             question: "Identificeer deze soort",
             score: "Score",
             of: "van",
@@ -132,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             easy: "Easy (Common)",
             medium: "Medium",
             hard: "Hard (Rare)",
+            mixed: "Mixed",
             question: "Identify this species",
             score: "Score",
             of: "of",
@@ -197,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             easy: "Facile (Commun)",
             medium: "Moyen",
             hard: "Difficile (Rare)",
+            mixed: "Mélangé",
             question: "Identifiez cette espèce",
             score: "Score",
             of: "sur",
@@ -658,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const filtered = uniqueData.filter(species => {
             const cats = GROUP_TO_CATEGORIES[currentCategory];
             const matchesCategory = !cats || cats.includes(species.category);
-            const matchesDifficulty = currentDifficulty === 'all' || species.difficulty === currentDifficulty || !species.difficulty;
+            const matchesDifficulty = currentDifficulty === 'all' || currentDifficulty === 'mixed' || species.difficulty === currentDifficulty || !species.difficulty;
             return matchesCategory && matchesDifficulty;
         });
         const texts = {
@@ -750,7 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
         activeQuizPool = uniqueData.filter(species => {
             const cats = GROUP_TO_CATEGORIES[currentCategory];
             const matchesCategory = !cats || cats.includes(species.category);
-            const matchesDifficulty = currentDifficulty === 'all' || species.difficulty === currentDifficulty || !species.difficulty;
+            const matchesDifficulty = currentDifficulty === 'all' || currentDifficulty === 'mixed' || species.difficulty === currentDifficulty || !species.difficulty;
             return matchesCategory && matchesDifficulty;
         });
 
