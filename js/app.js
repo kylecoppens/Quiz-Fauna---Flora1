@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         audioMuted: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`,
         quiz: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>`,
         category: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>`,
-        difficulty: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`
+        difficulty: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`,
+        biogids: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm4 13.5c0-2.5-3-3.75-4-3.75s-4 1.25-4 3.75V19h8v-1.5z"></path></svg>`
     };
 
     // --- Audio Logic ---
@@ -99,7 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
             species: "Toon Soort",
             sotdLabel: "Soort van de Dag",
             sotdTap: "Tik voor details →",
-            xpLabel: "XP"
+            xpLabel: "XP",
+            biogids: "BioGids",
+            biogidsTitle: "BioGids: Biologische Kenniskaarten",
+            biogidsSearch: "Zoek onderwerp…"
         },
         en: {
             play: "Play Quiz",
@@ -165,7 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
             species: "Show Species",
             sotdLabel: "Species of the Day",
             sotdTap: "Tap for details →",
-            xpLabel: "XP"
+            xpLabel: "XP",
+            biogids: "BioGids",
+            biogidsTitle: "BioGids: Educational Knowledge Cards",
+            biogidsSearch: "Search topic…"
         },
         fr: {
             play: "Jouer au Quiz",
@@ -231,7 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
             species: "Espèce",
             sotdLabel: "Espèce du Jour",
             sotdTap: "Touchez pour d\u00e9tails →",
-            xpLabel: "XP"
+            xpLabel: "XP",
+            biogids: "BioGids",
+            biogidsTitle: "BioGids: Cartes de Connaissances Éducatives",
+            biogidsSearch: "Rechercher un sujet…"
         }
     };
 
@@ -274,11 +284,13 @@ document.addEventListener('DOMContentLoaded', () => {
         quiz: document.getElementById('screen-quiz'),
         results: document.getElementById('screen-results'),
         learn: document.getElementById('screen-learn'),
+        biogids: document.getElementById('screen-biogids'),
         phylo: document.getElementById('screen-phylo'),
     };
 
     const btnPlay = document.getElementById('btn-play');
     const btnLearn = document.getElementById('btn-learn');
+    const btnBioGids = document.getElementById('btn-biogids');
     const btnBacks = document.querySelectorAll('.btn-back, .back-btn');
     const btnStartQuiz = document.getElementById('btn-start-quiz');
     const btnNextQuestion = document.getElementById('btn-next-question');
@@ -524,6 +536,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btnLearn.addEventListener('click', () => {
         showScreen('screen-learn');
         renderEncyclopedia('all');
+    });
+    btnBioGids.addEventListener('click', () => {
+        showScreen('screen-biogids');
+        renderBioguide();
     });
 
     btnBacks.forEach(btn => {
@@ -1256,6 +1272,204 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- BioGids Rendering ---
+    function renderBioguide(filter = '') {
+        const grid = document.getElementById('biogids-grid');
+        const emptyState = document.getElementById('biogids-empty');
+        const data = window.bioguideData || [];
+
+        const filtered = data.filter(topic => {
+            const searchLower = filter.toLowerCase();
+            const titleLower = (topic.name[currentLang] || topic.name.en).toLowerCase();
+            return titleLower.includes(searchLower);
+        });
+
+        if (filtered.length === 0) {
+            grid.style.display = 'none';
+            emptyState.style.display = 'flex';
+            return;
+        }
+
+        grid.style.display = 'grid';
+        emptyState.style.display = 'none';
+
+        grid.innerHTML = filtered.map(topic => `
+            <div class="biogids-card" data-topic-id="${topic.id}" style="--card-hue: ${topic.hue}deg; --card-color: ${topic.color};">
+                <div class="biogids-card-icon">${topic.icon}</div>
+                <div class="biogids-card-content">
+                    <h3 class="biogids-card-title">${topic.name[currentLang] || topic.name.en}</h3>
+                    <p class="biogids-card-summary">${topic.summary[currentLang] || topic.summary.en}</p>
+                </div>
+                <div class="biogids-card-arrow">→</div>
+            </div>
+        `).join('');
+
+        grid.querySelectorAll('.biogids-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const topicId = card.dataset.topicId;
+                const topic = data.find(t => t.id === topicId);
+                if (topic) openBioguideDetail(topic);
+            });
+        });
+    }
+
+    // BioGids search functionality
+    const bioguideSearch = document.getElementById('biogids-search');
+    if (bioguideSearch) {
+        bioguideSearch.addEventListener('input', (e) => renderBioguide(e.target.value));
+    }
+
+    // BioGids detail modal
+    const bioguideDetailModal = document.getElementById('biogids-detail-modal');
+    const btnCloseBioguideModal = document.getElementById('btn-close-biogids-modal');
+
+    function openBioguideDetail(topic) {
+        const dict = i18n[currentLang];
+        const lang = currentLang;
+
+        // Fill header
+        document.getElementById('biogids-modal-icon').textContent = topic.icon;
+        document.getElementById('biogids-modal-title').textContent = topic.name[lang] || topic.name.en;
+
+        // Fill content
+        document.getElementById('biogids-modal-content').textContent = topic.content[lang] || topic.content.en;
+
+        // Fill comparison table if exists
+        const comparisonSection = document.getElementById('biogids-comparison-section');
+        if (topic.comparison && topic.comparison.length > 0) {
+            comparisonSection.style.display = 'block';
+            const table = document.getElementById('biogids-comparison-table');
+            const headers = Object.keys(topic.comparison[0]);
+            table.innerHTML = `
+                <table class="biogids-table">
+                    <thead>
+                        <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
+                    </thead>
+                    <tbody>
+                        ${topic.comparison.map(row => `
+                            <tr>${headers.map(h => `<td>${row[h] || '—'}</td>`).join('')}</tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        } else {
+            comparisonSection.style.display = 'none';
+        }
+
+        // Fill related species links
+        const speciesSection = document.getElementById('biogids-species-section');
+        if (topic.relatedSpecies && topic.relatedSpecies.length > 0) {
+            speciesSection.style.display = 'block';
+            const speciesLinks = document.getElementById('biogids-species-links');
+            const allSpecies = window.speciesData || [];
+            speciesLinks.innerHTML = topic.relatedSpecies
+                .map(speciesId => {
+                    const species = allSpecies.find(s => s.id === speciesId);
+                    if (!species) return '';
+                    return `<button class="biogids-species-link" data-species-id="${species.id}">${species.name[lang] || species.name.en}</button>`;
+                })
+                .filter(html => html)
+                .join('');
+
+            speciesLinks.querySelectorAll('.biogids-species-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    const speciesId = link.dataset.speciesId;
+                    const species = allSpecies.find(s => s.id === speciesId);
+                    if (species) {
+                        bioguideDetailModal.classList.add('hidden');
+                        openModal(species);
+                    }
+                });
+            });
+        } else {
+            speciesSection.style.display = 'none';
+        }
+
+        // Fill quiz
+        const quizContainer = document.getElementById('quiz-container');
+        if (topic.quiz && topic.quiz.length > 0) {
+            renderBioguideQuiz(topic.quiz, lang, quizContainer);
+        }
+
+        bioguideDetailModal.classList.remove('hidden');
+    }
+
+    function renderBioguideQuiz(questions, lang, container) {
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion(index) {
+            if (index >= questions.length) {
+                // Quiz complete
+                const percent = Math.round((score / questions.length) * 100);
+                container.innerHTML = `
+                    <div class="quiz-complete">
+                        <h2>Quiz Voltooid!</h2>
+                        <div class="quiz-score">
+                            <span class="score-number">${score}/${questions.length}</span>
+                            <span class="score-percent">${percent}%</span>
+                        </div>
+                        <p class="quiz-message">
+                            ${percent === 100 ? '🎉 Perfecte score!' : percent >= 75 ? '👍 Goed gedaan!' : '📚 Blijf leren!'}
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            const question = questions[index];
+            const q = question.question[lang] || question.question.en;
+            const options = question.options;
+
+            container.innerHTML = `
+                <div class="quiz-question-block">
+                    <div class="quiz-progress">${index + 1} / ${questions.length}</div>
+                    <h4>${q}</h4>
+                    <div class="quiz-options">
+                        ${options.map((opt, i) => `
+                            <button class="quiz-option" data-index="${i}">
+                                ${opt[lang] || opt.en}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            container.querySelectorAll('.quiz-option').forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    const isCorrect = i === question.correct;
+                    if (isCorrect) {
+                        score++;
+                        btn.classList.add('correct');
+                    } else {
+                        btn.classList.add('incorrect');
+                        const correctBtn = container.querySelector(`[data-index="${question.correct}"]`);
+                        if (correctBtn) correctBtn.classList.add('correct');
+                    }
+                    // Disable all buttons
+                    container.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+                    // Move to next after delay
+                    setTimeout(() => {
+                        currentQuestionIndex++;
+                        showQuestion(currentQuestionIndex);
+                    }, 1200);
+                });
+            });
+        }
+
+        showQuestion(0);
+    }
+
+    if (btnCloseBioguideModal) {
+        btnCloseBioguideModal.onclick = () => bioguideDetailModal.classList.add('hidden');
+    }
+
+    if (bioguideDetailModal) {
+        bioguideDetailModal.addEventListener('click', (e) => {
+            if (e.target === bioguideDetailModal) bioguideDetailModal.classList.add('hidden');
+        });
+    }
+
     // --- Icon Injection ---
     function injectIcons() {
         document.querySelectorAll('.back-svg-target').forEach(el => el.innerHTML = ICONS.back);
@@ -1263,6 +1477,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.play-svg-target').forEach(el => el.innerHTML = ICONS.play);
         document.querySelectorAll('.learn-svg-target').forEach(el => el.innerHTML = ICONS.learn);
         document.querySelectorAll('.quiz-svg-target').forEach(el => el.innerHTML = ICONS.quiz);
+        document.querySelectorAll('.biogids-svg-target').forEach(el => el.innerHTML = ICONS.biogids);
     }
 
     // --- Badges ---

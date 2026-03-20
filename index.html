@@ -97,10 +97,13 @@
 
             <div class="action-buttons">
                 <button id="btn-play" class="btn btn-primary">
-                    <span class="play-svg-target" style="margin-right:8px"></span> Play Quiz
+                    <span class="play-svg-target" style="margin-right:8px"></span> <span data-i18n="play">Speel Quiz</span>
                 </button>
                 <button id="btn-learn" class="btn btn-outline">
-                    <span class="learn-svg-target" style="margin-right:8px"></span> Encyclopedie
+                    <span class="learn-svg-target" style="margin-right:8px"></span> <span data-i18n="learn">Encyclopedie</span>
+                </button>
+                <button id="btn-biogids" class="btn btn-outline">
+                    <span class="biogids-svg-target" style="margin-right:8px"></span> <span data-i18n="biogids">BioGids</span>
                 </button>
             </div>
         </section>
@@ -335,6 +338,28 @@
             <div class="grid-container" id="learn-grid"></div>
         </section>
 
+        <!-- ══ BIOGIDS SCREEN ═════════════════════════════════════════════ -->
+        <section id="screen-biogids" class="screen hidden">
+            <header class="biogids-header">
+                <button class="btn-back" data-target="screen-home">← <span data-i18n="back">Terug</span></button>
+                <h2 data-i18n="biogidsTitle">BioGids: Biologische Kenniskaarten</h2>
+            </header>
+
+            <!-- Search bar -->
+            <div class="biogids-search-wrap">
+                <input class="biogids-search-input" id="biogids-search" type="text" placeholder="Zoek onderwerp…" data-placeholder="biogidsSearch">
+            </div>
+
+            <!-- BioGids cards grid -->
+            <div class="biogids-grid" id="biogids-grid"></div>
+
+            <!-- Empty state -->
+            <div class="biogids-empty" id="biogids-empty" style="display:none">
+                <div class="biogids-empty-icon">🔍</div>
+                <p data-i18n="noResults">Geen onderwerpen gevonden</p>
+            </div>
+        </section>
+
         <!-- ══ PHYLOGENY SCREEN ══════════════════════════════════════════ -->
         <section id="screen-phylo" class="screen hidden phylo-screen">
             <div class="phylo-screen-topbar">
@@ -435,7 +460,43 @@
         </div>
     </div>
 
+    <!-- ══ BIOGIDS DETAIL MODAL ══════════════════════════════════════════ -->
+    <div id="biogids-detail-modal" class="modal-backdrop hidden">
+        <div class="modal biogids-modal glass-panel">
+            <button id="btn-close-biogids-modal" class="btn-close">×</button>
+            <div class="biogids-modal-header">
+                <div class="biogids-modal-icon" id="biogids-modal-icon">🔬</div>
+                <h1 id="biogids-modal-title">Topic Title</h1>
+            </div>
+            <div class="biogids-modal-body">
+                <!-- Content section -->
+                <div class="biogids-content">
+                    <p id="biogids-modal-content">Content goes here.</p>
+
+                    <!-- Comparison table if applicable -->
+                    <div id="biogids-comparison-section" class="biogids-comparison-section" style="display:none">
+                        <h3>Vergelijking</h3>
+                        <div class="biogids-comparison-table" id="biogids-comparison-table"></div>
+                    </div>
+
+                    <!-- Related species -->
+                    <div id="biogids-species-section" class="biogids-species-section" style="display:none">
+                        <h3>Voorbeeldsoorten</h3>
+                        <div class="biogids-species-links" id="biogids-species-links"></div>
+                    </div>
+                </div>
+
+                <!-- Quiz section -->
+                <div class="biogids-quiz-section" id="biogids-quiz-section">
+                    <h3>📝 Mini-Quiz</h3>
+                    <div class="quiz-container" id="quiz-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/data/species_data.js"></script>
+    <script src="js/data/biogids_data.js"></script>
     <script src="js/app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
