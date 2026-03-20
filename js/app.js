@@ -1,5 +1,235 @@
 // app.js
 
+// ═══════════════════════════════════════════════════════════════════════════
+// GLOBAL STATE & FUNCTIONS (outside DOMContentLoaded)
+// ═══════════════════════════════════════════════════════════════════════════
+let currentLang = 'nl';
+let showScreenFunc = null; // Will be set inside DOMContentLoaded
+
+// BioGids rendering functions - defined at global scope for accessibility
+window.renderBioguide = function(filter = '') {
+    try {
+        const grid = document.getElementById('biogids-grid');
+        const emptyState = document.getElementById('biogids-empty');
+        const data = window.bioguideData || [];
+
+        if (!grid || !emptyState) {
+            console.error('BioGids DOM elements not found');
+            return;
+        }
+
+        const filtered = data.filter(topic => {
+            const searchLower = filter.toLowerCase();
+            const titleLower = (topic.name[currentLang] || topic.name.en).toLowerCase();
+            return titleLower.includes(searchLower);
+        });
+
+        if (filtered.length === 0) {
+            grid.style.display = 'none';
+            emptyState.style.display = 'flex';
+            return;
+        }
+
+        grid.style.display = 'grid';
+        emptyState.style.display = 'none';
+
+        grid.innerHTML = filtered.map(topic => `
+            <div class="biogids-card" data-topic-id="${topic.id}" style="--card-hue: ${topic.hue}deg; --card-color: ${topic.color};">
+                <div class="biogids-card-icon">${topic.icon}</div>
+                <div class="biogids-card-content">
+                    <h3 class="biogids-card-title">${topic.name[currentLang] || topic.name.en}</h3>
+                    <p class="biogids-card-summary">${topic.summary[currentLang] || topic.summary.en}</p>
+                </div>
+                <div class="biogids-card-arrow">→</div>
+            </div>
+        `).join('');
+
+        // Attach click handlers
+        grid.querySelectorAll('.biogids-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const topicId = card.dataset.topicId;
+                const topic = data.find(t => t.id === topicId);
+                if (topic) window.openBioguideDetail(topic);
+            });
+        });
+    } catch (error) {
+        console.error('Error in renderBioguide:', error);
+    }
+};
+
+window.openBioguideDetail = function(topic) {
+    try {
+        const i18n = window.i18nData; // Will be set inside DOMContentLoaded
+        const bioguideDetailModal = document.getElementById('biogids-detail-modal');
+
+        if (!bioguideDetailModal) {
+            console.error('BioGids detail modal not found');
+            return;
+        }
+
+        const dict = i18n && i18n[currentLang] ? i18n[currentLang] : {};
+        const lang = currentLang;
+
+        // Fill header
+        const headerIcon = document.getElementById('biogids-modal-icon');
+        const headerTitle = document.getElementById('biogids-modal-title');
+        if (headerIcon) headerIcon.textContent = topic.icon;
+        if (headerTitle) headerTitle.textContent = topic.name[lang] || topic.name.en;
+
+        // Fill content
+        const contentEl = document.getElementById('biogids-modal-content');
+        if (contentEl) contentEl.textContent = topic.content[lang] || topic.content.en;
+
+        // Fill comparison table if exists
+        const comparisonSection = document.getElementById('biogids-comparison-section');
+        if (topic.comparison && topic.comparison.length > 0 && comparisonSection) {
+            comparisonSection.style.display = 'block';
+            const table = document.getElementById('biogids-comparison-table');
+            const headers = Object.keys(topic.comparison[0]);
+            if (table) {
+                table.innerHTML = `
+                    <table class="biogids-table">
+                        <thead>
+                            <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
+                        </thead>
+                        <tbody>
+                            ${topic.comparison.map(row => `
+                                <tr>${headers.map(h => `<td>${row[h] || '—'}</td>`).join('')}</tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+            }
+        } else if (comparisonSection) {
+            comparisonSection.style.display = 'none';
+        }
+
+        // Fill related species links
+        const speciesSection = document.getElementById('biogids-species-section');
+        if (topic.relatedSpecies && topic.relatedSpecies.length > 0 && speciesSection) {
+            speciesSection.style.display = 'block';
+            const speciesLinks = document.getElementById('biogids-species-links');
+            const allSpecies = window.speciesData || [];
+            if (speciesLinks && Array.isArray(allSpecies) && allSpecies.length > 0) {
+                try {
+                    speciesLinks.innerHTML = topic.relatedSpecies
+                        .map(speciesId => {
+                            const species = allSpecies.find(s => s && s.id === speciesId);
+                            if (!species) return '';
+                            return `<button class="biogids-species-link" data-species-id="${species.id}">${species.name[lang] || species.name.en}</button>`;
+                        })
+                        .filter(html => html)
+                        .join('');
+                } catch (err) {
+                    console.error('Error rendering species links:', err);
+                    speciesLinks.innerHTML = '';
+                }
+            } else if (speciesLinks) {
+                speciesLinks.innerHTML = '';
+            }
+
+            // Attach click handlers to species links
+            if (speciesLinks) {
+                speciesLinks.querySelectorAll('.biogids-species-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        const speciesId = link.dataset.speciesId;
+                        const species = allSpecies.find(s => s && s.id === speciesId);
+                        if (species && window.openModalFunc) {
+                            bioguideDetailModal.classList.add('hidden');
+                            window.openModalFunc(species);
+                        }
+                    });
+                });
+            }
+        } else if (speciesSection) {
+            speciesSection.style.display = 'none';
+        }
+
+        // Fill quiz
+        const quizContainer = document.getElementById('quiz-container');
+        if (topic.quiz && topic.quiz.length > 0 && quizContainer) {
+            window.renderBioguideQuiz(topic.quiz, lang, quizContainer);
+        }
+
+        bioguideDetailModal.classList.remove('hidden');
+    } catch (error) {
+        console.error('Error in openBioguideDetail:', error);
+    }
+};
+
+window.renderBioguideQuiz = function(questions, lang, container) {
+    try {
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion(index) {
+            if (index >= questions.length) {
+                // Quiz complete
+                const percent = Math.round((score / questions.length) * 100);
+                container.innerHTML = `
+                    <div class="quiz-complete">
+                        <h2>Quiz Voltooid!</h2>
+                        <div class="quiz-score">
+                            <span class="score-number">${score}/${questions.length}</span>
+                            <span class="score-percent">${percent}%</span>
+                        </div>
+                        <p class="quiz-message">
+                            ${percent === 100 ? '🎉 Perfecte score!' : percent >= 75 ? '👍 Goed gedaan!' : '📚 Blijf leren!'}
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            const question = questions[index];
+            const q = question.question[lang] || question.question.en;
+            const options = question.options;
+
+            container.innerHTML = `
+                <div class="quiz-question-block">
+                    <div class="quiz-progress">${index + 1} / ${questions.length}</div>
+                    <h4>${q}</h4>
+                    <div class="quiz-options">
+                        ${options.map((opt, i) => `
+                            <button class="quiz-option" data-index="${i}">
+                                ${opt[lang] || opt.en}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            container.querySelectorAll('.quiz-option').forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    const isCorrect = i === question.correct;
+                    if (isCorrect) {
+                        score++;
+                        btn.classList.add('correct');
+                    } else {
+                        btn.classList.add('incorrect');
+                        const correctBtn = container.querySelector(`[data-index="${question.correct}"]`);
+                        if (correctBtn) correctBtn.classList.add('correct');
+                    }
+                    // Disable all buttons
+                    container.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+                    // Move to next after delay
+                    setTimeout(() => {
+                        currentQuestionIndex++;
+                        showQuestion(currentQuestionIndex);
+                    }, 1200);
+                });
+            });
+        }
+
+        showQuestion(0);
+    } catch (error) {
+        console.error('Error in renderBioguideQuiz:', error);
+    }
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+// DOMContentLoaded initialization
+// ═══════════════════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
     console.log("App.js: DOMContentLoaded triggered");
 
@@ -246,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- State Variables ---
-    let currentLang = 'nl';
+    // currentLang is now global (defined outside DOMContentLoaded)
     let currentCategory = 'all';
     let currentDifficulty = 'easy';
     let activeQuizPool = [];
@@ -1272,194 +1502,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- BioGids Rendering ---
-    function renderBioguide(filter = '') {
-        const grid = document.getElementById('biogids-grid');
-        const emptyState = document.getElementById('biogids-empty');
-        const data = window.bioguideData || [];
-
-        const filtered = data.filter(topic => {
-            const searchLower = filter.toLowerCase();
-            const titleLower = (topic.name[currentLang] || topic.name.en).toLowerCase();
-            return titleLower.includes(searchLower);
-        });
-
-        if (filtered.length === 0) {
-            grid.style.display = 'none';
-            emptyState.style.display = 'flex';
-            return;
-        }
-
-        grid.style.display = 'grid';
-        emptyState.style.display = 'none';
-
-        grid.innerHTML = filtered.map(topic => `
-            <div class="biogids-card" data-topic-id="${topic.id}" style="--card-hue: ${topic.hue}deg; --card-color: ${topic.color};">
-                <div class="biogids-card-icon">${topic.icon}</div>
-                <div class="biogids-card-content">
-                    <h3 class="biogids-card-title">${topic.name[currentLang] || topic.name.en}</h3>
-                    <p class="biogids-card-summary">${topic.summary[currentLang] || topic.summary.en}</p>
-                </div>
-                <div class="biogids-card-arrow">→</div>
-            </div>
-        `).join('');
-
-        grid.querySelectorAll('.biogids-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const topicId = card.dataset.topicId;
-                const topic = data.find(t => t.id === topicId);
-                if (topic) openBioguideDetail(topic);
-            });
-        });
-    }
-
-    // BioGids search functionality
+    // --- BioGids Modal Setup ---
+    const bioguideDetailModal = document.getElementById('biogids-detail-modal');
+    const btnCloseBioguideModal = document.getElementById('btn-close-biogids-modal');
     const bioguideSearch = document.getElementById('biogids-search');
+
+    // Store i18n and openModal globally for BioGids functions
+    window.i18nData = i18n;
+    window.openModalFunc = openModal;
+
+    // Attach search handler
     if (bioguideSearch) {
         bioguideSearch.addEventListener('input', (e) => renderBioguide(e.target.value));
     }
 
-    // BioGids detail modal
-    const bioguideDetailModal = document.getElementById('biogids-detail-modal');
-    const btnCloseBioguideModal = document.getElementById('btn-close-biogids-modal');
-
-    function openBioguideDetail(topic) {
-        const dict = i18n[currentLang];
-        const lang = currentLang;
-
-        // Fill header
-        document.getElementById('biogids-modal-icon').textContent = topic.icon;
-        document.getElementById('biogids-modal-title').textContent = topic.name[lang] || topic.name.en;
-
-        // Fill content
-        document.getElementById('biogids-modal-content').textContent = topic.content[lang] || topic.content.en;
-
-        // Fill comparison table if exists
-        const comparisonSection = document.getElementById('biogids-comparison-section');
-        if (topic.comparison && topic.comparison.length > 0) {
-            comparisonSection.style.display = 'block';
-            const table = document.getElementById('biogids-comparison-table');
-            const headers = Object.keys(topic.comparison[0]);
-            table.innerHTML = `
-                <table class="biogids-table">
-                    <thead>
-                        <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
-                    </thead>
-                    <tbody>
-                        ${topic.comparison.map(row => `
-                            <tr>${headers.map(h => `<td>${row[h] || '—'}</td>`).join('')}</tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-        } else {
-            comparisonSection.style.display = 'none';
-        }
-
-        // Fill related species links
-        const speciesSection = document.getElementById('biogids-species-section');
-        if (topic.relatedSpecies && topic.relatedSpecies.length > 0) {
-            speciesSection.style.display = 'block';
-            const speciesLinks = document.getElementById('biogids-species-links');
-            const allSpecies = window.speciesData || [];
-            speciesLinks.innerHTML = topic.relatedSpecies
-                .map(speciesId => {
-                    const species = allSpecies.find(s => s.id === speciesId);
-                    if (!species) return '';
-                    return `<button class="biogids-species-link" data-species-id="${species.id}">${species.name[lang] || species.name.en}</button>`;
-                })
-                .filter(html => html)
-                .join('');
-
-            speciesLinks.querySelectorAll('.biogids-species-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    const speciesId = link.dataset.speciesId;
-                    const species = allSpecies.find(s => s.id === speciesId);
-                    if (species) {
-                        bioguideDetailModal.classList.add('hidden');
-                        openModal(species);
-                    }
-                });
-            });
-        } else {
-            speciesSection.style.display = 'none';
-        }
-
-        // Fill quiz
-        const quizContainer = document.getElementById('quiz-container');
-        if (topic.quiz && topic.quiz.length > 0) {
-            renderBioguideQuiz(topic.quiz, lang, quizContainer);
-        }
-
-        bioguideDetailModal.classList.remove('hidden');
-    }
-
-    function renderBioguideQuiz(questions, lang, container) {
-        let currentQuestionIndex = 0;
-        let score = 0;
-
-        function showQuestion(index) {
-            if (index >= questions.length) {
-                // Quiz complete
-                const percent = Math.round((score / questions.length) * 100);
-                container.innerHTML = `
-                    <div class="quiz-complete">
-                        <h2>Quiz Voltooid!</h2>
-                        <div class="quiz-score">
-                            <span class="score-number">${score}/${questions.length}</span>
-                            <span class="score-percent">${percent}%</span>
-                        </div>
-                        <p class="quiz-message">
-                            ${percent === 100 ? '🎉 Perfecte score!' : percent >= 75 ? '👍 Goed gedaan!' : '📚 Blijf leren!'}
-                        </p>
-                    </div>
-                `;
-                return;
-            }
-
-            const question = questions[index];
-            const q = question.question[lang] || question.question.en;
-            const options = question.options;
-
-            container.innerHTML = `
-                <div class="quiz-question-block">
-                    <div class="quiz-progress">${index + 1} / ${questions.length}</div>
-                    <h4>${q}</h4>
-                    <div class="quiz-options">
-                        ${options.map((opt, i) => `
-                            <button class="quiz-option" data-index="${i}">
-                                ${opt[lang] || opt.en}
-                            </button>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-
-            container.querySelectorAll('.quiz-option').forEach((btn, i) => {
-                btn.addEventListener('click', () => {
-                    const isCorrect = i === question.correct;
-                    if (isCorrect) {
-                        score++;
-                        btn.classList.add('correct');
-                    } else {
-                        btn.classList.add('incorrect');
-                        const correctBtn = container.querySelector(`[data-index="${question.correct}"]`);
-                        if (correctBtn) correctBtn.classList.add('correct');
-                    }
-                    // Disable all buttons
-                    container.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
-                    // Move to next after delay
-                    setTimeout(() => {
-                        currentQuestionIndex++;
-                        showQuestion(currentQuestionIndex);
-                    }, 1200);
-                });
-            });
-        }
-
-        showQuestion(0);
-    }
-
+    // Attach modal close handlers
     if (btnCloseBioguideModal) {
         btnCloseBioguideModal.onclick = () => bioguideDetailModal.classList.add('hidden');
     }
