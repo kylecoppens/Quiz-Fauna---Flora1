@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stopNo: "Doorgaan",
             home: "← Home",
             setup: "Quiz Instellen",
+            setupDesc: "Kies je categorie en moeilijkheidsgraad",
             category: "Kies Categorie",
             difficulty: "Kies Moeilijkheidsgraad",
             start: "Start Quiz",
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trees: "🌲 Bomen",
             agriculture: "🌾 Gekweekte Soorten",
             easy: "Gemakkelijk (Algemeen)",
+            medium: "Gemiddeld",
             hard: "Moeilijk (Zeldzaam)",
             question: "Identificeer deze soort",
             score: "Score",
@@ -92,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             range: "Toon Kaart",
             species: "Toon Soort",
             sotdLabel: "Soort van de Dag",
+            sotdTap: "Tik voor details →",
             xpLabel: "XP"
         },
         en: {
@@ -107,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stopNo: "Keep playing",
             home: "← Home",
             setup: "Setup Quiz",
+            setupDesc: "Choose your category and difficulty",
             category: "Select Category",
             difficulty: "Select Difficulty",
             start: "Start Quiz",
@@ -123,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trees: "🌲 Trees",
             agriculture: "🌾 Cultivated Species",
             easy: "Easy (Common)",
+            medium: "Medium",
             hard: "Hard (Rare)",
             question: "Identify this species",
             score: "Score",
@@ -154,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             range: "Show Range",
             species: "Show Species",
             sotdLabel: "Species of the Day",
+            sotdTap: "Tap for details →",
             xpLabel: "XP"
         },
         fr: {
@@ -169,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stopNo: "Continuer",
             home: "← Accueil",
             setup: "Configuration du Quiz",
+            setupDesc: "Choisissez votre cat\u00e9gorie et difficult\u00e9",
             category: "Choisir la Catégorie",
             difficulty: "Choisir la Difficulté",
             start: "Commencer le Quiz",
@@ -185,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trees: "🌲 Arbres",
             agriculture: "🌾 Espèces Cultivées",
             easy: "Facile (Commun)",
+            medium: "Moyen",
             hard: "Difficile (Rare)",
             question: "Identifiez cette espèce",
             score: "Score",
@@ -216,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             range: "Carte",
             species: "Espèce",
             sotdLabel: "Espèce du Jour",
+            sotdTap: "Touchez pour d\u00e9tails →",
             xpLabel: "XP"
         }
     };
@@ -360,6 +369,10 @@ document.addEventListener('DOMContentLoaded', () => {
         factEl.textContent = funfact || '';
 
         card.classList.remove('hidden');
+
+        // Make SOTD card clickable — opens species detail modal
+        card.style.cursor = 'pointer';
+        card.onclick = () => openModal(species);
     }
 
     // --- Language Logic ---
@@ -389,10 +402,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // SOTD label
         const sotdLabelEl = document.querySelector('.sotd-label [data-i18n="sotdLabel"]');
         if (sotdLabelEl) sotdLabelEl.textContent = dict.sotdLabel;
+        const sotdTapEl = document.querySelector('[data-i18n="sotdTap"]');
+        if (sotdTapEl) sotdTapEl.textContent = dict.sotdTap;
 
         // Config
         const configH2 = document.querySelector('#screen-config h2');
         if (configH2) configH2.textContent = dict.setup;
+        const configSubEl = document.querySelector('.config-hero-sub');
+        if (configSubEl) configSubEl.textContent = dict.setupDesc;
 
         const catLabel = document.querySelector('#category-selector') && document.querySelector('#category-selector').previousElementSibling;
         if (catLabel) catLabel.textContent = dict.category;
@@ -487,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    btnPlay.addEventListener('click', () => showScreen('screen-config'));
+    btnPlay.addEventListener('click', () => { showScreen('screen-config'); updateConfigPreview(); });
     btnLearn.addEventListener('click', () => {
         showScreen('screen-learn');
         renderEncyclopedia('all');
@@ -501,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnResultsHome.addEventListener('click', () => showScreen('screen-home'));
-    btnPlayAgain.addEventListener('click', () => showScreen('screen-config'));
+    btnPlayAgain.addEventListener('click', () => { showScreen('screen-config'); updateConfigPreview(); });
 
     // ── Encyclopedia filter with sub-tabs ──────────────────────────────────
     const subFilterRow = document.getElementById('sub-filters');
@@ -615,6 +632,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Config ---
+    function updateConfigPreview() {
+        const countEl = document.getElementById('config-species-count');
+        if (!countEl) return;
+        const allData = window.speciesData || [];
+        const seen = new Set();
+        const uniqueData = allData.filter(item => {
+            const isDuplicate = seen.has(item.scientific);
+            seen.add(item.scientific);
+            return !isDuplicate;
+        });
+        const filtered = uniqueData.filter(species => {
+            const cats = GROUP_TO_CATEGORIES[currentCategory];
+            const matchesCategory = !cats || cats.includes(species.category);
+            const matchesDifficulty = currentDifficulty === 'all' || species.difficulty === currentDifficulty || !species.difficulty;
+            return matchesCategory && matchesDifficulty;
+        });
+        const texts = {
+            nl: `${filtered.length} soorten beschikbaar`,
+            en: `${filtered.length} species available`,
+            fr: `${filtered.length} esp\u00e8ces disponibles`
+        };
+        countEl.textContent = texts[currentLang] || texts.nl;
+    }
+
     function setupChips(chipsList, callback) {
         chipsList.forEach(chip => {
             chip.addEventListener('click', (e) => {
@@ -626,8 +667,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    setupChips(categoryChips, val => currentCategory = val);
-    setupChips(difficultyChips, val => currentDifficulty = val);
+    setupChips(categoryChips, val => { currentCategory = val; updateConfigPreview(); });
+    setupChips(difficultyChips, val => { currentDifficulty = val; updateConfigPreview(); });
 
     // --- Quiz Engine ---
     btnStartQuiz.addEventListener('click', startQuiz);

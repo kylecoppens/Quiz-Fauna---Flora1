@@ -263,6 +263,18 @@ p { color: var(--text-secondary); line-height: 1.6; }
     border-radius: var(--border-radius-md);
     padding: 14px 16px;
     animation: fadeIn 0.5s ease;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.sotd-card:hover {
+    background: rgba(61, 184, 99, 0.14);
+    border-color: rgba(61, 184, 99, 0.5);
+    transform: translateY(-2px);
+}
+
+.sotd-card:active {
+    transform: translateY(0);
 }
 
 .sotd-label {
@@ -318,6 +330,20 @@ p { color: var(--text-secondary); line-height: 1.6; }
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.sotd-tap-hint {
+    float: right;
+    font-weight: 400;
+    font-size: 0.65rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.sotd-card:hover .sotd-tap-hint {
+    opacity: 0.9;
 }
 
 /* ==========================================================================
@@ -411,14 +437,62 @@ p { color: var(--text-secondary); line-height: 1.6; }
 /* ==========================================================================
    Config Selectors
    ========================================================================== */
+/* Config hero header */
+.config-header {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.config-header .btn-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+}
+
+.config-hero {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+
+.config-hero-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 12px rgba(61, 184, 99, 0.3));
+}
+
+.config-hero h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.config-hero-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
 .form-group { margin-bottom: 30px; }
 
 .form-group label {
     display: block;
     font-family: var(--font-heading);
-    font-size: 1.2rem;
-    margin-bottom: 12px;
+    font-size: 1.1rem;
+    margin-bottom: 14px;
     color: var(--text-primary);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Species count preview */
+.config-species-count {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 8px 0 4px;
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
 }
 
 .custom-select-grid {
@@ -436,7 +510,9 @@ p { color: var(--text-secondary); line-height: 1.6; }
     font-family: var(--font-body);
     font-weight: 500;
     cursor: pointer;
-    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
 .select-chip:hover {
@@ -444,10 +520,34 @@ p { color: var(--text-secondary); line-height: 1.6; }
     color: var(--text-primary);
 }
 
+.select-chip:active {
+    transform: scale(0.96);
+}
+
 .select-chip.active {
     background: rgba(61, 184, 99, 0.2);
     border-color: var(--accent-primary);
     color: #fff;
+    box-shadow: 0 0 12px rgba(61, 184, 99, 0.15);
+}
+
+/* Animated checkmark on active chip */
+.select-chip.active::after {
+    content: '\2713';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 0.7rem;
+    color: var(--accent-primary);
+    opacity: 0;
+    transform: scale(0);
+    animation: chipCheck 0.3s ease forwards;
+}
+
+@keyframes chipCheck {
+    0% { opacity: 0; transform: scale(0); }
+    50% { transform: scale(1.3); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 /* Group-header chips (Dieren / Planten / Fungi) */
@@ -455,13 +555,15 @@ p { color: var(--text-secondary); line-height: 1.6; }
     grid-column: 1 / -1;
     font-weight: 700;
     font-size: 1.05em;
-    background: rgba(255, 255, 255, 0.04);
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
     border-color: rgba(255, 255, 255, 0.15);
+    border-left: 3px solid var(--group-accent, var(--accent-primary));
     letter-spacing: 0.02em;
 }
 .select-chip.group-header.active {
     background: rgba(61, 184, 99, 0.18);
     border-color: var(--accent-primary);
+    border-left-color: var(--group-accent, var(--accent-primary));
     color: #fff;
 }
 
@@ -469,6 +571,11 @@ p { color: var(--text-secondary); line-height: 1.6; }
 .select-chip.child-chip {
     font-size: 0.9em;
     padding: 10px 14px;
+}
+
+/* Difficulty selector: 3 columns for easy/medium/hard */
+#difficulty-selector {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* ==========================================================================

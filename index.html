@@ -83,7 +83,7 @@
                 </div>
 
                 <div id="sotd-card" class="sotd-card hidden">
-                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span></div>
+                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span> <span class="sotd-tap-hint" data-i18n="sotdTap">Tik voor details →</span></div>
                     <div class="sotd-body">
                         <img id="sotd-img" src="" alt="" referrerpolicy="no-referrer">
                         <div class="sotd-info">
@@ -107,9 +107,13 @@
 
         <!-- ══ 2. QUIZ CONFIG ══════════════════════════════════════════════ -->
         <section id="screen-config" class="screen hidden">
-            <header>
+            <header class="config-header">
                 <button class="btn-back" data-target="screen-home">← Back</button>
-                <h2>Setup Quiz</h2>
+                <div class="config-hero">
+                    <div class="config-hero-icon">🎯</div>
+                    <h2 data-i18n="setup">Quiz Instellen</h2>
+                    <p class="config-hero-sub" data-i18n="setupDesc">Kies je categorie en moeilijkheidsgraad</p>
+                </div>
             </header>
             <div class="config-options">
                 <div class="form-group">
@@ -117,27 +121,29 @@
                     <div class="custom-select-grid" id="category-selector">
                         <button class="select-chip active" data-val="all">🌍 Alles</button>
 
-                        <button class="select-chip group-header" data-val="dieren">🐾 Dieren</button>
+                        <button class="select-chip group-header" data-val="dieren" style="--group-accent:#56c4e8">🐾 Dieren</button>
                         <button class="select-chip child-chip" data-val="fauna">🦊 Zoogdieren</button>
                         <button class="select-chip child-chip" data-val="birds">🐦 Vogels</button>
                         <button class="select-chip child-chip" data-val="insects">🦋 Insecten</button>
 
-                        <button class="select-chip group-header" data-val="planten">🌿 Planten</button>
+                        <button class="select-chip group-header" data-val="planten" style="--group-accent:#7ec860">🌿 Planten</button>
                         <button class="select-chip child-chip" data-val="flora">🌸 Wilde Bloemen</button>
                         <button class="select-chip child-chip" data-val="trees">🌲 Bomen</button>
                         <button class="select-chip child-chip" data-val="agriculture">🌾 Gekweekt</button>
 
-                        <button class="select-chip group-header" data-val="fungi">🍄 Fungi</button>
+                        <button class="select-chip group-header" data-val="fungi" style="--group-accent:#c87ef0">🍄 Fungi</button>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Select Difficulty</label>
                     <div class="custom-select-grid" id="difficulty-selector">
-                        <button class="select-chip active" data-val="easy">Easy (Common)</button>
-                        <button class="select-chip" data-val="hard">Hard (Rare)</button>
+                        <button class="select-chip active" data-val="easy">Gemakkelijk (Algemeen)</button>
+                        <button class="select-chip" data-val="medium">Gemiddeld</button>
+                        <button class="select-chip" data-val="hard">Moeilijk (Zeldzaam)</button>
                     </div>
                 </div>
             </div>
+            <div id="config-species-count" class="config-species-count"></div>
             <div class="action-buttons bottom">
                 <button id="btn-start-quiz" class="btn btn-primary w-100">Start Quiz</button>
             </div>
