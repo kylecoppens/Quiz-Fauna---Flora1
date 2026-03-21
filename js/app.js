@@ -1442,6 +1442,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          onerror="this.style.background='rgba(61,184,99,0.1)'; this.src='';">
                     <div class="learn-card-info">
                         <div class="learn-card-title">${name}</div>
+                        ${item.scientific ? `<div class="learn-card-scientific">${item.scientific}</div>` : ''}
                         <div class="learn-card-type">${catName}</div>
                         ${gradeTag}
                     </div>`;

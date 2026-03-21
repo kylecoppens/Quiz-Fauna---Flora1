@@ -1195,7 +1195,15 @@ p {
     font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.9rem;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
+}
+
+.learn-card-scientific {
+    font-style: italic;
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    margin-bottom: 3px;
+    opacity: 0.85;
 }
 
 .learn-card-type {
