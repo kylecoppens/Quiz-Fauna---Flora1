@@ -1711,6 +1711,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]},
             {id:'angiospermae',icon:'🌸',label:'Bedektzadigen',sci:'Angiospermae',color:'#a8d870',children:[
               {id:'monocots',icon:'🌷',label:'Monocotylen',sci:'Liliopsida',color:'#f0c05a',cats:['flora'],children:[
+                {id:'alismatales',icon:'💧',label:'Kroosachtigen',sci:'Alismatales',color:'#60b8c8',families:['Araceae']},
                 {id:'asparagales',icon:'🌸',label:'Asparagales',sci:'Asparagales',color:'#f0c05a',families:['Amaryllidaceae','Asparagaceae','Orchidaceae']},
               ]},
               {id:'dicots',icon:'🌼',label:'Dicotylen',sci:'Eudicotyledones',color:'#7ec860',cats:['flora','trees','agriculture'],children:[
@@ -1721,9 +1722,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 {id:'oleales_arb',icon:'🌳',label:'Olijfachtigen - Bomen',sci:'Lamiales arborescent',color:'#90d870',families:['Oleaceae']},
                 {id:'aquifoliales',icon:'🌿',label:'Hulstfamilie',sci:'Aquifoliales',color:'#50a840',families:['Aquifoliaceae']},
                 {id:'salicales',icon:'🌳',label:'Wilgenachtigen',sci:'Malpighiales',color:'#a060d0',families:['Salicaceae']},
-                {id:'asterales_d',icon:'🌻',label:'Composieten',sci:'Asterales',color:'#e8d040',families:['Asteraceae','Caprifoliaceae']},
+                {id:'asterales_d',icon:'🌻',label:'Composieten',sci:'Asterales',color:'#e8d040',families:['Asteraceae','Caprifoliaceae','Campanulaceae']},
                 {id:'lamiales_d',icon:'🌿',label:'Lipbloemigen',sci:'Lamiales',color:'#90d870',families:['Lamiaceae','Plantaginaceae','Boraginaceae']},
-                {id:'caryophyllales_d',icon:'🌸',label:'Anjerfamilie',sci:'Caryophyllales',color:'#e89090',families:['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae','Polygonaceae']},
+                {id:'caryophyllales_d',icon:'🌸',label:'Anjerfamilie',sci:'Caryophyllales',color:'#e89090',families:['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae','Polygonaceae','Portulacaceae']},
                 {id:'ranunculales_d',icon:'🌼',label:'Boterbloemen',sci:'Ranunculales',color:'#f8e050',families:['Ranunculaceae','Papaveraceae']},
                 {id:'fabales_d',icon:'🫘',label:'Vlinderbloemigen',sci:'Fabales',color:'#70c890',families:['Fabaceae']},
                 {id:'brassicales_d',icon:'🥦',label:'Kruisbloemigen',sci:'Brassicales',color:'#90d870',families:['Brassicaceae']},
