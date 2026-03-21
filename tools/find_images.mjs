@@ -49,8 +49,8 @@ async function fetchJSON(url, headers = {}) {
 async function urlReachable(url) {
   if (!url) return false;
 
-  // Special:FilePath — always valid if Wikidata returned it
-  if (url.includes('Special:FilePath')) return true;
+  // Special:FilePath — these are redirects that don't work in <img> tags → treat as broken
+  if (url.includes('Special:FilePath')) return false;
 
   // iNaturalist S3 URLs — assume valid if they look well-formed
   if (url.includes('inaturalist-open-data.s3')) return true;
@@ -149,8 +149,8 @@ async function wikipediaBatch(scientificNames) {
 // ─── Strategy 2: Wikidata SPARQL (batch VALUES) ──────────────────────────────
 /**
  * Wikidata taxon P225 → P18 image property.
- * Returns Special:FilePath URLs, appended with ?width=640.
- * Fastest single call, but lower coverage than Wikipedia.
+ * Resolves Special:FilePath URLs to real upload.wikimedia.org thumb URLs
+ * via the Commons imageinfo API before returning.
  */
 async function wikidataBatch(scientificNames) {
   const values = scientificNames.map(n => `"${n}"`).join(' ');
@@ -168,16 +168,53 @@ async function wikidataBatch(scientificNames) {
 
   try {
     const data = await fetchJSON(url, { Accept: 'application/sparql-results+json' });
-    const results = {};
+
+    // Collect filename → species name mapping
+    const filenameToName = {};
+    const rawResults = {};
+
     for (const row of data.results?.bindings || []) {
       const name  = row.name?.value;
-      const image = row.image?.value; // Special:FilePath/Filename.jpg
-      if (name && image && !results[name]) {
-        // Convert Special:FilePath to thumb URL via ?width=640
-        const encoded = image.includes('Special:FilePath')
-          ? image + '?width=640'
-          : image;
-        results[name] = encoded;
+      const image = row.image?.value;
+      if (name && image && !rawResults[name]) {
+        rawResults[name] = image;
+        if (image.includes('Special:FilePath')) {
+          const fn = decodeURIComponent(image.split('Special:FilePath/')[1]?.split('?')[0] || '');
+          if (fn) filenameToName[fn] = name;
+        }
+      }
+    }
+
+    // Resolve Special:FilePath URLs via Commons imageinfo API (batch)
+    const filenames = Object.keys(filenameToName);
+    const resolvedUrls = {};
+
+    if (filenames.length > 0) {
+      const CHUNK = 50;
+      for (let i = 0; i < filenames.length; i += CHUNK) {
+        const chunk = filenames.slice(i, i + CHUNK);
+        const titles = chunk.map(f => `File:${encodeURIComponent(f)}`).join('|');
+        const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=${titles}&prop=imageinfo&iiprop=url&iiurlwidth=640&format=json`;
+        const apiData = await fetchJSON(apiUrl);
+        for (const page of Object.values(apiData?.query?.pages || {})) {
+          const ii = page.imageinfo?.[0];
+          if (ii) {
+            const fn = page.title.replace('File:', '');
+            resolvedUrls[fn] = ii.thumburl || ii.url;
+          }
+        }
+        if (i + CHUNK < filenames.length) await new Promise(r => setTimeout(r, 100));
+      }
+    }
+
+    // Build final results with real URLs
+    const results = {};
+    for (const [name, image] of Object.entries(rawResults)) {
+      if (image.includes('Special:FilePath')) {
+        const fn = decodeURIComponent(image.split('Special:FilePath/')[1]?.split('?')[0] || '');
+        results[name] = resolvedUrls[fn] || image; // fallback to original if not resolved
+      } else {
+        results[name] = image;
       }
     }
     return results;

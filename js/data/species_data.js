@@ -42,7 +42,7 @@ window.speciesData = [
       "en": "The female can kill birds weighing up to 500 g — bigger than itself!",
       "fr": "La femelle peut tuer des oiseaux pesant jusqu'à 500 g, plus lourd qu'elle !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Accipiter%20nisus%20Meneer%20Zjeroen.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Accipiter_nisus_Meneer_Zjeroen.jpg/960px-Accipiter_nisus_Meneer_Zjeroen.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Eurasian_Sparrowhawk_by_Steve_Ward.jpg/640px-Eurasian_Sparrowhawk_by_Steve_Ward.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Eurasian_Sparrowhawk_female.jpg/640px-Eurasian_Sparrowhawk_female.jpg"
@@ -252,7 +252,7 @@ window.speciesData = [
       "en": "Insects, spiders",
       "fr": "Insectes, araignées"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Long-tailed%20tit%20%2874940%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Long-tailed_tit_%2874940%29.jpg/960px-Long-tailed_tit_%2874940%29.jpg"
   },
   {
     "id": "t10",
@@ -330,7 +330,7 @@ window.speciesData = [
       "en": "Insects",
       "fr": "Insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/2013.07.01.-21-Wustrow-Neu%20Drosedow--Blaugruene%20Mosaikjungfer-Maennchen.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/2013.07.01.-21-Wustrow-Neu_Drosedow--Blaugruene_Mosaikjungfer-Maennchen.jpg/960px-2013.07.01.-21-Wustrow-Neu_Drosedow--Blaugruene_Mosaikjungfer-Maennchen.jpg"
   },
   {
     "id": "i16",
@@ -369,7 +369,7 @@ window.speciesData = [
       "en": "Insects",
       "fr": "Insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Aeshna%20juncea%202.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Aeshna_juncea_2.jpg/960px-Aeshna_juncea_2.jpg"
   },
   {
     "id": "ext_agaricus_campestris",
@@ -496,7 +496,7 @@ window.speciesData = [
       "en": "Seeds, insects",
       "fr": "Graines, insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Alouette%20des%20champs%20Zaghouan001.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Alouette_des_champs_Zaghouan001.jpg/960px-Alouette_des_champs_Zaghouan001.jpg"
   },
   {
     "id": "b8",
@@ -541,7 +541,7 @@ window.speciesData = [
       "en": "The kingfisher dives at up to 40 km/h to catch a fish!",
       "fr": "Le martin-pêcheur plonge à jusqu'à 40 km/h pour attraper un poisson !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%E2%99%82%20Common%20Kingfisher%20%28Alcedo%20atthis%29%20Photograph%20By%20Shantanu%20Kuveskar%2C%20Mangaon%2C%20Maharashtra%2C%20India.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/%E2%99%82_Common_Kingfisher_%28Alcedo_atthis%29_Photograph_By_Shantanu_Kuveskar%2C_Mangaon%2C_Maharashtra%2C_India.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Alcedo_atthis_-_Riserve_naturali_della_Lombardia.jpg/640px-Alcedo_atthis_-_Riserve_naturali_della_Lombardia.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Alcedo_atthis_2_(Bohuš_Číčel).jpg/640px-Alcedo_atthis_2_(Bohuš_Číčel).jpg"
@@ -835,7 +835,7 @@ window.speciesData = [
       "en": "Plants, insects, small fish",
       "fr": "Plantes, insectes, petits poissons"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Anas%20platyrhynchos%20%28mixed%20pair%29%20%2832428014687%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Anas_platyrhynchos_%28mixed_pair%29_%2832428014687%29.jpg/960px-Anas_platyrhynchos_%28mixed_pair%29_%2832428014687%29.jpg"
   },
   {
     "id": "p2",
@@ -875,7 +875,7 @@ window.speciesData = [
       "en": "Sunlight, water",
       "fr": "Lumière, eau"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/.00%202814%20Bl%C3%BCte%20des%20Buschwindr%C3%B6schen%20%28Anemone%20nemorosa%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/.00_2814_Bl%C3%BCte_des_Buschwindr%C3%B6schen_%28Anemone_nemorosa%29.jpg/960px-.00_2814_Bl%C3%BCte_des_Buschwindr%C3%B6schen_%28Anemone_nemorosa%29.jpg"
   },
   {
     "id": "ext_anguis_fragilis",
@@ -914,7 +914,7 @@ window.speciesData = [
       "en": "Slugs, worms, insects",
       "fr": "Limaces, vers, insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Anguidae.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Anguidae.jpg"
   },
   {
     "id": "gen_anser_anser",
@@ -954,7 +954,7 @@ window.speciesData = [
       "en": "Grasses, aquatic plants",
       "fr": "Graminées, plantes aquatiques"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/00%203688%20Graugans%20%28Anser%20anser%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/00_3688_Graugans_%28Anser_anser%29.jpg/960px-00_3688_Graugans_%28Anser_anser%29.jpg"
   },
   {
     "id": "gen_anthocharis_cardamines",
@@ -1077,7 +1077,7 @@ window.speciesData = [
       "en": "A bee visits 1,500 flowers to make one teaspoon of honey!",
       "fr": "Une abeille visite 1 500 fleurs pour produire une cuillère à café de miel !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Apis%20mellifera%20Tanzania.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Apis_mellifera_Tanzania.jpg/960px-Apis_mellifera_Tanzania.jpg"
   },
   {
     "id": "b7",
@@ -1117,7 +1117,7 @@ window.speciesData = [
       "en": "Fish, amphibians, small mammals",
       "fr": "Poissons, amphibiens, petits mammifères"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ardea%20cinerea%20EM1A2714%20%2827349354381%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ardea_cinerea_EM1A2714_%2827349354381%29.jpg/960px-Ardea_cinerea_EM1A2714_%2827349354381%29.jpg"
   },
   {
     "id": "fu18",
@@ -1315,7 +1315,7 @@ window.speciesData = [
       "en": "Sunlight, water, minerals",
       "fr": "Lumière, eau, minéraux"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/SugarBeet.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/SugarBeet.jpg/960px-SugarBeet.jpg"
   },
   {
     "id": "t3",
@@ -1514,7 +1514,7 @@ window.speciesData = [
       "en": "Slugs, worms, insects",
       "fr": "Limaces, vers, insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bufo%20bufo%202%20%282005%2007%2011%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bufo_bufo_2_%282005_07_11%29.jpg/960px-Bufo_bufo_2_%282005_07_11%29.jpg"
   },
   {
     "id": "b20",
@@ -1554,7 +1554,7 @@ window.speciesData = [
       "en": "Mice, rabbits, worms, carrion",
       "fr": "Souris, lapins, vers, charogne"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Common%20Buzzard%20by%20caroline%20legg%20%28cropped%29.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Common_Buzzard_by_caroline_legg_%28cropped%29.jpg/960px-Common_Buzzard_by_caroline_legg_%28cropped%29.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Buteo_buteo_-_01.jpg/640px-Buteo_buteo_-_01.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Buteo_buteo_in_flight.jpg/640px-Buteo_buteo_in_flight.jpg"
@@ -1645,7 +1645,7 @@ window.speciesData = [
       "en": "Herbs, grasses, leaves, buds",
       "fr": "Herbes, graminées, feuilles, bourgeons"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Capreolus%20%28js%2911.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Capreolus_%28js%2911.jpg/960px-Capreolus_%28js%2911.jpg"
   },
   {
     "id": "fl11",
@@ -1725,7 +1725,7 @@ window.speciesData = [
       "en": "Seeds, leaves, buds",
       "fr": "Graines, feuilles, bourgeons"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Columba%20palumbus%20ssp.%20palumbus.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Columba_palumbus_ssp._palumbus.jpg/960px-Columba_palumbus_ssp._palumbus.jpg"
   },
   {
     "id": "fu11",
@@ -1804,7 +1804,7 @@ window.speciesData = [
       "en": "Insects, seeds",
       "fr": "Insectes, graines"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Parus%20caeruleus1.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Parus_caeruleus1.jpg"
   },
   {
     "id": "fu14",
@@ -1928,7 +1928,7 @@ window.speciesData = [
       "en": "The robin is one of the few birds that sings at night in cities, attracted by artificial light!",
       "fr": "Le rouge-gorge est l'un des rares oiseaux à chanter la nuit en ville, attiré par la lumière artificielle !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Erithacus%20rubecula%20with%20cocked%20head.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Erithacus_rubecula_with_cocked_head.jpg/960px-Erithacus_rubecula_with_cocked_head.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Erithacus_rubecula_with_cocked_head.jpg/640px-Erithacus_rubecula_with_cocked_head.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/EuropeanRobin.jpg/640px-EuropeanRobin.jpg"
@@ -2016,7 +2016,7 @@ window.speciesData = [
       "en": "Mice, large insects",
       "fr": "Souris, gros insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Common%20kestrel%20falco%20tinnunculus.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Common_kestrel_falco_tinnunculus.jpg/960px-Common_kestrel_falco_tinnunculus.jpg"
   },
   {
     "id": "fu12",
@@ -2173,7 +2173,7 @@ window.speciesData = [
       "en": "Seeds, insects (for chicks)",
       "fr": "Graines, insectes (pour les petits)"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fringilla%20coelebs%20chaffinch%20male%20edit2.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Fringilla_coelebs_chaffinch_male_edit2.jpg/960px-Fringilla_coelebs_chaffinch_male_edit2.jpg"
   },
   {
     "id": "b22",
@@ -2213,7 +2213,7 @@ window.speciesData = [
       "en": "Omnivore, acorns",
       "fr": "Omnivore, glands"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Garrulus%20glandarius%201%20Luc%20Viatour.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Garrulus_glandarius_1_Luc_Viatour.jpg/960px-Garrulus_glandarius_1_Luc_Viatour.jpg"
   },
   {
     "id": "fl14",
@@ -2293,7 +2293,7 @@ window.speciesData = [
       "en": "Water plants, insects, worms",
       "fr": "Plantes aquatiques, insectes, vers"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Common%20Moorhen%20%28Gallinula%20chloropus%20pyrrhorrhoa%29%2C%20Mauritius.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Common_Moorhen_%28Gallinula_chloropus_pyrrhorrhoa%29%2C_Mauritius.jpg/960px-Common_Moorhen_%28Gallinula_chloropus_pyrrhorrhoa%29%2C_Mauritius.jpg"
   },
   {
     "id": "fl12",
@@ -2452,7 +2452,7 @@ window.speciesData = [
       "en": "Flying insects",
       "fr": "Insectes volants"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Barn%20Swallow%20%2895504589%29.jpeg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Barn_Swallow_%2895504589%29.jpeg/960px-Barn_Swallow_%2895504589%29.jpeg"
   },
   {
     "id": "a7",
@@ -2627,7 +2627,7 @@ window.speciesData = [
       "en": "Nectar",
       "fr": "Nectar"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Macroglossum%20stellatarum%20%283%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Macroglossum_stellatarum_%283%29.jpg/960px-Macroglossum_stellatarum_%283%29.jpg"
   },
   {
     "id": "m3",
@@ -2666,7 +2666,7 @@ window.speciesData = [
       "en": "Earthworms, insects, fruit, small mammals",
       "fr": "Vers de terre, insectes, fruits, petits mammifères"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Badger%2025-07-09%20closer.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Badger_25-07-09_closer.jpg/960px-Badger_25-07-09_closer.jpg"
   },
   {
     "id": "m8",
@@ -2705,7 +2705,7 @@ window.speciesData = [
       "en": "Grasses, herbs, bark",
       "fr": "Graminées, herbes, écorce"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/European%20Brown%20Hare%20%2850341079472%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/European_Brown_Hare_%2850341079472%29.jpg/960px-European_Brown_Hare_%2850341079472%29.jpg"
   },
   {
     "id": "fl18",
@@ -2940,7 +2940,7 @@ window.speciesData = [
       "en": "Small animals, eggs, fruits",
       "fr": "Petits animaux, œufs, fruits"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Beech%20Marten.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Beech_Marten.jpg/960px-Beech_Marten.jpg"
   },
   {
     "id": "b25",
@@ -2980,7 +2980,7 @@ window.speciesData = [
       "en": "Insects",
       "fr": "Insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/20180415%20015%20Winterswijk%20Witte%20kwikstaart%20%2840785272624%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/20180415_015_Winterswijk_Witte_kwikstaart_%2840785272624%29.jpg/960px-20180415_015_Winterswijk_Witte_kwikstaart_%2840785272624%29.jpg"
   },
   {
     "id": "m16",
@@ -3019,7 +3019,7 @@ window.speciesData = [
       "en": "Mice, voles",
       "fr": "Souris, campagnols"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mustela%20nivalis%20-British%20Wildlife%20Centre-4.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Mustela_nivalis_-British_Wildlife_Centre-4.jpg/960px-Mustela_nivalis_-British_Wildlife_Centre-4.jpg"
   },
   {
     "id": "m9",
@@ -3058,7 +3058,7 @@ window.speciesData = [
       "en": "Grasses, roots, plants",
       "fr": "Graminées, racines, plantes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Oryctolagus%20cuniculus%20Tasmania%202%20%28cropped%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Oryctolagus_cuniculus_Tasmania_2_%28cropped%29.jpg/960px-Oryctolagus_cuniculus_Tasmania_2_%28cropped%29.jpg"
   },
   {
     "id": "i14",
@@ -3097,7 +3097,7 @@ window.speciesData = [
       "en": "Plant juices",
       "fr": "Sucs végétaux"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palomena%20prasina%20MHNT%20L%C3%A9guevin%20Blanc.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Palomena_prasina_MHNT_L%C3%A9guevin_Blanc.jpg/960px-Palomena_prasina_MHNT_L%C3%A9guevin_Blanc.jpg"
   },
   {
     "id": "fl3",
@@ -3177,7 +3177,7 @@ window.speciesData = [
       "en": "Insects, seeds, nuts",
       "fr": "Insectes, graines, noix"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Great%20tit%20%28Parus%20major%29%2C%20Parc%20de%20Woluw%C3%A9%2C%20Brussels%20%2813042792905%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Great_tit_%28Parus_major%29%2C_Parc_de_Woluw%C3%A9%2C_Brussels_%2813042792905%29.jpg/960px-Great_tit_%28Parus_major%29%2C_Parc_de_Woluw%C3%A9%2C_Brussels_%2813042792905%29.jpg"
   },
   {
     "id": "ext_passer_domesticus",
@@ -3217,7 +3217,7 @@ window.speciesData = [
       "en": "Seeds, insects (for chicks)",
       "fr": "Graines, insectes (pour les petits)"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/House%20sparrow%20male%20in%20Prospect%20Park%20%2853532%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/House_sparrow_male_in_Prospect_Park_%2853532%29.jpg/960px-House_sparrow_male_in_Prospect_Park_%2853532%29.jpg"
   },
   {
     "id": "b4",
@@ -3262,7 +3262,7 @@ window.speciesData = [
       "en": "The magpie is one of the very few animals that can recognise itself in a mirror!",
       "fr": "La pie est l'un des très rares animaux capables de se reconnaître dans un miroir !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Magpie%20in%20Ladakh.JPG?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Magpie_in_Ladakh.JPG/960px-Magpie_in_Ladakh.JPG"
   },
   {
     "id": "t19",
@@ -3341,7 +3341,7 @@ window.speciesData = [
       "en": "Ants",
       "fr": "Fourmis"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gr%C3%BCnspecht%20Picus%20viridis.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Gr%C3%BCnspecht_Picus_viridis.jpg"
   },
   {
     "id": "i9",
@@ -3419,7 +3419,7 @@ window.speciesData = [
       "en": "Nectar",
       "fr": "Nectar"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Common%20blue%20%28Polyommatus%20icarus%29%20male%20Turna.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Common_blue_%28Polyommatus_icarus%29_male_Turna.jpg/960px-Common_blue_%28Polyommatus_icarus%29_male_Turna.jpg"
   },
   {
     "id": "i27",
@@ -3669,7 +3669,7 @@ window.speciesData = [
       "en": "A squirrel buries thousands of nuts per year and only finds 70–80% of them — the rest grow into new trees!",
       "fr": "Un écureuil enterre des milliers de noix par an et n'en retrouve que 70–80% — les autres deviennent de nouveaux arbres !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Squirrel%20posing.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Squirrel_posing.jpg/960px-Squirrel_posing.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Eekhoorntje.jpg/640px-Eekhoorntje.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Sciurus_vulgaris_red_squirrel_in_autumn_tree.jpg/640px-Sciurus_vulgaris_red_squirrel_in_autumn_tree.jpg"
@@ -3757,7 +3757,7 @@ window.speciesData = [
       "en": "Belgium produces over 5 million tonnes of potatoes per year and exports the most fries in the world!",
       "fr": "La Belgique produit plus de 5 millions de tonnes de pommes de terre par an et exporte le plus de frites au monde !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/234%20Solanum%20tuberosum%20L.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/234_Solanum_tuberosum_L.jpg"
   },
   {
     "id": "t20",
@@ -3841,7 +3841,7 @@ window.speciesData = [
       "en": "A starling murmuration can contain over a million birds and is one of nature's most spectacular phenomena!",
       "fr": "Une murmuration d'étourneaux peut contenir plus d'un million d'oiseaux !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Common%20Starling%2C%20Blyth%20%2812598795653%29.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Common_Starling%2C_Blyth_%2812598795653%29.jpg/960px-Common_Starling%2C_Blyth_%2812598795653%29.jpg"
   },
   {
     "id": "f6",
@@ -3880,7 +3880,7 @@ window.speciesData = [
       "en": "Roots, acorns, insects, carrion",
       "fr": "Racines, glands, insectes, charogne"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/202310%20Wild%20boar.svg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/202310_Wild_boar.svg/960px-202310_Wild_boar.svg.png"
   },
   {
     "id": "fl4",
@@ -4078,7 +4078,7 @@ window.speciesData = [
       "en": "Worms, insects, berries",
       "fr": "Vers, insectes, baies"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Amselm%C3%A4nnchen%20der%20Unterart%20T.%20m.%20azorensis%20auf%20Terceira.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Amselm%C3%A4nnchen_der_Unterart_T._m._azorensis_auf_Terceira.jpg/960px-Amselm%C3%A4nnchen_der_Unterart_T._m._azorensis_auf_Terceira.jpg"
   },
   {
     "id": "t12",
@@ -4249,7 +4249,7 @@ window.speciesData = [
       "en": "The European hornet is protected in Belgium and Germany — it is illegal to destroy its nest!",
       "fr": "Le frelon européen est protégé en Belgique et en Allemagne — il est illégal de détruire son nid !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vespa%20crabro%2080708.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Vespa_crabro_80708.jpg/960px-Vespa_crabro_80708.jpg"
   },
   {
     "id": "i19",
@@ -4367,7 +4367,7 @@ window.speciesData = [
       "en": "Small mammals, birds, fruits",
       "fr": "Petits mammifères, oiseaux, fruits"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fox%20at%20the%20British%20Wildlife%20Centre%2C%20Newchapel%2C%20Surrey%20-%20geograph.org.uk%20-%202221750.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Fox_at_the_British_Wildlife_Centre%2C_Newchapel%2C_Surrey_-_geograph.org.uk_-_2221750.jpg/960px-Fox_at_the_British_Wildlife_Centre%2C_Newchapel%2C_Surrey_-_geograph.org.uk_-_2221750.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Vulpes_vulpes_-_British_Wildlife_Centre-3.jpg/640px-Vulpes_vulpes_-_British_Wildlife_Centre-3.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat_November_2010-1a.jpg/640px-Cat_November_2010-1a.jpg"
@@ -4493,7 +4493,7 @@ window.speciesData = [
       "en": "A beaver dam can be up to 100 metres long and completely holds back a stream!",
       "fr": "Un barrage de castor peut atteindre 100 mètres de long et retenir entièrement un ruisseau !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Beaver%20pho34.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Beaver_pho34.jpg"
   },
   {
     "id": "f8",
@@ -4537,7 +4537,7 @@ window.speciesData = [
       "en": "A hedgehog can travel up to 40 km in a single night searching for food!",
       "fr": "Un hérisson peut parcourir jusqu'à 40 km en une seule nuit à la recherche de nourriture !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Erinaceus%20europaeus%20%28Linnaeus%2C%201758%29.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Erinaceus_europaeus_%28Linnaeus%2C_1758%29.jpg/960px-Erinaceus_europaeus_%28Linnaeus%2C_1758%29.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/640px-24701-nature-natural-beauty.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Erinaceus_europaeus_LC0119.jpg/640px-Erinaceus_europaeus_LC0119.jpg"
@@ -4659,7 +4659,7 @@ window.speciesData = [
       "en": "Carrion, small animals, scraps",
       "fr": "Charogne, petits animaux, déchets"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Corvus%20corax%20ad%20berlin%20090516.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Corvus_corax_ad_berlin_090516.jpg/960px-Corvus_corax_ad_berlin_090516.jpg"
   },
   {
     "id": "t13",
@@ -4737,7 +4737,7 @@ window.speciesData = [
       "en": "Sunlight, water",
       "fr": "Lumière, eau"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Romagne%2086%20Ch%C3%A2taignes%202008.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Romagne_86_Ch%C3%A2taignes_2008.jpg/960px-Romagne_86_Ch%C3%A2taignes_2008.jpg"
   },
   {
     "id": "gen_cuculus_canorus",
@@ -4782,7 +4782,7 @@ window.speciesData = [
       "en": "A cuckoo chick produces begging calls that sound like a whole nest of hungry chicks — the foster parent feeds it non-stop!",
       "fr": "Un coucou produit des cris qui ressemblent à tout un nid de poussins affamés !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Cuculus%20canorus%20vogelartinfo%20chris%20romeiks%20CHR0791%20cropped.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Cuculus_canorus_vogelartinfo_chris_romeiks_CHR0791_cropped.jpg"
   },
   {
     "id": "m17",
@@ -4821,7 +4821,7 @@ window.speciesData = [
       "en": "Earthworms, insect larvae",
       "fr": "Vers de terre, larves d'insectes"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Talpa%20europaea%20MHNT.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Talpa_europaea_MHNT.jpg/960px-Talpa_europaea_MHNT.jpg"
   },
   {
     "id": "gen_falco_peregrinus",
@@ -4866,7 +4866,7 @@ window.speciesData = [
       "en": "The peregrine dives faster than 300 km/h — faster than a Formula 1 car!",
       "fr": "Le faucon pèlerin plonge à plus de 300 km/h — plus vite qu'une voiture de F1 !"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Faucon%20pelerin%207%20mai.jpg?width=640"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Faucon_pelerin_7_mai.jpg/960px-Faucon_pelerin_7_mai.jpg"
   },
   {
     "id": "t_pinus_sylvestris",
@@ -5576,7 +5576,7 @@ window.speciesData = [
       "en": "Harvest Mouse",
       "fr": "Rat des moissons"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Who%27s%20The%20King%20of%20the%20Teasel.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Who%27s_The_King_of_the_Teasel.jpg/960px-Who%27s_The_King_of_the_Teasel.jpg",
     "rarity": {
       "nl": "Vrij zeldzaam",
       "en": "Fairly rare",
@@ -5616,7 +5616,7 @@ window.speciesData = [
       "en": "Stoat",
       "fr": "Hermine"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/R%C3%B8yskatt%20%28Mustela%20erminea%20erminea%29%2C%20Lista%2C%20Norway.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/R%C3%B8yskatt_%28Mustela_erminea_erminea%29%2C_Lista%2C_Norway.jpg/960px-R%C3%B8yskatt_%28Mustela_erminea_erminea%29%2C_Lista%2C_Norway.jpg",
     "rarity": {
       "nl": "Vrij zeldzaam",
       "en": "Fairly rare",
@@ -5657,7 +5657,7 @@ window.speciesData = [
       "en": "Mute Swan",
       "fr": "Cygne tuberculé"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mute%20Swan%20Emsworth2.JPG?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Mute_Swan_Emsworth2.JPG/960px-Mute_Swan_Emsworth2.JPG",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Cygnus_olor_on_water.jpg/640px-Cygnus_olor_on_water.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Cygnus_olor_in_flight.jpg/640px-Cygnus_olor_in_flight.jpg"
@@ -5702,7 +5702,7 @@ window.speciesData = [
       "en": "Herring Gull",
       "fr": "Goéland argenté"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Larus%20argentatus01.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Larus_argentatus01.jpg/960px-Larus_argentatus01.jpg",
     "rarity": {
       "nl": "Algemeen",
       "en": "Common",
@@ -5743,7 +5743,7 @@ window.speciesData = [
       "en": "Yellowhammer",
       "fr": "Bruant jaune"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Emberiza%20citrinella%20-Midtjylland%2C%20Denmark%20-male-8.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Emberiza_citrinella_-Midtjylland%2C_Denmark_-male-8.jpg/960px-Emberiza_citrinella_-Midtjylland%2C_Denmark_-male-8.jpg",
     "rarity": {
       "nl": "Vrij algemeen",
       "en": "Fairly common",
@@ -5784,7 +5784,7 @@ window.speciesData = [
       "en": "Eurasian Collared Dove",
       "fr": "Tourterelle turque"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Streptopelia%20decaocto%2C%20H%C4%83rman%2C%20Rom%C3%A2nia%20%2834881606270%29.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Streptopelia_decaocto%2C_H%C4%83rman%2C_Rom%C3%A2nia_%2834881606270%29.jpg/960px-Streptopelia_decaocto%2C_H%C4%83rman%2C_Rom%C3%A2nia_%2834881606270%29.jpg",
     "rarity": {
       "nl": "Zeer algemeen",
       "en": "Very common",
@@ -6068,7 +6068,7 @@ window.speciesData = [
       "en": "Black redstart",
       "fr": "Rougequeue noir"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Black%20Redstart%20bird.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Black_Redstart_bird.jpg/960px-Black_Redstart_bird.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Phoenicurus_ochruros_male.jpg/640px-Phoenicurus_ochruros_male.jpg"
     ],
@@ -6111,7 +6111,7 @@ window.speciesData = [
       "en": "Serotine bat",
       "fr": "Grande sérotine"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eptesicus%20serotinus.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Eptesicus_serotinus.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Eptesicus_serotinus_01.jpg/640px-Eptesicus_serotinus_01.jpg"
     ],
@@ -6154,7 +6154,7 @@ window.speciesData = [
       "en": "Grass snake",
       "fr": "Couleuvre à collier"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/2017.07.17.-17-Tiefer%20See%20oder%20Grubensee-Storkow%20%28Mark%29--Ringelnatter.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/2017.07.17.-17-Tiefer_See_oder_Grubensee-Storkow_%28Mark%29--Ringelnatter.jpg/960px-2017.07.17.-17-Tiefer_See_oder_Grubensee-Storkow_%28Mark%29--Ringelnatter.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Natrix_natrix_01.jpg/640px-Natrix_natrix_01.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Natrix_natrix_collaris_LC0079.jpg/640px-Natrix_natrix_collaris_LC0079.jpg"
@@ -6198,7 +6198,7 @@ window.speciesData = [
       "en": "Common adder",
       "fr": "Vipère péliade"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Benny%20Trapp%20Vipera%20berus.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Benny_Trapp_Vipera_berus.jpg/960px-Benny_Trapp_Vipera_berus.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Vipera_berus_LC0119.jpg/640px-Vipera_berus_LC0119.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Vipera_berus_berus_male.jpg/640px-Vipera_berus_berus_male.jpg"
@@ -6242,7 +6242,7 @@ window.speciesData = [
       "en": "Sand lizard",
       "fr": "Lézard des souches"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Jaszczurka.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Jaszczurka.jpg/960px-Jaszczurka.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Lacerta_agilis_%28male%29.jpg/640px-Lacerta_agilis_%28male%29.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Lacerta_agilis_female_dsc00890.jpg/640px-Lacerta_agilis_female_dsc00890.jpg"
@@ -6330,7 +6330,7 @@ window.speciesData = [
       "en": "Common frog",
       "fr": "Grenouille rousse"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/European%20Common%20Frog%20Rana%20temporaria.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/European_Common_Frog_Rana_temporaria.jpg/960px-European_Common_Frog_Rana_temporaria.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rana_temporaria_LC0073.jpg/640px-Rana_temporaria_LC0073.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Rana_temporaria_mating.jpg/640px-Rana_temporaria_mating.jpg"
@@ -6375,7 +6375,7 @@ window.speciesData = [
       "en": "Carrion crow",
       "fr": "Corneille noire"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Carrion%20crow%202022%2004%2005%2005%2002.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Carrion_crow_2022_04_05_05_02.jpg/960px-Carrion_crow_2022_04_05_05_02.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Corvus_corone_Luc_Viatour.jpg/640px-Corvus_corone_Luc_Viatour.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Corvus_corone_1_%28Marek_Szczepanek%29.jpg/640px-Corvus_corone_1_%28Marek_Szczepanek%29.jpg"
@@ -6420,7 +6420,7 @@ window.speciesData = [
       "en": "Common swift",
       "fr": "Martinet noir"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Common%20Swift%202025%2007%2018%2002%20%28cropped%29.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Common_Swift_2025_07_18_02_%28cropped%29.jpg/960px-Common_Swift_2025_07_18_02_%28cropped%29.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Apus_apus_01.jpg/640px-Apus_apus_01.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Apus_apus_flock.jpg/640px-Apus_apus_flock.jpg"
@@ -6465,7 +6465,7 @@ window.speciesData = [
       "en": "Song thrush",
       "fr": "Grive musicienne"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Song%20thrush%20%28Turdus%20philomelos%20philomelos%29.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Song_thrush_%28Turdus_philomelos_philomelos%29.jpg/960px-Song_thrush_%28Turdus_philomelos_philomelos%29.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Song_thrush_2.jpg/640px-Song_thrush_2.jpg"
     ],
@@ -6509,7 +6509,7 @@ window.speciesData = [
       "en": "Great spotted woodpecker",
       "fr": "Pic épeiche"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%D0%94%D1%8F%D1%82%D0%B5%D0%BB%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B9%20%D0%BF%D1%91%D1%81%D1%82%D1%80%D1%8B%D0%B9%20KR%2001.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/%D0%94%D1%8F%D1%82%D0%B5%D0%BB_%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B9_%D0%BF%D1%91%D1%81%D1%82%D1%80%D1%8B%D0%B9_KR_01.jpg/960px-%D0%94%D1%8F%D1%82%D0%B5%D0%BB_%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B9_%D0%BF%D1%91%D1%81%D1%82%D1%80%D1%8B%D0%B9_KR_01.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dendrocopos_major_-_01.jpg/640px-Dendrocopos_major_-_01.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Dendrocopos_major_male_2.jpg/640px-Dendrocopos_major_male_2.jpg"
@@ -6554,7 +6554,7 @@ window.speciesData = [
       "en": "Eurasian nuthatch",
       "fr": "Sittelle torchepot"
     },
-    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kleiber%20%28Sitta%20europaea%20caesia%29%20Val%20Roseg.jpg?width=640",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Kleiber_%28Sitta_europaea_caesia%29_Val_Roseg.jpg/960px-Kleiber_%28Sitta_europaea_caesia%29_Val_Roseg.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Sitta-europaea-004.jpg/640px-Sitta-europaea-004.jpg"
     ],
@@ -8717,7 +8717,7 @@ window.speciesData = [
     size: { nl: "5–20 cm hoog", en: "5–20 cm tall", fr: "5–20 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op droge, kalkrijke, voedselarme bodems in volle zon.", en: "Photosynthesis; grows on dry, calcareous, nutrient-poor soils in full sun.", fr: "Photosynthèse; pousse sur sols secs, calcaires, pauvres en nutriments, en plein soleil." },
     funfact: { nl: "Bergsteentijm is een oud medicinaal kruid dat in de Griekse en Romeinse geneeskunde werd gebruikt voor maagproblemen en als antisepticum. De kleine plant is moeilijk te herkennen en wordt daardoor gemakkelijk over het hoofd gezien.", en: "Basil thyme is an ancient medicinal herb used in Greek and Roman medicine for stomach complaints and as an antiseptic. The tiny plant is difficult to identify and is therefore easily overlooked.", fr: "L'acinos des champs est une ancienne herbe médicinale utilisée dans la médecine grecque et romaine pour les troubles gastriques et comme antiseptique. Cette petite plante est difficile à identifier et est donc facilement négligée." },
-    image: "http://commons.wikimedia.org/wiki/Special:FilePath/Acinos%20arvensis%20RF.jpg?width=640"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Acinos_arvensis_RF.jpg/960px-Acinos_arvensis_RF.jpg"
   },
   {
     id: "bel_galinsoga_quadriradiata",
