@@ -8105,7 +8105,7 @@ window.speciesData = [
     size: { nl: "3–10 m hoog", en: "3–10 m tall", fr: "3–10 m de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op goed gedraineerde, kalkrijke, droge tot matig vochtige bodems in volle zon.", en: "Photosynthesis; thrives on well-drained, calcareous, dry to moderately moist soils in full sun.", fr: "Photosynthèse; prospère sur sols bien drainés, calcaires, secs à modérément humides, en plein soleil." },
     funfact: { nl: "De pitten van de weichselbes bevatten een aromatische stof die gebruikt wordt om Maraschino-likeur te maken. Het hout is ook de traditionele grondstof voor pijpstelen.", en: "The stones of St Lucie Cherry contain an aromatic compound used to make Maraschino liqueur. The wood is also the traditional material for pipe stems.", fr: "Les noyaux du merisier de Sainte-Lucie contiennent un composé aromatique utilisé pour faire la liqueur Marasquin. Le bois est aussi la matière traditionnelle pour les tuyaux de pipe." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Prunus_mahaleb_flowers.jpg/640px-Prunus_mahaleb_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Prunus_mahaleb_kz02.jpg/640px-Prunus_mahaleb_kz02.jpg"
   },
   {
     id: "bel_prunus_padus",
@@ -8122,7 +8122,7 @@ window.speciesData = [
     size: { nl: "5–15 m hoog", en: "5–15 m tall", fr: "5–15 m de hauteur" },
     diet: { nl: "Fotosynthese; groeit op vochtige, voedselrijke, lemige tot kleiige bodems langs water en in schaduwrijke bossen.", en: "Photosynthesis; grows on moist, nutrient-rich, loamy to clayey soils near water and in shaded woodland.", fr: "Photosynthèse; pousse sur sols humides, riches en nutriments, limoneux à argileux près de l'eau et en forêt ombragée." },
     funfact: { nl: "De vogelkers bloeit als een van de vroegste bomen in mei met een spectaculaire witte bloesem. De bast werd vroeger gebruikt als wormkruid en insectenverdrijver.", en: "Bird Cherry is one of the earliest trees to bloom in May with a spectacular white blossom. The bark was formerly used as a vermifuge and insect repellent.", fr: "Le cerisier à grappes est l'un des premiers arbres à fleurir en mai avec une floraison blanche spectaculaire. L'écorce était autrefois utilisée comme vermifuge et répulsif contre les insectes." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Prunus_padus_flower_closeup.jpg/640px-Prunus_padus_flower_closeup.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Prunus_padus_in_April.jpg/640px-Prunus_padus_in_April.jpg"
   },
   {
     id: "bel_cornus_sanguinea",
@@ -8139,7 +8139,7 @@ window.speciesData = [
     size: { nl: "2–5 m hoog", en: "2–5 m tall", fr: "2–5 m de hauteur" },
     diet: { nl: "Fotosynthese; groeit op kalkrijke, vochtige tot droge, goed gedraineerde bodems in volle zon tot halfschaduw.", en: "Photosynthesis; grows on calcareous, moist to dry, well-drained soils in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols calcaires, humides à secs, bien drainés, en plein soleil à mi-ombre." },
     funfact: { nl: "De naam 'kornoelje' komt van het Latijn 'cornus' (hoorn), verwijzend naar het extreem harde hout. Dit hout werd vroeger gebruikt voor spiesschachten en tandenstokers.", en: "The name comes from Latin 'cornus' (horn), referring to the extremely hard wood. This wood was formerly used for spear shafts and toothpicks.", fr: "Le nom vient du latin 'cornus' (corne), en référence au bois extrêmement dur. Ce bois était autrefois utilisé pour les hampes de lances et les cure-dents." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Cornus_sanguinea_flowers.jpg/640px-Cornus_sanguinea_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Cornus_sanguinea_RF.jpg/640px-Cornus_sanguinea_RF.jpg"
   },
   {
     id: "bel_cornus_mas",
@@ -8156,7 +8156,7 @@ window.speciesData = [
     size: { nl: "3–8 m hoog", en: "3–8 m tall", fr: "3–8 m de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op kalkrijke, goed gedraineerde bodems in volle zon tot lichte schaduw.", en: "Photosynthesis; thrives on calcareous, well-drained soils in full sun to light shade.", fr: "Photosynthèse; prospère sur sols calcaires, bien drainés, en plein soleil à ombre légère." },
     funfact: { nl: "De gele kornoelje was in de oudheid een belangrijke voedselbron. De Grieken en Romeinen maakten wijn en confituur van de vruchten, die meer vitamine C bevatten dan sinaasappels.", en: "The Cornelian cherry was an important food source in antiquity. Greeks and Romans made wine and jam from the fruits, which contain more vitamin C than oranges.", fr: "Le cornouiller mâle était une importante source alimentaire dans l'Antiquité. Les Grecs et Romains faisaient du vin et de la confiture avec les fruits, qui contiennent plus de vitamine C que les oranges." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Cornus_mas_flowers.jpg/640px-Cornus_mas_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Cornus_mas_kz04.jpg/640px-Cornus_mas_kz04.jpg"
   },
   {
     id: "bel_melilotus_officinalis",
@@ -8173,7 +8173,7 @@ window.speciesData = [
     size: { nl: "40–150 cm hoog", en: "40–150 cm tall", fr: "40–150 cm de hauteur" },
     diet: { nl: "Fotosynthese; stikstofbinder via wortelknolletjes; groeit op droge tot matig vochtige, voedselarme, kalkrijke bodems in volle zon.", en: "Photosynthesis; nitrogen fixer via root nodules; grows on dry to moderately moist, nutrient-poor, calcareous soils in full sun.", fr: "Photosynthèse; fixateur d'azote via les nodules racinaires; pousse sur sols secs à modérément humides, pauvres en nutriments, calcaires, en plein soleil." },
     funfact: { nl: "De geur van honingklaver werd vroeger gebruikt om tabak en sommige kazen te aromatiseren. De coumarine die de geur veroorzaakt is de basis van het 'vers-hooigeur' in parfums.", en: "The scent of sweet clover was formerly used to flavour tobacco and some cheeses. The coumarin causing the scent is the basis of the 'new-mown hay' note in perfumes.", fr: "Le parfum du mélilot était autrefois utilisé pour aromatiser le tabac et certains fromages. La coumarine à l'origine du parfum est la base de la note 'foin coupé' en parfumerie." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Melilotus_officinalis_-_harilik_mesikas.jpg/640px-Melilotus_officinalis_-_harilik_mesikas.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Melilotus_officinalis_kz16.jpg/640px-Melilotus_officinalis_kz16.jpg"
   },
   {
     id: "bel_impatiens_noli_tangere",
@@ -8190,7 +8190,7 @@ window.speciesData = [
     size: { nl: "30–100 cm hoog", en: "30–100 cm tall", fr: "30–100 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op vochtige, humusrijke, zure tot neutrale bosbodem met hoge luchtvochtigheid.", en: "Photosynthesis; thrives on moist, humus-rich, acid to neutral forest soil with high air humidity.", fr: "Photosynthèse; prospère sur sol forestier humide, riche en humus, acide à neutre, avec une humidité atmosphérique élevée." },
     funfact: { nl: "De wetenschappelijke naam 'noli-tangere' is Latijn voor 'raak mij niet aan', een directe verwijzing naar de explosieve zaadomhulsels. Dit is de enige inheemse Belgische Impatiens-soort.", en: "The scientific name 'noli-tangere' is Latin for 'touch me not', a direct reference to the explosive seed pods. This is the only native Belgian Impatiens species.", fr: "Le nom scientifique 'noli-tangere' est le latin pour 'ne me touche pas', une référence directe aux capsules explosives. C'est la seule espèce d'Impatiens indigène en Belgique." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Impatiens_noli-tangere_flowers.jpg/640px-Impatiens_noli-tangere_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Impatiens_noli-tangere_kz10.jpg/640px-Impatiens_noli-tangere_kz10.jpg"
   },
   {
     id: "bel_vaccinium_myrtillus",
@@ -8207,7 +8207,7 @@ window.speciesData = [
     size: { nl: "10–50 cm hoog", en: "10–50 cm tall", fr: "10–50 cm de hauteur" },
     diet: { nl: "Fotosynthese; mycorrhizaafhankelijk; groeit op zure, humusrijke, vochtige, voedselarme bodems in halfschaduw.", en: "Photosynthesis; mycorrhiza-dependent; grows on acid, humus-rich, moist, nutrient-poor soils in semi-shade.", fr: "Photosynthèse; dépendant des mycorhizes; pousse sur sols acides, riches en humus, humides et pauvres en nutriments, à mi-ombre." },
     funfact: { nl: "Het sap van blauwe bosbessen kleurt rood-paars en was vroeger gebruikt als inkt en textielverfstof. De blauwe bosbes is nauw verwant aan maar anders dan de gekweekte blauwe bes.", en: "Bilberry juice is red-purple and was formerly used as ink and textile dye. The bilberry is closely related to but different from the cultivated blueberry.", fr: "Le jus de myrtille est rouge-violet et était autrefois utilisé comme encre et teinture textile. La myrtille est étroitement liée à la myrtille cultivée mais différente." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Vaccinium_myrtillus_bush.jpg/640px-Vaccinium_myrtillus_bush.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Vaccinium_myrtillus_sl10.jpg/640px-Vaccinium_myrtillus_sl10.jpg"
   },
   {
     id: "bel_stellaria_media",
@@ -8224,7 +8224,7 @@ window.speciesData = [
     size: { nl: "5–40 cm hoog", en: "5–40 cm tall", fr: "5–40 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op stikstofrijke, vochtige, beschutte bodems in volle zon tot schaduw.", en: "Photosynthesis; grows on nitrogen-rich, moist, sheltered soils in full sun to shade.", fr: "Photosynthèse; pousse sur sols riches en azote, humides et abrités, en plein soleil à l'ombre." },
     funfact: { nl: "Vogelmuur kan tot 25.000 zaden per plant per jaar produceren en de zaden blijven tot 25 jaar kiemkrachtig in de bodem. Bij zachte winters bloeit de plant zelfs in december en januari.", en: "Chickweed can produce up to 25,000 seeds per plant per year and seeds remain viable in soil for up to 25 years. During mild winters the plant flowers even in December and January.", fr: "Le mouron des oiseaux peut produire jusqu'à 25 000 graines par plante par an et les graines restent viables dans le sol jusqu'à 25 ans. Lors des hivers doux, la plante fleurit même en décembre et janvier." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Stellaria_media_flowers.jpg/640px-Stellaria_media_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/%28Stellaria_media%29_Chickweed_plant.jpg/640px-%28Stellaria_media%29_Chickweed_plant.jpg"
   },
   {
     id: "bel_thymus_serpyllum",
@@ -8241,7 +8241,7 @@ window.speciesData = [
     size: { nl: "5–15 cm hoog", en: "5–15 cm tall", fr: "5–15 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op droge, zandige of kalkrijke, voedselarme, goed gedraineerde bodems in volle zon.", en: "Photosynthesis; thrives on dry, sandy or calcareous, nutrient-poor, well-drained soils in full sun.", fr: "Photosynthèse; prospère sur sols secs, sableux ou calcaires, pauvres en nutriments, bien drainés, en plein soleil." },
     funfact: { nl: "Wilde tijm was in de Middeleeuwen een symbool van moed en kracht. Het etherische olie thymol wordt nog altijd gebruikt in mondwater en desinfectiemiddelen.", en: "Wild thyme was a symbol of courage and strength in the Middle Ages. The essential oil thymol is still used in mouthwashes and disinfectants.", fr: "Le thym serpolet était un symbole de courage et de force au Moyen Âge. L'huile essentielle thymol est encore utilisée dans les bains de bouche et désinfectants." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Thymus_serpyllum_flowers.jpg/640px-Thymus_serpyllum_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Thymus_serpyllum_kz02.jpg/640px-Thymus_serpyllum_kz02.jpg"
   },
   {
     id: "bel_hylotelephium_telephium",
@@ -8258,7 +8258,7 @@ window.speciesData = [
     size: { nl: "20–60 cm hoog", en: "20–60 cm tall", fr: "20–60 cm de hauteur" },
     diet: { nl: "Fotosynthese via CAM-metabolisme; groeit op droge, voedselarme, goed gedraineerde rotsbodems in volle zon.", en: "Photosynthesis via CAM metabolism; grows on dry, nutrient-poor, well-drained rocky soils in full sun.", fr: "Photosynthèse via le métabolisme CAM; pousse sur sols rocheux secs, pauvres en nutriments, bien drainés, en plein soleil." },
     funfact: { nl: "De volksgebruik om de plant in huis te hangen als weersvoorspeller: als hij groen bleef, zou het goed gaan; verwelkte hij, dan was er onheil op komst. De CAM-fotosynthese laat de plant toe 's nachts CO₂ op te nemen.", en: "The folk custom was to hang the plant indoors as a weather indicator: if it stayed green all would be well; if it wilted, misfortune was coming. CAM photosynthesis allows the plant to take up CO₂ at night.", fr: "La coutume populaire était de suspendre la plante à l'intérieur: si elle restait verte tout irait bien; si elle se fanait, le malheur approchait. La photosynthèse CAM permet à la plante d'absorber le CO₂ la nuit." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Hylotelephium_telephium.jpg/640px-Hylotelephium_telephium.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/%28MHNT%29_Hylotelephium_telephium_-_flowers.jpg/640px-%28MHNT%29_Hylotelephium_telephium_-_flowers.jpg"
   },
   {
     id: "bel_vaccinium_vitis_idaea",
@@ -8275,7 +8275,7 @@ window.speciesData = [
     size: { nl: "10–30 cm hoog", en: "10–30 cm tall", fr: "10–30 cm de hauteur" },
     diet: { nl: "Fotosynthese; mycorrhizaafhankelijk; groeit op zure, vochtige, humusrijke, voedselarme veenachtige bodems.", en: "Photosynthesis; mycorrhiza-dependent; grows on acid, moist, humus-rich, nutrient-poor peaty soils.", fr: "Photosynthèse; dépendant des mycorhizes; pousse sur sols tourbeux acides, humides, riches en humus et pauvres en nutriments." },
     funfact: { nl: "De rode bosbes bewaart zijn vruchten over twee seizoenen: bessen die in de herfst niet gegeten worden, overleven de winter en zijn in de lente nog eetbaar. In Scandinavië zijn rode bosbessen een klassiek bijgerecht bij wildgerechten.", en: "Cowberry keeps its fruits over two seasons: berries not eaten in autumn survive winter and are still edible in spring. In Scandinavia, cowberries are a classic accompaniment to game dishes.", fr: "L'airelle rouge conserve ses fruits sur deux saisons: les baies non mangées en automne survivent à l'hiver et sont encore comestibles au printemps. En Scandinavie, les airelles rouges accompagnent classiquement les plats de gibier." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vaccinium_vitis-idaea_flowers.jpg/640px-Vaccinium_vitis-idaea_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Vaccinium_vitis-idaea_RF.jpg/640px-Vaccinium_vitis-idaea_RF.jpg"
   },
   {
     id: "bel_trifolium_pratense",
@@ -8292,7 +8292,7 @@ window.speciesData = [
     size: { nl: "20–60 cm hoog", en: "20–60 cm tall", fr: "20–60 cm de hauteur" },
     diet: { nl: "Fotosynthese; stikstofbinder via wortelknolletjes met Rhizobium-bacteriën; groeit op matig vochtige, voedselarme tot matig voedselrijke bodems.", en: "Photosynthesis; nitrogen fixer via root nodules with Rhizobium bacteria; grows on moderately moist, nutrient-poor to moderately rich soils.", fr: "Photosynthèse; fixateur d'azote via les nodules racinaires avec des bactéries Rhizobium; pousse sur sols modérément humides, pauvres à modérément riches en nutriments." },
     funfact: { nl: "Rode klaver kan per hectare tot 200 kg stikstof per jaar binden, waardoor het een uiterst waardevolle groenbemester is. Het is de nationale bloem van Denemarken.", en: "Red clover can fix up to 200 kg of nitrogen per hectare per year, making it an extremely valuable green manure. It is the national flower of Denmark.", fr: "Le trèfle des prés peut fixer jusqu'à 200 kg d'azote par hectare par an, ce qui en fait un précieux engrais vert. C'est la fleur nationale du Danemark." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Trifolium_pratense_red_clover.jpg/640px-Trifolium_pratense_red_clover.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Trifolium_pratense_-_Keila.jpg/640px-Trifolium_pratense_-_Keila.jpg"
   },
   {
     id: "bel_polygonum_aviculare",
@@ -8309,7 +8309,7 @@ window.speciesData = [
     size: { nl: "5–40 cm hoog", en: "5–40 cm tall", fr: "5–40 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op gecompacteerde, stikstofrijke, goed gedraineerde bodems in volle zon.", en: "Photosynthesis; grows on compacted, nitrogen-rich, well-drained soils in full sun.", fr: "Photosynthèse; pousse sur sols compactés, riches en azote, bien drainés, en plein soleil." },
     funfact: { nl: "Varkensgras is de 'betonnen' onkruid van treinperrons en sportvelden. Ondanks zijn bescheiden uiterlijk produceren de zaadjes tot 200 zaden per plant die tientallen jaren in de bodem kunnen overleven.", en: "Knotgrass is the 'concrete' weed of railway platforms and sports fields. Despite its modest appearance, the plants produce up to 200 seeds per plant that can survive in the soil for decades.", fr: "La renouée des oiseaux est la 'mauvaise herbe de béton' des quais de gare et des terrains de sport. Malgré son apparence modeste, les plantes produisent jusqu'à 200 graines par plante qui peuvent survivre dans le sol pendant des décennies." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Polygonum_aviculare_in_Easton,_MD.jpg/640px-Polygonum_aviculare_in_Easton,_MD.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Polygonum_aviculare_4.JPG/640px-Polygonum_aviculare_4.JPG"
   },
   {
     id: "bel_medicago_sativa",
@@ -8326,7 +8326,7 @@ window.speciesData = [
     size: { nl: "30–90 cm hoog", en: "30–90 cm tall", fr: "30–90 cm de hauteur" },
     diet: { nl: "Fotosynthese; stikstofbinder via wortelknolletjes; gedijt op diepe, kalkrijke, goed gedraineerde bodems in volle zon met weinig neerslag.", en: "Photosynthesis; nitrogen fixer via root nodules; thrives on deep, calcareous, well-drained soils in full sun with low rainfall.", fr: "Photosynthèse; fixateur d'azote via les nodules racinaires; prospère sur sols profonds, calcaires, bien drainés, en plein soleil avec peu de précipitations." },
     funfact: { nl: "Luzerne wordt al meer dan 6.000 jaar geteeld en is oorspronkelijk afkomstig uit Iran. De naam 'alfalfa' is afgeleid van het Arabische 'al-fasfasa'. Het diepe wortelstelsel maakt het bijzonder droogteresistent.", en: "Alfalfa has been cultivated for more than 6,000 years and originates from Iran. The name 'alfalfa' derives from Arabic 'al-fasfasa'. Its deep root system makes it exceptionally drought-resistant.", fr: "La luzerne est cultivée depuis plus de 6 000 ans et est originaire d'Iran. Le nom 'alfalfa' dérive de l'arabe 'al-fasfasa'. Son système racinaire profond la rend exceptionnellement résistante à la sécheresse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Medicago_sativa_flowers.jpg/640px-Medicago_sativa_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Alfalfa_%28Medicago_sativa%29_I.jpg/640px-Alfalfa_%28Medicago_sativa%29_I.jpg"
   },
   {
     id: "bel_lotus_corniculatus",
@@ -8343,7 +8343,7 @@ window.speciesData = [
     size: { nl: "10–40 cm hoog", en: "10–40 cm tall", fr: "10–40 cm de hauteur" },
     diet: { nl: "Fotosynthese; stikstofbinder via wortelknolletjes; groeit op droge, kalkrijke, voedselarme bodems in volle zon.", en: "Photosynthesis; nitrogen fixer via root nodules; grows on dry, calcareous, nutrient-poor soils in full sun.", fr: "Photosynthèse; fixateur d'azote via les nodules racinaires; pousse sur sols secs, calcaires, pauvres en nutriments, en plein soleil." },
     funfact: { nl: "Gewone rolklaver is de waardplant van meer dan 70 vlindersoorten in Europa. Ondanks de kleine blaasjes in de wortels bevat de plant kleine hoeveelheden blauwzuur die als verdediging tegen begrazing dienen.", en: "Common bird's-foot trefoil is the food plant for over 70 butterfly species in Europe. Despite small nodules in the roots, the plant contains small amounts of cyanide that serve as a defence against grazing.", fr: "Le lotier corniculé est la plante nourricière de plus de 70 espèces de papillons en Europe. Malgré les petits nodules dans les racines, la plante contient de petites quantités de cyanure servant de défense contre le pâturage." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Lotus_corniculatus_flowers.jpg/640px-Lotus_corniculatus_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Lotus_corniculatus_RF.jpg/640px-Lotus_corniculatus_RF.jpg"
   },
   {
     id: "bel_lysimachia_vulgaris",
@@ -8360,7 +8360,7 @@ window.speciesData = [
     size: { nl: "50–150 cm hoog", en: "50–150 cm tall", fr: "50–150 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op vochtige tot natte, voedselrijke, lemige bodems langs water in volle zon tot halfschaduw.", en: "Photosynthesis; grows on moist to wet, nutrient-rich, loamy soils near water in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols limoneux humides à très humides, riches en nutriments, près de l'eau, en plein soleil à mi-ombre." },
     funfact: { nl: "Ondanks de naam is grote wederik geen echte loosestrife (Lythrum) maar behoort tot de Primulaceae. De naam 'wederik' is afgeleid van het oud-Germaans voor 'vredebrenger', omdat de plant vroeger om de hals van dieren werd gebonden om vliegenplagen te weren.", en: "Despite the name, yellow loosestrife is not a true loosestrife (Lythrum) but belongs to the Primulaceae. The folk belief was that placing it on a yoke would calm quarrelsome oxen.", fr: "Malgré le nom, la lysimaque commune n'est pas une vraie salicaire (Lythrum) mais appartient aux Primulacées. La croyance populaire était que la placer sur un joug calmerait les bœufs querelleurs." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Lysimachia_vulgaris_flowers.jpg/640px-Lysimachia_vulgaris_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Lysimachia_vulgaris_RF.jpg/640px-Lysimachia_vulgaris_RF.jpg"
   },
   {
     id: "bel_impatiens_glandulifera",
@@ -8377,7 +8377,7 @@ window.speciesData = [
     size: { nl: "100–200 cm hoog", en: "100–200 cm tall", fr: "100–200 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op vochtige, stikstofrijke, verstoorde bodems langs water in volle zon tot halfschaduw.", en: "Photosynthesis; grows on moist, nitrogen-rich, disturbed soils near water in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols humides, riches en azote et perturbés près de l'eau, en plein soleil à mi-ombre." },
     funfact: { nl: "Reuzenbalsemien werd in 1839 in Europa geïntroduceerd als sierbloem. Elke plant kan tot 800 zaden produceren die tot 2 jaar kiemkrachtig blijven. De plant is nu wijdverspreid invasief langs bijna alle Belgische waterlopen.", en: "Himalayan balsam was introduced to Europe in 1839 as an ornamental. Each plant can produce up to 800 seeds remaining viable for up to 2 years. It is now widely invasive along almost all Belgian watercourses.", fr: "L'impatiente de l'Himalaya a été introduite en Europe en 1839 comme ornementale. Chaque plante peut produire jusqu'à 800 graines restant viables pendant 2 ans. Elle est maintenant largement invasive le long de presque tous les cours d'eau belges." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Impatiens_glandulifera_close.jpg/640px-Impatiens_glandulifera_close.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Reuzenbalsemien_%28Impatiens_glandulifera%29_01.JPG/640px-Reuzenbalsemien_%28Impatiens_glandulifera%29_01.JPG"
   },
   {
     id: "bel_prunus_spinosa",
@@ -8394,7 +8394,7 @@ window.speciesData = [
     size: { nl: "1–4 m hoog", en: "1–4 m tall", fr: "1–4 m de hauteur" },
     diet: { nl: "Fotosynthese; groeit op diverse bodems van kalkrijke tot zure gronden, droog tot vochtig, in volle zon.", en: "Photosynthesis; grows on various soils from calcareous to acid, dry to moist, in full sun.", fr: "Photosynthèse; pousse sur des sols variés des calcaires aux acides, secs à humides, en plein soleil." },
     funfact: { nl: "Sleedoorn bloeit als een van de vroegste struiken in het jaar en vormt dan een spectaculair witte waas over het landschap. De eerstegeneratie haagdoorns waren van sleedoorn gemaakt. De doornige struiken bieden bescherming voor nestende vogels.", en: "Blackthorn blooms as one of the earliest shrubs in the year, forming a spectacular white haze over the landscape. First-generation hedgerows were made from blackthorn. The thorny shrubs provide protection for nesting birds.", fr: "Le prunellier fleurit comme l'un des premiers arbustes de l'année, formant une brume blanche spectaculaire sur le paysage. Les premières haies étaient faites de prunellier. Les arbustes épineux offrent une protection pour les oiseaux nicheurs." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Prunus_spinosa_flowers.jpg/640px-Prunus_spinosa_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Prunus_spinosa_Hedge_in_Flower.jpg/640px-Prunus_spinosa_Hedge_in_Flower.jpg"
   },
   {
     id: "bel_mespilus_germanica",
@@ -8411,7 +8411,7 @@ window.speciesData = [
     size: { nl: "3–6 m hoog", en: "3–6 m tall", fr: "3–6 m de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op goed gedraineerde, kalkrijke tot neutraal lemige bodems in volle zon.", en: "Photosynthesis; thrives on well-drained, calcareous to neutral loamy soils in full sun.", fr: "Photosynthèse; prospère sur sols bien drainés, calcaires à limoneux neutres, en plein soleil." },
     funfact: { nl: "De mispel was in de Middeleeuwen een van de weinige wintervruchten die beschikbaar waren, omdat de vruchten na de eerste vorst eetbaar worden. Shakespeare verwees naar de mispel als symbool van rijpheid op gevorderde leeftijd.", en: "The medlar was one of the few winter fruits available in the Middle Ages, as the fruits become edible after the first frost. Shakespeare referred to the medlar as a symbol of ripeness in old age.", fr: "Le néflier était l'un des rares fruits d'hiver disponibles au Moyen Âge, car les fruits deviennent comestibles après la première gelée. Shakespeare a évoqué le néflier comme symbole de maturité à un âge avancé." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Mespilus_germanica_flowers.jpg/640px-Mespilus_germanica_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Mespilus_germanica_2024-09-24-1.jpg/640px-Mespilus_germanica_2024-09-24-1.jpg"
   },
   {
     id: "bel_inula_helenium",
@@ -8428,7 +8428,7 @@ window.speciesData = [
     size: { nl: "100–200 cm hoog", en: "100–200 cm tall", fr: "100–200 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op vochtige, voedselrijke, diep gedraineerde bodems in volle zon tot halfschaduw.", en: "Photosynthesis; grows on moist, nutrient-rich, deeply drained soils in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols humides, riches en nutriments, profondément drainés, en plein soleil à mi-ombre." },
     funfact: { nl: "De naam 'helenium' verwijst naar de mythe dat de plant opkwam op de plaatsen waar Helena van Troje haar tranen liet vallen. De wortelstok bevat inuline, een prebiotische vezel die naar de plant is vernoemd.", en: "The name 'helenium' refers to the myth that the plant sprang up where Helen of Troy shed her tears. The rhizome contains inulin, a prebiotic fibre named after the plant.", fr: "Le nom 'helenium' fait référence au mythe selon lequel la plante aurait poussé là où Hélène de Troie versa ses larmes. Le rhizome contient de l'inuline, une fibre prébiotique nommée d'après la plante." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Inula_helenium_flowers.jpg/640px-Inula_helenium_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Inula_helenium_kz04.jpg/640px-Inula_helenium_kz04.jpg"
   },
   {
     id: "bel_prunella_vulgaris",
@@ -8445,7 +8445,7 @@ window.speciesData = [
     size: { nl: "5–30 cm hoog", en: "5–30 cm tall", fr: "5–30 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op diverse bodems van kalkrijk tot matig zuur, vochtig tot droog, in volle zon tot halfschaduw.", en: "Photosynthesis; grows on various soils from calcareous to moderately acid, moist to dry, in full sun to semi-shade.", fr: "Photosynthèse; pousse sur des sols variés des calcaires aux modérément acides, humides à secs, en plein soleil à mi-ombre." },
     funfact: { nl: "Brunel werd in de Middeleeuwen beschouwd als een wondermiddel tegen alle ziekten en heette dan ook 'allheal'. Moderne onderzoeken bevestigen antiseptische en antivirale eigenschappen. De plant kan gebruikt worden in salades.", en: "Self-heal was considered a cure-all in the Middle Ages, hence the name. Modern research confirms antiseptic and antiviral properties. The plant can be used in salads.", fr: "La brunelle était considérée comme un remède universel au Moyen Âge, d'où le nom. Les recherches modernes confirment des propriétés antiseptiques et antivirales. La plante peut être utilisée dans les salades." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Prunella_vulgaris_flowers.jpg/640px-Prunella_vulgaris_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Prunella_vulgaris_kz14.jpg/640px-Prunella_vulgaris_kz14.jpg"
   },
   {
     id: "bel_pulmonaria_officinalis",
@@ -8462,7 +8462,7 @@ window.speciesData = [
     size: { nl: "15–30 cm hoog", en: "15–30 cm tall", fr: "15–30 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op vochtige, humusrijke, neutrale tot matig zure bosbodem in halfschaduw tot schaduw.", en: "Photosynthesis; thrives on moist, humus-rich, neutral to moderately acid forest soil in semi-shade to shade.", fr: "Photosynthèse; prospère sur sol forestier humide, riche en humus, neutre à modérément acide, à mi-ombre à l'ombre." },
     funfact: { nl: "Longkruid werd voorgeschreven voor longziekten op basis van de 'signatuurleer': de gevlekte bladeren leken op aangetaste longen. De kleurverandering van roze naar blauw is te wijten aan een pH-verandering in de bloemen.", en: "Lungwort was prescribed for lung diseases based on the 'doctrine of signatures': the spotted leaves resembled diseased lungs. The colour change from pink to blue is due to a pH change in the flowers.", fr: "La pulmonaire était prescrite pour les maladies pulmonaires selon la 'doctrine des signatures': les feuilles tachetées ressemblaient à des poumons malades. Le changement de couleur du rose au bleu est dû à un changement de pH dans les fleurs." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pulmonaria_officinalis_flowers.jpg/640px-Pulmonaria_officinalis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pulmonaria_officinalis_TK.jpg/640px-Pulmonaria_officinalis_TK.jpg"
   },
   {
     id: "bel_armoracia_rusticana",
@@ -8479,7 +8479,7 @@ window.speciesData = [
     size: { nl: "50–120 cm hoog", en: "50–120 cm tall", fr: "50–120 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op diepe, vochtige, voedselrijke bodems en kan zelfs op zware kleigronden groeien.", en: "Photosynthesis; thrives on deep, moist, nutrient-rich soils and can even grow on heavy clay.", fr: "Photosynthèse; prospère sur sols profonds, humides et riches en nutriments et peut même pousser sur de l'argile lourde." },
     funfact: { nl: "Mierik bevat meer dan 10 keer zo veel isothiocyanaten als mosterd en is daarmee het scherpste wortelkruid in de Europese keuken. De wortel kan worden geraspte tot een saus die bijzonder goed past bij koud vlees en gerookte vis.", en: "Horseradish contains more than 10 times the isothiocyanates of mustard, making it the sharpest root herb in European cuisine. The grated root makes a sauce that pairs especially well with cold meats and smoked fish.", fr: "Le raifort contient plus de 10 fois plus d'isothiocyanates que la moutarde, ce qui en fait le condiment le plus piquant de la cuisine européenne. La racine râpée donne une sauce qui s'accorde particulièrement bien avec les viandes froides et le poisson fumé." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Armoracia_rusticana_flowers.jpg/640px-Armoracia_rusticana_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Armoracia_rusticana_kz04.jpg/640px-Armoracia_rusticana_kz04.jpg"
   },
   {
     id: "bel_oenothera_biennis",
@@ -8496,7 +8496,7 @@ window.speciesData = [
     size: { nl: "50–150 cm hoog", en: "50–150 cm tall", fr: "50–150 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op droge, zandige, voedselarme, goed gedraineerde bodems in volle zon.", en: "Photosynthesis; grows on dry, sandy, nutrient-poor, well-drained soils in full sun.", fr: "Photosynthèse; pousse sur sols secs, sableux, pauvres en nutriments, bien drainés, en plein soleil." },
     funfact: { nl: "Teunisbloemseedolie is rijk aan gamma-linoleenzuur (GLA) en wordt verkocht als gezondheidssupplement. De naam 'evening primrose' verwijst naar het feit dat de bloemen opengaan bij zonsondergang om nachtvlinders aan te trekken.", en: "Evening primrose seed oil is rich in gamma-linolenic acid (GLA) and sold as a health supplement. The name refers to the flowers opening at sunset to attract night-flying moths.", fr: "L'huile de graines d'onagre est riche en acide gamma-linolénique (GLA) et vendue comme complément de santé. Le nom fait référence aux fleurs qui s'ouvrent au coucher du soleil pour attirer les papillons de nuit." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Oenothera_biennis_flowers.jpg/640px-Oenothera_biennis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Oenothera_biennis%2C_Vic-la-Gardiole_01.jpg/640px-Oenothera_biennis%2C_Vic-la-Gardiole_01.jpg"
   },
   {
     id: "bel_mentha_spicata",
@@ -8513,7 +8513,7 @@ window.speciesData = [
     size: { nl: "30–100 cm hoog", en: "30–100 cm tall", fr: "30–100 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op vochtige tot natte, voedselrijke bodems in volle zon tot halfschaduw.", en: "Photosynthesis; thrives on moist to wet, nutrient-rich soils in full sun to semi-shade.", fr: "Photosynthèse; prospère sur sols humides à très humides, riches en nutriments, en plein soleil à mi-ombre." },
     funfact: { nl: "Hertsmunt is de basisingredient voor muntthee en wordt wereldwijd meer geteeld dan enig andere muntsoort. De plant verspreidt zich intensief via worteluitlopers en kan invasief worden in tuinen.", en: "Spearmint is the base ingredient for mint tea and is cultivated worldwide more than any other mint species. The plant spreads vigorously via root runners and can become invasive in gardens.", fr: "La menthe verte est l'ingrédient de base du thé à la menthe et est cultivée dans le monde entier plus que toute autre espèce de menthe. La plante se propage vigoureusement par les stolons et peut devenir invasive dans les jardins." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Mentha_spicata_flowers.jpg/640px-Mentha_spicata_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Mint_leaves_%28Mentha_spicata%29.jpg/640px-Mint_leaves_%28Mentha_spicata%29.jpg"
   },
   {
     id: "bel_ononis_spinosa",
@@ -8530,7 +8530,7 @@ window.speciesData = [
     size: { nl: "20–60 cm hoog", en: "20–60 cm tall", fr: "20–60 cm de hauteur" },
     diet: { nl: "Fotosynthese; stikstofbinder via wortelknolletjes; groeit op droge, kalkrijke, voedselarme bodems in volle zon.", en: "Photosynthesis; nitrogen fixer via root nodules; grows on dry, calcareous, nutrient-poor soils in full sun.", fr: "Photosynthèse; fixateur d'azote via les nodules racinaires; pousse sur sols secs, calcaires, pauvres en nutriments, en plein soleil." },
     funfact: { nl: "De naam 'arrête-bœuf' (Frans voor 'stop de os') en het Engelse 'restharrow' verwijzen naar de sterke, doornige wortelstokken die vroeger ploegen en eggen aan de grond vasthielden. De wortel was vroeger medicinaal gebruikt als diureticum.", en: "The names 'arrête-bœuf' (French for 'stop the ox') and 'restharrow' refer to the strong, spiny rootstocks that formerly caught ploughs and harrows. The root was formerly used medicinally as a diuretic.", fr: "Les noms 'arrête-bœuf' et 'restharrow' font référence aux rhizomes forts et épineux qui accrochaient autrefois les charrues et les herses. La racine était autrefois utilisée médicalement comme diurétique." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Ononis_spinosa_flowers.jpg/640px-Ononis_spinosa_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Ononis_spinosa_%288289068860%29.jpg/640px-Ononis_spinosa_%288289068860%29.jpg"
   },
   {
     id: "bel_myosotis_arvensis",
@@ -8547,7 +8547,7 @@ window.speciesData = [
     size: { nl: "15–40 cm hoog", en: "15–40 cm tall", fr: "15–40 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op diverse bodems van kalkrijk tot matig zuur, droog tot matig vochtig, in volle zon tot lichte schaduw.", en: "Photosynthesis; grows on various soils from calcareous to moderately acid, dry to moderately moist, in full sun to light shade.", fr: "Photosynthèse; pousse sur des sols variés des calcaires aux modérément acides, secs à modérément humides, en plein soleil à ombre légère." },
     funfact: { nl: "De legende achter de vergeet-mij-niet vertelt dat een ridder die plukken voor zijn dame viel en slechts kon zeggen 'vergeet mij niet' voordat hij verdronk. De wetenschappelijke naam 'myosotis' is Grieks voor 'muizenoor', verwijzend naar de zachte, behaard blaadjes.", en: "The legend behind the forget-me-not tells of a knight picking some for his lady who fell in a river and could only cry 'forget me not' before drowning. The scientific name 'myosotis' is Greek for 'mouse ear', referring to the soft, hairy leaves.", fr: "La légende derrière le myosotis raconte l'histoire d'un chevalier qui en cueillait pour sa dame, tomba dans une rivière et ne put que crier 'ne m'oublie pas' avant de se noyer. Le nom scientifique 'myosotis' est le grec pour 'oreille de souris'." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Myosotis_arvensis_flowers.jpg/640px-Myosotis_arvensis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Myosotis_arvensis_kz05.jpg/640px-Myosotis_arvensis_kz05.jpg"
   },
   {
     id: "bel_verbascum_thapsus",
@@ -8564,7 +8564,7 @@ window.speciesData = [
     size: { nl: "50–200 cm hoog", en: "50–200 cm tall", fr: "50–200 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op droge, kalkrijke tot neutrale, voedselarme, goed gedraineerde bodems in volle zon.", en: "Photosynthesis; grows on dry, calcareous to neutral, nutrient-poor, well-drained soils in full sun.", fr: "Photosynthèse; pousse sur sols secs, calcaires à neutres, pauvres en nutriments, bien drainés, en plein soleil." },
     funfact: { nl: "De stengels van de stalkaars werden in de oudheid gedoopt in dierenvet en gebruikt als fakkels. In de Middeleeuwen werden de dikke bladeren als voetverwarming in schoenen gedragen. De viltige bladharen helpen de plant vochtverlies te beperken in droge omstandigheden.", en: "Mullein stems were dipped in animal fat in antiquity and used as torches. In the Middle Ages the thick leaves were worn in shoes as foot warmers. The felted leaf hairs help the plant reduce moisture loss in dry conditions.", fr: "Les tiges de la molène étaient trempées dans de la graisse animale dans l'Antiquité et utilisées comme torches. Au Moyen Âge, les feuilles épaisses étaient portées dans les chaussures comme chauffe-pieds. Les poils feutrés des feuilles aident la plante à réduire la perte d'humidité dans les conditions sèches." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Verbascum_thapsus_flowers.jpg/640px-Verbascum_thapsus_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Koningskaars_R01.jpg/640px-Koningskaars_R01.jpg"
   },
   {
     id: "bel_viola_tricolor",
@@ -8581,7 +8581,7 @@ window.speciesData = [
     size: { nl: "10–30 cm hoog", en: "10–30 cm tall", fr: "10–30 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op voedselarme, vochtige tot droge, zandige tot lemige bodems in volle zon tot halfschaduw.", en: "Photosynthesis; grows on nutrient-poor, moist to dry, sandy to loamy soils in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols pauvres en nutriments, humides à secs, sableux à limoneux, en plein soleil à mi-ombre." },
     funfact: { nl: "Het driekleurig viooltje is de wilde voorouder van alle geteelde tuin-viooltjes (Viola x wittrockiana). In de Middeleeuwen gold het als liefdesdrankje en werd het in drankjes gestopt om verliefdheid op te wekken.", en: "The wild pansy is the wild ancestor of all cultivated garden pansies (Viola x wittrockiana). In the Middle Ages it was considered a love potion and put into drinks to arouse affection.", fr: "La pensée sauvage est l'ancêtre sauvage de toutes les pensées cultivées (Viola x wittrockiana). Au Moyen Âge, elle était considérée comme un philtre d'amour et mise dans les boissons pour susciter l'affection." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Viola_tricolor_flowers.jpg/640px-Viola_tricolor_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Viola_tricolor_kz05.jpg/640px-Viola_tricolor_kz05.jpg"
   },
   {
     id: "bel_erigeron_canadensis",
@@ -8598,7 +8598,7 @@ window.speciesData = [
     size: { nl: "30–150 cm hoog", en: "30–150 cm tall", fr: "30–150 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op droge tot matig vochtige, stikstofrijke, open, verstoorde bodems in volle zon.", en: "Photosynthesis; grows on dry to moderately moist, nitrogen-rich, open, disturbed soils in full sun.", fr: "Photosynthèse; pousse sur sols secs à modérément humides, riches en azote, ouverts et perturbés, en plein soleil." },
     funfact: { nl: "Canadese fijnstraal was een van de eerste Noord-Amerikaanse planten die in Europa inburgerde — al in de 17e eeuw. Het is nu op alle continenten aanwezig en groeit zelfs in Centraal-Aziatische steppegordels.", en: "Canadian fleabane was one of the first North American plants to naturalise in Europe, as early as the 17th century. It is now present on all continents and even grows in Central Asian steppes.", fr: "La vergerette du Canada a été l'une des premières plantes nord-américaines à se naturaliser en Europe, dès le XVIIe siècle. Elle est maintenant présente sur tous les continents et pousse même dans les steppes d'Asie centrale." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Erigeron_canadensis_flowers.jpg/640px-Erigeron_canadensis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Erigeron_canadensis_from_Britain_by_D_Merrick_14.jpg/640px-Erigeron_canadensis_from_Britain_by_D_Merrick_14.jpg"
   },
   {
     id: "bel_persicaria_hydropiper",
@@ -8615,7 +8615,7 @@ window.speciesData = [
     size: { nl: "30–70 cm hoog", en: "30–70 cm tall", fr: "30–70 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op natte tot vochtige, voedselrijke, lemige bodems langs water in volle zon.", en: "Photosynthesis; grows on wet to moist, nutrient-rich, loamy soils near water in full sun.", fr: "Photosynthèse; pousse sur sols limoneux humides à très humides, riches en nutriments, près de l'eau, en plein soleil." },
     funfact: { nl: "Waterpeper werd gebruikt als peper-vervanger voor de 17e eeuw, als het echte peperspecerij te duur was. De brandende stof is polygodial, een sesquiterpeendialdehyde. De plant was ook volksmatig gebruikt als insectenverdrijver.", en: "Water pepper was used as a pepper substitute before the 17th century when real peppercorn was too expensive. The burning compound is polygodial, a sesquiterpene dialdehyde. The plant was also used folk-medicinally as an insect repellent.", fr: "Le poivre d'eau était utilisé comme substitut du poivre avant le XVIIe siècle, quand le vrai poivre était trop cher. Le composé brûlant est le polygodial, un sesquiterpène dialdéhyde. La plante était aussi utilisée comme répulsif d'insectes." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Persicaria_hydropiper_flowers.jpg/640px-Persicaria_hydropiper_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Persicaria_hydropiper_kz06.jpg/640px-Persicaria_hydropiper_kz06.jpg"
   },
   {
     id: "bel_tripolium_pannonicum",
@@ -8632,7 +8632,7 @@ window.speciesData = [
     size: { nl: "20–80 cm hoog", en: "20–80 cm tall", fr: "20–80 cm de hauteur" },
     diet: { nl: "Fotosynthese; halofyt die gedijt op zilte, natte tot vochtige bodems met hoge zoutconcentraties in volle zon.", en: "Photosynthesis; halophyte thriving on saline, wet to moist soils with high salt concentrations in full sun.", fr: "Photosynthèse; halophyte prospérant sur sols salins, humides à modérément humides avec de fortes concentrations en sel, en plein soleil." },
     funfact: { nl: "Zulte is een echte halofyt die zout actief uitscheidt via speciale klieren in de bladeren. De vettige blaadjes zijn eetbaar en smaken licht zout. In sommige kuststreken wordt zulte als groente gegeten.", en: "Sea aster is a true halophyte that actively excretes salt through special glands in the leaves. The fleshy leaves are edible with a slightly salty taste. In some coastal areas, sea aster is eaten as a vegetable.", fr: "L'aster maritime est un vrai halophyte qui excrète activement le sel par des glandes spéciales dans les feuilles. Les feuilles charnues sont comestibles avec un goût légèrement salé. Dans certaines régions côtières, l'aster maritime est consommé comme légume." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Tripolium_pannonicum.jpg/640px-Tripolium_pannonicum.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Tripolium_pannonicum_RF.jpg/640px-Tripolium_pannonicum_RF.jpg"
   },
   {
     id: "bel_solidago_canadensis",
@@ -8649,7 +8649,7 @@ window.speciesData = [
     size: { nl: "60–150 cm hoog", en: "60–150 cm tall", fr: "60–150 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op droge tot vochtige, stikstofrijke, verstoorde bodems in volle zon tot halfschaduw.", en: "Photosynthesis; grows on dry to moist, nitrogen-rich, disturbed soils in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols secs à humides, riches en azote et perturbés, en plein soleil à mi-ombre." },
     funfact: { nl: "Canadese guldenroede produceert allelopathische stoffen die de groei van omliggende planten remmen, wat helpt bij het vormen van monoculturen. Desondanks is de plant een waardevolle nectarbron voor laat-seizoen vlinders en bijen.", en: "Canadian goldenrod produces allelopathic compounds that inhibit the growth of surrounding plants, helping it form monocultures. Nevertheless, the plant is a valuable nectar source for late-season butterflies and bees.", fr: "Le solidage du Canada produit des composés allélopathiques qui inhibent la croissance des plantes environnantes, l'aidant à former des monocultures. Néanmoins, la plante est une précieuse source de nectar pour les papillons et abeilles de fin de saison." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Solidago_canadensis_flowers.jpg/640px-Solidago_canadensis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Solidago_canadensis_2014_G01.jpg/640px-Solidago_canadensis_2014_G01.jpg"
   },
   {
     id: "bel_solidago_gigantea",
@@ -8666,7 +8666,7 @@ window.speciesData = [
     size: { nl: "60–200 cm hoog", en: "60–200 cm tall", fr: "60–200 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op vochtige tot natte, voedselrijke bodems langs water in volle zon tot halfschaduw.", en: "Photosynthesis; grows on moist to wet, nutrient-rich soils near water in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols humides à très humides, riches en nutriments, près de l'eau, en plein soleil à mi-ombre." },
     funfact: { nl: "Late guldenroede en Canadese guldenroede zijn samen verantwoordelijk voor het verdringen van inheemse vegetatie langs duizenden kilometers Belgische waterlopen. Beide soorten zijn opgenomen in de EU-lijst van invasieve exoten.", en: "Giant goldenrod and Canadian goldenrod together are responsible for displacing native vegetation along thousands of kilometres of Belgian watercourses. Both species are on the EU list of invasive alien species.", fr: "Le solidage géant et le solidage du Canada sont ensemble responsables du déplacement de la végétation indigène le long de milliers de kilomètres de cours d'eau belges. Les deux espèces figurent sur la liste européenne des espèces exotiques envahissantes." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Solidago_gigantea_flowers.jpg/640px-Solidago_gigantea_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Solidago_gigantea_kz01.jpg/640px-Solidago_gigantea_kz01.jpg"
   },
   {
     id: "bel_hippophae_rhamnoides",
@@ -8683,7 +8683,7 @@ window.speciesData = [
     size: { nl: "1–6 m hoog", en: "1–6 m tall", fr: "1–6 m de hauteur" },
     diet: { nl: "Fotosynthese; stikstofbinder via symbiotische Frankia-bacteriën in wortelknolletjes; gedijt op droge, zandige, voedselarme bodems in volle zon.", en: "Photosynthesis; nitrogen fixer via symbiotic Frankia bacteria in root nodules; thrives on dry, sandy, nutrient-poor soils in full sun.", fr: "Photosynthèse; fixateur d'azote via des bactéries Frankia symbiotiques dans les nodules racinaires; prospère sur sols sableux, secs et pauvres en nutriments, en plein soleil." },
     funfact: { nl: "Duindoornbessen bevatten 10 tot 100 keer meer vitamine C dan sinaasappels en zijn een van de meest voedingsrijke vruchten ter wereld. De bessen worden niet door vogels opgegeten voor de winter, maar in de lente zijn ze zoeter na vorstperiodes.", en: "Sea buckthorn berries contain 10 to 100 times more vitamin C than oranges and are among the most nutritionally rich fruits in the world. Birds typically do not eat the berries until winter, when frost sweetens them.", fr: "Les baies d'argousier contiennent 10 à 100 fois plus de vitamine C que les oranges et sont parmi les fruits les plus nutritifs au monde. Les oiseaux ne mangent généralement pas les baies avant l'hiver, quand le gel les adoucit." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Hippophae_rhamnoides_flowers.jpg/640px-Hippophae_rhamnoides_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Hippophae_rhamnoides-01_%28xndr%29.JPG/640px-Hippophae_rhamnoides-01_%28xndr%29.JPG"
   },
   {
     id: "bel_reynoutria_japonica",
@@ -8700,7 +8700,7 @@ window.speciesData = [
     size: { nl: "100–300 cm hoog", en: "100–300 cm tall", fr: "100–300 cm de hauteur" },
     diet: { nl: "Fotosynthese; opportunistische groeier op diverse bodems; gedijt op stikstofrijke, verstoorde bodems in volle zon.", en: "Photosynthesis; opportunistic grower on various soils; thrives on nitrogen-rich, disturbed soils in full sun.", fr: "Photosynthèse; plante opportuniste sur des sols variés; prospère sur sols riches en azote et perturbés, en plein soleil." },
     funfact: { nl: "Japanse duizendknoop staat op de lijst van de 100 meest invasieve soorten ter wereld van de IUCN. In het VK is het illegaal om de plant te verspreiden. De jonge scheuten zijn eetbaar en smaken naar zuring.", en: "Japanese knotweed is on the IUCN list of the 100 worst invasive species in the world. In the UK it is illegal to spread the plant. The young shoots are edible and taste like sorrel.", fr: "La renouée du Japon figure sur la liste de l'UICN des 100 pires espèces envahissantes au monde. Au Royaume-Uni, il est illégal de propager la plante. Les jeunes pousses sont comestibles et ont un goût d'oseille." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Reynoutria_japonica_flowers.jpg/640px-Reynoutria_japonica_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Reynoutria_japonica_flower_%2812%29.jpg/640px-Reynoutria_japonica_flower_%2812%29.jpg"
   },
   {
     id: "bel_acinos_arvensis",
@@ -8717,7 +8717,7 @@ window.speciesData = [
     size: { nl: "5–20 cm hoog", en: "5–20 cm tall", fr: "5–20 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op droge, kalkrijke, voedselarme bodems in volle zon.", en: "Photosynthesis; grows on dry, calcareous, nutrient-poor soils in full sun.", fr: "Photosynthèse; pousse sur sols secs, calcaires, pauvres en nutriments, en plein soleil." },
     funfact: { nl: "Bergsteentijm is een oud medicinaal kruid dat in de Griekse en Romeinse geneeskunde werd gebruikt voor maagproblemen en als antisepticum. De kleine plant is moeilijk te herkennen en wordt daardoor gemakkelijk over het hoofd gezien.", en: "Basil thyme is an ancient medicinal herb used in Greek and Roman medicine for stomach complaints and as an antiseptic. The tiny plant is difficult to identify and is therefore easily overlooked.", fr: "L'acinos des champs est une ancienne herbe médicinale utilisée dans la médecine grecque et romaine pour les troubles gastriques et comme antiseptique. Cette petite plante est difficile à identifier et est donc facilement négligée." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Acinos_arvensis_flowers.jpg/640px-Acinos_arvensis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Acinos_arvensis_kz05.jpg/640px-Acinos_arvensis_kz05.jpg"
   },
   {
     id: "bel_galinsoga_quadriradiata",
@@ -8734,7 +8734,7 @@ window.speciesData = [
     size: { nl: "10–50 cm hoog", en: "10–50 cm tall", fr: "10–50 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op stikstofrijke, vochtige, verstoorde bodems in volle zon.", en: "Photosynthesis; grows on nitrogen-rich, moist, disturbed soils in full sun.", fr: "Photosynthèse; pousse sur sols riches en azote, humides et perturbés, en plein soleil." },
     funfact: { nl: "Harig knopkruid werd in 1814 in Europa ingevoerd als onkruid in een botanische tuin in Madrid en was er in 1860 al in heel Europa aanwezig. Elke plant produceert tot 7500 zaadjes die onmiddellijk kiemen kunnen.", en: "Shaggy soldier was introduced to Europe in 1814 as a weed in a botanical garden in Madrid and by 1860 was present throughout Europe. Each plant produces up to 7500 seeds that can germinate immediately.", fr: "Le galinsoga a été introduit en Europe en 1814 comme mauvaise herbe dans un jardin botanique à Madrid et était présent dans toute l'Europe dès 1860. Chaque plante produit jusqu'à 7500 graines qui peuvent germer immédiatement." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Galinsoga_quadriradiata_flowers.jpg/640px-Galinsoga_quadriradiata_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Galinsoga_quadriradiata%2C_MX.jpg/640px-Galinsoga_quadriradiata%2C_MX.jpg"
   },
   {
     id: "bel_physalis_alkekengi",
@@ -8751,7 +8751,7 @@ window.speciesData = [
     size: { nl: "30–80 cm hoog", en: "30–80 cm tall", fr: "30–80 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op goed gedraineerde, voedselrijke, neutrale bodems in volle zon tot lichte schaduw.", en: "Photosynthesis; thrives on well-drained, nutrient-rich, neutral soils in full sun to light shade.", fr: "Photosynthèse; prospère sur sols bien drainés, riches en nutriments, neutres, en plein soleil à ombre légère." },
     funfact: { nl: "De lampionplant wordt al meer dan 3000 jaar geteeld. De naam 'Physalis' komt van het Griekse 'physa' (blaas), verwijzend naar de opgezwollen kelch. De gedroogde lampionnetjes zijn populair in droogbloemenarrangementen.", en: "The Chinese lantern plant has been cultivated for over 3000 years. The name 'Physalis' comes from the Greek 'physa' (bladder), referring to the inflated calyx. The dried lanterns are popular in dried flower arrangements.", fr: "La lampion plant est cultivée depuis plus de 3000 ans. Le nom 'Physalis' vient du grec 'physa' (vésicule), en référence au calice gonflé. Les lanternes séchées sont populaires dans les arrangements de fleurs séchées." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Physalis_alkekengi_fruits.jpg/640px-Physalis_alkekengi_fruits.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Physalis_alkekengi_kz05.jpg/640px-Physalis_alkekengi_kz05.jpg"
   },
   {
     id: "bel_lamiastrum_galeobdolon",
@@ -8768,7 +8768,7 @@ window.speciesData = [
     size: { nl: "20–60 cm hoog", en: "20–60 cm tall", fr: "20–60 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op vochtige, humusrijke, kalkrijke tot neutrale bosbodem in halfschaduw.", en: "Photosynthesis; thrives on moist, humus-rich, calcareous to neutral forest soil in semi-shade.", fr: "Photosynthèse; prospère sur sol forestier humide, riche en humus, calcaire à neutre, à mi-ombre." },
     funfact: { nl: "Gele dovenetel is een indicator voor oude, ongestoorde loofbossen in België. De zilveren vlekken op de bladeren helpen bij het herkennen van de plant, ook buiten bloeitijd. Sommige gekweekte variëteiten met meer zilver worden als bodembedekker in tuinen gebruikt.", en: "Yellow archangel is an indicator of ancient, undisturbed deciduous woodland in Belgium. The silver markings on the leaves help identify the plant even out of flowering season. Some cultivated varieties with more silver are used as ground cover in gardens.", fr: "Le lamier jaune est un indicateur de forêts feuillues anciennes et non perturbées en Belgique. Les marques argentées sur les feuilles aident à identifier la plante même hors saison de floraison. Certaines variétés cultivées avec plus d'argent sont utilisées comme couvre-sol dans les jardins." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Lamiastrum_galeobdolon_flowers.jpg/640px-Lamiastrum_galeobdolon_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Lamiastrum_galeobdolon_kz01.jpg/640px-Lamiastrum_galeobdolon_kz01.jpg"
   },
   {
     id: "bel_myosoton_aquaticum",
@@ -8785,7 +8785,7 @@ window.speciesData = [
     size: { nl: "20–60 cm hoog", en: "20–60 cm tall", fr: "20–60 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op natte tot vochtige, voedselrijke, lemige bodems langs water in volle zon tot halfschaduw.", en: "Photosynthesis; grows on wet to moist, nutrient-rich, loamy soils near water in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols limoneux humides à très humides, riches en nutriments, près de l'eau, en plein soleil à mi-ombre." },
     funfact: { nl: "Watermuur lijkt sterk op vogelmuur maar is te herkennen aan de veel grotere bladeren, de kleverige stengels en het vochtige habitatvoorkeur. Vroeger werd de plant verward met vogelmuur en als salade gegeten.", en: "Water chickweed closely resembles common chickweed but can be identified by its much larger leaves, sticky stems and preference for wet habitats. It was formerly confused with chickweed and eaten as salad.", fr: "Le myosoton aquatique ressemble beaucoup au mouron des oiseaux mais se reconnaît à ses feuilles beaucoup plus grandes, ses tiges collantes et sa préférence pour les habitats humides. Il était autrefois confondu avec le mouron et consommé en salade." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Myosoton_aquaticum_flowers.jpg/640px-Myosoton_aquaticum_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Myosoton_aquaticum_kz06.jpg/640px-Myosoton_aquaticum_kz06.jpg"
   },
   {
     id: "bel_salvia_pratensis",
@@ -8802,7 +8802,7 @@ window.speciesData = [
     size: { nl: "30–80 cm hoog", en: "30–80 cm tall", fr: "30–80 cm de hauteur" },
     diet: { nl: "Fotosynthese; gedijt op droge, kalkrijke, voedselarme, goed gedraineerde bodems in volle zon.", en: "Photosynthesis; thrives on dry, calcareous, nutrient-poor, well-drained soils in full sun.", fr: "Photosynthèse; prospère sur sols secs, calcaires, pauvres en nutriments, bien drainés, en plein soleil." },
     funfact: { nl: "Veldsalie heeft een bijzonder bestuivingsmechanisme: wanneer een bij in de bloem gaat, duwen hefboomachtige meeldraden pollen op de rug van de bij. Dit mechanisme is zo efficiënt dat wetenschappers het als model gebruiken.", en: "Meadow clary has a remarkable pollination mechanism: when a bee enters the flower, lever-like stamens push pollen onto the bee's back. This mechanism is so efficient that scientists use it as a model.", fr: "La sauge des prés a un mécanisme de pollinisation remarquable: quand une abeille entre dans la fleur, des étamines en levier poussent le pollen sur le dos de l'abeille. Ce mécanisme est si efficace que les scientifiques l'utilisent comme modèle." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Salvia_pratensis_flowers.jpg/640px-Salvia_pratensis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Salvia_pratensis_RF.jpg/640px-Salvia_pratensis_RF.jpg"
   },
   {
     id: "bel_galeopsis_tetrahit",
@@ -8819,7 +8819,7 @@ window.speciesData = [
     size: { nl: "20–80 cm hoog", en: "20–80 cm tall", fr: "20–80 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op voedselrijke, vochtige tot matig droge, verstoorde bodems in volle zon tot halfschaduw.", en: "Photosynthesis; grows on nutrient-rich, moist to moderately dry, disturbed soils in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols riches en nutriments, humides à modérément secs et perturbés, en plein soleil à mi-ombre." },
     funfact: { nl: "Gewone hennepnetel is interessant voor genetici: de soort is vermoedelijk een amfiploïde hybride die spontaan is ontstaan uit een kruising van twee andere Galeopsis-soorten. Wetenschappers hebben dit experimenteel kunnen bevestigen door de oudersoorten opnieuw te kruisen.", en: "Common hemp-nettle is of interest to geneticists: the species is thought to be an amphiploid hybrid that arose spontaneously from a cross between two other Galeopsis species. Scientists confirmed this experimentally by re-crossing the parent species.", fr: "Le galéopsis tétrahit est intéressant pour les généticiens: l'espèce serait un hybride amphiploïde apparu spontanément d'un croisement entre deux autres espèces de Galeopsis. Les scientifiques ont confirmé cela expérimentalement en recroisant les espèces parentales." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Galeopsis_tetrahit_flowers.jpg/640px-Galeopsis_tetrahit_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Galeopsis_tetrahit_tetrahit_118453171.jpg/640px-Galeopsis_tetrahit_tetrahit_118453171.jpg"
   },
   {
     id: "bel_helianthus_tuberosus",
@@ -8836,7 +8836,7 @@ window.speciesData = [
     size: { nl: "100–300 cm hoog", en: "100–300 cm tall", fr: "100–300 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op diverse, voedselrijke bodems; gedijt op vochtige tot matig droge bodems in volle zon.", en: "Photosynthesis; grows on various, nutrient-rich soils; thrives on moist to moderately dry soils in full sun.", fr: "Photosynthèse; pousse sur des sols variés et riches en nutriments; prospère sur sols humides à modérément secs en plein soleil." },
     funfact: { nl: "Aardpeer heeft niets te maken met Jeruzalem: de naam is een vervorming van het Italiaanse 'girasole' (zonnebloem). De knollen bevatten veel inuline, wat spijsverteringsklachten kan veroorzaken maar ook prebiotische voordelen heeft.", en: "Jerusalem artichoke has nothing to do with Jerusalem: the name is a corruption of the Italian 'girasole' (sunflower). The tubers contain much inulin which can cause digestive problems but also has prebiotic benefits.", fr: "Le topinambour n'a rien à voir avec Jérusalem: le nom est une déformation de l'italien 'girasole' (tournesol). Les tubercules contiennent beaucoup d'inuline qui peut causer des problèmes digestifs mais présente aussi des avantages prébiotiques." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Helianthus_tuberosus_flowers.jpg/640px-Helianthus_tuberosus_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Helianthus_tuberosus_controluce.jpg/640px-Helianthus_tuberosus_controluce.jpg"
   },
   {
     id: "bel_bistorta_officinalis",
@@ -8853,6 +8853,6 @@ window.speciesData = [
     size: { nl: "25–80 cm hoog", en: "25–80 cm tall", fr: "25–80 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit op vochtige, matig voedselrijke, zure tot neutrale bodems in volle zon tot halfschaduw.", en: "Photosynthesis; grows on moist, moderately nutrient-rich, acid to neutral soils in full sun to semi-shade.", fr: "Photosynthèse; pousse sur sols humides, modérément riches en nutriments, acides à neutres, en plein soleil à mi-ombre." },
     funfact: { nl: "Adderwortel werd traditioneel gegeten in het noorden van Engeland in de 'dock pudding', een hartig gerecht gemaakt van de jonge bladeren. De getwiste wortelstok werd gezien als een symbool van de slang en gebruikte men als tegenmiddel voor slangenbeten.", en: "Common bistort was traditionally eaten in northern England in 'dock pudding', a savoury dish made from the young leaves. The twisted rootstock was seen as a symbol of the snake and used as a remedy for snakebite.", fr: "La bistorte officinale était traditionnellement consommée dans le nord de l'Angleterre dans le 'dock pudding', un plat salé fait des jeunes feuilles. Le rhizome tordu était vu comme un symbole du serpent et utilisé comme remède contre les morsures de serpent." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bistorta_officinalis_flowers.jpg/640px-Bistorta_officinalis_flowers.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bistorta_officinalis_01.JPG/640px-Bistorta_officinalis_01.JPG"
   }
 ];
