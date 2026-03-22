@@ -767,6 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'label-size': 'size',
             'label-diet': 'diet',
             'label-funfact': 'funfact',
+            'label-info-scientific': 'scientific',
             'label-info-habitat': 'habitat',
             'label-info-rarity': 'rarity',
             'label-info-size': 'size',
@@ -1529,6 +1530,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        document.getElementById('modal-infobox-scientific').textContent = item.scientific || '---';
         document.getElementById('modal-infobox-family').textContent = item.family || '---';
         document.getElementById('modal-infobox-category').textContent = i18n[lang][item.category] || item.category;
         document.getElementById('modal-habitat').textContent = getName(item.habitat) || '---';
@@ -1711,8 +1713,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ]},
             {id:'angiospermae',icon:'🌸',label:'Bedektzadigen',sci:'Angiospermae',color:'#a8d870',children:[
               {id:'monocots',icon:'🌷',label:'Monocotylen',sci:'Liliopsida',color:'#f0c05a',cats:['flora'],children:[
-                {id:'alismatales',icon:'💧',label:'Kroosachtigen',sci:'Alismatales',color:'#60b8c8',families:['Araceae']},
-                {id:'asparagales',icon:'🌸',label:'Asparagales',sci:'Asparagales',color:'#f0c05a',families:['Amaryllidaceae','Asparagaceae','Orchidaceae']},
+                {id:'alismatales',icon:'💧',label:'Kroosachtigen',sci:'Alismatales',color:'#60b8c8',families:['Araceae','Alismataceae']},
+                {id:'asparagales',icon:'🌸',label:'Asparagales',sci:'Asparagales',color:'#f0c05a',families:['Amaryllidaceae','Asparagaceae','Orchidaceae','Iridaceae']},
               ]},
               {id:'dicots',icon:'🌼',label:'Dicotylen',sci:'Eudicotyledones',color:'#7ec860',cats:['flora','trees','agriculture'],children:[
                 {id:'fagales',icon:'🍂',label:'Beukachtigen (Loofbomen)',sci:'Fagales',color:'#6ab850',families:['Fagaceae','Betulaceae']},
@@ -1725,6 +1727,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {id:'asterales_d',icon:'🌻',label:'Composieten',sci:'Asterales',color:'#e8d040',families:['Asteraceae','Caprifoliaceae','Campanulaceae']},
                 {id:'lamiales_d',icon:'🌿',label:'Lipbloemigen',sci:'Lamiales',color:'#90d870',families:['Lamiaceae','Plantaginaceae','Boraginaceae']},
                 {id:'caryophyllales_d',icon:'🌸',label:'Anjerfamilie',sci:'Caryophyllales',color:'#e89090',families:['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae','Polygonaceae','Portulacaceae']},
+                {id:'nymphaeales_d',icon:'🌊',label:'Waterlelies',sci:'Nymphaeales',color:'#60b8e8',families:['Nymphaeaceae']},
                 {id:'ranunculales_d',icon:'🌼',label:'Boterbloemen',sci:'Ranunculales',color:'#f8e050',families:['Ranunculaceae','Papaveraceae']},
                 {id:'fabales_d',icon:'🫘',label:'Vlinderbloemigen',sci:'Fabales',color:'#70c890',families:['Fabaceae']},
                 {id:'brassicales_d',icon:'🥦',label:'Kruisbloemigen',sci:'Brassicales',color:'#90d870',families:['Brassicaceae']},
