@@ -1709,7 +1709,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ]},
           {id:'plantae',icon:'🌿',label:'Planten',sci:'Plantae',color:'#a8d870',children:[
             {id:'gymnospermae',icon:'🌲',label:'Naaldbomen (Naaktzadigen)',sci:'Gymnospermae',color:'#7ab860',cats:['trees'],children:[
-              {id:'pinales',icon:'🌲',label:'Naaldbomen - Pinales',sci:'Pinales',color:'#7ab860',families:['Pinaceae','Taxaceae']},
+              {id:'pinales',icon:'🌲',label:'Naaldbomen - Pinales',sci:'Pinales',color:'#7ab860',families:['Pinaceae','Taxaceae','Cupressaceae']},
             ]},
             {id:'angiospermae',icon:'🌸',label:'Bedektzadigen',sci:'Angiospermae',color:'#a8d870',children:[
               {id:'monocots',icon:'🌷',label:'Monocotylen',sci:'Liliopsida',color:'#f0c05a',cats:['flora'],children:[
@@ -1724,8 +1724,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 {id:'oleales_arb',icon:'🌳',label:'Olijfachtigen - Bomen',sci:'Lamiales arborescent',color:'#90d870',families:['Oleaceae']},
                 {id:'aquifoliales',icon:'🌿',label:'Hulstfamilie',sci:'Aquifoliales',color:'#50a840',families:['Aquifoliaceae']},
                 {id:'salicales',icon:'🌳',label:'Wilgenachtigen',sci:'Malpighiales',color:'#a060d0',families:['Salicaceae']},
-                {id:'asterales_d',icon:'🌻',label:'Composieten',sci:'Asterales',color:'#e8d040',families:['Asteraceae','Caprifoliaceae','Campanulaceae']},
-                {id:'lamiales_d',icon:'🌿',label:'Lipbloemigen',sci:'Lamiales',color:'#90d870',families:['Lamiaceae','Plantaginaceae','Boraginaceae']},
+                {id:'asterales_d',icon:'🌻',label:'Composieten',sci:'Asterales',color:'#e8d040',families:['Asteraceae','Caprifoliaceae','Campanulaceae','Menyanthaceae']},
+                {id:'lamiales_d',icon:'🌿',label:'Lipbloemigen',sci:'Lamiales',color:'#90d870',families:['Lamiaceae','Plantaginaceae','Boraginaceae','Orobanchaceae','Scrophulariaceae']},
                 {id:'caryophyllales_d',icon:'🌸',label:'Anjerfamilie',sci:'Caryophyllales',color:'#e89090',families:['Caryophyllaceae','Amaranthaceae','Droseraceae','Resedaceae','Polygonaceae','Portulacaceae']},
                 {id:'nymphaeales_d',icon:'🌊',label:'Waterlelies',sci:'Nymphaeales',color:'#60b8e8',families:['Nymphaeaceae']},
                 {id:'ranunculales_d',icon:'🌼',label:'Boterbloemen',sci:'Ranunculales',color:'#f8e050',families:['Ranunculaceae','Papaveraceae']},
@@ -1738,7 +1738,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 {id:'santalales_d',icon:'🌿',label:'Maretak',sci:'Santalales',color:'#80c060',families:['Santalaceae']},
                 {id:'gentianales_d',icon:'🌿',label:'Walstro',sci:'Gentianales',color:'#90d870',families:['Rubiaceae']},
                 {id:'celastrales_d',icon:'🌿',label:'Bitterzoet',sci:'Celastrales',color:'#90d870',families:['Celastraceae']},
-                {id:'solanales_d',icon:'🍅',label:'Nachtschadefamilie',sci:'Solanales',color:'#e06050',families:['Solanaceae']},
+                {id:'solanales_d',icon:'🍅',label:'Nachtschadefamilie',sci:'Solanales',color:'#e06050',families:['Solanaceae','Convolvulaceae']},
+                {id:'buxales_d',icon:'🌿',label:'Buxusfamilie',sci:'Buxales',color:'#70b870',families:['Buxaceae']},
                 {id:'rosales_herb',icon:'🌿',label:'Brandnetelachtigen e.a.',sci:'Rosales herbaceous',color:'#90d870',families:['Urticaceae','Elaeagnaceae']},
                 {id:'cornales_d',icon:'🌿',label:'Kornoelje',sci:'Cornales',color:'#70b870',families:['Cornaceae']},
               ]},
