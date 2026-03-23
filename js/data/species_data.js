@@ -10776,7 +10776,7 @@ window.speciesData = [
     description: { nl: "Boom of struik tot 20 m, soms met stekels. Witte bloemen in april, vóór of met de bladontwikkeling. Kleine harde peervormige vruchten, 1–4 cm, zuur en oneetbaar rauw. Onderscheid van gekweekte peer moeilijk door vermenging. Zeldzame soort van houtwallandschappen.", en: "Tree or shrub to 20 m, sometimes with thorns. White flowers in April, before or with leaf emergence. Small hard pear-shaped fruits, 1–4 cm, sour and inedible raw. Distinction from cultivated pear difficult due to hybridization. Rare species of hedgerow landscapes.", fr: "Arbre ou arbuste jusqu'à 20 m, parfois épineux. Fleurs blanches en avril, avant ou avec les feuilles. Petits fruits durs en forme de poire, 1–4 cm, acides et immangeables crus. Distinction du poirier cultivé difficile due aux hybridations. Espèce rare des paysages bocagers." },
     size: { nl: "Boom tot 20 m hoog", en: "Tree to 20 m tall", fr: "Arbre jusqu'à 20 m de hauteur" },
     diet: { nl: "Fotosynthese; vruchten worden gegeten door vogels en zoogdieren die zaden verspreiden.", en: "Photosynthesis; fruits eaten by birds and mammals that disperse seeds.", fr: "Photosynthèse; fruits consommés par oiseaux et mammifères qui dispersent les graines." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Pyrus_pyraster_sl12.jpg/960px-Pyrus_pyraster_sl12.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Rosaceae_-_Pyrus_pyraster_-_Perastro-1.JPG/960px-Rosaceae_-_Pyrus_pyraster_-_Perastro-1.JPG"
   },
   {
     id: "bel_ulmus_minor",
@@ -10808,7 +10808,7 @@ window.speciesData = [
     description: { nl: "Rechtopstaande plant 30–100 cm met gevind blad en een lange smalle tros gele bloemen juni–augustus. Vruchten met haakjes die zich vastkleven aan pels en kleding. Gebruikt in kruidengeneeskunde. Bladeren en bloemen ruiken aangenaam aromatisch wanneer gewreven.", en: "Erect plant 30–100 cm with pinnate leaves and a long narrow spike of yellow flowers June–August. Fruits with hooks that cling to fur and clothing. Used in herbal medicine. Leaves and flowers smell pleasantly aromatic when rubbed.", fr: "Plante dressée 30–100 cm aux feuilles pennées et long épi étroit de fleurs jaunes juin–août. Fruits à crochets s'accrochant aux fourrures et vêtements. Utilisée en phytothérapie. Feuilles et fleurs odorantes quand froissées." },
     size: { nl: "30–100 cm hoog", en: "30–100 cm tall", fr: "30–100 cm de hauteur" },
     diet: { nl: "Fotosynthese; bestoven door bijen en vlinders.", en: "Photosynthesis; pollinated by bees and butterflies.", fr: "Photosynthèse; pollinisée par les abeilles et papillons." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Agrimonia_eupatoria_kz1.jpg/960px-Agrimonia_eupatoria_kz1.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Illustration_Agrimonia_eupatoria0.jpg/960px-Illustration_Agrimonia_eupatoria0.jpg"
   },
   {
     id: "bel_anthyllis_vulneraria",
@@ -10824,7 +10824,7 @@ window.speciesData = [
     description: { nl: "Lage plant 10–40 cm met gevind blad en gele (soms oranje of rood) bloemen in bolvormige hoofdjes mei–september. Waardplant van het kleine vuurvlindertje (Lycaena phlaeas). Vroeger medicinaal gebruikt om wonden te behandelen (vulneraria = wondgenezer). Fixeert stikstof.", en: "Low plant 10–40 cm with pinnate leaves and yellow (sometimes orange or red) flowers in rounded heads May–September. Host plant of small copper butterfly (Lycaena phlaeas). Formerly used medicinally to treat wounds (vulneraria = wound healer). Fixes nitrogen.", fr: "Plante basse 10–40 cm aux feuilles pennées et fleurs jaunes (parfois orange ou rouges) en têtes arrondies mai–septembre. Plante hôte du cuivré commun (Lycaena phlaeas). Autrefois utilisée médicalement pour soigner les blessures (vulneraria = guérisseur de plaies). Fixe l'azote." },
     size: { nl: "10–40 cm hoog", en: "10–40 cm tall", fr: "10–40 cm de hauteur" },
     diet: { nl: "Fotosynthese; stikstofbinding via wortelknolletjes.", en: "Photosynthesis; nitrogen fixation via root nodules.", fr: "Photosynthèse; fixation d'azote via des nodosités racinaires." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Anthyllis_vulneraria_LC0196.jpg/960px-Anthyllis_vulneraria_LC0196.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Anthyllis_vulneraria_inflorescence_-_Niitv%C3%A4lja.jpg/960px-Anthyllis_vulneraria_inflorescence_-_Niitv%C3%A4lja.jpg"
   },
   {
     id: "bel_centaurea_scabiosa",
@@ -10872,7 +10872,7 @@ window.speciesData = [
     description: { nl: "Plant 25–70 cm met ovale bladeren en slanke trossen van kleine witte tweesnijdige bloemen juni–augustus. Vruchten met haakborstelhaartjes die zich vastkleeft aan dieren en kleding. Naam verwijst naar tovenaar Circe uit de Griekse mythologie. Kenmerksoort van rijke loofbossen.", en: "Plant 25–70 cm with oval leaves and slender racemes of small white two-petalled flowers June–August. Fruits with hooked bristles clinging to animals and clothing. Name refers to sorceress Circe from Greek mythology. Characteristic species of rich deciduous forest.", fr: "Plante 25–70 cm aux feuilles ovales et grappes grêles de petites fleurs blanches à deux pétales juin–août. Fruits à soies crochues s'accrochant aux animaux et vêtements. Nom faisant référence à la magicienne Circé de la mythologie grecque. Espèce caractéristique des forêts feuillues riches." },
     size: { nl: "25–70 cm hoog", en: "25–70 cm tall", fr: "25–70 cm de hauteur" },
     diet: { nl: "Fotosynthese; groeit in diepe bosschaduw dankzij efficiënte fotosynthese.", en: "Photosynthesis; grows in deep forest shade thanks to efficient photosynthesis.", fr: "Photosynthèse; pousse à l'ombre dense grâce à une photosynthèse efficace." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Circaea_lutetiana_sl.jpg/960px-Circaea_lutetiana_sl.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Illustration_Circaea_lutetiana0_clean.jpg/960px-Illustration_Circaea_lutetiana0_clean.jpg"
   },
   {
     id: "bel_consolida_ajacis",
@@ -10936,7 +10936,7 @@ window.speciesData = [
     description: { nl: "Halfhoutachtige plant 30–80 cm. Groengele schermachtige bloemstanden (cyathia) april–juni. Tweejarige stengels: eerste jaar vegetatief, tweede jaar bloeiend. Melksap irritant voor huid en ogen. Alle Euphorbia-soorten bevatten giftige latex.", en: "Semi-woody plant 30–80 cm. Yellow-green umbel-like inflorescences (cyathia) April–June. Biennial stems: first year vegetative, second year flowering. Latex irritant to skin and eyes. All Euphorbia species contain toxic latex.", fr: "Plante semi-ligneuse 30–80 cm. Inflorescences verdâtres en ombelle (cyathes) avril–juin. Tiges bisannuelles: première année végétative, deuxième année florifère. Latex irritant pour la peau et les yeux. Toutes les euphorbes contiennent un latex toxique." },
     size: { nl: "30–80 cm hoog", en: "30–80 cm tall", fr: "30–80 cm de hauteur" },
     diet: { nl: "Fotosynthese; half-schaduwtolerante soort van rijke bossen.", en: "Photosynthesis; semi-shade tolerant species of rich woodland.", fr: "Photosynthèse; espèce semi-sciaphile des forêts riches." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Euphorbia_amygdaloides_LC0096.jpg/960px-Euphorbia_amygdaloides_LC0096.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Amandelwolfsmelk_Euphorbia_amygdaloides_closeup.jpg"
   },
   {
     id: "bel_euphorbia_cyparissias",
@@ -11032,7 +11032,7 @@ window.speciesData = [
     description: { nl: "Eenjarige plant 20–100 cm met brede lancetvormige bladeren met donkere vlek. Witte of roze bloempjes in dichte rechtopstaande aren juli–oktober. Ochrea aanwezig (vliezig omhulsel rond stengel, kenmerk van Polygonaceae). Beklierde stengels zijn kenmerkend.", en: "Annual plant 20–100 cm with broad lanceolate leaves often with dark spot. White or pink flowers in dense erect spikes July–October. Ochrea present (membranous sheath around stem, characteristic of Polygonaceae). Glandular stems are distinctive.", fr: "Plante annuelle 20–100 cm aux feuilles largement lancéolées souvent à tache sombre. Fleurs blanches ou roses en épis denses dressés juillet–octobre. Ochréa présente (gaine membraneuse autour de la tige, caractéristique des Polygonacées). Tiges glanduleuses sont distinctives." },
     size: { nl: "20–100 cm hoog", en: "20–100 cm tall", fr: "20–100 cm de hauteur" },
     diet: { nl: "Fotosynthese; typische akker- en oeverplant van verstoorde bodems.", en: "Photosynthesis; typical arable and waterside plant of disturbed soils.", fr: "Photosynthèse; plante typique des cultures et berges sur sols perturbés." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Persicaria_lapathifolia_sl4.jpg/960px-Persicaria_lapathifolia_sl4.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Polygonum_lapathifolium3.jpg/960px-Polygonum_lapathifolium3.jpg"
   },
   {
     id: "bel_rumex_crispus",
@@ -11720,7 +11720,7 @@ window.speciesData = [
     description: { nl: "Vaste plant 20–70 cm met witte bloemhoofdjes (witte stralenbloemen, geel schijf). Bloeit mei–september. Kenmerkend voor extensief beheerde graslanden. Sterk verminderd in intensieve landbouw. Populaire tuinplant. Grote nectarwaarde voor wilde bijen en vlinders.", en: "Perennial 20–70 cm with white flower heads (white ray florets, yellow disc). Flowers May–September. Characteristic of extensively managed grasslands. Greatly reduced in intensive agriculture. Popular garden plant. High nectar value for wild bees and butterflies.", fr: "Vivace 20–70 cm aux capitules blancs (fleurs ligulées blanches, disque jaune). Floraison mai–septembre. Caractéristique des prairies gérées de façon extensive. Fortement réduite dans l'agriculture intensive. Plante de jardin populaire. Grande valeur nectarifère pour abeilles sauvages et papillons." },
     size: { nl: "20–70 cm hoog", en: "20–70 cm tall", fr: "20–70 cm de hauteur" },
     diet: { nl: "Fotosynthese.", en: "Photosynthesis.", fr: "Photosynthèse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Leucanthemum_vulgare_'Filigran'_Flower_2200px.jpg/960px-Leucanthemum_vulgare_'Filigran'_Flower_2200px.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg/960px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg"
   },
   {
     id: "bel_lychnis_flos_cuculi",

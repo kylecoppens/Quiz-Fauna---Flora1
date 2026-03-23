@@ -1248,14 +1248,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let sameCatWrong = wrongAnswersPool.filter(i => i.category === correctItem.category);
         let selectedWrong = [];
 
-        if (sameCatWrong.length >= 3) {
-            selectedWrong = sameCatWrong.sort(() => 0.5 - Math.random()).slice(0, 3);
+        if (sameCatWrong.length >= 2) {
+            selectedWrong = sameCatWrong.sort(() => 0.5 - Math.random()).slice(0, 2);
         } else {
             selectedWrong = [...sameCatWrong];
             const others = wrongAnswersPool
                 .filter(i => !selectedWrong.includes(i))
                 .sort(() => 0.5 - Math.random())
-                .slice(0, 3 - selectedWrong.length);
+                .slice(0, 2 - selectedWrong.length);
             selectedWrong = [...selectedWrong, ...others];
         }
 
