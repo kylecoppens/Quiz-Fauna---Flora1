@@ -289,12 +289,15 @@
             </div>
 
             <!-- ── PRIMARY CATEGORY TABS (Hierarchical: Dieren / Planten / Fungi) ── -->
-            <div class="filter-tabs" id="learn-filters">
-                <button class="tab active" data-filter="all">🌍 Alles</button>
-                <button class="tab tab-has-sub" data-filter="dieren">🐾 Dieren ▾</button>
-                <button class="tab tab-has-sub" data-filter="planten">🌿 Planten ▾</button>
-                <button class="tab tab-has-sub" data-filter="fungi">🍄 Fungi ▾</button>
-                <button class="tab" data-filter="collected">🏆 Collectie</button>
+            <div class="filter-bar-row">
+                <div class="filter-tabs" id="learn-filters">
+                    <button class="tab active" data-filter="all">🌍 Alles</button>
+                    <button class="tab tab-has-sub" data-filter="dieren">🐾 Dieren ▾</button>
+                    <button class="tab tab-has-sub" data-filter="planten">🌿 Planten ▾</button>
+                    <button class="tab tab-has-sub" data-filter="fungi">🍄 Fungi ▾</button>
+                    <button class="tab" data-filter="collected">🏆 Collectie</button>
+                </div>
+                <button class="enc-sort-btn" id="enc-sort-btn" title="Sorteer A–Z / Z–A">A–Z ↕</button>
             </div>
 
             <!-- ── SUB-FILTER ROW ─────────────────────────────────────────
@@ -446,11 +449,11 @@
                     <div class="infobox-image">
                         <img id="modal-image" src="" alt="Species Detail" referrerpolicy="no-referrer">
                     </div>
-                    <div class="infobox-title">Scientific Classification</div>
+                    <div class="infobox-title" id="label-classification">Scientific Classification</div>
                     <table class="infobox-table">
                         <tr><th id="label-info-scientific">Species</th><td id="modal-infobox-scientific" style="font-style:italic">—</td></tr>
-                        <tr><th>Family</th><td id="modal-infobox-family">—</td></tr>
-                        <tr><th>Category</th><td id="modal-infobox-category">—</td></tr>
+                        <tr><th id="label-info-family">Family</th><td id="modal-infobox-family">—</td></tr>
+                        <tr><th id="label-info-category">Category</th><td id="modal-infobox-category">—</td></tr>
                         <tr><th id="label-info-habitat">Habitat</th><td id="modal-habitat">—</td></tr>
                         <tr><th id="label-info-rarity">Rarity</th><td id="modal-rarity">—</td></tr>
                         <tr><th id="label-info-size">Size</th><td id="modal-infobox-size">—</td></tr>
@@ -507,9 +510,9 @@
         </div>
     </div>
 
-    <script src="js/data/species_data.js?v=371"></script>
+    <script src="js/data/species_data.js?v=263"></script>
     <script src="js/data/biogids_data.js"></script>
-    <script src="js/app.js?v=371"></script>
+    <script src="js/app.js?v=263"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {

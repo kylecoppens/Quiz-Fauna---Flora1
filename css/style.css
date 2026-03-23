@@ -1033,12 +1033,39 @@ p {
 /* ==========================================================================
    Encyclopedia — Skeleton & No-data states
    ========================================================================== */
+.filter-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 .filter-tabs {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
     overflow-x: auto;
     padding-bottom: 5px;
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.enc-sort-btn {
+    flex-shrink: 0;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+.enc-sort-btn:hover, .enc-sort-btn.active {
+    background: rgba(61,184,99,0.15);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
 }
 
 .filter-tabs::-webkit-scrollbar { height: 4px; }

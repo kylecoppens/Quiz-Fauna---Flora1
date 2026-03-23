@@ -311,6 +311,8 @@ document.addEventListener('DOMContentLoaded', () => {
             rarity: "Zeldzaamheid",
             scientific: "Wetenschappelijke naam",
             family: "Familie",
+            categoryLabel: "Categorie",
+            classification: "Wetenschappelijke Classificatie",
             size: "Grootte",
             diet: "Dieet",
             funfact: "Wist je dat?",
@@ -380,6 +382,8 @@ document.addEventListener('DOMContentLoaded', () => {
             rarity: "Rarity",
             scientific: "Scientific Name",
             family: "Family",
+            categoryLabel: "Category",
+            classification: "Scientific Classification",
             size: "Size",
             diet: "Diet",
             funfact: "Did you know?",
@@ -449,6 +453,8 @@ document.addEventListener('DOMContentLoaded', () => {
             rarity: "Rareté",
             scientific: "Nom Scientifique",
             family: "Famille",
+            categoryLabel: "Catégorie",
+            classification: "Classification Scientifique",
             size: "Taille",
             diet: "Régime",
             funfact: "Le saviez-vous ?",
@@ -767,7 +773,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'label-size': 'size',
             'label-diet': 'diet',
             'label-funfact': 'funfact',
+            'label-classification': 'classification',
             'label-info-scientific': 'scientific',
+            'label-info-family': 'family',
+            'label-info-category': 'categoryLabel',
             'label-info-habitat': 'habitat',
             'label-info-rarity': 'rarity',
             'label-info-size': 'size',
@@ -825,6 +834,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const subFilterRow = document.getElementById('sub-filters');
     const subGroups = document.querySelectorAll('.sub-group');
     let currentSubFilter = null; // e.g. "fauna_mammal"
+    let encSortOrder = null; // null = default, 'az', 'za'
+
+    const encSortBtn = document.getElementById('enc-sort-btn');
+    if (encSortBtn) {
+        encSortBtn.addEventListener('click', () => {
+            if (encSortOrder === null || encSortOrder === 'za') {
+                encSortOrder = 'az';
+                encSortBtn.textContent = 'A–Z ↑';
+                encSortBtn.classList.add('active');
+            } else {
+                encSortOrder = 'za';
+                encSortBtn.textContent = 'Z–A ↓';
+            }
+            const activeTab = document.querySelector('#learn-filters .tab.active');
+            renderEncyclopedia(activeTab?.dataset.filter || 'all', currentSubFilter);
+        });
+    }
 
     function showSubGroup(parentFilter) {
         if (!subFilterRow) return;
@@ -1222,14 +1248,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let sameCatWrong = wrongAnswersPool.filter(i => i.category === correctItem.category);
         let selectedWrong = [];
 
-        if (sameCatWrong.length >= 2) {
-            selectedWrong = sameCatWrong.sort(() => 0.5 - Math.random()).slice(0, 2);
+        if (sameCatWrong.length >= 3) {
+            selectedWrong = sameCatWrong.sort(() => 0.5 - Math.random()).slice(0, 3);
         } else {
             selectedWrong = [...sameCatWrong];
             const others = wrongAnswersPool
                 .filter(i => !selectedWrong.includes(i))
                 .sort(() => 0.5 - Math.random())
-                .slice(0, 2 - selectedWrong.length);
+                .slice(0, 3 - selectedWrong.length);
             selectedWrong = [...selectedWrong, ...others];
         }
 
@@ -1408,6 +1434,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
+            // Sort if requested
+            if (encSortOrder) {
+                items = [...items].sort((a, b) => {
+                    const na = (typeof a.name === 'object' ? a.name[currentLang] : a.name) || '';
+                    const nb = (typeof b.name === 'object' ? b.name[currentLang] : b.name) || '';
+                    return encSortOrder === 'az' ? na.localeCompare(nb) : nb.localeCompare(na);
+                });
+            }
+
             // No results state
             if (items.length === 0) {
                 const dict = i18n[currentLang];
@@ -1420,23 +1455,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            items.forEach(item => {
+            const iucnColors = { LC:'#00b450', NT:'#7cc800', VU:'#c8960a', EN:'#d05000', CR:'#c81414' };
+            const iucnBg = { LC:'rgba(0,180,80,0.12)', NT:'rgba(150,210,0,0.12)', VU:'rgba(240,170,0,0.12)', EN:'rgba(240,100,0,0.12)', CR:'rgba(220,20,20,0.12)' };
+
+            function makeCard(item) {
                 const card = document.createElement('div');
                 card.className = 'learn-card';
                 const name = typeof item.name === 'object' ? item.name[currentLang] : item.name;
                 const catName = i18n[currentLang][item.category] || item.category;
                 const isCollected = collectedSpecies.includes(item.id);
                 if (isCollected) card.classList.add('collected');
-
                 const gradeTag = item.plantGrade
-                ? `<span class="plant-grade-badge plant-grade-${item.plantGrade}">${item.plantGrade === 'monocot' ? 'Monocot' : 'Dicot'}</span>`
-                : '';
-            const iucnColors = { LC:'#00b450', NT:'#7cc800', VU:'#c8960a', EN:'#d05000', CR:'#c81414' };
-            const iucnBg = { LC:'rgba(0,180,80,0.12)', NT:'rgba(150,210,0,0.12)', VU:'rgba(240,170,0,0.12)', EN:'rgba(240,100,0,0.12)', CR:'rgba(220,20,20,0.12)' };
-            const iucnTag = item.iucn && item.iucn !== 'LC'
-                ? `<span class="iucn-card-badge" style="background:${iucnBg[item.iucn]||''};color:${iucnColors[item.iucn]||'#aaa'};border:1px solid ${iucnColors[item.iucn]||'#aaa'}33">${item.iucn}</span>`
-                : '';
-            card.innerHTML = `
+                    ? `<span class="plant-grade-badge plant-grade-${item.plantGrade}">${item.plantGrade === 'monocot' ? 'Monocot' : 'Dicot'}</span>`
+                    : '';
+                const iucnTag = item.iucn && item.iucn !== 'LC'
+                    ? `<span class="iucn-card-badge" style="background:${iucnBg[item.iucn]||''};color:${iucnColors[item.iucn]||'#aaa'};border:1px solid ${iucnColors[item.iucn]||'#aaa'}33">${item.iucn}</span>`
+                    : '';
+                card.innerHTML = `
                     <div class="collected-badge ${isCollected ? '' : 'hidden'}">✓</div>
                     ${iucnTag}
                     <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer"
@@ -1448,9 +1483,38 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${gradeTag}
                     </div>`;
                 card.addEventListener('click', () => openModal(item));
-                learnGrid.appendChild(card);
-            });
-        }, 300); // 300ms skeleton flash — feels snappy but visible
+                return card;
+            }
+
+            // Render in batches with IntersectionObserver for infinite scroll
+            const BATCH = 60;
+            let rendered = 0;
+
+            function renderBatch() {
+                const fragment = document.createDocumentFragment();
+                const end = Math.min(rendered + BATCH, items.length);
+                for (let i = rendered; i < end; i++) fragment.appendChild(makeCard(items[i]));
+                rendered = end;
+
+                // Remove old sentinel if any
+                const oldSentinel = learnGrid.querySelector('.enc-sentinel');
+                if (oldSentinel) oldSentinel.remove();
+
+                learnGrid.appendChild(fragment);
+
+                if (rendered < items.length) {
+                    const sentinel = document.createElement('div');
+                    sentinel.className = 'enc-sentinel';
+                    learnGrid.appendChild(sentinel);
+                    const obs = new IntersectionObserver(entries => {
+                        if (entries[0].isIntersecting) { obs.disconnect(); renderBatch(); }
+                    }, { rootMargin: '200px' });
+                    obs.observe(sentinel);
+                }
+            }
+
+            renderBatch();
+        }, 150); // shortened skeleton flash
     }
 
     async function openModal(item) {
@@ -1717,7 +1781,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {id:'asparagales',icon:'🌸',label:'Asparagales',sci:'Asparagales',color:'#f0c05a',families:['Amaryllidaceae','Asparagaceae','Orchidaceae','Iridaceae']},
               ]},
               {id:'dicots',icon:'🌼',label:'Dicotylen',sci:'Eudicotyledones',color:'#7ec860',cats:['flora','trees','agriculture'],children:[
-                {id:'fagales',icon:'🍂',label:'Beukachtigen (Loofbomen)',sci:'Fagales',color:'#6ab850',families:['Fagaceae','Betulaceae']},
+                {id:'fagales',icon:'🍂',label:'Beukachtigen (Loofbomen)',sci:'Fagales',color:'#6ab850',families:['Fagaceae','Betulaceae','Juglandaceae']},
                 {id:'sapindales',icon:'🍁',label:'Esdoornachtigen (Loofbomen)',sci:'Sapindales',color:'#e07840',families:['Sapindaceae']},
                 {id:'malvales',icon:'🌳',label:'Lindeachtigen (Loofbomen)',sci:'Malvales',color:'#90d870',families:['Malvaceae','Adoxaceae']},
                 {id:'rosales_arb',icon:'🌳',label:'Rozenachtigen - Bomen',sci:'Rosales arborescent',color:'#90d870',families:['Rosaceae','Ulmaceae','Cannabaceae']},
@@ -1734,7 +1798,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {id:'apiales_d',icon:'☂️',label:'Schermbloemigen',sci:'Apiales',color:'#e8f0a0',families:['Apiaceae','Araliaceae']},
                 {id:'ericales_d',icon:'🌸',label:'Heidefamilie e.a.',sci:'Ericales',color:'#c060d8',families:['Ericaceae','Primulaceae','Hypericaceae','Onagraceae','Lythraceae','Balsaminaceae']},
                 {id:'saxifragales_d',icon:'🌿',label:'Steenbreek',sci:'Saxifragales',color:'#90d870',families:['Saxifragaceae','Grossulariaceae','Crassulaceae']},
-                {id:'malpighiales_d',icon:'🌸',label:'Vioolachtigen',sci:'Malpighiales',color:'#a060d0',families:['Violaceae','Geraniaceae']},
+                {id:'malpighiales_d',icon:'🌸',label:'Vioolachtigen',sci:'Malpighiales',color:'#a060d0',families:['Violaceae','Geraniaceae','Euphorbiaceae']},
                 {id:'santalales_d',icon:'🌿',label:'Maretak',sci:'Santalales',color:'#80c060',families:['Santalaceae']},
                 {id:'gentianales_d',icon:'🌿',label:'Walstro',sci:'Gentianales',color:'#90d870',families:['Rubiaceae']},
                 {id:'celastrales_d',icon:'🌿',label:'Bitterzoet',sci:'Celastrales',color:'#90d870',families:['Celastraceae']},
