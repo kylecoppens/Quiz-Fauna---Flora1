@@ -83,7 +83,7 @@
                 </div>
 
                 <div id="sotd-card" class="sotd-card hidden">
-                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span></div>
+                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span> <span class="sotd-tap-hint" data-i18n="sotdTap">Tik voor details →</span></div>
                     <div class="sotd-body">
                         <img id="sotd-img" src="" alt="" referrerpolicy="no-referrer">
                         <div class="sotd-info">
@@ -97,42 +97,90 @@
 
             <div class="action-buttons">
                 <button id="btn-play" class="btn btn-primary">
-                    <span class="play-svg-target" style="margin-right:8px"></span> Play Quiz
+                    <span class="play-svg-target" style="margin-right:8px"></span> <span data-i18n="play">Speel Quiz</span>
                 </button>
                 <button id="btn-learn" class="btn btn-outline">
-                    <span class="learn-svg-target" style="margin-right:8px"></span> Encyclopedie
+                    <span class="learn-svg-target" style="margin-right:8px"></span> <span data-i18n="learn">Encyclopedie</span>
+                </button>
+                <button id="btn-biogids" class="btn btn-outline">
+                    <span class="biogids-svg-target" style="margin-right:8px"></span> <span data-i18n="biogids">BioGids</span>
                 </button>
             </div>
         </section>
 
         <!-- ══ 2. QUIZ CONFIG ══════════════════════════════════════════════ -->
         <section id="screen-config" class="screen hidden">
-            <header>
+            <header class="config-header">
                 <button class="btn-back" data-target="screen-home">← Back</button>
-                <h2>Setup Quiz</h2>
+                <div class="config-hero">
+                    <div class="config-hero-icon"><span class="quiz-svg-target"></span></div>
+                    <h2 data-i18n="setup">Quiz Instellen</h2>
+                    <p class="config-hero-sub" data-i18n="setupDesc">Kies je categorie en moeilijkheidsgraad</p>
+                </div>
             </header>
             <div class="config-options">
+                <!-- Category cards -->
                 <div class="form-group">
                     <label>Select Category</label>
-                    <div class="custom-select-grid" id="category-selector">
-                        <button class="select-chip active" data-val="all">🌍 Alles</button>
-                        <button class="select-chip" data-val="fauna">🦊 Zoogdieren</button>
-                        <button class="select-chip" data-val="birds">🐦 Vogels</button>
-                        <button class="select-chip" data-val="insects">🦋 Insecten</button>
-                        <button class="select-chip" data-val="flora">🌸 Flora</button>
-                        <button class="select-chip" data-val="fungi">🍄 Fungi</button>
-                        <button class="select-chip" data-val="trees">🌲 Bomen</button>
-                        <button class="select-chip" data-val="agriculture">🌾 Gekweekt</button>
+                    <div id="category-selector" class="cat-cards-wrap">
+                        <!-- Row 1: Alles + Dieren -->
+                        <div class="cat-cards-row">
+                            <button class="cat-card active" data-val="all" style="--card-hue:160;--card-color:#3db863">
+                                <span class="cat-card-icon">🌍</span>
+                                <span class="cat-card-label">Alles</span>
+                            </button>
+                            <button class="cat-card" data-val="dieren" style="--card-hue:200;--card-color:#56c4e8">
+                                <span class="cat-card-icon">🐾</span>
+                                <span class="cat-card-label">Dieren</span>
+                            </button>
+                        </div>
+                        <div class="cat-accordion" data-for="dieren">
+                            <button class="select-chip sub-chip" data-val="fauna">🦊 Zoogdieren</button>
+                            <button class="select-chip sub-chip" data-val="birds">🐦 Vogels</button>
+                            <button class="select-chip sub-chip" data-val="insects">🦋 Insecten</button>
+                        </div>
+                        <!-- Row 2: Planten + Fungi -->
+                        <div class="cat-cards-row">
+                            <button class="cat-card" data-val="planten" style="--card-hue:110;--card-color:#7ec860">
+                                <span class="cat-card-icon">🌿</span>
+                                <span class="cat-card-label">Planten</span>
+                            </button>
+                            <button class="cat-card" data-val="fungi" style="--card-hue:275;--card-color:#c87ef0">
+                                <span class="cat-card-icon">🍄</span>
+                                <span class="cat-card-label">Fungi</span>
+                            </button>
+                        </div>
+                        <div class="cat-accordion" data-for="planten">
+                            <button class="select-chip sub-chip" data-val="flora">🌸 Wilde Bloemen</button>
+                            <button class="select-chip sub-chip" data-val="trees">🌲 Bomen</button>
+                            <button class="select-chip sub-chip" data-val="agriculture">🌾 Gekweekt</button>
+                        </div>
                     </div>
                 </div>
+                <!-- Difficulty -->
                 <div class="form-group">
                     <label>Select Difficulty</label>
-                    <div class="custom-select-grid" id="difficulty-selector">
-                        <button class="select-chip active" data-val="easy">Easy (Common)</button>
-                        <button class="select-chip" data-val="hard">Hard (Rare)</button>
+                    <div class="difficulty-bar" id="difficulty-selector">
+                        <button class="diff-btn active" data-val="easy">
+                            <span class="diff-stars">★</span>
+                            <span class="diff-label">Gemakkelijk</span>
+                        </button>
+                        <button class="diff-btn" data-val="medium">
+                            <span class="diff-stars">★★</span>
+                            <span class="diff-label">Gemiddeld</span>
+                        </button>
+                        <button class="diff-btn" data-val="hard">
+                            <span class="diff-stars">★★★</span>
+                            <span class="diff-label">Moeilijk</span>
+                        </button>
+                        <button class="diff-btn" data-val="mixed">
+                            <span class="diff-stars">🔀</span>
+                            <span class="diff-label">Gemengd</span>
+                        </button>
                     </div>
                 </div>
             </div>
+            <div id="config-species-count" class="config-species-count"></div>
             <div class="action-buttons bottom">
                 <button id="btn-start-quiz" class="btn btn-primary w-100">Start Quiz</button>
             </div>
@@ -229,58 +277,46 @@
                 </div>
             </div>
 
-            <!-- ── PRIMARY CATEGORY TABS ─────────────────────────────────── -->
+            <!-- ── PRIMARY CATEGORY TABS (Hierarchical: Dieren / Planten / Fungi) ── -->
             <div class="filter-tabs" id="learn-filters">
                 <button class="tab active" data-filter="all">🌍 Alles</button>
+                <button class="tab tab-has-sub" data-filter="dieren">🐾 Dieren ▾</button>
+                <button class="tab tab-has-sub" data-filter="planten">🌿 Planten ▾</button>
+                <button class="tab tab-has-sub" data-filter="fungi">🍄 Fungi ▾</button>
                 <button class="tab" data-filter="collected">🏆 Collectie</button>
-                <button class="tab tab-has-sub" data-filter="fauna">🦊 Zoogdieren ▾</button>
-                <button class="tab tab-has-sub" data-filter="birds">🐦 Vogels ▾</button>
-                <button class="tab" data-filter="insects">🦋 Insecten</button>
-                <button class="tab tab-has-sub" data-filter="flora">🌸 Flora ▾</button>
-                <button class="tab" data-filter="fungi">🍄 Fungi</button>
-                <button class="tab tab-has-sub" data-filter="trees">🌲 Bomen ▾</button>
-                <button class="tab" data-filter="agriculture">🌾 Gekweekt</button>
             </div>
 
             <!-- ── SUB-FILTER ROW ─────────────────────────────────────────
-                 Appears below primary tabs only when a ▾ tab is selected.
-                 Each .sub-group is shown/hidden based on data-parent.       -->
+                 Level 2: children of Dieren / Planten / Fungi.
+                 Level 3: deeper filters shown when a child is selected.    -->
             <div class="sub-filter-row hidden" id="sub-filters">
 
-                <!-- Fauna sub-groups -->
-                <div class="sub-group" data-parent="fauna">
+                <!-- Dieren sub-groups (level 2) -->
+                <div class="sub-group" data-parent="dieren">
                     <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="fauna_all">Alles</button>
-                    <button class="sub-tab" data-subfilter="fauna_mammal">🦊 Zoogdieren</button>
-                    <button class="sub-tab" data-subfilter="fauna_reptile">🦎 Reptielen</button>
-                    <button class="sub-tab" data-subfilter="fauna_amphibian">🐸 Amfibieën</button>
-                    <button class="sub-tab" data-subfilter="fauna_aquatic">🦭 Zeezoogdieren</button>
+                    <button class="sub-tab active" data-subfilter="dieren_all">Alles</button>
+                    <button class="sub-tab" data-subfilter="dieren_mammals">🦊 Zoogdieren</button>
+                    <button class="sub-tab" data-subfilter="dieren_birds">🐦 Vogels</button>
+                    <button class="sub-tab" data-subfilter="dieren_reptiles">🦎 Reptielen</button>
+                    <button class="sub-tab" data-subfilter="dieren_amphibians">🐸 Amfibieën</button>
+                    <button class="sub-tab" data-subfilter="dieren_insects">🦋 Insecten</button>
                 </div>
 
-                <!-- Birds sub-groups -->
-                <div class="sub-group hidden" data-parent="birds">
+                <!-- Planten sub-groups (level 2) -->
+                <div class="sub-group hidden" data-parent="planten">
                     <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="birds_all">Alle vogels</button>
-                    <button class="sub-tab" data-subfilter="birds_passerine">🎵 Zangvogels</button>
-                    <button class="sub-tab" data-subfilter="birds_raptor">🦅 Roofvogels</button>
-                    <button class="sub-tab" data-subfilter="birds_water">🦆 Watervogels</button>
-                    <button class="sub-tab" data-subfilter="birds_dove">🕊️ Duiven &amp; Uilen</button>
-                    <button class="sub-tab" data-subfilter="birds_other">🐦 Overige</button>
+                    <button class="sub-tab active" data-subfilter="planten_all">Alles</button>
+                    <button class="sub-tab" data-subfilter="planten_flora">🌸 Wilde Bloemen</button>
+                    <button class="sub-tab" data-subfilter="planten_trees">🌲 Bomen</button>
+                    <button class="sub-tab" data-subfilter="planten_agriculture">🌾 Landbouwgewassen</button>
                 </div>
 
-                <!-- Flora sub-groups -->
-                <div class="sub-group hidden" data-parent="flora">
+                <!-- Fungi sub-groups (level 2) -->
+                <div class="sub-group hidden" data-parent="fungi">
                     <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="flora_all">Alle flora</button>
-                    <button class="sub-tab" data-subfilter="flora_dicot">🌼 Dicotylen</button>
-                    <button class="sub-tab" data-subfilter="flora_monocot">🌷 Monocotylen</button>
-                </div>
-                <!-- Trees sub-groups (naaldbomen vs loofbomen) -->
-                <div class="sub-group hidden" data-parent="trees">
-                    <span class="sub-label">Onderverdeling</span>
-                    <button class="sub-tab active" data-subfilter="trees_all">Alle bomen</button>
-                    <button class="sub-tab" data-subfilter="trees_conifer">🌲 Naaldbomen</button>
-                    <button class="sub-tab" data-subfilter="trees_deciduous">🍂 Loofbomen</button>
+                    <button class="sub-tab active" data-subfilter="fungi_all">Alles</button>
+                    <button class="sub-tab" data-subfilter="fungi_basidio">🍄 Basidiomyceten</button>
+                    <button class="sub-tab" data-subfilter="fungi_asco">🧫 Ascomyceten</button>
                 </div>
             </div>
 
@@ -302,6 +338,28 @@
             <div class="grid-container" id="learn-grid"></div>
         </section>
 
+        <!-- ══ BIOGIDS SCREEN ═════════════════════════════════════════════ -->
+        <section id="screen-biogids" class="screen hidden">
+            <header class="biogids-header">
+                <button class="btn-back" data-target="screen-home">← <span data-i18n="back">Terug</span></button>
+                <h2 data-i18n="biogidsTitle">BioGids: Biologische Kenniskaarten</h2>
+            </header>
+
+            <!-- Search bar -->
+            <div class="biogids-search-wrap">
+                <input class="biogids-search-input" id="biogids-search" type="text" placeholder="Zoek onderwerp…" data-placeholder="biogidsSearch">
+            </div>
+
+            <!-- BioGids cards grid -->
+            <div class="biogids-grid" id="biogids-grid"></div>
+
+            <!-- Empty state -->
+            <div class="biogids-empty" id="biogids-empty" style="display:none">
+                <div class="biogids-empty-icon">🔍</div>
+                <p data-i18n="noResults">Geen onderwerpen gevonden</p>
+            </div>
+        </section>
+
         <!-- ══ PHYLOGENY SCREEN ══════════════════════════════════════════ -->
         <section id="screen-phylo" class="screen hidden phylo-screen">
             <div class="phylo-screen-topbar">
@@ -312,13 +370,9 @@
 
             <div class="phylo-filter-bar" id="phylo-filter-bar">
                 <button class="phylo-chip active" data-g="all">🌍 Alles</button>
-                <button class="phylo-chip" data-g="fauna">🦊 Zoogdieren</button>
-                <button class="phylo-chip" data-g="birds">🐦 Vogels</button>
-                <button class="phylo-chip" data-g="insects">🦋 Insecten</button>
-                <button class="phylo-chip" data-g="flora">🌸 Flora</button>
+                <button class="phylo-chip" data-g="dieren">🐾 Dieren</button>
+                <button class="phylo-chip" data-g="planten">🌿 Planten</button>
                 <button class="phylo-chip" data-g="fungi">🍄 Fungi</button>
-                <button class="phylo-chip" data-g="trees">🌲 Bomen</button>
-                <button class="phylo-chip" data-g="agriculture">🌾 Gekweekt</button>
                 <div class="phylo-search-wrap">
                     <input class="phylo-search-input" id="phylo-search" type="text" placeholder="Zoek soort…">
                 </div>
@@ -406,7 +460,43 @@
         </div>
     </div>
 
+    <!-- ══ BIOGIDS DETAIL MODAL ══════════════════════════════════════════ -->
+    <div id="biogids-detail-modal" class="modal-backdrop hidden">
+        <div class="modal biogids-modal glass-panel">
+            <button id="btn-close-biogids-modal" class="btn-close">×</button>
+            <div class="biogids-modal-header">
+                <div class="biogids-modal-icon" id="biogids-modal-icon">🔬</div>
+                <h1 id="biogids-modal-title">Topic Title</h1>
+            </div>
+            <div class="biogids-modal-body">
+                <!-- Content section -->
+                <div class="biogids-content">
+                    <p id="biogids-modal-content">Content goes here.</p>
+
+                    <!-- Comparison table if applicable -->
+                    <div id="biogids-comparison-section" class="biogids-comparison-section" style="display:none">
+                        <h3>Vergelijking</h3>
+                        <div class="biogids-comparison-table" id="biogids-comparison-table"></div>
+                    </div>
+
+                    <!-- Related species -->
+                    <div id="biogids-species-section" class="biogids-species-section" style="display:none">
+                        <h3>Voorbeeldsoorten</h3>
+                        <div class="biogids-species-links" id="biogids-species-links"></div>
+                    </div>
+                </div>
+
+                <!-- Quiz section -->
+                <div class="biogids-quiz-section" id="biogids-quiz-section">
+                    <h3>📝 Mini-Quiz</h3>
+                    <div class="quiz-container" id="quiz-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/data/species_data.js"></script>
+    <script src="js/data/biogids_data.js"></script>
     <script src="js/app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {

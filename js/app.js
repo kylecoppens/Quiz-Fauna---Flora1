@@ -11,13 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
         back: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>`,
         check: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`,
         audio: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`,
-        audioMuted: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`
+        audioMuted: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`,
+        quiz: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>`,
+        category: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>`,
+        difficulty: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`,
+        biogids: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm4 13.5c0-2.5-3-3.75-4-3.75s-4 1.25-4 3.75V19h8v-1.5z"></path></svg>`
     };
 
     // --- Audio Logic ---
     const bgAudio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3');
     bgAudio.loop = true;
     let audioEnabled = false;
+
+    // --- Category Group Mapping (hierarchical: Dieren / Planten / Fungi) ---
+    const GROUP_TO_CATEGORIES = {
+        dieren:  ['fauna', 'birds', 'insects'],
+        planten: ['flora', 'trees', 'agriculture'],
+        fungi:   ['fungi'],
+        // Individual categories map to themselves:
+        fauna: ['fauna'], birds: ['birds'], insects: ['insects'],
+        flora: ['flora'], trees: ['trees'], agriculture: ['agriculture'],
+        all: null
+    };
 
     // --- Localization Data ---
     const i18n = {
@@ -34,19 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
             stopNo: "Doorgaan",
             home: "← Home",
             setup: "Quiz Instellen",
+            setupDesc: "Kies je categorie en moeilijkheidsgraad",
             category: "Kies Categorie",
             difficulty: "Kies Moeilijkheidsgraad",
             start: "Start Quiz",
             all: "🌍 Alles",
+            dieren: "🐾 Dieren",
+            planten: "🌿 Planten",
             fauna: "🦊 Zoogdieren",
             birds: "🐦 Vogels",
+            reptiles: "🦎 Reptielen",
+            amphibians: "🐸 Amfibieën",
             insects: "🦋 Insecten",
             flora: "🌸 Wilde Bloemen",
             fungi: "🍄 Paddenstoelen",
             trees: "🌲 Bomen",
             agriculture: "🌾 Gekweekte Soorten",
             easy: "Gemakkelijk (Algemeen)",
+            medium: "Gemiddeld",
             hard: "Moeilijk (Zeldzaam)",
+            mixed: "Gemengd",
             question: "Identificeer deze soort",
             score: "Score",
             of: "van",
@@ -77,7 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
             range: "Toon Kaart",
             species: "Toon Soort",
             sotdLabel: "Soort van de Dag",
-            xpLabel: "XP"
+            sotdTap: "Tik voor details →",
+            xpLabel: "XP",
+            biogids: "BioGids",
+            biogidsTitle: "BioGids: Biologische Kenniskaarten",
+            biogidsSearch: "Zoek onderwerp…"
         },
         en: {
             play: "Play Quiz",
@@ -92,19 +118,26 @@ document.addEventListener('DOMContentLoaded', () => {
             stopNo: "Keep playing",
             home: "← Home",
             setup: "Setup Quiz",
+            setupDesc: "Choose your category and difficulty",
             category: "Select Category",
             difficulty: "Select Difficulty",
             start: "Start Quiz",
             all: "🌍 All",
+            dieren: "🐾 Animals",
+            planten: "🌿 Plants",
             fauna: "🦊 Mammals",
             birds: "🐦 Birds",
+            reptiles: "🦎 Reptiles",
+            amphibians: "🐸 Amphibians",
             insects: "🦋 Insects",
             flora: "🌸 Wildflowers",
             fungi: "🍄 Fungi",
             trees: "🌲 Trees",
             agriculture: "🌾 Cultivated Species",
             easy: "Easy (Common)",
+            medium: "Medium",
             hard: "Hard (Rare)",
+            mixed: "Mixed",
             question: "Identify this species",
             score: "Score",
             of: "of",
@@ -135,7 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
             range: "Show Range",
             species: "Show Species",
             sotdLabel: "Species of the Day",
-            xpLabel: "XP"
+            sotdTap: "Tap for details →",
+            xpLabel: "XP",
+            biogids: "BioGids",
+            biogidsTitle: "BioGids: Educational Knowledge Cards",
+            biogidsSearch: "Search topic…"
         },
         fr: {
             play: "Jouer au Quiz",
@@ -150,19 +187,26 @@ document.addEventListener('DOMContentLoaded', () => {
             stopNo: "Continuer",
             home: "← Accueil",
             setup: "Configuration du Quiz",
+            setupDesc: "Choisissez votre cat\u00e9gorie et difficult\u00e9",
             category: "Choisir la Catégorie",
             difficulty: "Choisir la Difficulté",
             start: "Commencer le Quiz",
             all: "🌍 Tout",
+            dieren: "🐾 Animaux",
+            planten: "🌿 Plantes",
             fauna: "🦊 Mammifères",
             birds: "🐦 Oiseaux",
+            reptiles: "🦎 Reptiles",
+            amphibians: "🐸 Amphibiens",
             insects: "🦋 Insectes",
             flora: "🌸 Fleurs sauvages",
             fungi: "🍄 Champignons",
             trees: "🌲 Arbres",
             agriculture: "🌾 Espèces Cultivées",
             easy: "Facile (Commun)",
+            medium: "Moyen",
             hard: "Difficile (Rare)",
+            mixed: "Mélangé",
             question: "Identifiez cette espèce",
             score: "Score",
             of: "sur",
@@ -193,7 +237,11 @@ document.addEventListener('DOMContentLoaded', () => {
             range: "Carte",
             species: "Espèce",
             sotdLabel: "Espèce du Jour",
-            xpLabel: "XP"
+            sotdTap: "Touchez pour d\u00e9tails →",
+            xpLabel: "XP",
+            biogids: "BioGids",
+            biogidsTitle: "BioGids: Cartes de Connaissances Éducatives",
+            biogidsSearch: "Rechercher un sujet…"
         }
     };
 
@@ -236,11 +284,13 @@ document.addEventListener('DOMContentLoaded', () => {
         quiz: document.getElementById('screen-quiz'),
         results: document.getElementById('screen-results'),
         learn: document.getElementById('screen-learn'),
+        biogids: document.getElementById('screen-biogids'),
         phylo: document.getElementById('screen-phylo'),
     };
 
     const btnPlay = document.getElementById('btn-play');
     const btnLearn = document.getElementById('btn-learn');
+    const btnBioGids = document.getElementById('btn-biogids');
     const btnBacks = document.querySelectorAll('.btn-back, .back-btn');
     const btnStartQuiz = document.getElementById('btn-start-quiz');
     const btnNextQuestion = document.getElementById('btn-next-question');
@@ -257,8 +307,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnStopConfirm = document.getElementById('btn-stop-confirm');
     const btnStopCancel = document.getElementById('btn-stop-cancel');
 
-    const categoryChips = document.querySelectorAll('#category-selector .select-chip');
-    const difficultyChips = document.querySelectorAll('#difficulty-selector .select-chip');
+    const categoryChips = document.querySelectorAll('#category-selector .cat-card');
+    const difficultyChips = document.querySelectorAll('#difficulty-selector .diff-btn');
+    const subCategoryChips = document.querySelectorAll('#category-selector .sub-chip');
+    const catAccordions = document.querySelectorAll('#category-selector .cat-accordion');
 
     const qNumText = document.getElementById('current-q-num');
     const progressFill = document.getElementById('progress-fill');
@@ -337,6 +389,10 @@ document.addEventListener('DOMContentLoaded', () => {
         factEl.textContent = funfact || '';
 
         card.classList.remove('hidden');
+
+        // Make SOTD card clickable — opens species detail modal
+        card.style.cursor = 'pointer';
+        card.onclick = () => openModal(species);
     }
 
     // --- Language Logic ---
@@ -366,27 +422,39 @@ document.addEventListener('DOMContentLoaded', () => {
         // SOTD label
         const sotdLabelEl = document.querySelector('.sotd-label [data-i18n="sotdLabel"]');
         if (sotdLabelEl) sotdLabelEl.textContent = dict.sotdLabel;
+        const sotdTapEl = document.querySelector('[data-i18n="sotdTap"]');
+        if (sotdTapEl) sotdTapEl.textContent = dict.sotdTap;
 
         // Config
         const configH2 = document.querySelector('#screen-config h2');
         if (configH2) configH2.textContent = dict.setup;
+        const configSubEl = document.querySelector('.config-hero-sub');
+        if (configSubEl) configSubEl.textContent = dict.setupDesc;
 
         const catLabel = document.querySelector('#category-selector') && document.querySelector('#category-selector').previousElementSibling;
-        if (catLabel) catLabel.textContent = dict.category;
+        if (catLabel) catLabel.innerHTML = `<span class="label-icon">${ICONS.category}</span> ${dict.category}`;
 
         const diffLabel = document.querySelector('#difficulty-selector') && document.querySelector('#difficulty-selector').previousElementSibling;
-        if (diffLabel) diffLabel.textContent = dict.difficulty;
+        if (diffLabel) diffLabel.innerHTML = `<span class="label-icon">${ICONS.difficulty}</span> ${dict.difficulty}`;
 
         if (btnStartQuiz) btnStartQuiz.textContent = dict.start;
 
         categoryChips.forEach(chip => {
+            const v = chip.dataset.val;
+            const labelEl = chip.querySelector('.cat-card-label');
+            // Strip emoji prefix (e.g. "🌍 Alles" → "Alles") since cards have large icon
+            if (dict[v] && labelEl) labelEl.textContent = dict[v].replace(/^\S+\s/, '');
+        });
+
+        subCategoryChips.forEach(chip => {
             const v = chip.dataset.val;
             if (dict[v]) chip.textContent = dict[v];
         });
 
         difficultyChips.forEach(chip => {
             const v = chip.dataset.val;
-            if (dict[v]) chip.textContent = dict[v];
+            const labelEl = chip.querySelector('.diff-label');
+            if (dict[v] && labelEl) labelEl.textContent = dict[v];
         });
 
         // Quiz
@@ -419,7 +487,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Encyclopedia
         document.querySelectorAll('#learn-filters .tab').forEach(tab => {
             const v = tab.dataset.filter;
-            if (v && dict[v]) tab.textContent = dict[v];
+            if (v && dict[v]) {
+                const hasSub = tab.classList.contains('tab-has-sub');
+                tab.textContent = dict[v] + (hasSub ? ' \u25BE' : '');
+            }
         });
 
         // Modal labels
@@ -461,10 +532,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    btnPlay.addEventListener('click', () => showScreen('screen-config'));
+    btnPlay.addEventListener('click', () => { showScreen('screen-config'); updateConfigPreview(); });
     btnLearn.addEventListener('click', () => {
         showScreen('screen-learn');
         renderEncyclopedia('all');
+    });
+    btnBioGids.addEventListener('click', () => {
+        showScreen('screen-biogids');
+        renderBioguide();
     });
 
     btnBacks.forEach(btn => {
@@ -475,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnResultsHome.addEventListener('click', () => showScreen('screen-home'));
-    btnPlayAgain.addEventListener('click', () => showScreen('screen-config'));
+    btnPlayAgain.addEventListener('click', () => { showScreen('screen-config'); updateConfigPreview(); });
 
     // ── Encyclopedia filter with sub-tabs ──────────────────────────────────
     const subFilterRow = document.getElementById('sub-filters');
@@ -589,6 +664,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Config ---
+    function updateConfigPreview() {
+        const countEl = document.getElementById('config-species-count');
+        if (!countEl) return;
+        const allData = window.speciesData || [];
+        const seen = new Set();
+        const uniqueData = allData.filter(item => {
+            const isDuplicate = seen.has(item.scientific);
+            seen.add(item.scientific);
+            return !isDuplicate;
+        });
+        const filtered = uniqueData.filter(species => {
+            const cats = GROUP_TO_CATEGORIES[currentCategory];
+            const matchesCategory = !cats || cats.includes(species.category);
+            const matchesDifficulty = currentDifficulty === 'all' || currentDifficulty === 'mixed' || species.difficulty === currentDifficulty || !species.difficulty;
+            return matchesCategory && matchesDifficulty;
+        });
+        const texts = {
+            nl: `${filtered.length} soorten beschikbaar`,
+            en: `${filtered.length} species available`,
+            fr: `${filtered.length} esp\u00e8ces disponibles`
+        };
+        countEl.textContent = texts[currentLang] || texts.nl;
+    }
+
     function setupChips(chipsList, callback) {
         chipsList.forEach(chip => {
             chip.addEventListener('click', (e) => {
@@ -600,8 +699,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    setupChips(categoryChips, val => currentCategory = val);
-    setupChips(difficultyChips, val => currentDifficulty = val);
+    // Category cards with accordion subcategory panels
+    function toggleAccordion(group) {
+        catAccordions.forEach(acc => {
+            if (acc.dataset.for === group) {
+                acc.classList.add('open');
+            } else {
+                acc.classList.remove('open');
+            }
+        });
+        // Clear sub-chip selections when switching groups
+        subCategoryChips.forEach(c => c.classList.remove('active'));
+    }
+
+    setupChips(categoryChips, val => {
+        currentCategory = val;
+        toggleAccordion(val);
+        updateConfigPreview();
+    });
+
+    // Subcategory chips override group selection
+    subCategoryChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const val = chip.dataset.val;
+            // Only deactivate siblings in the same accordion
+            const parent = chip.closest('.cat-accordion');
+            if (parent) parent.querySelectorAll('.sub-chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            currentCategory = val;
+            updateConfigPreview();
+        });
+    });
+
+    setupChips(difficultyChips, val => { currentDifficulty = val; updateConfigPreview(); });
 
     // --- Quiz Engine ---
     btnStartQuiz.addEventListener('click', startQuiz);
@@ -637,13 +767,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         activeQuizPool = uniqueData.filter(species => {
-            const matchesCategory = currentCategory === 'all' || species.category === currentCategory;
-            const matchesDifficulty = currentDifficulty === 'all' || species.difficulty === currentDifficulty || !species.difficulty;
+            const cats = GROUP_TO_CATEGORIES[currentCategory];
+            const matchesCategory = !cats || cats.includes(species.category);
+            const matchesDifficulty = currentDifficulty === 'all' || currentDifficulty === 'mixed' || species.difficulty === currentDifficulty || !species.difficulty;
             return matchesCategory && matchesDifficulty;
         });
 
         if (activeQuizPool.length === 0) {
-            activeQuizPool = uniqueData.filter(species => currentCategory === 'all' || species.category === currentCategory);
+            const cats = GROUP_TO_CATEGORIES[currentCategory];
+            activeQuizPool = uniqueData.filter(species => !cats || cats.includes(species.category));
         }
 
         if (activeQuizPool.length === 0) {
@@ -883,7 +1015,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (filter === 'collected') {
                 items = allData.filter(i => collectedSpecies.includes(i.id));
             } else {
-                items = allData.filter(i => i.category === filter);
+                const cats = GROUP_TO_CATEGORIES[filter];
+                if (cats) {
+                    items = allData.filter(i => cats.includes(i.category));
+                } else {
+                    items = allData.filter(i => i.category === filter);
+                }
             }
 
             // Sub-filter logic
@@ -900,9 +1037,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Certhiidae','Phylloscopidae','Aegithalidae','Passeridae'];
                 const RAPTOR_FAMILIES = ['Accipitridae','Falconidae'];
                 const WATER_FAMILIES = ['Anatidae','Rallidae','Laridae','Ardeidae'];
+                const BASIDIOMYCOTA_FAMILIES = ['Agaricaceae','Physalacriaceae','Pleurotaceae','Psathyrellaceae',
+                    'Hymenogastraceae','Hydnangiaceae','Tricholomataceae','Marasmiaceae','Bolbitiaceae',
+                    'Boletaceae','Sclerodermataceae','Fomitopsidaceae','Polyporaceae','Fistulinaceae',
+                    'Cantharellus','Russulaceae','Amanitaceae','Auriculariaceae','Tremellaceae',
+                    'Schizophyllaceae','Phallaceae','Cantharellaceae'];
+                const ASCOMYCOTA_FAMILIES = ['Pezizaceae','Sarcoscyphaceae','Discinaceae',
+                    'Helvellaceae','Morchellaceae','Tuberaceae','Nectriaceae','Teloschistaceae',
+                    'Hypoxylaceae','Xylariaceae'];
                 items = items.filter(i => {
                     const fam = i.family || '';
                     switch(subFilter) {
+                        // --- Dieren group sub-filters ---
+                        case 'dieren_mammals':  return i.category === 'fauna' && (MAMMAL_FAMILIES.includes(fam) || AQUATIC_FAMILIES.includes(fam));
+                        case 'dieren_birds':    return i.category === 'birds';
+                        case 'dieren_reptiles': return i.category === 'fauna' && REPTILE_FAMILIES.includes(fam);
+                        case 'dieren_amphibians': return i.category === 'fauna' && AMPHIBIAN_FAMILIES.includes(fam);
+                        case 'dieren_insects':  return i.category === 'insects';
+                        // --- Planten group sub-filters ---
+                        case 'planten_flora':   return i.category === 'flora';
+                        case 'planten_trees':   return i.category === 'trees';
+                        case 'planten_agriculture': return i.category === 'agriculture';
+                        // --- Fungi group sub-filters ---
+                        case 'fungi_basidio':   return BASIDIOMYCOTA_FAMILIES.includes(fam);
+                        case 'fungi_asco':      return ASCOMYCOTA_FAMILIES.includes(fam);
+                        // --- Legacy / 3rd-level sub-filters ---
                         case 'fauna_mammal':    return MAMMAL_FAMILIES.includes(fam) && !AQUATIC_FAMILIES.includes(fam);
                         case 'fauna_reptile':   return REPTILE_FAMILIES.includes(fam);
                         case 'fauna_amphibian': return AMPHIBIAN_FAMILIES.includes(fam);
@@ -1005,29 +1164,52 @@ document.addEventListener('DOMContentLoaded', () => {
             funfactSection.style.display = 'none';
         }
 
-        // Infobox image
+        // Infobox image — build gallery if multiple images
         const infoboxImageContainer = document.querySelector('.infobox-image');
-        infoboxImageContainer.innerHTML = `<img id="modal-image" src="${item.image}" alt="Species Detail" referrerpolicy="no-referrer">`;
+        const allImages = [item.image];
+        if (item.images && item.images.length) {
+            item.images.forEach(url => { if (url && !allImages.includes(url)) allImages.push(url); });
+        }
+        const uniqueImages = allImages.filter(Boolean);
 
-        // Manual gallery images
-        const folderName = item.scientific.replace(/ /g, '_');
-        const basePath = `Belgium_species_dataset/${folderName}/`;
-        const manualImages = ['manual.jpg', 'custom.jpg', '1.jpg', '2.jpg', '3.jpg'];
+        if (uniqueImages.length <= 1) {
+            // Single image — simple display
+            infoboxImageContainer.innerHTML = `<img id="modal-image" src="${item.image}" alt="Species Detail" referrerpolicy="no-referrer">`;
+        } else {
+            // Gallery mode with CSS scroll-snap
+            infoboxImageContainer.innerHTML = `
+                <div class="gallery-scroll">${uniqueImages.map((url, i) => `<img class="gallery-img" src="${url}" alt="Photo ${i+1}" referrerpolicy="no-referrer">`).join('')}</div>
+                <div class="gallery-dots">${uniqueImages.map((_, i) => `<span class="gallery-dot${i === 0 ? ' active' : ''}" data-idx="${i}"></span>`).join('')}</div>
+                <button class="gallery-arrow gallery-prev" aria-label="Previous">&#8249;</button>
+                <button class="gallery-arrow gallery-next" aria-label="Next">&#8250;</button>
+            `;
 
-        for (const imgName of manualImages) {
-            const imgPath = basePath + imgName;
-            const testImg = new Image();
-            testImg.src = imgPath;
-            testImg.onload = () => {
-                const galleryImg = document.createElement('img');
-                galleryImg.src = imgPath;
-                galleryImg.alt = "Manual Image";
-                galleryImg.style.cssText = "margin-top:10px; border-radius:8px; cursor:pointer; width:100%;";
-                galleryImg.addEventListener('click', () => {
-                    document.getElementById('modal-image').src = imgPath;
+            const scrollEl = infoboxImageContainer.querySelector('.gallery-scroll');
+            const dots = infoboxImageContainer.querySelectorAll('.gallery-dot');
+            const prevBtn = infoboxImageContainer.querySelector('.gallery-prev');
+            const nextBtn = infoboxImageContainer.querySelector('.gallery-next');
+
+            // Update dots on scroll
+            scrollEl.addEventListener('scroll', () => {
+                const idx = Math.round(scrollEl.scrollLeft / scrollEl.clientWidth);
+                dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+            });
+
+            // Dot click → scroll to image
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const idx = parseInt(dot.dataset.idx);
+                    scrollEl.scrollTo({ left: idx * scrollEl.clientWidth, behavior: 'smooth' });
                 });
-                infoboxImageContainer.appendChild(galleryImg);
-            };
+            });
+
+            // Arrow buttons
+            prevBtn.addEventListener('click', () => {
+                scrollEl.scrollBy({ left: -scrollEl.clientWidth, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                scrollEl.scrollBy({ left: scrollEl.clientWidth, behavior: 'smooth' });
+            });
         }
 
         document.getElementById('modal-infobox-family').textContent = item.family || '---';
@@ -1090,12 +1272,212 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- BioGids Rendering ---
+    function renderBioguide(filter = '') {
+        const grid = document.getElementById('biogids-grid');
+        const emptyState = document.getElementById('biogids-empty');
+        const data = window.bioguideData || [];
+
+        const filtered = data.filter(topic => {
+            const searchLower = filter.toLowerCase();
+            const titleLower = (topic.name[currentLang] || topic.name.en).toLowerCase();
+            return titleLower.includes(searchLower);
+        });
+
+        if (filtered.length === 0) {
+            grid.style.display = 'none';
+            emptyState.style.display = 'flex';
+            return;
+        }
+
+        grid.style.display = 'grid';
+        emptyState.style.display = 'none';
+
+        grid.innerHTML = filtered.map(topic => `
+            <div class="biogids-card" data-topic-id="${topic.id}" style="--card-hue: ${topic.hue}deg; --card-color: ${topic.color};">
+                <div class="biogids-card-icon">${topic.icon}</div>
+                <div class="biogids-card-content">
+                    <h3 class="biogids-card-title">${topic.name[currentLang] || topic.name.en}</h3>
+                    <p class="biogids-card-summary">${topic.summary[currentLang] || topic.summary.en}</p>
+                </div>
+                <div class="biogids-card-arrow">→</div>
+            </div>
+        `).join('');
+
+        grid.querySelectorAll('.biogids-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const topicId = card.dataset.topicId;
+                const topic = data.find(t => t.id === topicId);
+                if (topic) openBioguideDetail(topic);
+            });
+        });
+    }
+
+    // BioGids search functionality
+    const bioguideSearch = document.getElementById('biogids-search');
+    if (bioguideSearch) {
+        bioguideSearch.addEventListener('input', (e) => renderBioguide(e.target.value));
+    }
+
+    // BioGids detail modal
+    const bioguideDetailModal = document.getElementById('biogids-detail-modal');
+    const btnCloseBioguideModal = document.getElementById('btn-close-biogids-modal');
+
+    function openBioguideDetail(topic) {
+        const dict = i18n[currentLang];
+        const lang = currentLang;
+
+        // Fill header
+        document.getElementById('biogids-modal-icon').textContent = topic.icon;
+        document.getElementById('biogids-modal-title').textContent = topic.name[lang] || topic.name.en;
+
+        // Fill content
+        document.getElementById('biogids-modal-content').textContent = topic.content[lang] || topic.content.en;
+
+        // Fill comparison table if exists
+        const comparisonSection = document.getElementById('biogids-comparison-section');
+        if (topic.comparison && topic.comparison.length > 0) {
+            comparisonSection.style.display = 'block';
+            const table = document.getElementById('biogids-comparison-table');
+            const headers = Object.keys(topic.comparison[0]);
+            table.innerHTML = `
+                <table class="biogids-table">
+                    <thead>
+                        <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
+                    </thead>
+                    <tbody>
+                        ${topic.comparison.map(row => `
+                            <tr>${headers.map(h => `<td>${row[h] || '—'}</td>`).join('')}</tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        } else {
+            comparisonSection.style.display = 'none';
+        }
+
+        // Fill related species links
+        const speciesSection = document.getElementById('biogids-species-section');
+        if (topic.relatedSpecies && topic.relatedSpecies.length > 0) {
+            speciesSection.style.display = 'block';
+            const speciesLinks = document.getElementById('biogids-species-links');
+            const allSpecies = window.speciesData || [];
+            speciesLinks.innerHTML = topic.relatedSpecies
+                .map(speciesId => {
+                    const species = allSpecies.find(s => s.id === speciesId);
+                    if (!species) return '';
+                    return `<button class="biogids-species-link" data-species-id="${species.id}">${species.name[lang] || species.name.en}</button>`;
+                })
+                .filter(html => html)
+                .join('');
+
+            speciesLinks.querySelectorAll('.biogids-species-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    const speciesId = link.dataset.speciesId;
+                    const species = allSpecies.find(s => s.id === speciesId);
+                    if (species) {
+                        bioguideDetailModal.classList.add('hidden');
+                        openModal(species);
+                    }
+                });
+            });
+        } else {
+            speciesSection.style.display = 'none';
+        }
+
+        // Fill quiz
+        const quizContainer = document.getElementById('quiz-container');
+        if (topic.quiz && topic.quiz.length > 0) {
+            renderBioguideQuiz(topic.quiz, lang, quizContainer);
+        }
+
+        bioguideDetailModal.classList.remove('hidden');
+    }
+
+    function renderBioguideQuiz(questions, lang, container) {
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion(index) {
+            if (index >= questions.length) {
+                // Quiz complete
+                const percent = Math.round((score / questions.length) * 100);
+                container.innerHTML = `
+                    <div class="quiz-complete">
+                        <h2>Quiz Voltooid!</h2>
+                        <div class="quiz-score">
+                            <span class="score-number">${score}/${questions.length}</span>
+                            <span class="score-percent">${percent}%</span>
+                        </div>
+                        <p class="quiz-message">
+                            ${percent === 100 ? '🎉 Perfecte score!' : percent >= 75 ? '👍 Goed gedaan!' : '📚 Blijf leren!'}
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            const question = questions[index];
+            const q = question.question[lang] || question.question.en;
+            const options = question.options;
+
+            container.innerHTML = `
+                <div class="quiz-question-block">
+                    <div class="quiz-progress">${index + 1} / ${questions.length}</div>
+                    <h4>${q}</h4>
+                    <div class="quiz-options">
+                        ${options.map((opt, i) => `
+                            <button class="quiz-option" data-index="${i}">
+                                ${opt[lang] || opt.en}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            container.querySelectorAll('.quiz-option').forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    const isCorrect = i === question.correct;
+                    if (isCorrect) {
+                        score++;
+                        btn.classList.add('correct');
+                    } else {
+                        btn.classList.add('incorrect');
+                        const correctBtn = container.querySelector(`[data-index="${question.correct}"]`);
+                        if (correctBtn) correctBtn.classList.add('correct');
+                    }
+                    // Disable all buttons
+                    container.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+                    // Move to next after delay
+                    setTimeout(() => {
+                        currentQuestionIndex++;
+                        showQuestion(currentQuestionIndex);
+                    }, 1200);
+                });
+            });
+        }
+
+        showQuestion(0);
+    }
+
+    if (btnCloseBioguideModal) {
+        btnCloseBioguideModal.onclick = () => bioguideDetailModal.classList.add('hidden');
+    }
+
+    if (bioguideDetailModal) {
+        bioguideDetailModal.addEventListener('click', (e) => {
+            if (e.target === bioguideDetailModal) bioguideDetailModal.classList.add('hidden');
+        });
+    }
+
     // --- Icon Injection ---
     function injectIcons() {
         document.querySelectorAll('.back-svg-target').forEach(el => el.innerHTML = ICONS.back);
         document.querySelectorAll('.search-svg-target').forEach(el => el.innerHTML = ICONS.search);
         document.querySelectorAll('.play-svg-target').forEach(el => el.innerHTML = ICONS.play);
         document.querySelectorAll('.learn-svg-target').forEach(el => el.innerHTML = ICONS.learn);
+        document.querySelectorAll('.quiz-svg-target').forEach(el => el.innerHTML = ICONS.quiz);
+        document.querySelectorAll('.biogids-svg-target').forEach(el => el.innerHTML = ICONS.biogids);
     }
 
     // --- Badges ---
@@ -1233,7 +1615,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         let pGroup = 'all', pSearch = '';
-        const pGcats = { all:null, fauna:['fauna'], birds:['birds'], insects:['insects'], flora:['flora'], fungi:['fungi'], trees:['trees'], agriculture:['agriculture'] };
+        const pGcats = { all:null, dieren:['fauna','birds','insects'], planten:['flora','trees','agriculture'], fungi:['fungi'] };
 
         function pSpMatch(sp) {
             const cats = pGcats[pGroup];
