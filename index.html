@@ -21,66 +21,53 @@
     <div class="bg-shape bg-shape-2"></div>
     <div class="bg-overlay"></div>
 
-    <main id="app-container" class="glass-panel">
+    <!-- ══ SPLASH / LOADING SCREEN ══════════════════════════════════════ -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <!-- Animated nature icons floating in background -->
+            <div class="splash-particles">
+                <span class="splash-particle" style="--delay:0s; --x:15%; --y:20%; --dur:6s">🍃</span>
+                <span class="splash-particle" style="--delay:1.2s; --x:75%; --y:15%; --dur:7s">🌿</span>
+                <span class="splash-particle" style="--delay:0.5s; --x:25%; --y:70%; --dur:5.5s">🦋</span>
+                <span class="splash-particle" style="--delay:2s; --x:80%; --y:65%; --dur:6.5s">🌸</span>
+                <span class="splash-particle" style="--delay:1.8s; --x:50%; --y:85%; --dur:5s">🍄</span>
+                <span class="splash-particle" style="--delay:0.8s; --x:60%; --y:30%; --dur:7.5s">🐦</span>
+                <span class="splash-particle" style="--delay:2.5s; --x:35%; --y:45%; --dur:6s">🌻</span>
+                <span class="splash-particle" style="--delay:1.5s; --x:90%; --y:40%; --dur:5.8s">🦔</span>
+            </div>
+
+            <!-- Main logo area -->
+            <div class="splash-logo">
+                <div class="splash-icon-ring">
+                    <svg viewBox="0 0 120 120" class="splash-ring-svg">
+                        <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(61,184,99,0.2)" stroke-width="2"/>
+                        <circle cx="60" cy="60" r="54" fill="none" stroke="var(--accent-primary)" stroke-width="2.5"
+                                stroke-dasharray="340" stroke-dashoffset="340" stroke-linecap="round"
+                                class="splash-ring-progress"/>
+                    </svg>
+                    <span class="splash-leaf">🌱</span>
+                </div>
+            </div>
+
+            <h1 class="splash-title">
+                <span class="splash-title-top">Belgian</span>
+                <span class="splash-title-main">Fauna & Flora</span>
+            </h1>
+
+            <div class="splash-loader">
+                <div class="splash-loader-bar">
+                    <div class="splash-loader-fill"></div>
+                </div>
+                <span class="splash-loader-text" id="splash-status">Laden...</span>
+            </div>
+        </div>
+    </div>
+
+    <main id="app-container" class="glass-panel" style="display:none;">
 
         <!-- ══ 1. HOME ══════════════════════════════════════════════════════ -->
         <section id="screen-home" class="screen active">
-            <div class="controls-bar">
-                <select id="lang-select" class="lang-select" aria-label="Taal kiezen">
-                    <option value="nl" selected>NL</option>
-                    <option value="en">EN</option>
-                    <option value="fr">FR</option>
-                </select>
-                <div class="controls-divider"></div>
-                <button id="btn-dark" class="ctrl-btn" title="Dark/Light mode" aria-label="Toggle dark mode">
-                    <span id="dark-icon">🌙</span>
-                </button>
-                <div class="controls-divider"></div>
-                <button id="btn-audio" class="ctrl-btn" aria-label="Toggle background sound">
-                    <span id="audio-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                            <line x1="23" y1="9" x2="17" y2="15"></line>
-                            <line x1="17" y1="9" x2="23" y2="15"></line>
-                        </svg>
-                    </span>
-                </button>
-            </div>
-
             <header>
-                <div class="subtitle" data-i18n="discover">Discover Nature</div>
-                <h1 data-i18n="title">Belgian<br><span class="highlight">Fauna &amp; Flora</span></h1>
-                <p data-i18n="desc">Test your knowledge or explore the encyclopedia of Belgium's natural wonders.</p>
-
-                <!--
-                ╔══════════════════════════════════════════════════════════════╗
-                ║  HOW TO ADD YOUR HERO IMAGE                                  ║
-                ║                                                              ║
-                ║  File name:  juncala-forest-homepage.jpg                     ║
-                ║                                                              ║
-                ║  Where to put it:                                            ║
-                ║    Place the file in the SAME FOLDER as index.html.          ║
-                ║                                                              ║
-                ║    Your project structure should look like this:             ║
-                ║                                                              ║
-                ║    📁 your-project/   (= your repo root)                     ║
-                ║    ├── 📄 index.html                                         ║
-                ║    ├── 🖼️  juncala-forest-homepage.jpg   ← PUT IT HERE      ║
-                ║    ├── 📁 css/                                               ║
-                ║    ├── 📁 js/                                                ║
-                ║    └── 📁 assets/                                            ║
-                ║                                                              ║
-                ║  On Netlify:                                                 ║
-                ║    Your "Publish directory" in Site Settings > Build & Deploy║
-                ║    must point to the folder containing index.html.           ║
-                ║    Put the image in that same folder.                        ║
-                ║    If Publish directory is blank or "." → repo root is fine. ║
-                ║                                                              ║
-                ║  The src below is a relative path. The browser looks for     ║
-                ║  the file in the same directory as index.html.               ║
-                ╚══════════════════════════════════════════════════════════════╝
-                -->
                 <div class="hero-parallax-container" id="hero-parallax">
                     <div class="hero-parallax-inner" id="hero-parallax-inner">
                         <img src="juncala-forest-homepage.jpg"
@@ -88,6 +75,37 @@
                              id="home-forest-img"
                              referrerpolicy="no-referrer"
                              onerror="this.parentElement.parentElement.classList.add('hero-fallback')">
+
+                        <!-- Controls bar on hero -->
+                        <div class="controls-bar hero-controls-bar">
+                            <select id="lang-select" class="lang-select" aria-label="Taal kiezen">
+                                <option value="nl" selected>NL</option>
+                                <option value="en">EN</option>
+                                <option value="fr">FR</option>
+                            </select>
+                            <div class="controls-divider"></div>
+                            <button id="btn-dark" class="ctrl-btn" title="Dark/Light mode" aria-label="Toggle dark mode">
+                                <span id="dark-icon">🌙</span>
+                            </button>
+                            <div class="controls-divider"></div>
+                            <button id="btn-audio" class="ctrl-btn" aria-label="Toggle background sound">
+                                <span id="audio-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
+                        <!-- Title overlaid on hero -->
+                        <div class="hero-title-overlay">
+                            <div class="hero-subtitle" data-i18n="discover">Discover Nature</div>
+                            <h1 class="hero-title" data-i18n="title">Belgian<br><span class="highlight">Fauna &amp; Flora</span></h1>
+                            <p class="hero-description" data-i18n="desc">Test your knowledge or explore the encyclopedia of Belgium's natural wonders.</p>
+                        </div>
                         <div class="hero-overlay-text">
                             <span class="hero-badge">🌿 Belgium</span>
                         </div>
