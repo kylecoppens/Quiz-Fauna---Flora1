@@ -26,9 +26,11 @@
         <!-- ══ 1. HOME ══════════════════════════════════════════════════════ -->
         <section id="screen-home" class="screen active">
             <div class="lang-selector">
-                <button class="btn-lang active" data-lang="nl">NL</button>
-                <button class="btn-lang" data-lang="en">EN</button>
-                <button class="btn-lang" data-lang="fr">FR</button>
+                <select id="lang-select" class="lang-select" aria-label="Taal kiezen">
+                    <option value="nl" selected>🇧🇪 NL</option>
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="fr">🇫🇷 FR</option>
+                </select>
                 <button id="btn-dark" class="icon-btn transition" title="Dark/Light mode" aria-label="Toggle dark mode" style="margin-left:auto">
                     <span id="dark-icon">🌙</span>
                 </button>

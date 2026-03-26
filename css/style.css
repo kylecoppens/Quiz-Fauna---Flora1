@@ -23,9 +23,7 @@ body.light-mode .glass-panel-inner {
     color: var(--text-primary);
 }
 body.light-mode .screen { background: transparent; }
-body.light-mode .btn-lang,
 body.light-mode .icon-btn { color: var(--text-primary); }
-body.light-mode .btn-lang.active { background: var(--accent-primary); color: #fff; }
 body.light-mode .answer-widget { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); color: var(--text-primary); }
 body.light-mode .select-chip, body.light-mode .diff-btn { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); color: var(--text-primary); }
 body.light-mode .infobox { background: rgba(0,0,0,0.04); }
@@ -1570,28 +1568,45 @@ p {
     z-index: 10;
 }
 
-.btn-lang {
+.lang-select {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-secondary);
-    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    padding: 6px 10px;
     border-radius: 8px;
     cursor: pointer;
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.8rem;
     transition: var(--transition-fast);
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23a3b8a8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 26px;
 }
 
-.btn-lang:hover {
-    background: rgba(255, 255, 255, 0.2);
+.lang-select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.lang-select option {
+    background: #1e3a24;
+    color: #fff;
+}
+
+body.light-mode .lang-select {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.15);
     color: var(--text-primary);
 }
 
-.btn-lang.active {
-    background: var(--accent-primary);
-    color: #fff;
-    border-color: var(--accent-primary);
+body.light-mode .lang-select option {
+    background: #e8f5e9;
+    color: #1a3a20;
 }
 
 [data-i18n] { transition: opacity 0.2s; }

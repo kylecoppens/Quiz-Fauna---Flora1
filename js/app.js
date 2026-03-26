@@ -552,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnResultsHome = document.getElementById('btn-results-home');
     const btnHint = document.getElementById('btn-hint');
     const btnRange = document.getElementById('btn-range');
-    const langBtns = document.querySelectorAll('.btn-lang');
+    const langSelect = document.getElementById('lang-select');
     const btnStopQuiz = document.getElementById('btn-stop-quiz');
     const rangeImage = document.getElementById('range-image');
 
@@ -654,9 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = lang;
         document.documentElement.lang = lang;
 
-        langBtns.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
+        if (langSelect) langSelect.value = lang;
 
         const dict = i18n[lang];
 
@@ -807,9 +805,9 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSpeciesOfTheDay();
     }
 
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', () => updateLanguage(btn.dataset.lang));
-    });
+    if (langSelect) {
+        langSelect.addEventListener('change', () => updateLanguage(langSelect.value));
+    }
 
     // --- Navigation ---
     function showScreen(screenId) {
