@@ -1560,11 +1560,11 @@ p {
    Controls Bar (taal + dark mode + geluid)
    ========================================================================== */
 .controls-bar {
-    position: absolute;
-    top: 18px;
-    right: 18px;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    align-self: flex-end;
+    margin-bottom: 16px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 12px;
@@ -1572,6 +1572,7 @@ p {
     -webkit-backdrop-filter: blur(8px);
     overflow: hidden;
     z-index: 10;
+    flex-shrink: 0;
 }
 
 .lang-select {
@@ -1674,7 +1675,7 @@ body.light-mode .ctrl-btn {
 
     .action-buttons { padding-top: 20px; }
 
-    .controls-bar { top: 14px; right: 14px; }
+    .controls-bar { margin-bottom: 12px; }
 
     .hero-parallax-container { height: 160px; }
 
