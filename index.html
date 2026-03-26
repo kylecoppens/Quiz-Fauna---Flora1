@@ -67,29 +67,6 @@
 
         <!-- ══ 1. HOME ══════════════════════════════════════════════════════ -->
         <section id="screen-home" class="screen active">
-            <div class="controls-bar">
-                <select id="lang-select" class="lang-select" aria-label="Taal kiezen">
-                    <option value="nl" selected>NL</option>
-                    <option value="en">EN</option>
-                    <option value="fr">FR</option>
-                </select>
-                <div class="controls-divider"></div>
-                <button id="btn-dark" class="ctrl-btn" title="Dark/Light mode" aria-label="Toggle dark mode">
-                    <span id="dark-icon">🌙</span>
-                </button>
-                <div class="controls-divider"></div>
-                <button id="btn-audio" class="ctrl-btn" aria-label="Toggle background sound">
-                    <span id="audio-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                            <line x1="23" y1="9" x2="17" y2="15"></line>
-                            <line x1="17" y1="9" x2="23" y2="15"></line>
-                        </svg>
-                    </span>
-                </button>
-            </div>
-
             <header>
                 <div class="hero-parallax-container" id="hero-parallax">
                     <div class="hero-parallax-inner" id="hero-parallax-inner">
@@ -98,6 +75,31 @@
                              id="home-forest-img"
                              referrerpolicy="no-referrer"
                              onerror="this.parentElement.parentElement.classList.add('hero-fallback')">
+
+                        <!-- Controls bar on hero -->
+                        <div class="controls-bar hero-controls-bar">
+                            <select id="lang-select" class="lang-select" aria-label="Taal kiezen">
+                                <option value="nl" selected>NL</option>
+                                <option value="en">EN</option>
+                                <option value="fr">FR</option>
+                            </select>
+                            <div class="controls-divider"></div>
+                            <button id="btn-dark" class="ctrl-btn" title="Dark/Light mode" aria-label="Toggle dark mode">
+                                <span id="dark-icon">🌙</span>
+                            </button>
+                            <div class="controls-divider"></div>
+                            <button id="btn-audio" class="ctrl-btn" aria-label="Toggle background sound">
+                                <span id="audio-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
                         <!-- Title overlaid on hero -->
                         <div class="hero-title-overlay">
                             <div class="hero-subtitle" data-i18n="discover">Discover Nature</div>

@@ -267,7 +267,7 @@ p {
    ========================================================================== */
 .hero-parallax-container {
     width: 100%;
-    height: 180px;
+    height: 320px;
     margin-top: 0;
     border-radius: var(--border-radius-md);
     overflow: hidden;
@@ -308,41 +308,64 @@ p {
     z-index: 1;
 }
 
+/* Controls bar on hero */
+.hero-controls-bar {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 3;
+    margin: 0 !important;
+}
+
+.hero-controls-bar .lang-select,
+.hero-controls-bar .ctrl-btn {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    color: var(--text-primary) !important;
+}
+
+.hero-controls-bar .lang-select:hover,
+.hero-controls-bar .ctrl-btn:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
 /* Title overlay on hero */
 .hero-title-overlay {
     position: absolute;
     inset: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
-    padding: 18px 20px;
+    padding: 40px 24px;
     z-index: 2;
     background: linear-gradient(
         180deg,
-        rgba(15, 22, 16, 0.8) 0%,
-        rgba(15, 22, 16, 0.3) 60%,
-        transparent 100%
+        rgba(15, 22, 16, 0.7) 0%,
+        rgba(15, 22, 16, 0.4) 50%,
+        rgba(15, 22, 16, 0.2) 100%
     );
     color: var(--text-primary);
 }
 
 .hero-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--text-tertiary);
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     opacity: 0.85;
 }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 1.9rem;
+    font-size: 2.8rem;
     font-weight: 900;
     line-height: 1.1;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     color: var(--text-primary);
 }
 
@@ -1750,15 +1773,17 @@ body.light-mode .header-content {
 
     .controls-bar { margin-bottom: 8px; }
 
-    .hero-parallax-container { height: 140px; }
+    .hero-parallax-container { height: 240px; }
 
-    .hero-title-overlay { padding: 12px 16px; }
+    .hero-title-overlay { padding: 30px 16px; justify-content: center; }
 
-    .hero-subtitle { font-size: 0.7rem; margin-bottom: 1px; }
+    .hero-controls-bar { top: 10px; right: 12px; }
 
-    .hero-title { font-size: 1.6rem; margin-bottom: 4px; }
+    .hero-subtitle { font-size: 0.7rem; margin-bottom: 2px; }
 
-    .hero-description { font-size: 0.75rem; }
+    .hero-title { font-size: 2rem; margin-bottom: 6px; }
+
+    .hero-description { font-size: 0.75rem; max-width: 95%; }
 
     .xp-label { display: none; }
 }
