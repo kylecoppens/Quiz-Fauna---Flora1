@@ -2117,7 +2117,7 @@ body.light-mode .header-content {
     flex-direction: column;
     height: 100%;
     flex: 1;
-    overflow: hidden;
+    overflow: clip;
 }
 .phylo-screen.active { display: flex; }
 
@@ -2374,14 +2374,6 @@ li.phylo-ci.collapsed > .phylo-children { display: none; }
    ══ BIOGIDS SCREEN & COMPONENTS ════════════════════════════════════════════════
    ════════════════════════════════════════════════════════════════════════════════ */
 
-/* BioGids Screen Header */
-#screen-biogids {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-
 /* BioGids Search Bar */
 .biogids-search-wrap {
     padding: 12px 20px;
@@ -2411,11 +2403,6 @@ li.phylo-ci.collapsed > .phylo-children { display: none; }
 }
 
 /* BioGids Grid */
-#screen-biogids {
-    flex: 1;
-    overflow-y: auto;
-}
-
 .biogids-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
