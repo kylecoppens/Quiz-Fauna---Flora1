@@ -1652,6 +1652,29 @@ body.light-mode .ctrl-btn {
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg-dark);
+    padding: 12px 0 12px;
+    margin-left: -44px;
+    margin-right: -44px;
+    padding-left: 44px;
+    padding-right: 44px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+body.light-mode .header-content {
+    background: var(--bg-gradient-start);
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .header-content h1 {

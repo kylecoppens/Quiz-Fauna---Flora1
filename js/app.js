@@ -2061,4 +2061,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // --- Swipe rechts → terug (encyclopedie, biogids, quiz-config) ---
+    const swipeScreens = [screens.learn, screens.biogids, screens.config];
+    swipeScreens.forEach(el => {
+        if (!el) return;
+        let touchStartX = 0;
+        let touchStartY = 0;
+        el.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        el.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+            // Swipe rechts: minstens 80px horizontaal, minder dan 60px verticaal, start vanuit linker rand
+            if (dx > 80 && dy < 60 && touchStartX < 60) {
+                const target = el.querySelector('[data-target]')?.dataset.target || 'screen-home';
+                showScreen(target);
+            }
+        }, { passive: true });
+    });
 });
