@@ -107,7 +107,8 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: 24px 0 40px;
     overflow-x: hidden;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -231,7 +232,7 @@ p {
     min-height: 80vh;
     padding: 48px 44px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
 }
@@ -1614,12 +1615,14 @@ p {
    Responsive
    ========================================================================== */
 @media (max-width: 480px) {
+    body { padding: 0; }
+
     h1 { font-size: 2.8rem; }
 
     .glass-panel {
         padding: 30px 20px;
-        width: 95%;
-        max-height: 95vh;
+        width: 100%;
+        border-radius: 0;
     }
 
     .action-buttons { padding-top: 20px; }
