@@ -12,7 +12,8 @@
       "Bash(ls -lh /tmp/new_species*)",
       "Bash(wc -l js/data/species_data.js*)",
       "Bash(git log --oneline js/data/species_data*.js)",
-      "Bash(ls -lah *.json BELGIAN*)"
+      "Bash(ls -lah *.json BELGIAN*)",
+      "Bash(__NEW_LINE_dd0ff34a729da2f9__ sed:*)"
     ]
   }
 }

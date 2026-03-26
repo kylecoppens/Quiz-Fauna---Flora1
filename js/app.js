@@ -230,6 +230,53 @@ window.renderBioguideQuiz = function(questions, lang, container) {
 // ═══════════════════════════════════════════════════════════════════════════
 // DOMContentLoaded initialization
 // ═══════════════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════════
+// SPLASH SCREEN
+// ═══════════════════════════════════════════════════════════════════════════
+(function initSplash() {
+    const splash = document.getElementById('splash-screen');
+    const fill   = document.querySelector('.splash-loader-fill');
+    const status = document.getElementById('splash-status');
+    if (!splash) return;
+
+    const msgs = {
+        nl: ['Soorten laden...', 'Encyclopedie opbouwen...', 'Bijna klaar...'],
+        en: ['Loading species...', 'Building encyclopedia...', 'Almost ready...'],
+        fr: ['Chargement des espèces...', 'Construction de l\'encyclopédie...', 'Presque prêt...']
+    };
+    const lang = (navigator.language || 'nl').slice(0, 2);
+    const m = msgs[lang] || msgs.nl;
+
+    let progress = 0;
+    function tick(target, msg) {
+        if (status) status.textContent = msg;
+        const step = () => {
+            if (progress < target) {
+                progress += 2;
+                if (fill) fill.style.width = progress + '%';
+                requestAnimationFrame(step);
+            }
+        };
+        step();
+    }
+
+    // Animate progress in stages
+    tick(30, m[0]);
+    setTimeout(() => tick(65, m[1]), 600);
+    setTimeout(() => tick(90, m[2]), 1200);
+
+    // Finish once everything is loaded
+    window.addEventListener('load', () => {
+        tick(100, m[2]);
+        setTimeout(() => {
+            const appContainer = document.getElementById('app-container');
+            if (appContainer) appContainer.style.display = '';
+            splash.classList.add('splash-exit');
+            setTimeout(() => splash.remove(), 600);
+        }, 400);
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("App.js: DOMContentLoaded triggered");
 
