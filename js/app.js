@@ -2063,7 +2063,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Swipe rechts → terug (encyclopedie, biogids, quiz-config) ---
-    const swipeScreens = [screens.learn, screens.biogids, screens.config];
+    const swipeScreens = [screens.learn, screens.biogids, screens.config, screens.quiz, screens.phylo];
     swipeScreens.forEach(el => {
         if (!el) return;
         let touchStartX = 0;

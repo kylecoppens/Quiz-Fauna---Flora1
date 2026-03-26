@@ -122,14 +122,16 @@
 
         <!-- ══ 2. QUIZ CONFIG ══════════════════════════════════════════════ -->
         <section id="screen-config" class="screen hidden">
-            <header class="config-header">
-                <button class="btn-back" data-target="screen-home">← Back</button>
-                <div class="config-hero">
-                    <div class="config-hero-icon"><span class="quiz-svg-target"></span></div>
-                    <h2 data-i18n="setup">Quiz Instellen</h2>
-                    <p class="config-hero-sub" data-i18n="setupDesc">Kies je categorie en moeilijkheidsgraad</p>
-                </div>
-            </header>
+            <div class="header-content">
+                <button class="icon-btn transition back-btn" data-target="screen-home">
+                    <span class="back-svg-target"></span>
+                </button>
+                <h1 data-i18n="setup">Quiz Instellen</h1>
+            </div>
+            <div class="config-hero">
+                <div class="config-hero-icon"><span class="quiz-svg-target"></span></div>
+                <p class="config-hero-sub" data-i18n="setupDesc">Kies je categorie en moeilijkheidsgraad</p>
+            </div>
             <div class="config-options">
                 <!-- Category cards -->
                 <div class="form-group">
@@ -210,6 +212,7 @@
         <!-- ══ 3. ACTIVE QUIZ ══════════════════════════════════════════════ -->
         <section id="screen-quiz" class="screen hidden">
             <header class="quiz-header">
+                <button id="btn-stop-quiz" class="btn-stop" title="Stop quiz">✕</button>
                 <div class="progress-container">
                     <div class="progress-text">Vraag <span id="current-q-num">1</span> van <span id="progress-total">10</span></div>
                     <div class="xp-bar-wrapper">
@@ -223,7 +226,6 @@
                     </div>
                 </div>
                 <div class="score-pill">🏅 <span id="current-score">0</span></div>
-                <button id="btn-stop-quiz" class="btn-stop" title="Stop quiz">✕</button>
             </header>
 
             <div class="question-container">
@@ -371,10 +373,12 @@
 
         <!-- ══ BIOGIDS SCREEN ═════════════════════════════════════════════ -->
         <section id="screen-biogids" class="screen hidden">
-            <header class="biogids-header">
-                <button class="btn-back" data-target="screen-home">← <span data-i18n="back">Terug</span></button>
-                <h2 data-i18n="biogidsTitle">BioGids: Biologische Kenniskaarten</h2>
-            </header>
+            <div class="header-content">
+                <button class="icon-btn transition back-btn" data-target="screen-home">
+                    <span class="back-svg-target"></span>
+                </button>
+                <h1>BioGids</h1>
+            </div>
 
             <!-- Search bar -->
             <div class="biogids-search-wrap">
@@ -393,9 +397,11 @@
 
         <!-- ══ PHYLOGENY SCREEN ══════════════════════════════════════════ -->
         <section id="screen-phylo" class="screen hidden phylo-screen">
-            <div class="phylo-screen-topbar">
-                <button class="btn-back-phylo back-btn" data-target="screen-learn">← Encyclopedie</button>
-                <h2>🌳 Fylogenetische boom</h2>
+            <div class="header-content">
+                <button class="icon-btn transition back-btn" data-target="screen-learn">
+                    <span class="back-svg-target"></span>
+                </button>
+                <h1>🌳 Fylogenetische boom</h1>
                 <div class="phylo-sp-count" id="phylo-sp-count"></div>
             </div>
 

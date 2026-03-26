@@ -555,18 +555,6 @@ p {
    Config Selectors
    ========================================================================== */
 /* Config hero header */
-.config-header {
-    position: relative;
-    margin-bottom: 24px;
-}
-
-.config-header .btn-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-bottom: 0;
-}
-
 .config-hero {
     text-align: center;
     padding: 16px 0 8px;
@@ -805,6 +793,16 @@ p {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg-dark);
+    padding: 12px 0;
+    margin-left: -44px;
+    margin-right: -44px;
+    padding-left: 44px;
+    padding-right: 44px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .progress-container {
@@ -2123,36 +2121,6 @@ body.light-mode .header-content {
 }
 .phylo-screen.active { display: flex; }
 
-.phylo-screen-topbar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 4px 12px;
-    flex-shrink: 0;
-}
-
-.btn-back-phylo {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    font-family: var(--font-body);
-    font-weight: 500;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: var(--transition-fast);
-    padding: 0;
-    white-space: nowrap;
-}
-.btn-back-phylo:hover { color: var(--text-primary); }
-
-.phylo-screen-topbar h2 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
 .phylo-sp-count {
     margin-left: auto;
@@ -2413,22 +2381,6 @@ li.phylo-ci.collapsed > .phylo-children { display: none; }
     overflow: hidden;
 }
 
-.biogids-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid rgba(61, 184, 99, 0.15);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: linear-gradient(180deg, rgba(61,184,99,0.05), transparent);
-}
-
-.biogids-header h2 {
-    flex: 1;
-    margin: 0;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
 
 /* BioGids Search Bar */
 .biogids-search-wrap {
