@@ -344,6 +344,7 @@ p {
 .hero-controls-bar .lang-select {
     font-weight: 600 !important;
     font-size: 0.9rem !important;
+    text-align: center !important;
 }
 
 .hero-controls-bar .ctrl-btn {
