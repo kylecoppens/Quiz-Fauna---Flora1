@@ -249,8 +249,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Audio Logic ---
-    const bgAudio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3');
+    // CC BY 4.0 · "Birds Singing 2" by freekit · freesound.org/sounds/652961/
+    const bgAudio = new Audio('https://cdn.freesound.org/previews/652/652961_14225204-hq.mp3');
     bgAudio.loop = true;
+    bgAudio.volume = 0.45;
     let audioEnabled = false;
 
     // --- Category Group Mapping (hierarchical: Dieren / Planten / Fungi) ---
@@ -485,9 +487,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // currentLang is now global (defined outside DOMContentLoaded)
     let currentCategory = 'all';
     let currentDifficulty = 'easy';
+    let currentQuizLength = 10;
     let activeQuizPool = [];
     let currentQuestionIndex = 0;
     let score = 0;
+    let wrongAnswers = [];
     let currentCorrectAnswer = null;
     let hintUsed = false;
     let collectedSpecies = JSON.parse(localStorage.getItem('collectedSpecies') || '[]');
@@ -495,7 +499,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let phyloInitialized = false;
 
     const XP_PER_CORRECT = 10;
-    const QUIZ_LENGTH = 10;
+    // Quiz length is dynamic via currentQuizLength (5 / 10 / 20)
+
+    // ── Helper: precise category label (reptiles & amphibians ≠ Zoogdieren) ──
+    const _REPTILE_FAM = ['Lacertidae','Anguidae','Colubridae','Viperidae'];
+    const _AMPHIB_FAM  = ['Ranidae','Bufonidae','Salamandridae'];
+    function getCategoryLabel(item, lang) {
+        const fam = item.family || '';
+        if (_REPTILE_FAM.includes(fam)) {
+            return lang === 'en' ? '🦎 Reptile' : lang === 'fr' ? '🦎 Reptile' : '🦎 Reptiel';
+        }
+        if (_AMPHIB_FAM.includes(fam)) {
+            return lang === 'en' ? '🐸 Amphibian' : lang === 'fr' ? '🐸 Amphibien' : '🐸 Amfibie';
+        }
+        return i18n[lang][item.category] || item.category;
+    }
 
     function saveCollection() {
         localStorage.setItem('collectedSpecies', JSON.stringify(collectedSpecies));
@@ -670,12 +688,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const afterWords = words.slice(belgianIndex + 1).join(' ');
 
                 if (belgianIndex === 0) {
-                    // Gradient word is first
+                    // Belgian word is first (NL: "Belgische Flora & Fauna", EN: "Belgian Fauna & Flora")
                     h1El.innerHTML = `<span class="gradient-belgian">${gradientWord}</span><br><span class="highlight">${afterWords}</span>`;
+                } else if (!afterWords.trim()) {
+                    // Belgian word is last (FR: "Faune & Flore Belges")
+                    h1El.innerHTML = `<span class="highlight">${beforeWords}</span><br><span class="gradient-belgian">${gradientWord}</span>`;
                 } else {
-                    // Gradient word is later
-                    h1El.innerHTML = `${beforeWords}<br><span class="highlight">${gradientWord}</span> ${afterWords}`;
-                    // Better: put gradient on the word itself
                     h1El.innerHTML = `${beforeWords}<br><span class="gradient-belgian">${gradientWord}</span> <span class="highlight">${afterWords}</span>`;
                 }
             } else {
@@ -731,11 +749,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dict[v] && labelEl) labelEl.textContent = dict[v];
         });
 
-        // Quiz
-        const progressTextEl = document.querySelector('.progress-text');
-        if (progressTextEl) {
-            progressTextEl.innerHTML = `${dict.question} <span id="current-q-num">${currentQuestionIndex + 1}</span> ${dict.of} 10`;
-        }
+        // Quiz — update only dynamic total span, keep structure intact
+        const progressTotalEl = document.getElementById('progress-total');
+        if (progressTotalEl) progressTotalEl.textContent = activeQuizPool.length || currentQuizLength;
 
         const scorePillEl = document.querySelector('.score-pill');
         if (scorePillEl) scorePillEl.innerHTML = `🏅 <span id="current-score">${score}</span>`;
@@ -1076,6 +1092,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupChips(difficultyChips, val => { currentDifficulty = val; updateConfigPreview(); });
 
+    // --- Quiz length selector ---
+    document.querySelectorAll('#length-selector .length-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('#length-selector .length-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentQuizLength = parseInt(btn.dataset.val, 10);
+        });
+    });
+
+    // --- Dark mode toggle ---
+    const btnDark = document.getElementById('btn-dark');
+    const darkIcon = document.getElementById('dark-icon');
+    let darkMode = localStorage.getItem('darkMode') !== 'false'; // default: dark
+    function applyDarkMode(on) {
+        document.body.classList.toggle('light-mode', !on);
+        if (darkIcon) darkIcon.textContent = on ? '🌙' : '☀️';
+        localStorage.setItem('darkMode', on);
+    }
+    applyDarkMode(darkMode);
+    if (btnDark) {
+        btnDark.addEventListener('click', () => { darkMode = !darkMode; applyDarkMode(darkMode); });
+    }
+
     // --- Quiz Engine ---
     btnStartQuiz.addEventListener('click', startQuiz);
     btnNextQuestion.addEventListener('click', loadNextQuestion);
@@ -1100,6 +1139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function startQuiz() {
         score = 0;
         currentQuestionIndex = 0;
+        wrongAnswers = [];
         const allData = window.speciesData || [];
 
         const seen = new Set();
@@ -1127,7 +1167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         activeQuizPool.sort(() => 0.5 - Math.random());
-        const actualLength = Math.min(activeQuizPool.length, QUIZ_LENGTH);
+        const actualLength = Math.min(activeQuizPool.length, currentQuizLength);
         activeQuizPool = activeQuizPool.slice(0, actualLength);
 
         showScreen('screen-quiz');
@@ -1174,20 +1214,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const dict = i18n[currentLang];
         const totalQs = activeQuizPool.length;
 
-        // Update question number
+        // Update question number + total (use stable span IDs, no innerHTML rebuild)
         const qNumEl = document.getElementById('current-q-num');
         if (qNumEl) qNumEl.textContent = currentQuestionIndex + 1;
-
-        // Update progress text
-        const progressTextEl = document.querySelector('.progress-text');
-        if (progressTextEl) {
-            progressTextEl.innerHTML = `${dict.question} <span id="current-q-num">${currentQuestionIndex + 1}</span> ${dict.of} ${totalQs}`;
-        }
+        const totalEl = document.getElementById('progress-total');
+        if (totalEl) totalEl.textContent = totalQs;
 
         progressFill.style.width = `${(currentQuestionIndex / totalQs) * 100}%`;
         scoreText.textContent = score;
 
-        const catName = dict[currentItem.category] || currentItem.category;
+        const catName = getCategoryLabel(currentItem, currentLang);
         qText.innerHTML = `${dict.question} (<span class="highlight">${catName}</span>)`;
 
         imageLoader.style.display = 'block';
@@ -1290,6 +1326,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clickedBtn.classList.add('wrong');
             const correctBtn = answersContainer.querySelector(`.answer-widget[data-id="${currentCorrectAnswer.id}"]`);
             if (correctBtn) correctBtn.classList.add('correct');
+            wrongAnswers.push({ item: currentCorrectAnswer, guessedName: clickedBtn.textContent.trim() });
         }
 
         progressFill.style.width = `${((currentQuestionIndex + 1) / activeQuizPool.length) * 100}%`;
@@ -1306,12 +1343,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showResults() {
-        document.getElementById('final-score').textContent = score;
-        const msgElem = document.getElementById('score-message');
-        const detElem = document.getElementById('score-details');
         const dict = i18n[currentLang];
         const total = activeQuizPool.length;
 
+        document.getElementById('final-score').textContent = score;
+        const outOfEl = document.getElementById('out-of-total');
+        if (outOfEl) outOfEl.textContent = `/${total}`;
+
+        const msgElem = document.getElementById('score-message');
+        const detElem = document.getElementById('score-details');
         if (score === total) {
             msgElem.textContent = dict.perfect;
             detElem.textContent = dict.perfectDesc;
@@ -1324,6 +1364,28 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             msgElem.textContent = dict.practice;
             detElem.textContent = dict.practiceDesc;
+        }
+
+        // ── Fout-overzicht ────────────────────────────────────────────────
+        const wrongSection = document.getElementById('wrong-answers-section');
+        const wrongGrid    = document.getElementById('wrong-answers-grid');
+        const wrongLabel   = document.getElementById('wrong-answers-label');
+        if (wrongAnswers.length > 0 && wrongSection && wrongGrid) {
+            if (wrongLabel) wrongLabel.textContent = dict.wrongAnsweredLabel || 'Fout beantwoord';
+            wrongGrid.innerHTML = wrongAnswers.map(({ item, guessedName }) => {
+                const name = (item.name && (item.name[currentLang] || item.name.nl)) || item.scientific;
+                return `<div class="wrong-answer-card" onclick="(function(){var d=window.speciesData||[];var s=d.find(function(x){return x.id==='${item.id}'});if(s&&window.__openModal)window.__openModal(s);})()">
+                    <img src="${item.image}" alt="${name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                    <div class="wrong-answer-info">
+                        <div class="wrong-answer-correct">✅ ${name}</div>
+                        <div class="wrong-answer-scientific">${item.scientific}</div>
+                        <div class="wrong-answer-guessed">❌ ${guessedName}</div>
+                    </div>
+                </div>`;
+            }).join('');
+            wrongSection.classList.remove('hidden');
+        } else if (wrongSection) {
+            wrongSection.classList.add('hidden');
         }
 
         showScreen('screen-results');
@@ -1462,7 +1524,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.className = 'learn-card';
                 const name = typeof item.name === 'object' ? item.name[currentLang] : item.name;
-                const catName = i18n[currentLang][item.category] || item.category;
+                const catName = getCategoryLabel(item, currentLang);
                 const isCollected = collectedSpecies.includes(item.id);
                 if (isCollected) card.classList.add('collected');
                 const gradeTag = item.plantGrade
@@ -1525,7 +1587,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('modal-title').textContent = getName(item.name);
         document.getElementById('modal-scientific').textContent = item.scientific || '';
-        document.getElementById('modal-tag').textContent = i18n[lang][item.category] || item.category;
+        document.getElementById('modal-tag').textContent = getCategoryLabel(item, lang);
         document.getElementById('modal-description').textContent = getName(item.description) || '---';
         document.getElementById('modal-habitat-text').textContent = getName(item.habitat) || '---';
         document.getElementById('modal-rarity-text').textContent = getName(item.rarity) || '---';
@@ -1596,7 +1658,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('modal-infobox-scientific').textContent = item.scientific || '---';
         document.getElementById('modal-infobox-family').textContent = item.family || '---';
-        document.getElementById('modal-infobox-category').textContent = i18n[lang][item.category] || item.category;
+        document.getElementById('modal-infobox-category').textContent = getCategoryLabel(item, lang);
         document.getElementById('modal-habitat').textContent = getName(item.habitat) || '---';
         document.getElementById('modal-rarity').textContent = getName(item.rarity) || '---';
         document.getElementById('modal-infobox-size').textContent = item.size ? getName(item.size) : '---';
@@ -1660,9 +1722,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCloseBioguideModal = document.getElementById('btn-close-biogids-modal');
     const bioguideSearch = document.getElementById('biogids-search');
 
-    // Store i18n and openModal globally for BioGids functions
+    // Store i18n and openModal globally for BioGids functions + wrong-answer cards
     window.i18nData = i18n;
     window.openModalFunc = openModal;
+    window.__openModal = openModal;
 
     // Attach search handler
     if (bioguideSearch) {

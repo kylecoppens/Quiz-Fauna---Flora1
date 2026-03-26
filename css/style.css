@@ -1,4 +1,40 @@
 /* ==========================================================================
+   Light mode (toggled via body.light-mode)
+   ========================================================================== */
+body.light-mode {
+    --bg-dark: #f0f4f0;
+    --bg-gradient-start: #e8f5e9;
+    --bg-gradient-end: #c8e6c9;
+    --bg-overlay: rgba(255, 255, 255, 0.25);
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+    --text-primary: #1a2e1a;
+    --text-secondary: #3d5a3d;
+    --text-tertiary: #5a7a5a;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)) !important;
+    color: var(--text-primary);
+}
+body.light-mode .bg-shape { opacity: 0.12; }
+body.light-mode .glass-panel,
+body.light-mode .glass-panel-inner {
+    background: rgba(255,255,255,0.7) !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    color: var(--text-primary);
+}
+body.light-mode .screen { background: transparent; }
+body.light-mode .btn-lang,
+body.light-mode .icon-btn { color: var(--text-primary); }
+body.light-mode .btn-lang.active { background: var(--accent-primary); color: #fff; }
+body.light-mode .answer-widget { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); color: var(--text-primary); }
+body.light-mode .select-chip, body.light-mode .diff-btn { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); color: var(--text-primary); }
+body.light-mode .infobox { background: rgba(0,0,0,0.04); }
+body.light-mode .infobox th, body.light-mode .infobox td { border-color: rgba(0,0,0,0.08); color: var(--text-primary); }
+body.light-mode .learn-card-info { background: rgba(255,255,255,0.9); }
+body.light-mode .learn-card-title, body.light-mode .learn-card-scientific { color: var(--text-primary); }
+body.light-mode .wrong-answer-card { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); }
+
+/* ==========================================================================
    Design System variables
    ========================================================================== */
 :root {
@@ -1211,9 +1247,10 @@ p {
 }
 
 .learn-card-img {
-    height: 100px;
+    height: 140px;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.35);
 }
 
 .learn-card-info { padding: 10px; }
@@ -2722,3 +2759,73 @@ li.phylo-ci.collapsed > .phylo-children { display: none; }
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* ── Quiz length selector ───────────────────────────────────────────────── */
+.length-selector-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.length-btn {
+    background: rgba(0,0,0,0.25);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 12px;
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-align: center;
+}
+.length-btn:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+.length-btn.active {
+    background: rgba(61,184,99,0.25);
+    border-color: var(--accent-primary);
+    color: #fff;
+}
+
+/* ── Wrong-answer review (results screen) ───────────────────────────────── */
+.wrong-answers-section {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+    padding: 0 1rem;
+    animation: fadeIn 0.4s ease;
+}
+.wrong-answers-header {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    margin: 0 0 0.75rem;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+.wrong-answers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.wrong-answer-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 0.6rem 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+.wrong-answer-card:hover { background: rgba(255,255,255,0.11); transform: translateY(-2px); }
+.wrong-answer-card img {
+    width: 54px; height: 54px;
+    object-fit: cover; border-radius: 8px;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.05);
+}
+.wrong-answer-info { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+.wrong-answer-correct { font-weight: 700; font-size: 0.9rem; color: #6ee7b7; }
+.wrong-answer-scientific { font-style: italic; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+.wrong-answer-guessed { font-size: 0.8rem; color: rgba(255,110,90,0.9); }

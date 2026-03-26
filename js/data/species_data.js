@@ -55,6 +55,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "medium",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Gewone esdoorn",
       "en": "Sycamore Maple",
@@ -261,6 +262,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "easy",
     "iucn": "NT",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Witte Paardenkastanje",
       "en": "Horse Chestnut",
@@ -717,6 +719,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "medium",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Zwarte els",
       "en": "Common Alder",
@@ -1324,6 +1327,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "easy",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Ruwe berk",
       "en": "Silver Birch",
@@ -1941,6 +1945,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "easy",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Gewone beuk",
       "en": "Common Beech",
@@ -2103,6 +2108,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "medium",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Gewone es",
       "en": "European Ash",
@@ -3467,6 +3473,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "easy",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Zomereik",
       "en": "Pedunculate Oak",
@@ -3766,6 +3773,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "easy",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Gewone lijsterbes",
       "en": "Rowan",
@@ -4087,6 +4095,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "hard",
     "iucn": "EN",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Iep",
       "en": "English Elm",
@@ -4668,6 +4677,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "easy",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Hazelaar",
       "en": "Common Hazel",
@@ -4707,6 +4717,7 @@ window.speciesData = [
     "category": "trees",
     "difficulty": "easy",
     "iucn": "LC",
+    "plantGrade": "dicot",
     "name": {
       "nl": "Tamme kastanje",
       "en": "Sweet Chestnut",
@@ -5898,6 +5909,7 @@ window.speciesData = [
     "family": "Pleurotaceae",
     "category": "fungi",
     "difficulty": "easy",
+    "iucn": "LC",
     "name": {
       "nl": "Oesterzwam",
       "en": "Oyster Mushroom",
@@ -7977,6 +7989,7 @@ window.speciesData = [
     category: "trees",
     difficulty: "medium",
     iucn: "LC",
+    plantGrade: "dicot",
     name: { nl: "Ruwe iep", en: "Wych Elm", fr: "Orme de montagne" },
     habitat: { nl: "Rijke loofbossen op vochtige, voedselrijke bodems; rivierdalen, hellingbossen en ravijnen", en: "Rich deciduous woodland on moist, fertile soils; river valleys, slope woodland and ravines", fr: "Forêts feuillues riches sur sols humides et fertiles; vallées fluviales, forêts de pentes et ravins" },
     rarity: { nl: "Zeldzaam geworden door de iepziekte (Ophiostoma ulmi)", en: "Become rare due to Dutch elm disease (Ophiostoma ulmi)", fr: "Devenu rare en raison de la graphiose de l'orme (Ophiostoma ulmi)" },
@@ -8080,6 +8093,7 @@ window.speciesData = [
     category: "trees",
     difficulty: "medium",
     iucn: "LC",
+    plantGrade: "dicot",
     name: { nl: "Meelbes", en: "Common Whitebeam", fr: "Alisier blanc" },
     habitat: { nl: "Kalkrijke heuvelgronden, kalksteenrotsen, droge bosranden — zeldzaam in België, Ardennen", en: "Calcareous hillsides, limestone rocks, dry woodland edges — rare in Belgium, Ardennes", fr: "Coteaux calcaires, rochers calcaires, lisières de forêts sèches — rare en Belgique, Ardennes" },
     rarity: { nl: "Zeldzaam in België; hoofdzakelijk in de Ardennen en Condroz", en: "Rare in Belgium; mainly in the Ardennes and Condroz", fr: "Rare en Belgique; principalement en Ardenne et dans le Condroz" },
@@ -10760,7 +10774,7 @@ window.speciesData = [
     description: { nl: "Boom tot 20 m met witte bast en behaarde jonge twijgen (i.t.t. ruwe berk). Bladeren meer rondachtig dan driehoekig, met getande rand. Bloeit april met hangende katjes. Toleranter voor natte en zure omstandigheden dan Betula pendula. Pioniersboom in veengebieden en natte heides.", en: "Tree to 20 m with white bark and hairy young twigs (unlike silver birch). Leaves more rounded than triangular, with toothed margin. Flowers April with pendulous catkins. More tolerant of wet and acidic conditions than Betula pendula. Pioneer tree in peat areas and wet heaths.", fr: "Arbre jusqu'à 20 m à écorce blanche et jeunes rameaux velus (contrairement au bouleau verruqueux). Feuilles plus arrondies que triangulaires, à marge dentée. Floraison avril avec chatons pendants. Plus tolérant aux conditions humides et acides que Betula pendula. Arbre pionnier dans les tourbières et landes humides." },
     size: { nl: "Boom tot 20 m hoog", en: "Tree to 20 m tall", fr: "Arbre jusqu'à 20 m de hauteur" },
     diet: { nl: "Fotosynthese; ectomycorrhizale boom die samenleeft met diverse schimmels.", en: "Photosynthesis; ectomycorrhizal tree living with various fungi.", fr: "Photosynthèse; arbre ectomycorhizien vivant avec divers champignons." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Betula_pubescens_subsp_pubescens.jpg/960px-Betula_pubescens_subsp_pubescens.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Betula_pubescens_-_Burgwald_002.jpg/960px-Betula_pubescens_-_Burgwald_002.jpg"
   },
   {
     id: "bel_pyrus_pyraster",
@@ -10888,7 +10902,7 @@ window.speciesData = [
     description: { nl: "Rechtopstaande plant 20–100 cm met sterk ingesneden bladeren en blauwe, roze of witte bloemen juni–augustus. Bloemen met spoor. Giftig (alkaloïden). Typische akkeronkruid van vroeger; nu zeldzaam door intensieve landbouw. Populaire tuinplant in diverse kleuren.", en: "Erect plant 20–100 cm with strongly divided leaves and blue, pink or white flowers June–August. Flowers with spur. Toxic (alkaloids). Typical arable weed of the past; now rare due to intensive farming. Popular garden plant in various colours.", fr: "Plante dressée 20–100 cm aux feuilles très découpées et fleurs bleues, roses ou blanches juin–août. Fleurs éperonnées. Toxique (alcaloïdes). Adventice typique du passé; maintenant rare à cause de l'agriculture intensive. Plante de jardin populaire en diverses couleurs." },
     size: { nl: "20–100 cm hoog", en: "20–100 cm tall", fr: "20–100 cm de hauteur" },
     diet: { nl: "Fotosynthese; eenjarige akkerplant met zomerbloei.", en: "Photosynthesis; annual arable plant with summer flowering.", fr: "Photosynthèse; plante adventice annuelle à floraison estivale." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Consolida_ajacis_ies.jpg/960px-Consolida_ajacis_ies.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Consolida_ajacis_habito.jpg/960px-Consolida_ajacis_habito.jpg"
   },
   {
     id: "bel_convolvulus_arvensis",
@@ -10904,7 +10918,7 @@ window.speciesData = [
     description: { nl: "Klimplant met pijlvormige bladeren en witte of roze trechtervormige bloemen juni–september. Wortels kunnen tot 2 m diep gaan, moeilijk te bestrijden. Zaad blijft 50+ jaar kiemkrachtig in de bodem. Bloemen geopend overdag, sluiten bij bewolkt weer. Giftig bij grote hoeveelheden.", en: "Climbing plant with arrow-shaped leaves and white or pink funnel-shaped flowers June–September. Roots can go to 2 m deep, difficult to eradicate. Seeds remain viable 50+ years in soil. Flowers open during the day, close in cloudy weather. Toxic in large quantities.", fr: "Plante grimpante aux feuilles en flèche et fleurs en entonnoir blanches ou roses juin–septembre. Racines pouvant atteindre 2 m de profondeur, difficile à éradiquer. Graines viables pendant 50+ ans dans le sol. Fleurs ouvertes le jour, fermées par temps nuageux. Toxique en grande quantité." },
     size: { nl: "Klimplant tot 1 m lang", en: "Climbing plant to 1 m long", fr: "Plante grimpante jusqu'à 1 m" },
     diet: { nl: "Fotosynthese; uitgebreid wortelstelsel hergroeit na verwijdering.", en: "Photosynthesis; extensive root system regrows after removal.", fr: "Photosynthèse; système racinaire étendu repousse après arrachage." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Convolvulus_arvensis_1.jpg/960px-Convolvulus_arvensis_1.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Bindweed_%28Convolvulus_Arvensis%29_%283105112704%29.jpg/960px-Bindweed_%28Convolvulus_Arvensis%29_%283105112704%29.jpg"
   },
   {
     id: "bel_crepis_capillaris",
@@ -11016,7 +11030,7 @@ window.speciesData = [
     description: { nl: "Meerjarige rozetplant met 1–3 bloemstengels 10–50 cm, vaak vertakt. Gele bloemhoofdjes juli–november, gelijkend op paardebloem. Bladeren in basale rozet, getand tot diep ingesneden. Onderscheid van andere leeuwentanden door vertakte stengels. Drachtplant voor bijen.", en: "Perennial rosette plant with 1–3 flowering stems 10–50 cm, often branched. Yellow flower heads July–November, resembling dandelion. Leaves in basal rosette, toothed to deeply incised. Distinguished from other hawkbits by branched stems. Forage plant for bees.", fr: "Vivace en rosette à 1–3 tiges florales 10–50 cm, souvent ramifiées. Capitules jaunes juillet–novembre, ressemblant au pissenlit. Feuilles en rosette basale, dentées à profondément incisées. Distingué des autres liondents par les tiges ramifiées. Plante mellifère pour abeilles." },
     size: { nl: "10–50 cm hoog", en: "10–50 cm tall", fr: "10–50 cm de hauteur" },
     diet: { nl: "Fotosynthese; bestoven door bijen en vliegen aangetrokken door gele bloemen.", en: "Photosynthesis; pollinated by bees and flies attracted to yellow flowers.", fr: "Photosynthèse; pollinisée par abeilles et mouches attirés par les fleurs jaunes." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Leontodon_autumnalis_LC0148.jpg/960px-Leontodon_autumnalis_LC0148.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Leontodon_autumnalis_detail.jpeg/960px-Leontodon_autumnalis_detail.jpeg"
   },
   {
     id: "bel_persicaria_lapathifolia",
@@ -11064,7 +11078,7 @@ window.speciesData = [
     description: { nl: "Vaste plant 30–80 cm met tegenoverstaande bladeren en vlakke trossen bleekroze bloemen juli–september. Bladeren en stengels bevatten saponines (zeepachtige stoffen). Vroeger als wasmiddel gebruikt. Geurende bloemen trekt avondvlinders aan (bestoven door nachtvlinders). Giftig bij inname.", en: "Perennial 30–80 cm with opposite leaves and flat clusters of pale pink flowers July–September. Leaves and stems contain saponins (soap-like compounds). Formerly used as washing agent. Fragrant flowers attract moths (pollinated by moths). Toxic if ingested.", fr: "Vivace 30–80 cm aux feuilles opposées et corymbes plats de fleurs rose pâle juillet–septembre. Feuilles et tiges contiennent des saponines (substances savonneuses). Autrefois utilisé comme détergent. Fleurs parfumées attirent les sphinx (pollinisée par des noctuelles). Toxique si ingérée." },
     size: { nl: "30–80 cm hoog", en: "30–80 cm tall", fr: "30–80 cm de hauteur" },
     diet: { nl: "Fotosynthese; uitlopers vormen klonale kolonie langs wegen en spoorwegen.", en: "Photosynthesis; stolons form clonal colony along roads and railways.", fr: "Photosynthèse; stolons forment des colonies clonales le long des routes et voies ferrées." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Saponaria_officinalis_sl5.jpg/960px-Saponaria_officinalis_sl5.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Saponaria-officinalis-flower.jpg/960px-Saponaria-officinalis-flower.jpg"
   },
   {
     id: "bel_scabiosa_columbaria",
@@ -11144,7 +11158,7 @@ window.speciesData = [
     description: { nl: "Sierlijk, doordringende vaste plant 20–60 cm met smalle, grasachtige bladeren. Witte bloemen met diep ingesneden kroonblaadjes mei–augustus. Lijkt op vogelmuur maar groter en heeft smallere bladeren. Groeit in dichte matten. Kenmerksoort van zure, schrale graslanden.", en: "Graceful, straggling perennial 20–60 cm with narrow, grass-like leaves. White flowers with deeply notched petals May–August. Resembles chickweed but larger and with narrower leaves. Grows in dense mats. Characteristic of acidic, nutrient-poor grasslands.", fr: "Vivace gracieuse et étalée 20–60 cm aux feuilles étroites semblables à des graminées. Fleurs blanches à pétales profondément échancrés mai–août. Ressemble au mouron mais plus grande et à feuilles plus étroites. Pousse en tapis denses. Espèce caractéristique des prairies acides et pauvres." },
     size: { nl: "20–60 cm lang", en: "20–60 cm long", fr: "20–60 cm de longueur" },
     diet: { nl: "Fotosynthese; kenmerksoort van zure, onbemeste graslanden.", en: "Photosynthesis; characteristic of acidic, unfertilized grasslands.", fr: "Photosynthèse; caractéristique des prairies acides et non fertilisées." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Stellaria_graminea_LC0231.jpg/960px-Stellaria_graminea_LC0231.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Stellaria_graminea_detail.jpeg/960px-Stellaria_graminea_detail.jpeg"
   },
   {
     id: "bel_stellaria_holostea",
@@ -11176,7 +11190,7 @@ window.speciesData = [
     description: { nl: "Vaste plant 15–60 cm. Lila-blauwe bolvormige bloemhoofdjes augustus–oktober. Wortelstok 'afgebeten' aan één kant (vandaar naam). Waardplant van het zeldzame pimpernelblauwtje (Phengaris teleius) en moerasparelmoervlinder. Kenmerksoort van natte, soortenrijke graslanden.", en: "Perennial 15–60 cm. Lilac-blue rounded flower heads August–October. Rootstock 'bitten off' at one end (hence name). Host plant of the rare large blue butterfly (Phengaris teleius) and marsh fritillary. Characteristic of wet, species-rich grasslands.", fr: "Vivace 15–60 cm. Capitules lilás-bleus arrondis août–octobre. Souche 'mordue' d'un côté (d'où le nom). Plante hôte du rare azuré de la sanguisorbe (Phengaris teleius) et du damier de la succise. Espèce caractéristique des prairies humides et riches en espèces." },
     size: { nl: "15–60 cm hoog", en: "15–60 cm tall", fr: "15–60 cm de hauteur" },
     diet: { nl: "Fotosynthese; waardplant voor zeldzame vlinders van natte graslanden.", en: "Photosynthesis; host plant for rare butterflies of wet grasslands.", fr: "Photosynthèse; plante hôte de papillons rares des prairies humides." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Succisa_pratensis_LC0235.jpg/960px-Succisa_pratensis_LC0235.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Succisa_pratensis_sl6.jpg/960px-Succisa_pratensis_sl6.jpg"
   },
   {
     id: "bel_tanacetum_vulgare",
@@ -11192,7 +11206,7 @@ window.speciesData = [
     description: { nl: "Vaste plant 50–150 cm met sterk geurende, geveerde bladeren en gele knoopachtige bloemhoofdjes zonder straalbloemjes juli–september. Bevat kamfer, borneol en thujon. Giftig bij grote dosis. Vroeger gebruikt als medicinaal kruid en insectenwerend middel. Aantrekkelijk voor zweefvliegen en bijen.", en: "Perennial 50–150 cm with strongly scented, pinnate leaves and yellow button-like flower heads without ray florets July–September. Contains camphor, borneol and thujone. Toxic in large doses. Formerly used as medicinal herb and insect repellent. Attractive to hoverflies and bees.", fr: "Vivace 50–150 cm aux feuilles pennées fortement odorantes et capitules jaunes en bouton sans ligules juillet–septembre. Contient du camphre, du bornéol et de la thuyone. Toxique à forte dose. Autrefois utilisée comme plante médicinale et insectifuge. Attrayante pour syrphes et abeilles." },
     size: { nl: "50–150 cm hoog", en: "50–150 cm tall", fr: "50–150 cm de hauteur" },
     diet: { nl: "Fotosynthese; klonale uitbreiding via worteluitlopers langs wegen en oevers.", en: "Photosynthesis; clonal spread via root runners along roads and waterside.", fr: "Photosynthèse; expansion clonale via stolons racinaires le long des routes et berges." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Tanacetum_vulgare_LC0238.jpg/960px-Tanacetum_vulgare_LC0238.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Bloemen_van_Boerenwormkruid_%28Tanacetum_vulgare%29._17-08-2025._%28actm.%29_01.jpg/960px-Bloemen_van_Boerenwormkruid_%28Tanacetum_vulgare%29._17-08-2025._%28actm.%29_01.jpg"
   },
   {
     id: "bel_trifolium_medium",
@@ -11288,7 +11302,7 @@ window.speciesData = [
     description: { nl: "Eenjarige plant 10–40 cm. Kleine bloemen wit-crème met gele vlek en purperen strepen april–november. Stipels gevind. Nauw verwant aan driekleurig viooltje maar bloemen kleiner en witter. Typische akkerplant van kalkrijke bodems. Bevrucht zich ook cleistogaam (gesloten bloemen).", en: "Annual plant 10–40 cm. Small flowers white-cream with yellow spot and purple stripes April–November. Stipules pinnate. Closely related to wild pansy but flowers smaller and whiter. Typical arable plant of calcareous soils. Also self-fertilizes cleistogamously (closed flowers).", fr: "Plante annuelle 10–40 cm. Petites fleurs blanc-crème à tache jaune et stries violettes avril–novembre. Stipules pennées. Étroitement lié à la pensée sauvage mais fleurs plus petites et plus blanches. Plante adventice typique des sols calcaires. Se féconde aussi par cléistogamie (fleurs fermées)." },
     size: { nl: "10–40 cm hoog", en: "10–40 cm tall", fr: "10–40 cm de hauteur" },
     diet: { nl: "Fotosynthese; eenjarige akkerplant die zaad lang kiemkrachtig houdt.", en: "Photosynthesis; annual arable plant that keeps seeds viable for long.", fr: "Photosynthèse; annuelle adventice qui maintient longtemps la viabilité des graines." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Viola_arvensis_sl3.jpg/960px-Viola_arvensis_sl3.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Viola_arvensis_-_Tutermaa.jpg/960px-Viola_arvensis_-_Tutermaa.jpg"
   },
   {
     id: "bel_dactylorhiza_maculata",
@@ -11320,7 +11334,7 @@ window.speciesData = [
     description: { nl: "Kleine bolplant 10–25 cm. Hemelsblauw-paarse stervormige bloemen in tros van 2–8 bloemen februari–april. Twee brede basale bladeren. Bloeit vroeg samen met sneeuwklokjes en gevlekt longkruid. Kenmerksoort van rijke, kalkhoudende bossen in vroeg voorjaar. Beschermd in België.", en: "Small bulbous plant 10–25 cm. Sky blue-purple star-shaped flowers in raceme of 2–8 flowers February–April. Two broad basal leaves. Flowers early together with snowdrops and lungwort. Characteristic of rich, calcareous woodland in early spring. Protected in Belgium.", fr: "Petite plante bulbeuse 10–25 cm. Fleurs en étoile bleu ciel-violet en grappe de 2–8 fleurs février–avril. Deux larges feuilles basales. Fleurit tôt avec les perce-neige et pulmonaires. Espèce caractéristique des forêts riches et calcaires au début du printemps. Protégée en Belgique." },
     size: { nl: "10–25 cm hoog", en: "10–25 cm tall", fr: "10–25 cm de hauteur" },
     diet: { nl: "Fotosynthese vanuit bol; bloeit vroeg voor bladontwikkeling van bomen.", en: "Photosynthesis from bulb; flowers early before tree leaf development.", fr: "Photosynthèse à partir du bulbe; fleurit tôt avant le débourrement des arbres." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Scilla_bifolia_LC0212.jpg/960px-Scilla_bifolia_LC0212.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Scilla_bifolia_070406.jpg/960px-Scilla_bifolia_070406.jpg"
   },
   {
     id: "bel_acer_pseudoplatanus",
@@ -11400,7 +11414,7 @@ window.speciesData = [
     description: { nl: "Grote boom tot 40 m met gladde zilvergrijs schors. Bladeren elliptisch met 5–9 paar zijnerven. Vruchten driekantige beukennoten in stekelige kupula. Vormt dicht kronendak; weinig ondergroei. Bloeit april–mei. Kensoort van rijke Ardense bossen.", en: "Large tree to 40 m with smooth silver-grey bark. Leaves elliptic with 5–9 pairs of lateral veins. Fruits triangular beech mast in spiny cupule. Forms dense canopy with little undergrowth. Flowers April–May. Characteristic species of rich Ardennes forests.", fr: "Grand arbre jusqu'à 40 m à écorce lisse gris-argenté. Feuilles elliptiques avec 5–9 paires de nervures. Fruits faines triangulaires dans une cupule épineuse. Canopée dense, peu de strate herbacée. Floraison avril–mai. Espèce caractéristique des forêts riches des Ardennes." },
     size: { nl: "Boom tot 40 m hoog", en: "Tree to 40 m tall", fr: "Arbre jusqu'à 40 m de haut" },
     diet: { nl: "Fotosynthese; beukennoten ook eetbaar.", en: "Photosynthesis; beech mast also edible.", fr: "Photosynthèse; faînes aussi comestibles." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Fagus_sylvatica_forest.jpg/960px-Fagus_sylvatica_forest.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Fagus-sylvatica-cansiglio-forest-italy.jpg/960px-Fagus-sylvatica-cansiglio-forest-italy.jpg"
   },
   {
     id: "bel_fraxinus_excelsior",
@@ -11448,7 +11462,7 @@ window.speciesData = [
     description: { nl: "Grote boom tot 40 m. Vruchten (eikels) zittend, zonder steel. Bladeren met lobben, bladsteel langer dan bij zomereik. Bloeit april–mei. Vormt uitgestrekte eikenbossen op zure bodems in de Ardennen en Kempen.", en: "Large tree to 40 m. Fruits (acorns) sessile, without stalk. Lobed leaves with longer stalk than pedunculate oak. Flowers April–May. Forms extensive oak forests on acidic soils in the Ardennes and Campine.", fr: "Grand arbre jusqu'à 40 m. Fruits (glands) sessiles, sans pédoncule. Feuilles lobées avec pétiole plus long que le chêne pédonculé. Floraison avril–mai. Forme de vastes chênaies sur sols acides dans les Ardennes et la Campine." },
     size: { nl: "Boom tot 40 m hoog", en: "Tree to 40 m tall", fr: "Arbre jusqu'à 40 m de haut" },
     diet: { nl: "Fotosynthese.", en: "Photosynthesis.", fr: "Photosynthèse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Quercus_petraea_in_autumn.jpg/960px-Quercus_petraea_in_autumn.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Quercus_petraea_06.jpg/960px-Quercus_petraea_06.jpg"
   },
   {
     id: "bel_sorbus_aucuparia",
@@ -11528,7 +11542,7 @@ window.speciesData = [
     description: { nl: "Kleine vaste plant 5–15 cm met een rozet van spatelvormige bladeren. Witte bloemhoofdjes met geel schijfje, bloeit bijna het hele jaar. Kensoort voor kort, regelmatig gemaaid grasland. Populair voorjaarsbloempje. Vroege nectarplant voor bijen en vlinders.", en: "Small perennial 5–15 cm with a rosette of spoon-shaped leaves. White flower heads with yellow disc, flowering almost year-round. Characteristic of short, regularly mown grassland. Popular spring flower. Early nectar source for bees and butterflies.", fr: "Petite vivace 5–15 cm avec rosette de feuilles spatulées. Capitules blancs à disque jaune, floraison presque toute l'année. Espèce caractéristique des pelouses courtes et régulièrement tondues. Fleur printanière populaire. Source de nectar précoce pour abeilles et papillons." },
     size: { nl: "5–15 cm hoog", en: "5–15 cm tall", fr: "5–15 cm de hauteur" },
     diet: { nl: "Fotosynthese.", en: "Photosynthesis.", fr: "Photosynthèse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bellis_perennis_L.jpg/960px-Bellis_perennis_L.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bellis_perennis_sl1.jpg/960px-Bellis_perennis_sl1.jpg"
   },
   {
     id: "bel_centaurea_cyanus",
@@ -11563,22 +11577,6 @@ window.speciesData = [
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cichorium_intybus_003.JPG/960px-Cichorium_intybus_003.JPG"
   },
   {
-    id: "bel_crataegus_monogyna",
-    scientific: "Crataegus monogyna",
-    family: "Rosaceae",
-    category: "flora",
-    difficulty: "easy",
-    iucn: "LC",
-    plantGrade: "dicot",
-    name: { nl: "Eenstijlige meidoorn", en: "Hawthorn", fr: "Aubépine monogyne" },
-    habitat: { nl: "Heggen, houtwallen, bosranden en kalkgraslanden op allerlei bodems.", en: "Hedges, hedgerows, woodland edges and chalk grasslands on various soils.", fr: "Haies, lisières forestières et pelouses calcaires sur divers sols." },
-    rarity: { nl: "Zeer algemeen in heel België.", en: "Very common throughout Belgium.", fr: "Très commun dans toute la Belgique." },
-    description: { nl: "Stekelige struik of kleine boom tot 10 m. Diep gelobde bladeren. Witte geurende bloemtrossen (mei). Rode bessen (meidoorns) in herfst. Kenmerkend voor traditionele heggenlandschappen. Bloemen witte massa in mei ('mei-bloei'). Bessen eetbaar, medicinaal (hart). Waardevolle habitat voor vogels en insecten.", en: "Thorny shrub or small tree to 10 m. Deeply lobed leaves. White fragrant flower clusters (May). Red berries (haws) in autumn. Characteristic of traditional hedgerow landscapes. White mass of blossom in May. Berries edible, medicinal (heart). Valuable habitat for birds and insects.", fr: "Arbuste ou petit arbre épineux jusqu'à 10 m. Feuilles profondément lobées. Grappes de fleurs blanches parfumées (mai). Baies rouges (cenelles) en automne. Caractéristique des paysages bocagers traditionnels. Masse blanche de fleurs en mai. Baies comestibles, médicinales (cœur). Habitat précieux pour oiseaux et insectes." },
-    size: { nl: "Struik of boom tot 10 m hoog", en: "Shrub or tree to 10 m tall", fr: "Arbuste ou arbre jusqu'à 10 m de haut" },
-    diet: { nl: "Fotosynthese; bessen eetbaar.", en: "Photosynthesis; berries edible.", fr: "Photosynthèse; baies comestibles." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Crataegus_monogyna1.jpg/960px-Crataegus_monogyna1.jpg"
-  },
-  {
     id: "bel_daucus_carota",
     scientific: "Daucus carota",
     family: "Apiaceae",
@@ -11608,7 +11606,7 @@ window.speciesData = [
     description: { nl: "Tweejarig kruid tot 200 cm met stekelige stengel en eivormige bloemhoofdjes met lila bloemetjes. Bloeit juli–augustus. Vruchten worden bezocht door putters (distelvinken) in de winter. Gedroogde kaardebolhoofdjes gebruikt in textielindustrie (wollen stof opruwen). Indrukwekkende wintersilhouet.", en: "Biennial herb to 200 cm with spiny stem and egg-shaped flower heads with lilac florets. Flowers July–August. Fruits visited by goldfinches in winter. Dried teasel heads used in textile industry (raising nap of woollen cloth). Impressive winter silhouette.", fr: "Herbe bisannuelle jusqu'à 200 cm à tige épineuse et capitules ovoïdes aux fleurettes lilas. Floraison juillet–août. Fruits visités par les chardonnerets en hiver. Têtes séchées utilisées dans l'industrie textile (cardage des draps). Silhouette hivernale impressionnante." },
     size: { nl: "Tot 200 cm hoog", en: "To 200 cm tall", fr: "Jusqu'à 200 cm de hauteur" },
     diet: { nl: "Fotosynthese.", en: "Photosynthesis.", fr: "Photosynthèse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Dipsacus_fullonum.jpg/960px-Dipsacus_fullonum.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Dipsacus_fullonum1.jpg/960px-Dipsacus_fullonum1.jpg"
   },
   {
     id: "bel_echium_vulgare",
@@ -11672,7 +11670,7 @@ window.speciesData = [
     description: { nl: "Overblijvende kruipende plant met vierkante stengel en niervorming gelobde bladeren. Lila-blauwe lipbloemen in bloeiwijzen (maart–juni). Sterk aromatisch geurend. Kruipt over de grond via uitlopers. Vroeg nectar voor bijen. Vroeger gebruikt als brouwkruid voor bier.", en: "Perennial creeping plant with square stem and kidney-shaped lobed leaves. Lilac-blue labiate flowers in whorls (March–June). Strongly aromatic. Spreads over ground via stolons. Early nectar source for bees. Formerly used as gruit herb in beer brewing.", fr: "Vivace rampante à tige carrée et feuilles réniformes lobées. Fleurs labiées lilas-bleu en verticilles (mars–juin). Fortement aromatique. S'étend sur le sol via des stolons. Source de nectar précoce pour abeilles. Anciennement utilisé comme gruyt dans le brassage de bière." },
     size: { nl: "Stengels tot 50 cm lang", en: "Stems to 50 cm long", fr: "Tiges jusqu'à 50 cm de long" },
     diet: { nl: "Fotosynthese.", en: "Photosynthesis.", fr: "Photosynthèse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Glechoma_hederacea2.jpg/960px-Glechoma_hederacea2.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Glechoma_hederacea_-_Keila.jpg/960px-Glechoma_hederacea_-_Keila.jpg"
   },
   {
     id: "bel_hedera_helix",
@@ -11800,7 +11798,7 @@ window.speciesData = [
     description: { nl: "Vaste plant met rozet van langwerpige, sterk geribbelde bladeren. Bruin-grijze bloemaren op lange stelen (april–oktober). Bestuiving door wind. Populair kinderspelletje ('soldaatjes'). Geneeskrachtige plant; bladeren verzachten wonden en insectensteken. Sterk vertraptreden.", en: "Perennial with rosette of elongated, strongly ribbed leaves. Brown-grey flower spikes on long stems (April–October). Wind-pollinated. Popular children's game ('soldiers'). Medicinal plant; leaves soothe wounds and insect stings. Highly trampling-tolerant.", fr: "Vivace à rosette de feuilles allongées, fortement côtelées. Épis brun-gris sur longues tiges (avril–octobre). Pollinisation par le vent. Jeu populaire pour les enfants ('soldats'). Plante médicinale; feuilles apaisantes pour blessures et piqûres d'insectes. Très résistant au piétinement." },
     size: { nl: "Stelen 10–50 cm hoog", en: "Flower stems 10–50 cm tall", fr: "Tiges florales 10–50 cm de hauteur" },
     diet: { nl: "Fotosynthese.", en: "Photosynthesis.", fr: "Photosynthèse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Plantago_lanceolata_L.jpg/960px-Plantago_lanceolata_L.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Plantago_lanceolata_-_Kulna.jpg/960px-Plantago_lanceolata_-_Kulna.jpg"
   },
   {
     id: "bel_ranunculus_acris",
@@ -11848,7 +11846,7 @@ window.speciesData = [
     description: { nl: "Tweeslachtige vaste plant 30–90 cm met felroze-rode bloemen. Mannelijke en vrouwelijke planten apart. Bloeit april–november (soms al februari). Bloemdeksels van vrouwelijke plant kelkachtig opgezwollen. Hybridiseert met witte koekoeksbloem (S. latifolia). Populaire insectenplant.", en: "Dioecious perennial 30–90 cm with bright pink-red flowers. Male and female plants separate. Flowers April–November (sometimes February). Calyx of female plant bladder-like inflated. Hybridises with white campion (S. latifolia). Popular insect plant.", fr: "Vivace dioïque 30–90 cm aux fleurs rose-rouge vif. Plantes mâles et femelles séparées. Floraison avril–novembre (parfois février). Calice de la plante femelle vésiculeux gonflé. Hybride avec la silène blanche (S. latifolia). Plante populaire pour les insectes." },
     size: { nl: "30–90 cm hoog", en: "30–90 cm tall", fr: "30–90 cm de hauteur" },
     diet: { nl: "Fotosynthese.", en: "Photosynthesis.", fr: "Photosynthèse." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Silene_dioica_-_male.jpg/960px-Silene_dioica_-_male.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Dagkoekoeksbloem%2C_10-07-2025._%28d.j.b.%29_01.jpg/960px-Dagkoekoeksbloem%2C_10-07-2025._%28d.j.b.%29_01.jpg"
   },
   {
     id: "bel_taraxacum_officinale",
@@ -11864,7 +11862,7 @@ window.speciesData = [
     description: { nl: "Vaste plant met rozet van tandelobbige bladeren en gele bloemhoofdjes op holle stengels. Bloeit bijna het hele jaar. Vruchten met pluizig zaadkuifje ('paardebloemklokje'). Onmisbaar voor vroege bijen in het voorjaar. Bladeren eetbaar als salade; wortel als koffiesurrogaat. Naam van 'dent de lion' (leeuwtand).", en: "Perennial with rosette of toothed-lobed leaves and yellow flower heads on hollow stems. Flowers almost year-round. Fruits with fluffy seed plume ('dandelion clock'). Essential for early bees in spring. Leaves edible as salad; root as coffee substitute. Name from 'dent de lion' (lion's tooth).", fr: "Vivace à rosette de feuilles lobées-dentées et capitules jaunes sur tiges creuses. Floraison presque toute l'année. Fruits à aigrette duveteuse ('horloge du pissenlit'). Essentiel pour les abeilles précoces au printemps. Feuilles comestibles en salade; racine en succédané de café. Nom de 'dent de lion'." },
     size: { nl: "5–40 cm hoog", en: "5–40 cm tall", fr: "5–40 cm de hauteur" },
     diet: { nl: "Fotosynthese; bladeren en wortel eetbaar.", en: "Photosynthesis; leaves and root edible.", fr: "Photosynthèse; feuilles et racine comestibles." },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Taraxacum_officinale_-_Herba.jpg/960px-Taraxacum_officinale_-_Herba.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Taraxacum_officinale_side_makro.jpg/960px-Taraxacum_officinale_side_makro.jpg"
   },
   {
     id: "bel_trifolium_repens",

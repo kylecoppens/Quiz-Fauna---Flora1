@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=270">
 </head>
 <body>
     <div class="bg-shape bg-shape-1"></div>
@@ -24,22 +24,16 @@
                 <button class="btn-lang active" data-lang="nl">NL</button>
                 <button class="btn-lang" data-lang="en">EN</button>
                 <button class="btn-lang" data-lang="fr">FR</button>
-                <button id="btn-audio" class="icon-btn transition" style="margin-left:auto">
+                <button id="btn-dark" class="icon-btn transition" title="Dark/Light mode" aria-label="Toggle dark mode" style="margin-left:auto">
+                    <span id="dark-icon">🌙</span>
+                </button>
+                <button id="btn-audio" class="icon-btn transition" aria-label="Toggle background sound">
                     <span id="audio-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                             <line x1="23" y1="9" x2="17" y2="15"></line>
                             <line x1="17" y1="9" x2="23" y2="15"></line>
-                        </svg>
-                    </span>
-                </button>
-                <button id="btn-theme" class="icon-btn transition" title="Toggle theme">
-                    <span id="theme-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <!-- Moon icon -->
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </span>
                 </button>
@@ -189,6 +183,15 @@
                     </div>
                 </div>
             </div>
+            <!-- Quiz Length -->
+            <div class="form-group" style="padding: 0 1rem;">
+                <label id="label-quiz-length" style="color:var(--text-secondary);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:.5rem;">Aantal vragen</label>
+                <div id="length-selector" class="length-selector-row">
+                    <button class="length-btn" data-val="5">5</button>
+                    <button class="length-btn active" data-val="10">10</button>
+                    <button class="length-btn" data-val="20">20</button>
+                </div>
+            </div>
             <div id="config-species-count" class="config-species-count"></div>
             <div class="action-buttons bottom">
                 <button id="btn-start-quiz" class="btn btn-primary w-100">Start Quiz</button>
@@ -199,7 +202,7 @@
         <section id="screen-quiz" class="screen hidden">
             <header class="quiz-header">
                 <div class="progress-container">
-                    <div class="progress-text">Question <span id="current-q-num">1</span> of 10</div>
+                    <div class="progress-text">Vraag <span id="current-q-num">1</span> van <span id="progress-total">10</span></div>
                     <div class="xp-bar-wrapper">
                         <div class="progress-bar">
                             <div id="progress-fill" class="progress-fill" style="width:10%"></div>
@@ -253,17 +256,22 @@
 
         <!-- ══ 4. RESULTS ══════════════════════════════════════════════════ -->
         <section id="screen-results" class="screen hidden">
-            <header><h2>Quiz Complete!</h2></header>
+            <header><h2 id="results-title">Quiz Voltooid!</h2></header>
             <div class="results-card glass-panel-inner">
                 <div class="score-circle">
-                    <span id="final-score">0</span><span class="out-of">/10</span>
+                    <span id="final-score">0</span><span class="out-of" id="out-of-total">/10</span>
                 </div>
-                <h3 id="score-message">Great job!</h3>
-                <p id="score-details">You're becoming a true nature expert.</p>
+                <h3 id="score-message">Goed gedaan!</h3>
+                <p id="score-details">Je bent een echte kenner van de natuur.</p>
+            </div>
+            <!-- Fout-overzicht -->
+            <div id="wrong-answers-section" class="wrong-answers-section hidden">
+                <h3 class="wrong-answers-header">❌ <span id="wrong-answers-label">Fout beantwoord</span></h3>
+                <div id="wrong-answers-grid" class="wrong-answers-grid"></div>
             </div>
             <div class="action-buttons">
-                <button id="btn-play-again" class="btn btn-primary">Play Again</button>
-                <button id="btn-results-home" class="btn btn-outline">Main Menu</button>
+                <button id="btn-play-again" class="btn btn-primary">Opnieuw</button>
+                <button id="btn-results-home" class="btn btn-outline">Menu</button>
             </div>
         </section>
 
@@ -510,9 +518,9 @@
         </div>
     </div>
 
-    <script src="js/data/species_data.js?v=263"></script>
+    <script src="js/data/species_data.js?v=270"></script>
     <script src="js/data/biogids_data.js"></script>
-    <script src="js/app.js?v=263"></script>
+    <script src="js/app.js?v=270"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
