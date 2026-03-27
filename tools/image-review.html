@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto Review — Fauna & Flora Quiz</title>
+  <script src="../js/data/species_data.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1a0f;
+      --surface: #1a2d1a;
+      --surface2: #243824;
+      --border: #2e4a2e;
+      --green: #4caf50;
+      --green-dim: #2e7d32;
+      --red: #ef5350;
+      --red-dim: #b71c1c;
+      --yellow: #ffca28;
+      --cyan: #00bcd4;
+      --cyan-dim: #006064;
+      --gray: #607d8b;
+      --text: #e8f5e9;
+      --text-dim: #81c784;
+      --accent: #69f0ae;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+
+    #progress-bar-wrap {
+      flex: 1; min-width: 160px; height: 8px;
+      background: var(--border); border-radius: 4px; overflow: hidden;
+    }
+    #progress-bar { height: 100%; background: var(--green); border-radius: 4px; transition: width .3s; width: 0%; }
+    #progress-text { font-size: .8rem; color: var(--text-dim); white-space: nowrap; }
+
+    #category-filter { display: flex; gap: 6px; flex-wrap: wrap; }
+    .cat-btn {
+      font-size: .7rem; padding: 3px 8px; border-radius: 12px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text-dim); cursor: pointer; transition: all .15s;
+    }
+    .cat-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .cat-btn.active { background: var(--green-dim); border-color: var(--green); color: #fff; }
+
+    /* ── Stats bar ── */
+    #stats-bar {
+      background: var(--surface2); border-bottom: 1px solid var(--border);
+      padding: 6px 20px; display: flex; gap: 20px; font-size: .75rem;
+    }
+    .stat { display: flex; align-items: center; gap: 5px; }
+    .stat-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot-green { background: var(--green); }
+    .dot-red { background: var(--red); }
+    .dot-yellow { background: var(--yellow); }
+    .dot-cyan { background: var(--cyan); }
+    .dot-gray { background: var(--gray); }
+
+    /* ── Main layout ── */
+    main {
+      flex: 1; display: grid; grid-template-columns: 1fr 360px; gap: 0;
+      height: calc(100vh - 100px);
+    }
+
+    /* ── Image panel ── */
+    #image-panel {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 20px; gap: 16px;
+      border-right: 1px solid var(--border); position: relative;
+    }
+
+    #main-image-wrap {
+      position: relative; width: 100%; max-width: 560px;
+      aspect-ratio: 4/3; background: var(--surface);
+      border-radius: 12px; overflow: hidden; border: 2px solid var(--border);
+    }
+    #main-image { width: 100%; height: 100%; object-fit: contain; transition: opacity .2s; }
+
+    #img-status-badge {
+      position: absolute; top: 10px; right: 10px;
+      font-size: .7rem; padding: 3px 10px; border-radius: 12px; font-weight: 600; display: none;
+    }
+    .badge-ok    { background: var(--green); color: #fff; display: block !important; }
+    .badge-broken { background: var(--red);  color: #fff; display: block !important; }
+    .badge-loading { background: var(--gray); color: #fff; display: block !important; }
+
+    #img-source-label {
+      position: absolute; bottom: 8px; left: 10px;
+      font-size: .65rem; color: rgba(255,255,255,.5);
+      max-width: 90%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+
+    /* ── Thumbnail strip ── */
+    #image-selector {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      justify-content: center; max-width: 560px;
+    }
+    .img-thumb-btn {
+      position: relative; width: 72px; height: 54px; border-radius: 6px;
+      overflow: hidden; border: 2px solid var(--border); cursor: pointer;
+      transition: border-color .15s; background: var(--surface);
+    }
+    .img-thumb-btn img { width: 100%; height: 100%; object-fit: cover; }
+    .img-thumb-btn.active      { border-color: var(--accent); }
+    .img-thumb-btn.broken-mark { border-color: var(--red); }
+    .img-thumb-btn.ok-mark     { border-color: var(--green); }
+    .img-thumb-btn.new-mark    { border-color: var(--cyan); }
+    .img-thumb-btn.removed-mark {
+      border-color: var(--red); opacity: .4; pointer-events: none;
+    }
+    .img-thumb-btn[draggable="true"] { cursor: grab; }
+    .img-thumb-btn[draggable="true"]:active { cursor: grabbing; }
+    .img-thumb-btn.dragging { opacity: .3; border-style: dashed; }
+    .img-thumb-btn.drag-over { border-color: var(--accent) !important; transform: scale(1.08); }
+    .thumb-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(0,0,0,.6); font-size: .5rem; text-align: center; padding: 1px; color: #fff;
+    }
+    .thumb-primary-star {
+      position: absolute; top: 2px; left: 2px;
+      background: var(--yellow); color: #000;
+      font-size: .5rem; font-weight: 700;
+      padding: 1px 3px; border-radius: 2px;
+      pointer-events: none; z-index: 2; line-height: 1.4;
+    }
+    .thumb-remove {
+      position: absolute; top: 2px; right: 2px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--red); color: #fff; border: none;
+      font-size: .6rem; font-weight: 700; cursor: pointer;
+      display: none; align-items: center; justify-content: center;
+      line-height: 1; z-index: 2;
+    }
+    .img-thumb-btn:hover .thumb-remove { display: flex; }
+
+    /* ── Action buttons ── */
+    #action-bar { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .action-btn {
+      padding: 9px 18px; border-radius: 8px; border: 2px solid transparent;
+      font-size: .85rem; font-weight: 600; cursor: pointer;
+      transition: all .15s; display: flex; align-items: center; gap: 5px;
+      position: relative;
+    }
+    .btn-approve   { background: var(--green-dim); border-color: var(--green); color: #fff; }
+    .btn-approve:hover { background: var(--green); }
+    .btn-skip      { background: transparent; border-color: var(--gray); color: var(--gray); }
+    .btn-skip:hover { border-color: #fff; color: #fff; }
+    .btn-reject    { background: var(--red-dim); border-color: var(--red); color: #fff; }
+    .btn-reject:hover { background: var(--red); }
+    .btn-add-photos { background: transparent; border-color: var(--cyan); color: var(--cyan); }
+    .btn-add-photos:hover { background: rgba(0,188,212,.12); }
+    .btn-prev      { background: transparent; border-color: var(--border); color: var(--text-dim); font-size: .8rem; }
+
+    .add-badge {
+      position: absolute; top: -7px; right: -7px;
+      background: var(--green); color: #fff;
+      font-size: .6rem; font-weight: 700;
+      min-width: 16px; height: 16px; border-radius: 8px;
+      display: none; align-items: center; justify-content: center; padding: 0 3px;
+    }
+    .add-badge.visible { display: flex; }
+
+    /* ── Info panel ── */
+    #info-panel {
+      display: flex; flex-direction: column; overflow-y: auto; padding: 20px; gap: 12px;
+    }
+    .species-name-nl { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+    .species-name-sci { font-size: .85rem; color: var(--text-dim); font-style: italic; margin-top: 2px; }
+    .species-name-en  { font-size: .85rem; color: var(--text-dim); }
+    .info-chip-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .info-chip {
+      font-size: .7rem; padding: 2px 8px; border-radius: 10px;
+      background: var(--surface2); border: 1px solid var(--border); color: var(--text-dim);
+    }
+    .chip-cat { border-color: var(--accent); color: var(--accent); }
+    .info-row { font-size: .78rem; color: var(--text-dim); line-height: 1.5; }
+    .info-label { color: var(--text); font-weight: 600; }
+
+    /* ── Shared panel styles ── */
+    .side-panel {
+      display: none; flex-direction: column; gap: 10px;
+    }
+    .side-panel.open { display: flex; }
+
+    .panel-header {
+      font-size: .8rem; font-weight: 600;
+      border-top: 1px solid var(--border); padding-top: 10px;
+    }
+    .panel-header.yellow { color: var(--yellow); }
+    .panel-header.cyan   { color: var(--cyan); }
+
+    .source-filter { display: flex; gap: 6px; }
+    .src-btn {
+      font-size: .7rem; padding: 3px 8px; border-radius: 10px;
+      border: 1px solid var(--border); background: transparent; color: var(--text-dim); cursor: pointer;
+    }
+    .src-btn.active-yellow { border-color: var(--yellow); color: var(--yellow); }
+    .src-btn.active-cyan   { border-color: var(--cyan);   color: var(--cyan); }
+
+    .img-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+    }
+
+    /* alt = single-select, add = multi-select */
+    .alt-img-card, .add-img-card {
+      position: relative; aspect-ratio: 1; border-radius: 8px; overflow: hidden;
+      border: 2px solid var(--border); cursor: pointer; background: var(--surface);
+      transition: border-color .15s;
+    }
+    .alt-img-card:hover { border-color: var(--accent); }
+    .alt-img-card.selected { border-color: var(--green); }
+    .add-img-card:hover { border-color: var(--cyan); }
+    .add-img-card.checked  { border-color: var(--green); }
+    .alt-img-card img, .add-img-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    .card-num {
+      position: absolute; top: 4px; left: 4px;
+      background: rgba(0,0,0,.7); color: #fff;
+      font-size: .65rem; font-weight: 700; padding: 1px 5px; border-radius: 4px;
+    }
+    .card-src {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(0,0,0,.7); font-size: .55rem; text-align: center;
+      padding: 2px; color: rgba(255,255,255,.7);
+    }
+    .card-check {
+      position: absolute; top: 4px; right: 4px;
+      width: 20px; height: 20px; background: var(--green); border-radius: 50%;
+      display: none; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 700; color: #fff;
+    }
+    .add-img-card.checked .card-check { display: flex; }
+
+    .panel-loading {
+      text-align: center; padding: 20px; color: var(--text-dim); font-size: .8rem;
+      display: none;
+    }
+
+    .custom-url-row { display: flex; gap: 6px; }
+    .custom-url-input {
+      flex: 1; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 6px 10px; color: var(--text); font-size: .75rem;
+    }
+    .custom-url-input:focus { outline: none; }
+    .custom-url-btn {
+      padding: 6px 12px; border-radius: 6px; background: transparent;
+      cursor: pointer; font-size: .75rem;
+    }
+
+    .confirm-btn {
+      width: 100%; padding: 8px; border-radius: 8px;
+      font-weight: 600; cursor: pointer; font-size: .85rem;
+      display: none;
+    }
+    .confirm-btn.visible { display: block; }
+    .confirm-btn.yellow-btn {
+      background: var(--green-dim); border: 2px solid var(--green); color: #fff;
+    }
+    .confirm-btn.cyan-btn {
+      background: var(--cyan-dim); border: 2px solid var(--cyan); color: #fff;
+    }
+    .confirm-btn.cyan-btn:disabled { opacity: .4; cursor: not-allowed; }
+
+    /* existing added images strip */
+    #add-existing-section { display: none; flex-direction: column; gap: 6px; }
+    #add-existing-section.visible { display: flex; }
+    .existing-label { font-size: .72rem; color: var(--text-dim); font-weight: 600; }
+    #add-existing-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+    .existing-chip {
+      position: relative; width: 52px; height: 40px;
+      border-radius: 4px; overflow: hidden; border: 1px solid var(--green);
+    }
+    .existing-chip img { width: 100%; height: 100%; object-fit: cover; }
+    .existing-chip .remove-x {
+      position: absolute; top: 0; right: 0;
+      background: var(--red); color: #fff; font-size: .6rem; font-weight: 700;
+      width: 14px; height: 14px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border-radius: 0 0 0 4px;
+    }
+
+    #add-count { font-size: .75rem; color: var(--text-dim); }
+
+    /* ── Export bar ── */
+    #export-bar {
+      border-top: 1px solid var(--border); padding: 10px 20px;
+      display: flex; gap: 10px; align-items: center; background: var(--surface);
+    }
+    #export-bar span { font-size: .75rem; color: var(--text-dim); flex: 1; }
+    .export-btn {
+      padding: 7px 16px; border-radius: 8px; border: 1px solid var(--accent);
+      background: transparent; color: var(--accent); font-size: .8rem; cursor: pointer; font-weight: 600;
+    }
+    .export-btn:hover { background: var(--accent); color: #000; }
+
+    /* ── Key hint ── */
+    #key-hint {
+      position: fixed; bottom: 60px; right: 16px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 12px; font-size: .65rem; color: var(--text-dim); line-height: 1.8;
+    }
+    kbd {
+      display: inline-block; padding: 1px 5px; background: var(--border);
+      border-radius: 3px; color: var(--text); font-size: .65rem;
+    }
+
+    /* ── Done screen ── */
+    #done-screen {
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; padding: 40px; text-align: center; grid-column: 1 / -1;
+    }
+    #done-screen h2 { font-size: 1.8rem; color: var(--accent); }
+    #done-screen p  { color: var(--text-dim); font-size: .9rem; }
+
+    .spinner {
+      display: inline-block; width: 16px; height: 16px;
+      border: 2px solid var(--border); border-top-color: var(--accent);
+      border-radius: 50%; animation: spin .6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📷 Foto Review</h1>
+  <div id="progress-bar-wrap"><div id="progress-bar"></div></div>
+  <span id="progress-text">0 / 0</span>
+  <div id="category-filter">
+    <button class="cat-btn active" data-cat="all">Alle</button>
+    <button class="cat-btn" data-cat="birds">Vogels</button>
+    <button class="cat-btn" data-cat="fauna">Fauna</button>
+    <button class="cat-btn" data-cat="insects">Insecten</button>
+    <button class="cat-btn" data-cat="flora">Flora</button>
+    <button class="cat-btn" data-cat="trees">Bomen</button>
+    <button class="cat-btn" data-cat="fungi">Schimmels</button>
+    <button class="cat-btn" data-cat="agriculture">Landbouw</button>
+  </div>
+</header>
+
+<div id="stats-bar">
+  <div class="stat"><div class="stat-dot dot-green"></div><span id="stat-approved">0 goedgekeurd</span></div>
+  <div class="stat"><div class="stat-dot dot-red"></div><span id="stat-replaced">0 vervangen</span></div>
+  <div class="stat"><div class="stat-dot dot-cyan"></div><span id="stat-added">0 foto's toegevoegd</span></div>
+  <div class="stat"><div class="stat-dot dot-yellow"></div><span id="stat-skipped">0 overgeslagen</span></div>
+  <div class="stat"><div class="stat-dot dot-gray"></div><span id="stat-remaining">0 resterend</span></div>
+</div>
+
+<main>
+  <!-- Image panel -->
+  <div id="image-panel">
+    <div id="main-image-wrap">
+      <img id="main-image" src="" alt="" referrerpolicy="no-referrer">
+      <div id="img-status-badge">laden...</div>
+      <div id="img-source-label"></div>
+    </div>
+
+    <div id="image-selector"></div>
+
+    <div id="action-bar">
+      <button class="action-btn btn-prev" id="btn-prev">← Vorige</button>
+      <button class="action-btn btn-approve" id="btn-approve" title="Enter / →">✓ Goed</button>
+      <button class="action-btn btn-skip" id="btn-skip" title="S">↷ Sla over</button>
+      <button class="action-btn btn-reject" id="btn-reject" title="X">✗ Fout</button>
+      <button class="action-btn btn-add-photos" id="btn-add-photos" title="A">
+        ➕ Foto's toevoegen
+        <span class="add-badge" id="add-badge">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Info + panels -->
+  <div id="info-panel">
+    <div>
+      <div class="species-name-nl" id="name-nl">—</div>
+      <div class="species-name-sci" id="name-sci">—</div>
+      <div class="species-name-en" id="name-en">—</div>
+    </div>
+
+    <div class="info-chip-row" id="chips"></div>
+    <div class="info-row"><span class="info-label">Habitat: </span><span id="info-habitat">—</span></div>
+    <div class="info-row"><span class="info-label">Beschrijving: </span><span id="info-desc">—</span></div>
+
+    <!-- ── Replace panel (single-select) ── -->
+    <div id="replace-panel" class="side-panel">
+      <div class="panel-header yellow">🔍 Kies een vervangende foto</div>
+
+      <div class="source-filter" id="replace-src-filter">
+        <button class="src-btn active-yellow" data-src="all">Alle</button>
+        <button class="src-btn" data-src="Wikipedia">Wikipedia</button>
+        <button class="src-btn" data-src="Commons">Commons</button>
+        <button class="src-btn" data-src="iNaturalist">iNaturalist</button>
+      </div>
+
+      <div class="panel-loading" id="replace-loading"><div class="spinner"></div> Foto's zoeken...</div>
+      <div class="img-grid" id="replace-grid"></div>
+
+      <div class="custom-url-row">
+        <input class="custom-url-input" id="replace-custom-url" type="url" placeholder="Of plak hier een eigen URL...">
+        <button class="custom-url-btn" id="replace-use-custom"
+          style="border:1px solid var(--accent);color:var(--accent)">Gebruik</button>
+      </div>
+      <button class="confirm-btn yellow-btn" id="replace-confirm-btn">✓ Bevestig vervanging</button>
+    </div>
+
+    <!-- ── Add photos panel (multi-select) ── -->
+    <div id="add-panel" class="side-panel">
+      <div class="panel-header cyan">➕ Extra foto's toevoegen</div>
+      <div id="add-count">0 geselecteerd</div>
+
+      <!-- existing added images -->
+      <div id="add-existing-section">
+        <div class="existing-label">Al toegevoegd voor deze soort:</div>
+        <div id="add-existing-strip"></div>
+      </div>
+
+      <div class="source-filter" id="add-src-filter">
+        <button class="src-btn active-cyan" data-src="all">Alle</button>
+        <button class="src-btn" data-src="Wikipedia">Wikipedia</button>
+        <button class="src-btn" data-src="Commons">Commons</button>
+        <button class="src-btn" data-src="iNaturalist">iNaturalist</button>
+      </div>
+
+      <div class="panel-loading" id="add-loading"><div class="spinner"></div> Foto's zoeken...</div>
+      <div class="img-grid" id="add-grid"></div>
+
+      <div class="custom-url-row">
+        <input class="custom-url-input" id="add-custom-url" type="url" placeholder="Of plak hier een eigen URL...">
+        <button class="custom-url-btn" id="add-use-custom"
+          style="border:1px solid var(--cyan);color:var(--cyan)">Voeg toe</button>
+      </div>
+      <button class="confirm-btn cyan-btn visible" id="add-confirm-btn">➕ Voeg 0 foto's toe</button>
+    </div>
+  </div>
+
+  <!-- Done screen -->
+  <div id="done-screen">
+    <h2>✓ Review voltooid!</h2>
+    <p id="done-summary"></p>
+    <button class="export-btn" id="btn-export-done" style="font-size:1rem;padding:12px 28px;">
+      ⬇ Download resultaten (JSON)
+    </button>
+    <button class="export-btn" id="btn-restart" style="border-color:var(--gray);color:var(--gray);">
+      ↺ Opnieuw beginnen
+    </button>
+  </div>
+</main>
+
+<div id="export-bar">
+  <span>Review sessie wordt opgeslagen in localStorage.</span>
+  <button class="export-btn" id="btn-export">⬇ Exporteer JSON</button>
+  <button class="export-btn" id="btn-reset" style="border-color:var(--red);color:var(--red);">✕ Reset sessie</button>
+</div>
+
+<div id="key-hint">
+  <kbd>→</kbd> / <kbd>Enter</kbd> Goed<br>
+  <kbd>S</kbd> Sla over<br>
+  <kbd>X</kbd> Fout (vervang)<br>
+  <kbd>A</kbd> Foto's toevoegen<br>
+  <kbd>←</kbd> Vorige<br>
+  <kbd>1</kbd>–<kbd>9</kbd> Selecteer alternatief
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+const STORAGE_KEY = 'imageReview_v3';
+
+let allSpecies = [];
+let fullSpecies = [];
+let currentIndex = 0;
+let selectedCategory = 'all';
+// decisions[id] = { status, oldImage, newImage, imageIndex, addedImages: [] }
+let decisions = {};
+
+let replaceAltResults = [];
+let selectedReplaceUrl = null;
+
+let addAltResults = [];
+let addSelection = new Set(); // selected URLs for adding
+
+// ── Persistence ────────────────────────────────────────────────────────────
+function loadState() {
+  try {
+    const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    decisions = s.decisions || {};
+    selectedCategory = s.category || 'all';
+  } catch(e) { decisions = {}; }
+}
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ decisions, category: selectedCategory }));
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+function init() {
+  if (!window.speciesData) {
+    document.body.innerHTML = '<div style="padding:40px;color:#ef5350;font-size:1.2rem">❌ species_data.js niet geladen. Gebruik een lokale server (python3 -m http.server 8000).</div>';
+    return;
+  }
+  fullSpecies = window.speciesData;
+  loadState();
+  applyFilter(selectedCategory);
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.cat === selectedCategory);
+  });
+}
+
+// ── Filter ─────────────────────────────────────────────────────────────────
+function applyFilter(cat) {
+  selectedCategory = cat;
+  allSpecies = cat === 'all' ? fullSpecies : fullSpecies.filter(s => s.category === cat);
+  currentIndex = allSpecies.findIndex(s => !decisions[s.id]);
+  if (currentIndex === -1) currentIndex = 0;
+  saveState();
+  renderCurrent();
+  updateStats();
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function renderCurrent() {
+  const species = allSpecies[currentIndex];
+  const reviewed = allSpecies.filter(s => decisions[s.id]).length;
+  if (reviewed === allSpecies.length && allSpecies.length > 0) { showDoneScreen(); return; }
+  if (!species) return;
+
+  closeReplace();
+  closeAdd();
+
+  document.getElementById('name-nl').textContent = species.name?.nl || '—';
+  document.getElementById('name-sci').textContent = species.scientific;
+  document.getElementById('name-en').textContent = species.name?.en || '';
+
+  document.getElementById('chips').innerHTML = `
+    <span class="info-chip chip-cat">${species.category}</span>
+    <span class="info-chip">${species.difficulty || '—'}</span>
+    <span class="info-chip">${species.iucn || '—'}</span>
+    <span class="info-chip">${species.family || '—'}</span>`;
+
+  document.getElementById('info-habitat').textContent = species.habitat?.nl || '—';
+  document.getElementById('info-desc').textContent = (species.description?.nl || '—').substring(0, 200) + '...';
+
+  const imageList = buildImageList(species);
+  renderThumbnails(species, imageList);
+  showImage(imageList[0], species);
+  updateAddBadge(species);
+  updateProgress();
+}
+
+function buildImageList(species) {
+  const dec = decisions[species.id];
+  const removed = dec?.removedImages || [];
+  const added = (dec?.addedImages || []).filter(u => !removed.includes(u));
+  const primary = dec?.newImage || species.image;
+  const extras = (Array.isArray(species.images) ? [...species.images] : [])
+    .filter(u => !removed.includes(u) && u !== primary);
+
+  // Default order: primary, then added (not in extras), then extras
+  const defaultOrder = [
+    primary,
+    ...added.filter(u => u !== primary && !extras.includes(u)),
+    ...extras,
+  ];
+
+  // Apply saved custom order if present
+  let ordered;
+  if (dec?.orderedImages?.length) {
+    ordered = dec.orderedImages.filter(u => !removed.includes(u));
+    // Append any URLs not yet in saved order (e.g. newly added)
+    for (const u of defaultOrder) {
+      if (!ordered.includes(u)) ordered.push(u);
+    }
+  } else {
+    ordered = defaultOrder;
+  }
+
+  return ordered.map((url, i) => ({
+    url,
+    label: i === 0 ? 'Primair' : (added.includes(url) ? `Nieuw ${i}` : `Extra ${i}`),
+    index: i,
+    isNew: added.includes(url) && i > 0,
+    canRemove: i > 0,
+    isPrimary: i === 0,
+  }));
+}
+
+function renderThumbnails(species, imageList) {
+  const container = document.getElementById('image-selector');
+  container.innerHTML = '';
+
+  imageList.forEach((item, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'img-thumb-btn' + (i === 0 ? ' active' : '');
+    btn.draggable = true;
+    if (item.isNew) btn.classList.add('new-mark');
+
+    const img = document.createElement('img');
+    img.src = item.url;
+    img.referrerPolicy = 'no-referrer';
+    img.onerror = () => { img.style.opacity = '0.2'; btn.classList.add('broken-mark'); };
+
+    const lbl = document.createElement('div');
+    lbl.className = 'thumb-label';
+    lbl.textContent = item.label;
+
+    // ★ Primary star on first thumbnail
+    if (i === 0) {
+      const star = document.createElement('div');
+      star.className = 'thumb-primary-star';
+      star.textContent = '★';
+      btn.appendChild(star);
+    }
+
+    btn.appendChild(img);
+    btn.appendChild(lbl);
+
+    if (item.canRemove) {
+      const rmBtn = document.createElement('button');
+      rmBtn.className = 'thumb-remove';
+      rmBtn.textContent = '✕';
+      rmBtn.title = 'Verwijder deze foto';
+      rmBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        removeExtraImage(species, item.url);
+      });
+      btn.appendChild(rmBtn);
+    }
+
+    // ── Drag & drop ──
+    btn.addEventListener('dragstart', e => {
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', String(i));
+      setTimeout(() => btn.classList.add('dragging'), 0);
+    });
+    btn.addEventListener('dragend', () => btn.classList.remove('dragging'));
+    btn.addEventListener('dragover', e => { e.preventDefault(); btn.classList.add('drag-over'); });
+    btn.addEventListener('dragleave', () => btn.classList.remove('drag-over'));
+    btn.addEventListener('drop', e => {
+      e.preventDefault();
+      btn.classList.remove('drag-over');
+      const fromIndex = parseInt(e.dataTransfer.getData('text/plain'));
+      if (!isNaN(fromIndex) && fromIndex !== i) {
+        reorderImages(species, imageList, fromIndex, i);
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.img-thumb-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      showImage(item, species);
+      closeReplace();
+      closeAdd();
+    });
+    container.appendChild(btn);
+  });
+}
+
+function showImage(item, species) {
+  const img = document.getElementById('main-image');
+  const badge = document.getElementById('img-status-badge');
+
+  badge.className = 'badge-loading';
+  badge.textContent = 'laden...';
+  badge.style.display = 'block';
+
+  img.onload  = () => { badge.className = 'badge-ok';     badge.textContent = '✓ OK'; };
+  img.onerror = () => { badge.className = 'badge-broken'; badge.textContent = '✗ Kapot'; };
+
+  img.src = item.url;
+  document.getElementById('img-source-label').textContent = item.url;
+}
+
+// ── Decision actions ───────────────────────────────────────────────────────
+function approve() {
+  const species = allSpecies[currentIndex];
+  if (!species) return;
+  const existing = decisions[species.id] || {};
+  decisions[species.id] = {
+    ...existing,
+    status: 'approved',
+    oldImage: species.image,
+    newImage: existing.newImage || species.image,
+  };
+  saveState();
+  goNext();
+}
+
+function skip() {
+  const species = allSpecies[currentIndex];
+  if (!species) return;
+  const existing = decisions[species.id] || {};
+  decisions[species.id] = { ...existing, status: 'skipped', oldImage: species.image };
+  saveState();
+  goNext();
+}
+
+function goNext() {
+  let next = currentIndex + 1;
+  while (next < allSpecies.length && decisions[allSpecies[next].id]) next++;
+  if (next >= allSpecies.length) {
+    next = allSpecies.findIndex(s => !decisions[s.id]);
+    if (next === -1) { showDoneScreen(); return; }
+  }
+  currentIndex = next;
+  updateStats();
+  renderCurrent();
+}
+
+function goPrev() {
+  if (currentIndex > 0) { currentIndex--; renderCurrent(); }
+}
+
+function removeExtraImage(species, url) {
+  const existing = decisions[species.id] || {};
+  const prev = existing.removedImages || [];
+  if (prev.includes(url)) return;
+  const newRemoved = [...prev, url];
+  // Also drop from orderedImages if present
+  const newOrdered = (existing.orderedImages || []).filter(u => u !== url);
+  decisions[species.id] = { ...existing, removedImages: newRemoved, orderedImages: newOrdered };
+  saveState();
+  renderCurrent();
+}
+
+function reorderImages(species, imageList, fromIndex, toIndex) {
+  const urls = imageList.map(item => item.url);
+  const [moved] = urls.splice(fromIndex, 1);
+  urls.splice(toIndex, 0, moved);
+  const existing = decisions[species.id] || {};
+  // If new primary differs from current stored primary, update newImage too
+  decisions[species.id] = {
+    ...existing,
+    orderedImages: urls,
+    oldImage: existing.oldImage || species.image,
+    newImage: urls[0],
+  };
+  saveState();
+  renderCurrent();
+}
+
+// ── Replace panel ──────────────────────────────────────────────────────────
+function openReplace() {
+  closeAdd();
+  document.getElementById('replace-panel').classList.add('open');
+  selectedReplaceUrl = null;
+  document.getElementById('replace-confirm-btn').classList.remove('visible');
+  document.getElementById('replace-custom-url').value = '';
+  fetchForPanel('replace');
+}
+
+function closeReplace() {
+  document.getElementById('replace-panel').classList.remove('open');
+  selectedReplaceUrl = null;
+  replaceAltResults = [];
+}
+
+function confirmReplace(url) {
+  const species = allSpecies[currentIndex];
+  if (!species || !url) return;
+  const existing = decisions[species.id] || {};
+  decisions[species.id] = {
+    ...existing,
+    status: 'replaced',
+    oldImage: species.image,
+    newImage: url,
+    imageIndex: 0,
+  };
+  saveState();
+  closeReplace();
+  updateStats();
+  renderCurrent();
+}
+
+// ── Add photos panel ───────────────────────────────────────────────────────
+function openAdd() {
+  closeReplace();
+  addSelection.clear();
+  document.getElementById('add-panel').classList.add('open');
+  document.getElementById('add-custom-url').value = '';
+  updateAddConfirmBtn();
+  renderExistingAdded();
+  fetchForPanel('add');
+}
+
+function closeAdd() {
+  document.getElementById('add-panel').classList.remove('open');
+  addSelection.clear();
+  addAltResults = [];
+}
+
+function confirmAdd() {
+  const species = allSpecies[currentIndex];
+  if (!species || addSelection.size === 0) return;
+
+  const existing = decisions[species.id] || {};
+  const prev = existing.addedImages || [];
+  const merged = [...new Set([...prev, ...addSelection])];
+
+  decisions[species.id] = { ...existing, addedImages: merged };
+  if (!existing.status) {
+    // Don't force a status — let user still approve/reject separately
+  }
+  saveState();
+  closeAdd();
+  updateStats();
+  renderCurrent();
+}
+
+function removeAddedImage(url) {
+  const species = allSpecies[currentIndex];
+  if (!species) return;
+  const existing = decisions[species.id] || {};
+  const updated = (existing.addedImages || []).filter(u => u !== url);
+  decisions[species.id] = { ...existing, addedImages: updated };
+  saveState();
+  renderExistingAdded();
+  renderCurrent();
+}
+
+function renderExistingAdded() {
+  const species = allSpecies[currentIndex];
+  if (!species) return;
+  const added = decisions[species.id]?.addedImages || [];
+  const section = document.getElementById('add-existing-section');
+  const strip = document.getElementById('add-existing-strip');
+  strip.innerHTML = '';
+
+  if (added.length === 0) { section.classList.remove('visible'); return; }
+  section.classList.add('visible');
+
+  added.forEach(url => {
+    const chip = document.createElement('div');
+    chip.className = 'existing-chip';
+    const img = document.createElement('img');
+    img.src = url; img.referrerPolicy = 'no-referrer';
+    img.onerror = () => { img.style.opacity = '0.3'; };
+    const x = document.createElement('div');
+    x.className = 'remove-x';
+    x.textContent = '✕';
+    x.addEventListener('click', () => removeAddedImage(url));
+    chip.appendChild(img); chip.appendChild(x);
+    strip.appendChild(chip);
+  });
+}
+
+function updateAddConfirmBtn() {
+  const btn = document.getElementById('add-confirm-btn');
+  btn.textContent = `➕ Voeg ${addSelection.size} foto${addSelection.size !== 1 ? "'s" : ''} toe`;
+  btn.disabled = addSelection.size === 0;
+  document.getElementById('add-count').textContent = `${addSelection.size} geselecteerd`;
+}
+
+function updateAddBadge(species) {
+  const added = decisions[species?.id]?.addedImages || [];
+  const badge = document.getElementById('add-badge');
+  badge.textContent = added.length;
+  badge.classList.toggle('visible', added.length > 0);
+}
+
+// ── Shared fetch + render ──────────────────────────────────────────────────
+async function fetchForPanel(mode) {
+  const species = allSpecies[currentIndex];
+  const gridId   = mode === 'replace' ? 'replace-grid'   : 'add-grid';
+  const loadId   = mode === 'replace' ? 'replace-loading' : 'add-loading';
+
+  const grid = document.getElementById(gridId);
+  const loading = document.getElementById(loadId);
+  grid.innerHTML = '';
+  loading.style.display = 'block';
+
+  if (mode === 'replace') replaceAltResults = [];
+  else addAltResults = [];
+
+  try {
+    const [wikiRes, commonsRes, inatRes] = await Promise.allSettled([
+      fetchWikiThumbnail(species.scientific),
+      fetchCommonsImages(species.scientific),
+      fetchINatImages(species.scientific),
+    ]);
+    const results = [];
+    if (wikiRes.status === 'fulfilled' && wikiRes.value)
+      results.push({ url: wikiRes.value, src: 'Wikipedia' });
+    if (commonsRes.status === 'fulfilled')
+      commonsRes.value.forEach(u => results.push({ url: u, src: 'Commons' }));
+    if (inatRes.status === 'fulfilled')
+      inatRes.value.forEach(u => results.push({ url: u, src: 'iNaturalist' }));
+
+    if (mode === 'replace') replaceAltResults = results;
+    else addAltResults = results;
+  } catch(e) { console.warn(e); }
+
+  loading.style.display = 'none';
+  if (mode === 'replace') renderReplaceGrid();
+  else renderAddGrid();
+}
+
+async function fetchWikiThumbnail(name) {
+  const slug = name.replace(/ /g, '_');
+  const r = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(slug)}`);
+  if (!r.ok) return null;
+  const d = await r.json();
+  return d.originalimage?.source || d.thumbnail?.source || null;
+}
+
+async function fetchCommonsImages(name) {
+  const r = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(name)}&prop=imageinfo&iiprop=url&iiurlwidth=640&format=json&origin=*&gsrlimit=12`);
+  if (!r.ok) return [];
+  const d = await r.json();
+  return Object.values(d.query?.pages || {})
+    .filter(p => p.imageinfo?.[0]?.url && /\.(jpg|jpeg|png|webp)/i.test(p.imageinfo[0].url))
+    .slice(0, 8).map(p => p.imageinfo[0].url);
+}
+
+async function fetchINatImages(name) {
+  const r = await fetch(`https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(name)}&photos=true&rank=species&per_page=3`);
+  if (!r.ok) return [];
+  const d = await r.json();
+  const urls = [];
+  for (const t of d.results || []) {
+    if (t.default_photo?.medium_url) urls.push(t.default_photo.medium_url);
+    for (const tp of (t.taxon_photos || []).slice(0, 3)) {
+      if (tp.photo?.medium_url && !urls.includes(tp.photo.medium_url))
+        urls.push(tp.photo.medium_url);
+    }
+  }
+  return urls.slice(0, 6);
+}
+
+function renderReplaceGrid() {
+  const grid = document.getElementById('replace-grid');
+  grid.innerHTML = '';
+  if (!replaceAltResults.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;color:var(--text-dim);font-size:.75rem;padding:6px">Geen resultaten. Plak een URL hieronder.</div>';
+    return;
+  }
+  replaceAltResults.forEach((item, i) => {
+    const card = makeImageCard(item, i, 'alt-img-card');
+    card.addEventListener('click', () => {
+      grid.querySelectorAll('.alt-img-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedReplaceUrl = item.url;
+      document.getElementById('replace-confirm-btn').classList.add('visible');
+      document.getElementById('main-image').src = item.url;
+    });
+    grid.appendChild(card);
+  });
+}
+
+function renderAddGrid() {
+  const grid = document.getElementById('add-grid');
+  grid.innerHTML = '';
+  if (!addAltResults.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;color:var(--text-dim);font-size:.75rem;padding:6px">Geen resultaten. Plak een URL hieronder.</div>';
+    return;
+  }
+  addAltResults.forEach((item, i) => {
+    const card = makeImageCard(item, i, 'add-img-card');
+    // checkmark overlay
+    const check = document.createElement('div');
+    check.className = 'card-check';
+    check.textContent = '✓';
+    card.appendChild(check);
+
+    card.addEventListener('click', () => {
+      if (addSelection.has(item.url)) {
+        addSelection.delete(item.url);
+        card.classList.remove('checked');
+      } else {
+        addSelection.add(item.url);
+        card.classList.add('checked');
+      }
+      updateAddConfirmBtn();
+    });
+    grid.appendChild(card);
+  });
+}
+
+function makeImageCard(item, i, cls) {
+  const card = document.createElement('div');
+  card.className = cls;
+
+  const img = document.createElement('img');
+  img.src = item.url;
+  img.referrerPolicy = 'no-referrer';
+  img.onerror = () => { card.style.opacity = '0.3'; };
+
+  const num = document.createElement('div');
+  num.className = 'card-num';
+  num.textContent = i + 1;
+
+  const src = document.createElement('div');
+  src.className = 'card-src';
+  src.textContent = item.src;
+
+  card.appendChild(img); card.appendChild(num); card.appendChild(src);
+  return card;
+}
+
+// ── Source filter (shared) ─────────────────────────────────────────────────
+function bindSourceFilter(filterId, gridId, activeClass) {
+  document.getElementById(filterId).addEventListener('click', e => {
+    const btn = e.target.closest('.src-btn');
+    if (!btn) return;
+    document.querySelectorAll(`#${filterId} .src-btn`).forEach(b => b.classList.remove(activeClass));
+    btn.classList.add(activeClass);
+    const src = btn.dataset.src;
+    document.querySelectorAll(`#${gridId} .alt-img-card, #${gridId} .add-img-card`).forEach(card => {
+      const cardSrc = card.querySelector('.card-src')?.textContent || '';
+      card.style.display = (src === 'all' || cardSrc === src) ? '' : 'none';
+    });
+  });
+}
+
+// ── Progress & Stats ───────────────────────────────────────────────────────
+function updateProgress() {
+  const total = allSpecies.length;
+  const done = allSpecies.filter(s => decisions[s.id]).length;
+  const pct = total ? (done / total * 100).toFixed(1) : 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = `${done} / ${total}`;
+}
+
+function updateStats() {
+  let approved = 0, replaced = 0, addedCount = 0, skipped = 0;
+  for (const id of Object.keys(decisions)) {
+    if (!allSpecies.find(s => s.id === id)) continue;
+    const d = decisions[id];
+    if (d.status === 'approved') approved++;
+    else if (d.status === 'replaced') replaced++;
+    else if (d.status === 'skipped') skipped++;
+    if (d.addedImages?.length) addedCount++;
+  }
+  const remaining = allSpecies.length - approved - replaced - skipped;
+  document.getElementById('stat-approved').textContent  = `${approved} goedgekeurd`;
+  document.getElementById('stat-replaced').textContent  = `${replaced} vervangen`;
+  document.getElementById('stat-added').textContent     = `${addedCount} foto's uitgebreid`;
+  document.getElementById('stat-skipped').textContent   = `${skipped} overgeslagen`;
+  document.getElementById('stat-remaining').textContent = `${remaining} resterend`;
+  updateProgress();
+}
+
+// ── Done screen ────────────────────────────────────────────────────────────
+function showDoneScreen() {
+  document.getElementById('image-panel').style.display = 'none';
+  document.getElementById('info-panel').style.display = 'none';
+  document.getElementById('done-screen').style.display = 'flex';
+  let ap = 0, rp = 0, sk = 0, ad = 0;
+  for (const d of Object.values(decisions)) {
+    if (d.status === 'approved') ap++;
+    else if (d.status === 'replaced') rp++;
+    else if (d.status === 'skipped') sk++;
+    if (d.addedImages?.length) ad++;
+  }
+  document.getElementById('done-summary').textContent =
+    `${ap} goedgekeurd · ${rp} vervangen · ${ad} uitgebreid · ${sk} overgeslagen`;
+}
+
+// ── Export ─────────────────────────────────────────────────────────────────
+function exportJSON() {
+  const results = fullSpecies.map(s => {
+    const dec = decisions[s.id];
+    if (!dec) return { id: s.id, scientific: s.scientific, nameNl: s.name?.nl, status: 'not_reviewed' };
+    // Compute effective primary from final ordered list
+    const finalList = buildImageList(s);
+    const effectivePrimary = finalList[0]?.url || dec.oldImage;
+    return {
+      id: s.id, scientific: s.scientific, nameNl: s.name?.nl, category: s.category,
+      status: dec.status || 'pending',
+      oldImage: dec.oldImage,
+      newImage: effectivePrimary,
+      imageIndex: dec.imageIndex ?? 0,
+      addedImages: dec.addedImages || [],
+      removedImages: dec.removedImages || [],
+      orderedImages: dec.orderedImages || [],
+    };
+  });
+  const blob = new Blob([JSON.stringify(results, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `image-review-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+}
+
+// ── Event listeners ────────────────────────────────────────────────────────
+document.getElementById('btn-approve').addEventListener('click', approve);
+document.getElementById('btn-skip').addEventListener('click', skip);
+document.getElementById('btn-reject').addEventListener('click', () => { closeAdd(); openReplace(); });
+document.getElementById('btn-add-photos').addEventListener('click', () => { closeReplace(); openAdd(); });
+document.getElementById('btn-prev').addEventListener('click', goPrev);
+document.getElementById('btn-export').addEventListener('click', exportJSON);
+document.getElementById('btn-export-done').addEventListener('click', exportJSON);
+
+document.getElementById('replace-use-custom').addEventListener('click', () => {
+  const url = document.getElementById('replace-custom-url').value.trim();
+  if (url) {
+    selectedReplaceUrl = url;
+    document.getElementById('main-image').src = url;
+    document.getElementById('replace-confirm-btn').classList.add('visible');
+  }
+});
+document.getElementById('replace-confirm-btn').addEventListener('click', () => {
+  if (selectedReplaceUrl) confirmReplace(selectedReplaceUrl);
+});
+
+document.getElementById('add-use-custom').addEventListener('click', () => {
+  const url = document.getElementById('add-custom-url').value.trim();
+  if (url) {
+    addSelection.add(url);
+    document.getElementById('add-custom-url').value = '';
+    updateAddConfirmBtn();
+  }
+});
+document.getElementById('add-confirm-btn').addEventListener('click', () => {
+  if (addSelection.size > 0) confirmAdd();
+});
+
+document.getElementById('btn-reset').addEventListener('click', () => {
+  if (confirm('Sessie resetten? Alle beslissingen worden gewist.')) {
+    decisions = {}; saveState(); currentIndex = 0;
+    document.getElementById('image-panel').style.display = '';
+    document.getElementById('info-panel').style.display = '';
+    document.getElementById('done-screen').style.display = 'none';
+    renderCurrent(); updateStats();
+  }
+});
+document.getElementById('btn-restart').addEventListener('click', () => {
+  decisions = {}; saveState(); currentIndex = 0;
+  document.getElementById('image-panel').style.display = '';
+  document.getElementById('info-panel').style.display = '';
+  document.getElementById('done-screen').style.display = 'none';
+  renderCurrent(); updateStats();
+});
+
+document.querySelectorAll('.cat-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilter(btn.dataset.cat);
+  });
+});
+
+bindSourceFilter('replace-src-filter', 'replace-grid', 'active-yellow');
+bindSourceFilter('add-src-filter', 'add-grid', 'active-cyan');
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  const replaceOpen = document.getElementById('replace-panel').classList.contains('open');
+  const addOpen     = document.getElementById('add-panel').classList.contains('open');
+
+  if (!replaceOpen && !addOpen) {
+    if (e.key === 'ArrowRight' || e.key === 'Enter') approve();
+    else if (e.key === 's' || e.key === 'S') skip();
+    else if (e.key === 'x' || e.key === 'X') { closeAdd(); openReplace(); }
+    else if (e.key === 'a' || e.key === 'A') { closeReplace(); openAdd(); }
+    else if (e.key === 'ArrowLeft') goPrev();
+  } else if (replaceOpen) {
+    if (e.key === 'Escape') closeReplace();
+    const n = parseInt(e.key);
+    if (n >= 1 && n <= replaceAltResults.length)
+      document.querySelectorAll('#replace-grid .alt-img-card')[n-1]?.click();
+    if (e.key === 'Enter' && selectedReplaceUrl) confirmReplace(selectedReplaceUrl);
+  } else if (addOpen) {
+    if (e.key === 'Escape') closeAdd();
+    const n = parseInt(e.key);
+    if (n >= 1 && n <= addAltResults.length)
+      document.querySelectorAll('#add-grid .add-img-card')[n-1]?.click();
+    if (e.key === 'Enter' && addSelection.size > 0) confirmAdd();
+  }
+});
+
+// ── Start ──────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
