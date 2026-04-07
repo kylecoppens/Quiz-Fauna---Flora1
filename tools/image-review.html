@@ -47,6 +47,13 @@
     }
     header h1 { font-size: 1rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
 
+    #save-indicator {
+      font-size: .75rem; color: var(--text-dim); margin-left: auto; white-space: nowrap;
+      transition: color .2s, opacity .2s;
+    }
+    #save-indicator.saved { color: var(--green); opacity: 1; }
+    #save-indicator.saving { color: var(--yellow); opacity: 1; }
+
     #progress-bar-wrap {
       flex: 1; min-width: 160px; height: 8px;
       background: var(--border); border-radius: 4px; overflow: hidden;
@@ -349,6 +356,7 @@
   <h1>📷 Foto Review</h1>
   <div id="progress-bar-wrap"><div id="progress-bar"></div></div>
   <span id="progress-text">0 / 0</span>
+  <span id="save-indicator">✓ Opgeslagen</span>
   <div id="category-filter">
     <button class="cat-btn active" data-cat="all">Alle</button>
     <button class="cat-btn" data-cat="birds">Vogels</button>
@@ -359,6 +367,7 @@
     <button class="cat-btn" data-cat="fungi">Schimmels</button>
     <button class="cat-btn" data-cat="agriculture">Landbouw</button>
   </div>
+  <button id="btn-skip-reviewed" class="cat-btn active" title="Sla al-beoordeelde soorten over bij navigatie">⏭ Sla beoordeeld over</button>
 </header>
 
 <div id="stats-bar">
@@ -471,6 +480,7 @@
 
 <div id="export-bar">
   <span>Review sessie wordt opgeslagen in localStorage.</span>
+  <button class="export-btn" id="btn-import-data" style="border-color:var(--accent);color:var(--accent);">📥 Laad bestaande foto's</button>
   <button class="export-btn" id="btn-export">⬇ Exporteer JSON</button>
   <button class="export-btn" id="btn-reset" style="border-color:var(--red);color:var(--red);">✕ Reset sessie</button>
 </div>
@@ -492,6 +502,7 @@ let allSpecies = [];
 let fullSpecies = [];
 let currentIndex = 0;
 let selectedCategory = 'all';
+let skipReviewed = true;
 // decisions[id] = { status, oldImage, newImage, imageIndex, addedImages: [] }
 let decisions = {};
 
@@ -507,11 +518,34 @@ function loadState() {
     const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     decisions = s.decisions || {};
     selectedCategory = s.category || 'all';
+    skipReviewed = s.skipReviewed !== undefined ? s.skipReviewed : true;
   } catch(e) { decisions = {}; }
 }
 
+let saveTimeout = null;
 function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ decisions, category: selectedCategory }));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ decisions, category: selectedCategory, skipReviewed }));
+  const ind = document.getElementById('save-indicator');
+  ind.classList.remove('saved');
+  ind.classList.add('saving');
+  ind.textContent = '💾 Opslaan...';
+
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(() => {
+    ind.classList.remove('saving');
+    ind.classList.add('saved');
+    ind.textContent = '✓ Opgeslagen';
+    setTimeout(() => {
+      ind.classList.remove('saved');
+      ind.textContent = '✓ Opgeslagen';
+    }, 2000);
+  }, 300);
+}
+
+function updateSkipBtn() {
+  const btn = document.getElementById('btn-skip-reviewed');
+  btn.classList.toggle('active', skipReviewed);
+  btn.textContent = skipReviewed ? '⏭ Sla beoordeeld over' : '☰ Toon alle soorten';
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
@@ -523,17 +557,22 @@ function init() {
   fullSpecies = window.speciesData;
   loadState();
   applyFilter(selectedCategory);
-  document.querySelectorAll('.cat-btn').forEach(btn => {
+  document.querySelectorAll('#category-filter .cat-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.cat === selectedCategory);
   });
+  updateSkipBtn();
 }
 
 // ── Filter ─────────────────────────────────────────────────────────────────
 function applyFilter(cat) {
   selectedCategory = cat;
   allSpecies = cat === 'all' ? fullSpecies : fullSpecies.filter(s => s.category === cat);
-  currentIndex = allSpecies.findIndex(s => !decisions[s.id]);
-  if (currentIndex === -1) currentIndex = 0;
+  if (skipReviewed) {
+    const first = allSpecies.findIndex(s => !decisions[s.id]);
+    currentIndex = first === -1 ? 0 : first;
+  } else {
+    currentIndex = 0;
+  }
   saveState();
   renderCurrent();
   updateStats();
@@ -718,10 +757,14 @@ function skip() {
 
 function goNext() {
   let next = currentIndex + 1;
-  while (next < allSpecies.length && decisions[allSpecies[next].id]) next++;
-  if (next >= allSpecies.length) {
-    next = allSpecies.findIndex(s => !decisions[s.id]);
-    if (next === -1) { showDoneScreen(); return; }
+  if (skipReviewed) {
+    while (next < allSpecies.length && decisions[allSpecies[next].id]) next++;
+    if (next >= allSpecies.length) {
+      next = allSpecies.findIndex(s => !decisions[s.id]);
+      if (next === -1) { showDoneScreen(); return; }
+    }
+  } else {
+    if (next >= allSpecies.length) next = 0;
   }
   currentIndex = next;
   updateStats();
@@ -741,6 +784,7 @@ function removeExtraImage(species, url) {
   const newOrdered = (existing.orderedImages || []).filter(u => u !== url);
   decisions[species.id] = { ...existing, removedImages: newRemoved, orderedImages: newOrdered };
   saveState();
+  console.log(`💾 Foto verwijderd voor ${species.name.nl}`);
   renderCurrent();
 }
 
@@ -757,6 +801,7 @@ function reorderImages(species, imageList, fromIndex, toIndex) {
     newImage: urls[0],
   };
   saveState();
+  console.log(`💾 Foto's hergeordend voor ${species.name.nl}`);
   renderCurrent();
 }
 
@@ -823,6 +868,7 @@ function confirmAdd() {
     // Don't force a status — let user still approve/reject separately
   }
   saveState();
+  console.log(`💾 ${addSelection.size} foto('s) toegevoegd voor ${species.name.nl}`);
   closeAdd();
   updateStats();
   renderCurrent();
@@ -835,6 +881,7 @@ function removeAddedImage(url) {
   const updated = (existing.addedImages || []).filter(u => u !== url);
   decisions[species.id] = { ...existing, addedImages: updated };
   saveState();
+  console.log(`💾 Toegevoegde foto verwijderd voor ${species.name.nl}`);
   renderExistingAdded();
   renderCurrent();
 }
@@ -1136,6 +1183,26 @@ document.getElementById('add-confirm-btn').addEventListener('click', () => {
   if (addSelection.size > 0) confirmAdd();
 });
 
+document.getElementById('btn-import-data').addEventListener('click', () => {
+  let imported = 0;
+  fullSpecies.forEach(s => {
+    if (decisions[s.id]) return; // al een beslissing, niet overschrijven
+    const hasExtras = Array.isArray(s.images) && s.images.length > 0;
+    if (hasExtras || s.image) {
+      decisions[s.id] = {
+        status: 'approved',
+        oldImage: s.image,
+        newImage: s.image,
+      };
+      imported++;
+    }
+  });
+  saveState();
+  renderCurrent();
+  updateStats();
+  alert(`✅ ${imported} soorten geïmporteerd als goedgekeurd.\nSoorten met extra foto's tonen die al in de thumbnail-strip.`);
+});
+
 document.getElementById('btn-reset').addEventListener('click', () => {
   if (confirm('Sessie resetten? Alle beslissingen worden gewist.')) {
     decisions = {}; saveState(); currentIndex = 0;
@@ -1153,12 +1220,18 @@ document.getElementById('btn-restart').addEventListener('click', () => {
   renderCurrent(); updateStats();
 });
 
-document.querySelectorAll('.cat-btn').forEach(btn => {
+document.querySelectorAll('#category-filter .cat-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('#category-filter .cat-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     applyFilter(btn.dataset.cat);
   });
+});
+
+document.getElementById('btn-skip-reviewed').addEventListener('click', () => {
+  skipReviewed = !skipReviewed;
+  updateSkipBtn();
+  saveState();
 });
 
 bindSourceFilter('replace-src-filter', 'replace-grid', 'active-yellow');
