@@ -16,7 +16,8 @@
       "Bash(__NEW_LINE_dd0ff34a729da2f9__ sed:*)",
       "Bash(rm -f /Users/mac/Quiz-Fauna---Flora1/.git/worktrees/peaceful-bardeen/index.lock)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(python3:*)"
     ]
   }
 }

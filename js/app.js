@@ -1271,18 +1271,59 @@ document.addEventListener('DOMContentLoaded', () => {
         const catName = getCategoryLabel(currentItem, currentLang);
         qText.innerHTML = `${dict.question} (<span class="highlight">${catName}</span>)`;
 
-        imageLoader.style.display = 'block';
-        qImage.style.opacity = '0';
-        qImage.referrerPolicy = "no-referrer";
-        qImage.src = currentItem.image;
-        qImage.onload = () => {
-            imageLoader.style.display = 'none';
-            qImage.style.opacity = '1';
+        // Setup image carousel for multiple images
+        const allImages = [currentItem.image];
+        if (Array.isArray(currentItem.images)) {
+            allImages.push(...currentItem.images);
+        }
+
+        window.quizImageIndex = 0;
+        window.quizAllImages = allImages;
+
+        function loadQuizImage() {
+            imageLoader.style.display = 'block';
+            qImage.style.opacity = '0';
+            qImage.referrerPolicy = "no-referrer";
+            qImage.src = allImages[window.quizImageIndex];
+            qImage.onload = () => {
+                imageLoader.style.display = 'none';
+                qImage.style.opacity = '1';
+                updateImageCounter();
+            };
+            qImage.onerror = () => {
+                imageLoader.style.display = 'none';
+                qImage.style.opacity = '0.5';
+                updateImageCounter();
+            };
+        }
+
+        function updateImageCounter() {
+            const counter = document.getElementById('image-counter');
+            if (counter && allImages.length > 1) {
+                counter.textContent = `${window.quizImageIndex + 1}/${allImages.length}`;
+                counter.style.display = 'block';
+            } else if (counter) {
+                counter.style.display = 'none';
+            }
+        }
+
+        loadQuizImage();
+
+        // Add keyboard navigation for images
+        const handleImageNav = (e) => {
+            if (allImages.length <= 1) return;
+            if (e.key === 'ArrowLeft') {
+                window.quizImageIndex = (window.quizImageIndex - 1 + allImages.length) % allImages.length;
+                loadQuizImage();
+            } else if (e.key === 'ArrowRight') {
+                window.quizImageIndex = (window.quizImageIndex + 1) % allImages.length;
+                loadQuizImage();
+            }
         };
-        qImage.onerror = () => {
-            imageLoader.style.display = 'none';
-            qImage.style.opacity = '0.5';
-        };
+
+        document.removeEventListener('keydown', window.quizImageNavHandler);
+        window.quizImageNavHandler = handleImageNav;
+        document.addEventListener('keydown', handleImageNav);
 
         // Range map
         if (currentItem.rangeMap) {
@@ -1379,6 +1420,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadNextQuestion() {
+        // Cleanup image nav handler van vorige vraag
+        if (window.quizImageNavHandler) {
+            document.removeEventListener('keydown', window.quizImageNavHandler);
+        }
         currentQuestionIndex++;
         if (currentQuestionIndex < activeQuizPool.length) {
             renderQuestion();
