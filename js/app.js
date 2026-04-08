@@ -1623,11 +1623,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const iucnTag = item.iucn && item.iucn !== 'LC'
                     ? `<span class="iucn-card-badge" style="background:${iucnBg[item.iucn]||''};color:${iucnColors[item.iucn]||'#aaa'};border:1px solid ${iucnColors[item.iucn]||'#aaa'}33">${item.iucn}</span>`
                     : '';
+
+                // Support carousel for cards with multiple images
+                const allImages = [item.image, ...(Array.isArray(item.images) ? item.images : [])];
+                const imageCounter = allImages.length > 1 ? `<div class="card-image-counter">${allImages.length}</div>` : '';
+
                 card.innerHTML = `
                     <div class="collected-badge ${isCollected ? '' : 'hidden'}">✓</div>
                     ${iucnTag}
-                    <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer"
-                         onerror="this.style.background='rgba(61,184,99,0.1)'; this.src='';">
+                    <div class="learn-card-img-wrap" style="position:relative;">
+                        <img src="${item.image}" class="learn-card-img" alt="${name}" loading="lazy" referrerpolicy="no-referrer"
+                             onerror="this.style.background='rgba(61,184,99,0.1)'; this.src='';">
+                        ${imageCounter}
+                    </div>
                     <div class="learn-card-info">
                         <div class="learn-card-title">${name}</div>
                         ${item.scientific ? `<div class="learn-card-scientific">${item.scientific}</div>` : ''}
