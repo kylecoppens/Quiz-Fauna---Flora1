@@ -554,7 +554,8 @@ function init() {
     document.body.innerHTML = '<div style="padding:40px;color:#ef5350;font-size:1.2rem">❌ species_data.js niet geladen. Gebruik een lokale server (python3 -m http.server 8000).</div>';
     return;
   }
-  fullSpecies = window.speciesData;
+  // Enkel species zonder images array tonen (268 soorten)
+  fullSpecies = window.speciesData.filter(s => !Array.isArray(s.images) || s.images.length === 0);
   loadState();
   applyFilter(selectedCategory);
   document.querySelectorAll('#category-filter .cat-btn').forEach(btn => {
