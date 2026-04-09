@@ -1299,11 +1299,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updateImageCounter() {
             const counter = document.getElementById('image-counter');
-            if (counter && allImages.length > 1) {
-                counter.textContent = `${window.quizImageIndex + 1}/${allImages.length}`;
-                counter.style.display = 'block';
-            } else if (counter) {
-                counter.style.display = 'none';
+            const hint = document.getElementById('image-nav-hint');
+            if (allImages.length > 1) {
+                if (counter) {
+                    counter.textContent = `${window.quizImageIndex + 1}/${allImages.length}`;
+                    counter.style.display = 'block';
+                }
+                if (hint) {
+                    hint.style.display = 'block';
+                }
+            } else {
+                if (counter) counter.style.display = 'none';
+                if (hint) hint.style.display = 'none';
             }
         }
 
