@@ -1,0 +1,14 @@
+VOGELS PAGINA 4 - SOORTEN ANALYSE
+==================================================
+
+JE HEBT AL (1 soort):
+  ✅ Columba palumbus (Houtduif)
+
+JE MIST NOG (7 soorten):
+  ❌ Turdus viscivorus (Grote lijster)
+  ❌ Ardea alba (Grote zilverreiger)
+  ❌ Limosa limosa (Grutto)
+  ❌ Psittacula krameri (Halsbandparkiet)
+  ❌ Accipiter gentilis (Havik)
+  ❌ Prunella modularis (Heggenmus)
+  ❌ Scolopax rusticola (Houtsnip)
