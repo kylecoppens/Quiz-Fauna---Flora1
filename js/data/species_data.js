@@ -20438,9 +20438,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_acrocephalus_palustris",
@@ -20451,7 +20449,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Acrocephalus+palustris",
     "name": {
-      "nl": "Acrocephalus palustris",
+      "nl": "Moerasgrasmus",
       "en": "Acrocephalus palustris",
       "fr": "Acrocephalus palustris"
     },
@@ -20481,9 +20479,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_acrocephalus_schoenobaenus",
@@ -20494,7 +20490,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Acrocephalus+schoenobaenus",
     "name": {
-      "nl": "Acrocephalus schoenobaenus",
+      "nl": "Bruine klauwier",
       "en": "Acrocephalus schoenobaenus",
       "fr": "Acrocephalus schoenobaenus"
     },
@@ -20524,9 +20520,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_acrocephalus_scirpaceus",
@@ -20537,7 +20531,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Acrocephalus+scirpaceus",
     "name": {
-      "nl": "Acrocephalus scirpaceus",
+      "nl": "Rietzanger",
       "en": "Acrocephalus scirpaceus",
       "fr": "Acrocephalus scirpaceus"
     },
@@ -20567,9 +20561,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_aegolius_funereus",
@@ -20580,7 +20572,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Aegolius+funereus",
     "name": {
-      "nl": "Aegolius funereus",
+      "nl": "Raufvoet-uil",
       "en": "Aegolius funereus",
       "fr": "Aegolius funereus"
     },
@@ -20610,9 +20602,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_anas_acuta",
@@ -20653,9 +20643,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_anas_crecca",
@@ -20696,9 +20684,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_anser_albifrons",
@@ -20739,9 +20725,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_anser_brachyrhynchus",
@@ -20782,9 +20766,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_anthus_trivialis",
@@ -20795,7 +20777,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Anthus+trivialis",
     "name": {
-      "nl": "Anthus trivialis",
+      "nl": "Boompieper",
       "en": "Anthus trivialis",
       "fr": "Anthus trivialis"
     },
@@ -20825,9 +20807,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_ardea_alba",
@@ -20868,9 +20848,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_asio_flammeus",
@@ -20881,7 +20859,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Asio+flammeus",
     "name": {
-      "nl": "Asio flammeus",
+      "nl": "Velduil",
       "en": "Asio flammeus",
       "fr": "Asio flammeus"
     },
@@ -20911,9 +20889,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_asio_otus",
@@ -20924,7 +20900,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Asio+otus",
     "name": {
-      "nl": "Asio otus",
+      "nl": "Ransuil",
       "en": "Asio otus",
       "fr": "Asio otus"
     },
@@ -20954,9 +20930,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_bombycilla_garrulus",
@@ -20967,7 +20941,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Bombycilla+garrulus",
     "name": {
-      "nl": "Bombycilla garrulus",
+      "nl": "Pestvogel",
       "en": "Bombycilla garrulus",
       "fr": "Bombycilla garrulus"
     },
@@ -20997,9 +20971,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_botaurus_stellaris",
@@ -21010,7 +20982,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Botaurus+stellaris",
     "name": {
-      "nl": "Botaurus stellaris",
+      "nl": "Roerdomp",
       "en": "Botaurus stellaris",
       "fr": "Botaurus stellaris"
     },
@@ -21040,9 +21012,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_branta_canadensis",
@@ -21053,7 +21023,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Branta+canadensis",
     "name": {
-      "nl": "Branta canadensis",
+      "nl": "Canadese gans",
       "en": "Branta canadensis",
       "fr": "Branta canadensis"
     },
@@ -21083,9 +21053,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_bubo_bubo",
@@ -21126,9 +21094,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_calidris_pugnax",
@@ -21139,7 +21105,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Calidris+pugnax",
     "name": {
-      "nl": "Calidris pugnax",
+      "nl": "Kemphaan",
       "en": "Calidris pugnax",
       "fr": "Calidris pugnax"
     },
@@ -21169,9 +21135,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_caprimulgus_europaeus",
@@ -21182,7 +21146,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Caprimulgus+europaeus",
     "name": {
-      "nl": "Caprimulgus europaeus",
+      "nl": "Geitenmelker",
       "en": "Caprimulgus europaeus",
       "fr": "Caprimulgus europaeus"
     },
@@ -21212,9 +21176,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_carduelis_carduelis",
@@ -21225,7 +21187,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Carduelis+carduelis",
     "name": {
-      "nl": "Carduelis carduelis",
+      "nl": "Distelvink",
       "en": "Carduelis carduelis",
       "fr": "Carduelis carduelis"
     },
@@ -21255,9 +21217,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_certhia_brachydactyla",
@@ -21268,7 +21228,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Certhia+brachydactyla",
     "name": {
-      "nl": "Certhia brachydactyla",
+      "nl": "Boomkruiper",
       "en": "Certhia brachydactyla",
       "fr": "Certhia brachydactyla"
     },
@@ -21298,9 +21258,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_chloris_chloris",
@@ -21311,7 +21269,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Chloris+chloris",
     "name": {
-      "nl": "Chloris chloris",
+      "nl": "Sijs",
       "en": "Chloris chloris",
       "fr": "Chloris chloris"
     },
@@ -21341,9 +21299,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_ciconia_ciconia",
@@ -21384,9 +21340,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_ciconia_nigra",
@@ -21397,7 +21351,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Ciconia+nigra",
     "name": {
-      "nl": "Ciconia nigra",
+      "nl": "Zwarte ooievaar",
       "en": "Ciconia nigra",
       "fr": "Ciconia nigra"
     },
@@ -21427,9 +21381,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_circus_aeruginosus",
@@ -21440,7 +21392,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Circus+aeruginosus",
     "name": {
-      "nl": "Circus aeruginosus",
+      "nl": "Bruine kiekendief",
       "en": "Circus aeruginosus",
       "fr": "Circus aeruginosus"
     },
@@ -21470,9 +21422,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_circus_pygargus",
@@ -21483,7 +21433,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Circus+pygargus",
     "name": {
-      "nl": "Circus pygargus",
+      "nl": "Grauwe kiekendief",
       "en": "Circus pygargus",
       "fr": "Circus pygargus"
     },
@@ -21513,9 +21463,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_clinclus_clinclus",
@@ -21556,9 +21504,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_corvus_frugileus",
@@ -21569,7 +21515,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Corvus+frugileus",
     "name": {
-      "nl": "Corvus frugileus",
+      "nl": "Roek",
       "en": "Corvus frugileus",
       "fr": "Corvus frugileus"
     },
@@ -21599,9 +21545,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_corvus_monedula",
@@ -21612,7 +21556,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Corvus+monedula",
     "name": {
-      "nl": "Corvus monedula",
+      "nl": "Kauw",
       "en": "Corvus monedula",
       "fr": "Corvus monedula"
     },
@@ -21642,9 +21586,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_coturnix_coturnix",
@@ -21655,7 +21597,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Coturnix+coturnix",
     "name": {
-      "nl": "Coturnix coturnix",
+      "nl": "Kwartel",
       "en": "Coturnix coturnix",
       "fr": "Coturnix coturnix"
     },
@@ -21685,9 +21627,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_delichon_urbicum",
@@ -21698,7 +21638,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Delichon+urbicum",
     "name": {
-      "nl": "Delichon urbicum",
+      "nl": "Huiszwaluw",
       "en": "Delichon urbicum",
       "fr": "Delichon urbicum"
     },
@@ -21728,9 +21668,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_dendrocoptes_medius",
@@ -21741,7 +21679,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Dendrocoptes+medius",
     "name": {
-      "nl": "Dendrocoptes medius",
+      "nl": "Middelste bonte specht",
       "en": "Dendrocoptes medius",
       "fr": "Dendrocoptes medius"
     },
@@ -21771,9 +21709,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_dryobates_minor",
@@ -21784,7 +21720,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Dryobates+minor",
     "name": {
-      "nl": "Dryobates minor",
+      "nl": "Kleine bonte specht",
       "en": "Dryobates minor",
       "fr": "Dryobates minor"
     },
@@ -21814,9 +21750,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_dryocopus_martius",
@@ -21827,7 +21761,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Dryocopus+martius",
     "name": {
-      "nl": "Dryocopus martius",
+      "nl": "Zwarte specht",
       "en": "Dryocopus martius",
       "fr": "Dryocopus martius"
     },
@@ -21857,9 +21791,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_egretta_garzetta",
@@ -21870,7 +21802,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Egretta+garzetta",
     "name": {
-      "nl": "Egretta garzetta",
+      "nl": "Kleine zilverreiger",
       "en": "Egretta garzetta",
       "fr": "Egretta garzetta"
     },
@@ -21900,9 +21832,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_emberiza_calandra",
@@ -21913,7 +21843,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Emberiza+calandra",
     "name": {
-      "nl": "Emberiza calandra",
+      "nl": "Geelgors",
       "en": "Emberiza calandra",
       "fr": "Emberiza calandra"
     },
@@ -21943,9 +21873,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_emberiza_schoeniclus",
@@ -21956,7 +21884,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Emberiza+schoeniclus",
     "name": {
-      "nl": "Emberiza schoeniclus",
+      "nl": "Rietgors",
       "en": "Emberiza schoeniclus",
       "fr": "Emberiza schoeniclus"
     },
@@ -21986,9 +21914,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_eurasian_siskin",
@@ -22029,9 +21955,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_eurasian_skylark",
@@ -22072,9 +21996,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_eurasian_wren",
@@ -22115,9 +22037,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_falco_columbarius",
@@ -22128,7 +22048,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Falco+columbarius",
     "name": {
-      "nl": "Falco columbarius",
+      "nl": "Smelleken",
       "en": "Falco columbarius",
       "fr": "Falco columbarius"
     },
@@ -22158,9 +22078,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_falco_subbuteo",
@@ -22171,7 +22089,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Falco+subbuteo",
     "name": {
-      "nl": "Falco subbuteo",
+      "nl": "Slechtvalk",
       "en": "Falco subbuteo",
       "fr": "Falco subbuteo"
     },
@@ -22201,9 +22119,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_fringilla_montifringilla",
@@ -22214,7 +22130,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Fringilla+montifringilla",
     "name": {
-      "nl": "Fringilla montifringilla",
+      "nl": "Bergfink",
       "en": "Fringilla montifringilla",
       "fr": "Fringilla montifringilla"
     },
@@ -22244,9 +22160,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_gallinago_gallinago",
@@ -22257,7 +22171,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Gallinago+gallinago",
     "name": {
-      "nl": "Gallinago gallinago",
+      "nl": "Watersnip",
       "en": "Gallinago gallinago",
       "fr": "Gallinago gallinago"
     },
@@ -22287,9 +22201,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_garullus_glandarius",
@@ -22330,9 +22242,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_grus_grus",
@@ -22373,9 +22283,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_haliaeetus_albicilla",
@@ -22416,9 +22324,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_hippolais_icterina",
@@ -22429,7 +22335,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Hippolais+icterina",
     "name": {
-      "nl": "Hippolais icterina",
+      "nl": "Geelsluiter",
       "en": "Hippolais icterina",
       "fr": "Hippolais icterina"
     },
@@ -22459,9 +22365,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_lanius_collurio",
@@ -22472,7 +22376,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Lanius+collurio",
     "name": {
-      "nl": "Lanius collurio",
+      "nl": "Grauwe klauwier",
       "en": "Lanius collurio",
       "fr": "Lanius collurio"
     },
@@ -22502,9 +22406,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_limosa_limosa",
@@ -22515,7 +22417,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Limosa+limosa",
     "name": {
-      "nl": "Limosa limosa",
+      "nl": "Grutto",
       "en": "Limosa limosa",
       "fr": "Limosa limosa"
     },
@@ -22545,9 +22447,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_lophophanus_cristatus",
@@ -22588,9 +22488,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_luscinia_megarhynchos",
@@ -22601,7 +22499,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Luscinia+megarhynchos",
     "name": {
-      "nl": "Luscinia megarhynchos",
+      "nl": "Nachtegaal",
       "en": "Luscinia megarhynchos",
       "fr": "Luscinia megarhynchos"
     },
@@ -22631,9 +22529,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_mareca_penelope",
@@ -22644,7 +22540,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Mareca+penelope",
     "name": {
-      "nl": "Mareca penelope",
+      "nl": "Krakeend",
       "en": "Mareca penelope",
       "fr": "Mareca penelope"
     },
@@ -22674,9 +22570,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_mareca_strepera",
@@ -22687,7 +22581,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Mareca+strepera",
     "name": {
-      "nl": "Mareca strepera",
+      "nl": "Snaketend",
       "en": "Mareca strepera",
       "fr": "Mareca strepera"
     },
@@ -22717,9 +22611,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_mergellus_albellus",
@@ -22730,7 +22622,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Mergellus+albellus",
     "name": {
-      "nl": "Mergellus albellus",
+      "nl": "Nonnetje",
       "en": "Mergellus albellus",
       "fr": "Mergellus albellus"
     },
@@ -22760,9 +22652,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_milvus_milvus",
@@ -22773,7 +22663,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Milvus+milvus",
     "name": {
-      "nl": "Milvus milvus",
+      "nl": "Rode wouw",
       "en": "Milvus milvus",
       "fr": "Milvus milvus"
     },
@@ -22803,9 +22693,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_motacilla_cinerea",
@@ -22816,7 +22704,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Motacilla+cinerea",
     "name": {
-      "nl": "Motacilla cinerea",
+      "nl": "Rouwgors",
       "en": "Motacilla cinerea",
       "fr": "Motacilla cinerea"
     },
@@ -22846,9 +22734,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_motacilla_flava",
@@ -22859,7 +22745,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Motacilla+flava",
     "name": {
-      "nl": "Motacilla flava",
+      "nl": "Geelpootgors",
       "en": "Motacilla flava",
       "fr": "Motacilla flava"
     },
@@ -22889,9 +22775,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_numenius_arquata",
@@ -22902,7 +22786,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Numenius+arquata",
     "name": {
-      "nl": "Numenius arquata",
+      "nl": "Wulp",
       "en": "Numenius arquata",
       "fr": "Numenius arquata"
     },
@@ -22932,9 +22816,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_oriolus_oriolus",
@@ -22945,7 +22827,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Oriolus+oriolus",
     "name": {
-      "nl": "Oriolus oriolus",
+      "nl": "Wielewaal",
       "en": "Oriolus oriolus",
       "fr": "Oriolus oriolus"
     },
@@ -22975,9 +22857,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_pandion_haliaetus",
@@ -22988,7 +22868,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Pandion+haliaetus",
     "name": {
-      "nl": "Pandion haliaetus",
+      "nl": "Visarend",
       "en": "Pandion haliaetus",
       "fr": "Pandion haliaetus"
     },
@@ -23018,9 +22898,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_parus_caeruleus",
@@ -23031,7 +22909,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Parus+caeruleus",
     "name": {
-      "nl": "Parus caeruleus",
+      "nl": "Pimpelmees",
       "en": "Parus caeruleus",
       "fr": "Parus caeruleus"
     },
@@ -23061,9 +22939,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_passer_montanus",
@@ -23074,7 +22950,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Passer+montanus",
     "name": {
-      "nl": "Passer montanus",
+      "nl": "Ringmus",
       "en": "Passer montanus",
       "fr": "Passer montanus"
     },
@@ -23104,9 +22980,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_perdix_perdix",
@@ -23117,7 +22991,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Perdix+perdix",
     "name": {
-      "nl": "Perdix perdix",
+      "nl": "Patrijs",
       "en": "Perdix perdix",
       "fr": "Perdix perdix"
     },
@@ -23147,9 +23021,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_periparus_ater",
@@ -23160,7 +23032,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Periparus+ater",
     "name": {
-      "nl": "Periparus ater",
+      "nl": "Zwarte mees",
       "en": "Periparus ater",
       "fr": "Periparus ater"
     },
@@ -23190,9 +23062,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_pernis_apivorus",
@@ -23203,7 +23073,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Pernis+apivorus",
     "name": {
-      "nl": "Pernis apivorus",
+      "nl": "Wespendief",
       "en": "Pernis apivorus",
       "fr": "Pernis apivorus"
     },
@@ -23233,9 +23103,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_phasianus_colchicus",
@@ -23246,7 +23114,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Phasianus+colchicus",
     "name": {
-      "nl": "Phasianus colchicus",
+      "nl": "Fazant",
       "en": "Phasianus colchicus",
       "fr": "Phasianus colchicus"
     },
@@ -23276,9 +23144,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_phylloscopus_collybita",
@@ -23289,7 +23155,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Phylloscopus+collybita",
     "name": {
-      "nl": "Phylloscopus collybita",
+      "nl": "Fitis",
       "en": "Phylloscopus collybita",
       "fr": "Phylloscopus collybita"
     },
@@ -23319,9 +23185,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_platalea_leucorodia",
@@ -23332,7 +23196,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Platalea+leucorodia",
     "name": {
-      "nl": "Platalea leucorodia",
+      "nl": "Lepelaar",
       "en": "Platalea leucorodia",
       "fr": "Platalea leucorodia"
     },
@@ -23362,9 +23226,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_podiceps_cristatus",
@@ -23375,7 +23237,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Podiceps+cristatus",
     "name": {
-      "nl": "Podiceps cristatus",
+      "nl": "Fuut",
       "en": "Podiceps cristatus",
       "fr": "Podiceps cristatus"
     },
@@ -23405,9 +23267,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_prunella_modularis",
@@ -23418,7 +23278,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Prunella+modularis",
     "name": {
-      "nl": "Prunella modularis",
+      "nl": "Heggenmus",
       "en": "Prunella modularis",
       "fr": "Prunella modularis"
     },
@@ -23448,9 +23308,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_psittacula_krameri",
@@ -23461,7 +23319,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Psittacula+krameri",
     "name": {
-      "nl": "Psittacula krameri",
+      "nl": "Halsbandparkiet",
       "en": "Psittacula krameri",
       "fr": "Psittacula krameri"
     },
@@ -23491,9 +23349,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_regulus_regulus",
@@ -23504,7 +23360,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Regulus+regulus",
     "name": {
-      "nl": "Regulus regulus",
+      "nl": "Goudkroontje",
       "en": "Regulus regulus",
       "fr": "Regulus regulus"
     },
@@ -23534,9 +23390,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_saxicola_rubicola",
@@ -23547,7 +23401,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Saxicola+rubicola",
     "name": {
-      "nl": "Saxicola rubicola",
+      "nl": "Roodborst",
       "en": "Saxicola rubicola",
       "fr": "Saxicola rubicola"
     },
@@ -23577,9 +23431,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_scolopax_rusticola",
@@ -23590,7 +23442,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Scolopax+rusticola",
     "name": {
-      "nl": "Scolopax rusticola",
+      "nl": "Houtsnip",
       "en": "Scolopax rusticola",
       "fr": "Scolopax rusticola"
     },
@@ -23620,9 +23472,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_spatula_clypeata",
@@ -23633,7 +23483,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Spatula+clypeata",
     "name": {
-      "nl": "Spatula clypeata",
+      "nl": "Slobeend",
       "en": "Spatula clypeata",
       "fr": "Spatula clypeata"
     },
@@ -23663,9 +23513,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_spatula_querquedula",
@@ -23676,7 +23524,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Spatula+querquedula",
     "name": {
-      "nl": "Spatula querquedula",
+      "nl": "Zomertaling",
       "en": "Spatula querquedula",
       "fr": "Spatula querquedula"
     },
@@ -23706,9 +23554,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_spinus_spinus",
@@ -23749,9 +23595,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_strix_aluco",
@@ -23762,7 +23606,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Strix+aluco",
     "name": {
-      "nl": "Strix aluco",
+      "nl": "Bosuil",
       "en": "Strix aluco",
       "fr": "Strix aluco"
     },
@@ -23792,9 +23636,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_sylvia_atricapilla",
@@ -23805,7 +23647,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Sylvia+atricapilla",
     "name": {
-      "nl": "Sylvia atricapilla",
+      "nl": "Zwartkop",
       "en": "Sylvia atricapilla",
       "fr": "Sylvia atricapilla"
     },
@@ -23835,9 +23677,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_sylvia_borin",
@@ -23848,7 +23688,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Sylvia+borin",
     "name": {
-      "nl": "Sylvia borin",
+      "nl": "Tuinfluiter",
       "en": "Sylvia borin",
       "fr": "Sylvia borin"
     },
@@ -23878,9 +23718,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_troglodytes_troglodytes",
@@ -23891,7 +23729,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Troglodytes+troglodytes",
     "name": {
-      "nl": "Troglodytes troglodytes",
+      "nl": "Winterkoning",
       "en": "Troglodytes troglodytes",
       "fr": "Troglodytes troglodytes"
     },
@@ -23921,9 +23759,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_turdus_iliacus",
@@ -23934,7 +23770,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Turdus+iliacus",
     "name": {
-      "nl": "Turdus iliacus",
+      "nl": "Koperwiek",
       "en": "Turdus iliacus",
       "fr": "Turdus iliacus"
     },
@@ -23964,9 +23800,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_turdus_pilaris",
@@ -23977,7 +23811,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Turdus+pilaris",
     "name": {
-      "nl": "Turdus pilaris",
+      "nl": "Lijster",
       "en": "Turdus pilaris",
       "fr": "Turdus pilaris"
     },
@@ -24007,9 +23841,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_turdus_viscivorus",
@@ -24020,7 +23852,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Turdus+viscivorus",
     "name": {
-      "nl": "Turdus viscivorus",
+      "nl": "Grote lijster",
       "en": "Turdus viscivorus",
       "fr": "Turdus viscivorus"
     },
@@ -24050,9 +23882,7 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   },
   {
     "id": "bird_tyto_alba",
@@ -24063,7 +23893,7 @@ window.speciesData = [
     "iucn": "LC",
     "xenoCanto": "https://xeno-canto.org/explore?query=Tyto+alba",
     "name": {
-      "nl": "Tyto alba",
+      "nl": "Kerkuil",
       "en": "Tyto alba",
       "fr": "Tyto alba"
     },
@@ -24093,8 +23923,6 @@ window.speciesData = [
       "fr": "Omnivore ou carnivore"
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg"
-    ]
+    "images": []
   }
 ];

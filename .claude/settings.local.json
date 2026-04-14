@@ -17,7 +17,15 @@
       "Bash(rm -f /Users/mac/Quiz-Fauna---Flora1/.git/worktrees/peaceful-bardeen/index.lock)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(node -e \":*)",
+      "Bash(curl -s \"https://ipt.inbo.be/archive.do?r=natuurpunt-natagora-checklist\" -o /tmp/natuurpunt.zip)",
+      "Bash(unzip -q /tmp/natuurpunt.zip -d /tmp/natuurpunt)",
+      "Read(//tmp/natuurpunt/**)",
+      "Bash(/tmp/create_excel.py:*)",
+      "Bash(__NEW_LINE_4adf7fe315a7c8cf__ python3:*)",
+      "Bash(gh pr:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }
