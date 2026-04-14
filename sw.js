@@ -1,17 +1,11 @@
-const CACHE_NAME = 'fauna-flora-v3';
+const CACHE_NAME = 'fauna-flora-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './css/style.css',
   './js/app.js',
-  './js/data/init.js',
-  './js/data/birds.js',
-  './js/data/fauna.js',
-  './js/data/flora.js',
-  './js/data/fungi.js',
-  './js/data/trees.js',
-  './js/data/insects.js',
-  './js/data/agriculture.js',
+  './js/data/species_data.js',
+  './js/data/biogids_data.js',
   './manifest.json'
 ];
 
