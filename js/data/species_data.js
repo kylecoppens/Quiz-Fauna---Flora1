@@ -311,9 +311,9 @@ window.speciesData = [
       "en": "Sunlight, water",
       "fr": "Lumière, eau"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Illustration_Aesculus_hippocastanum0_clean.jpg/960px-Illustration_Aesculus_hippocastanum0_clean.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/Aesculus_hippocastanum-1.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/0/05/Aesculus_hippocastanum-1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Illustration_Aesculus_hippocastanum0_clean.jpg/960px-Illustration_Aesculus_hippocastanum0_clean.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/1/1b/Aesculus_hippocastanum.001_-_Culleredo.jpg",
       "https://static.inaturalist.org/photos/288506278/medium.jpeg"
     ]
@@ -629,10 +629,10 @@ window.speciesData = [
       "en": "Sunlight, water",
       "fr": "Lumière, eau"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Nordens_flora_Alchemilla_vulgaris.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Alchemilla_vulgaris_with_raindrops.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/b/b2/Alchemilla_vulgaris_with_raindrops.jpg",
-      "https://inaturalist-open-data.s3.amazonaws.com/photos/10414/medium.jpg"
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/10414/medium.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/84/Nordens_flora_Alchemilla_vulgaris.jpg"
     ]
   },
   {
@@ -864,7 +864,9 @@ window.speciesData = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Amanita_muscaria_3_vliegenzwammen_op_rij.jpg/960px-Amanita_muscaria_3_vliegenzwammen_op_rij.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Amanita_muscaria_3_vliegenzwammen_op_rij.jpg/960px-Amanita_muscaria_3_vliegenzwammen_op_rij.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Amanita_muscaria_LC0119.jpg/640px-Amanita_muscaria_LC0119.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Amanita_muscaria_LC0119.jpg/640px-Amanita_muscaria_LC0119.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/Amanita_muscaria_tyndrum.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/03/Fly_Agaric_mushroom_04.jpg"
     ]
   },
   {
@@ -1527,7 +1529,8 @@ window.speciesData = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Boletus_edulis_IT.jpg/960px-Boletus_edulis_IT.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Boletus_edulis_IT.jpg/960px-Boletus_edulis_IT.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Boletus_edulis_2.JPG/960px-Boletus_edulis_2.JPG"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Boletus_edulis_2.JPG/960px-Boletus_edulis_2.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e0/%28Gemeine_Steinpilz%29_Boletus_edulis.jpg"
     ]
   },
   {
@@ -1750,7 +1753,9 @@ window.speciesData = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Chanterelle_Cantharellus_cibarius.jpg/960px-Chanterelle_Cantharellus_cibarius.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Cantharellus_cibarius_2009_G1.jpg/960px-Cantharellus_cibarius_2009_G1.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kantarellen.jpg/640px-Kantarellen.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kantarellen.jpg/640px-Kantarellen.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/66/Kukeseen_Lahemaal.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/aa/2007-07-14_Cantharellus_cibarius.jpg"
     ]
   },
   {
@@ -2780,7 +2785,9 @@ window.speciesData = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hyacinthoides_non-scripta_%28Common_Bluebell%29.jpg/960px-Hyacinthoides_non-scripta_%28Common_Bluebell%29.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hallerbos_in_bloom_2013.jpg/640px-Hallerbos_in_bloom_2013.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hyacinthoides_non-scripta_%28Hallerbos%29.jpg/640px-Hyacinthoides_non-scripta_%28Hallerbos%29.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hyacinthoides_non-scripta_%28Hallerbos%29.jpg/640px-Hyacinthoides_non-scripta_%28Hallerbos%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/80/Pryor%27s_Wood_Bluebells_2017-04-26-4.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2b/Hyacinthoides_non-scripta%2C_bastaard_van_Hyacinthoides_hispanica._Boshyacint._d.j.b._01.jpg"
     ]
   },
   {
@@ -4253,9 +4260,8 @@ window.speciesData = [
       "en": "Roots, acorns, insects, carrion",
       "fr": "Racines, glands, insectes, charogne"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/202310_Wild_boar.svg/960px-202310_Wild_boar.svg.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/A_young_wild_boar_in_his_environment.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/c/c0/A_young_wild_boar_in_his_environment.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/d/d2/Wildschwein%2C_N%C3%A4he_Pulverstampftor_%28cropped%29.jpg",
       "https://inaturalist-open-data.s3.amazonaws.com/photos/414500081/medium.jpg"
     ]
@@ -4518,11 +4524,11 @@ window.speciesData = [
       "en": "Sunlight, water",
       "fr": "Lumière, eau"
     },
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/594753859/large.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ulmus_procera_1.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ulmus_procera_1.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/a/af/Bark_of_Ulmus_minor_%27Procera%27.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/5/5c/Leaves_of_Ulmus_minor_%27Procera%27%2C_short_shoots_of_old_trees.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/5/5c/Leaves_of_Ulmus_minor_%27Procera%27%2C_short_shoots_of_old_trees.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/594753859/large.jpg"
     ]
   },
   {
@@ -5693,8 +5699,6 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Prunus_avium_fruit.jpg/960px-Prunus_avium_fruit.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Prunus_avium_Prague_2016_1.jpg/640px-Prunus_avium_Prague_2016_1.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/0/09/Prunus_avium_flowers.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/5/57/Fr%C3%BChling_bl%C3%BChender_Kirschenbaum.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/0/0c/Prunus_avium_duracina_-_flowers_-_Sasbach.jpg"
     ],
@@ -6700,7 +6704,7 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Eptesicus_serotinus.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Eptesicus_serotinus_01.jpg/640px-Eptesicus_serotinus_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/Eptesicus_serotinus_420908718.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/8/82/%D0%9A%D0%B0%D0%B6%D0%B0%D0%BD_%D0%BF%D1%96%D0%B7%D0%BD%D1%96%D0%B9%2C_%D0%B0%D0%B1%D0%BE_%D0%BF%D0%B5%D1%80%D0%B3%D0%B0%D1%87_%D0%BF%D1%96%D0%B7%D0%BD%D1%96%D0%B9_%28Eptesicus_serotinus%29.jpg"
     ],
     "description": {
@@ -6929,7 +6933,10 @@ window.speciesData = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/European_Common_Frog_Rana_temporaria.jpg/960px-European_Common_Frog_Rana_temporaria.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rana_temporaria_LC0073.jpg/640px-Rana_temporaria_LC0073.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Rana_temporaria_mating.jpg/640px-Rana_temporaria_mating.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Rana_temporaria_mating.jpg/640px-Rana_temporaria_mating.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c4/Dixi-Rana_temporaria.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6b/Rana_temporaria_LC0030.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7e/European_Common_Frog_Rana_temporaria_2.jpg"
     ],
     "description": {
       "nl": "De bruine kikker is de meest algemene kikkersoort van België. Bruin tot roodbruin van kleur met een donker masker achter het oog. Trekt elk voorjaar massaal naar vijvers en poelen om te paaien. Het gekwaak is in maart en april overal te horen.",
@@ -7204,7 +7211,8 @@ window.speciesData = [
     "plantGrade": "dicot",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Wiesenschaumkraut_%28Cardamine_pratensis%29-20200416-RM-095356.jpg/960px-Wiesenschaumkraut_%28Cardamine_pratensis%29-20200416-RM-095356.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Cardamine_pratensis.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Cardamine_pratensis.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/601068973/medium.jpg"
     ],
     "description": {
       "nl": "De pinksterbloem kleurt natte weiden lila-roze in april en mei. Slanke plant met geveerde bladeren en vier paarse tot witte bloemblaadjes. Waardplant voor de vlinder oranjetipje. Bloeit rond Pinksteren, vandaar de naam.",
@@ -7247,7 +7255,9 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Russula_cyanoxantha.JPG",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Russula_cyanoxantha_LC0083.jpg/640px-Russula_cyanoxantha_LC0083.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Russula_cyanoxantha_LC0083.jpg/640px-Russula_cyanoxantha_LC0083.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Russula_cyanoxantha_%2844290996435%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/66/Russula_cyanoxantha_G2.1.jpg"
     ],
     "description": {
       "nl": "De regenboogrussula is een van de meest voorkomende en eetbare russulazwammen. Hoed veelkleurig — paars, groen, violet — vandaar de naam. Witte kieuwen die opmerkelijk soepel zijn en niet afbreken. Groeit in loofbossen.",
@@ -7290,7 +7300,9 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hypholoma_fasciculare_Queteraro.jpg/960px-Hypholoma_fasciculare_Queteraro.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Hypholoma_fasciculare_LC0014.jpg/640px-Hypholoma_fasciculare_LC0014.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Hypholoma_fasciculare_LC0014.jpg/640px-Hypholoma_fasciculare_LC0014.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Hypholoma_fasciculare_LC0091.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1a/Clustered_woodlover_-_Hypholoma_fasciculare_-_Gr%C3%BCnbl%C3%A4ttriger_Schwefelkopf_-_sulfur_tuft_-_02.jpg"
     ],
     "description": {
       "nl": "Het zwavelkopje groeit het hele jaar door in grote trossen op dood loofhout. Felgele tot okerkleurige hoed met groenachtige kieuwen op rijpere exemplaren. Giftig — bitter van smaak. Een van de meest voorkomende paddenstoelen van Europa.",
@@ -7379,7 +7391,9 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/0_Belle-dame_%28Vanessa_cardui%29_-_Echinacea_purpurea_-_Havr%C3%A9_%283%29.jpg/960px-0_Belle-dame_%28Vanessa_cardui%29_-_Echinacea_purpurea_-_Havr%C3%A9_%283%29.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Vanessa_cardui_Luc_Viatour.jpg/640px-Vanessa_cardui_Luc_Viatour.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Vanessa_cardui_Luc_Viatour.jpg/640px-Vanessa_cardui_Luc_Viatour.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0d/Distelfalter%2C_Vanessa_cardui_AUF_Schmetterlingsflieder%2C_Buddleja_davidii_1.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0f/Distelfalter_%2C_Vanessa_cardui.JPG"
     ],
     "description": {
       "nl": "De distelvlinder is roestoranje met zwarte en witte tekening. Een van de meest verspreide vlinders ter wereld — van Afrika tot de Arctis. Trekt elk jaar van Sub-Sahara Afrika naar Noord-Europa, een reis van meer dan 12.000 km.",
@@ -8377,7 +8391,9 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Symphytum_officinale_01.jpg/960px-Symphytum_officinale_01.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Symphytum_officinale_01.jpg/960px-Symphytum_officinale_01.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Symphytum_officinale_01.jpg/960px-Symphytum_officinale_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/36/2014.09.19.-04-Kirschgartshaeuser_Schlaege_Mannheim--Gemeiner_Beinwell.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/75011823/medium.jpg"
     ]
   },
   {
@@ -8574,7 +8590,9 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bulrush_%28Typha_latifolia%29_%288139113636%29.jpg/960px-Bulrush_%28Typha_latifolia%29_%288139113636%29.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Typha_latifolia_001.jpg/640px-Typha_latifolia_001.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Typha_latifolia_001.jpg/640px-Typha_latifolia_001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4d/Typha_latifolia_Finland.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/15763547/medium.jpg"
     ]
   },
   {
@@ -8719,9 +8737,11 @@ window.speciesData = [
       "en": "Reed was historically THE raw material for writing instruments (quill pens), musical instruments (reeds), thatching and mats.",
       "fr": "Le roseau était historiquement LA matière première pour les instruments à écrire, les instruments de musique (anches), les toitures et les nattes."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Phragmites_australis_-_NASA_Tracks_an_Environmental_Invader_%2848049936657%29.jpg/960px-Phragmites_australis_-_NASA_Tracks_an_Environmental_Invader_%2848049936657%29.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Phragmites_australis_%28inflorescences%29.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Phragmites_australis_2.jpg/640px-Phragmites_australis_2.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c9/Phragmites_australis%2C_Neuss_%28DE%29_--_2022_--_3123.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/43/Phragmites_australis_Vikmanshyttesj%C3%B6n.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Phragmites_australis_-_NASA_Tracks_an_Environmental_Invader_%2848049936657%29.jpg/960px-Phragmites_australis_-_NASA_Tracks_an_Environmental_Invader_%2848049936657%29.jpg"
     ]
   },
   {
@@ -9262,7 +9282,9 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Equisetum_arvense_foliage.jpg/960px-Equisetum_arvense_foliage.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Equisetum_arvense_fertile.jpg/640px-Equisetum_arvense_fertile.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Equisetum_arvense_kz03.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/35/Equisetum_arvense_126536963.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Equisetum_arvense-271.JPG"
     ]
   },
   {
@@ -9357,10 +9379,8 @@ window.speciesData = [
       "en": "Dutch elm disease (caused by the fungus Ophiostoma novo-ulmi) killed 99% of mature elms in Western Europe in the 20th century — one of the greatest ecological disasters in Europe.",
       "fr": "La graphiose de l'orme (causée par le champignon Ophiostoma novo-ulmi) a tué 99% des ormes adultes en Europe occidentale au 20e siècle — l'une des plus grandes catastrophes écologiques en Europe."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Ulmus_glabra_sl11.jpg/960px-Ulmus_glabra_sl11.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Ulmus_glabra_in_Golden_Valley_Tree_Park%2C_May_2022.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ulmus_glabra_leaves.jpg/640px-Ulmus_glabra_leaves.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/b/bf/Ulmus_glabra_in_Golden_Valley_Tree_Park%2C_May_2022.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/9/9c/Ulmus_glabra_seed_01.jpg",
       "https://inaturalist-open-data.s3.amazonaws.com/photos/221899/medium.jpg"
     ]
@@ -9506,9 +9526,12 @@ window.speciesData = [
       "en": "Common Barberry is the alternate host of black stem rust (Puccinia graminis), a serious grain disease. As a result, it was massively eradicated from arable areas in the 18th–19th centuries.",
       "fr": "L'épine-vinette est l'hôte alternatif de la rouille noire (Puccinia graminis), une grave maladie des céréales. Elle fut massivement éliminée des zones agricoles aux 18e–19e siècles."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Illustration_Berberis_vulgaris0.jpg/960px-Illustration_Berberis_vulgaris0.jpg",
+    "image": "https://static.inaturalist.org/photos/131731237/medium.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Berberis_vulgaris_-_flowers.jpg/640px-Berberis_vulgaris_-_flowers.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Berberis_vulgaris_sl5.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d0/Berberis_vulgaris_berries._-_Flickr_-_gailhampshire.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Illustration_Berberis_vulgaris0.jpg/960px-Illustration_Berberis_vulgaris0.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a0/Berberis_vulgaris_kz01.jpg"
     ]
   },
   {
@@ -9652,12 +9675,12 @@ window.speciesData = [
       "en": "The name 'whitebeam' refers to the mealy, white underside of the leaves that glisten in the wind. In the Ardennes, ancient specimens are known that are over 400 years old.",
       "fr": "Le nom 'alisier blanc' fait référence à la face inférieure blanche et farineuse des feuilles qui scintille dans le vent. En Ardenne, des spécimens anciens de plus de 400 ans sont connus."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sorbus_aria_1.jpg/960px-Sorbus_aria_1.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/%28ms%29_Sorbus_aria_5.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Sorbus_aria_-_leaves.jpg/640px-Sorbus_aria_-_leaves.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/c/c6/Sorbus_aria.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sorbus_aria_1.jpg/960px-Sorbus_aria_1.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/5/5a/Sorbus_aria-3420.jpg",
-      "https://inaturalist-open-data.s3.amazonaws.com/photos/76073229/medium.jpg"
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/76073229/medium.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c6/Sorbus_aria.jpg"
     ]
   },
   {
@@ -12070,11 +12093,11 @@ window.speciesData = [
       "en": "The flowers of the large-leaved lime are one of the richest nectar sources for bees; a single tree can yield hundreds of kilograms of honey. Linden blossom tea is traditionally used for colds and flu.",
       "fr": "Les fleurs du tilleul à grandes feuilles sont l'une des sources de nectar les plus riches pour les abeilles; un seul arbre peut produire des centaines de kilos de miel. La tisane de fleurs de tilleul est traditionnellement utilisée contre les rhumes et la grippe."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tilia_platyphyllos_kz01.jpg/960px-Tilia_platyphyllos_kz01.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Sommerlinde_%28Tilia_platyphyllos%29.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/e/e5/Sommerlinde_%28Tilia_platyphyllos%29.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/b/b6/Tilia_platyphyllos_Owoce_lipy_656.jpg",
-      "https://inaturalist-open-data.s3.amazonaws.com/photos/195925297/medium.jpeg"
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/195925297/medium.jpeg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tilia_platyphyllos_kz01.jpg/960px-Tilia_platyphyllos_kz01.jpg"
     ]
   },
   {
@@ -13124,9 +13147,10 @@ window.speciesData = [
       "en": "Photosynthesis; thrives on various soils in sunny to semi-shaded positions.",
       "fr": "Photosynthèse; prospère sur divers sols en plein soleil ou à mi-ombre."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Rubus_fruticosus_in_Aveyron_%284%29.jpg",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/298534088/medium.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/7/7c/Rubus_fruticosus_in_Aveyron_%284%29.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/76714167/medium.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/8/8a/Rubus_fruticosus_in_Aveyron_%288%29.jpg"
     ]
   },
@@ -13922,7 +13946,9 @@ window.speciesData = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Lactuca_serriola_in_Aveyron_%285%29.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/3/38/Lactuca_serriola_in_Aveyron_%285%29.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/a/a7/Lactucaserriola2web.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/a/a7/Lactucaserriola2web.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/5228/medium.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Lactuca_serriola_kz12.jpg"
     ]
   },
   {
@@ -14674,9 +14700,8 @@ window.speciesData = [
       "en": "Photosynthesis and nitrogen fixation; tolerates dry, poor soils.",
       "fr": "Photosynthèse et fixation d'azote; tolère les sols secs et pauvres."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Robinia_pseudoacacia_coupe_MHNT.jpg/960px-Robinia_pseudoacacia_coupe_MHNT.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Robinia_pseudoacacia_%27Frisia%27.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/f/f5/Robinia_pseudoacacia_%27Frisia%27.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/8/86/Robina9146.JPG",
       "https://upload.wikimedia.org/wikipedia/commons/4/4b/Robinia_pseudoacacia_fruits.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/e/e5/Robinia_pseudoacacia_and_Pinus_halepensis%2C_Castelnau-de-Guers_02.jpg"
@@ -14723,7 +14748,8 @@ window.speciesData = [
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Tufted_vetch_close_800.jpg",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/b/b7/Tufted_vetch_close_800.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Vicia_cracca_163439406.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Vicia_cracca_163439406.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/Vicia_sepium_-_aed-hiirehernes.jpg"
     ]
   },
   {
@@ -17159,9 +17185,8 @@ window.speciesData = [
       "en": "Photosynthesis; roots live in symbiosis with mycorrhizal fungi.",
       "fr": "Photosynthèse; racines en symbiose avec des champignons mycorhiziens."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Acer_campestre_kz1.jpg/960px-Acer_campestre_kz1.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Acer_campestre_in_Appennino2.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/a/af/Acer_campestre_in_Appennino2.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/2/27/Acer_campestre_02_by-dpc.jpg",
       "https://inaturalist-open-data.s3.amazonaws.com/photos/10778/medium.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/4/4b/Acer_campestre_2_RF.jpg"
@@ -17294,9 +17319,8 @@ window.speciesData = [
       "en": "Photosynthesis; host plant for the rare white-letter hairstreak butterfly (Satyrium w-album).",
       "fr": "Photosynthèse; plante hôte du rare thécla de l'orme (Satyrium w-album)."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ulmus_minor_sl1.jpg/960px-Ulmus_minor_sl1.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Blismes_elm_2007.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/4/43/Blismes_elm_2007.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/6/68/Illustration_Ulmus_carpinifolia0.jpg",
       "https://inaturalist-open-data.s3.amazonaws.com/photos/111979192/medium.jpg"
     ]
@@ -17652,7 +17676,8 @@ window.speciesData = [
     },
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Crepis_capillaris_2005.07.10_09.09.34.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/3/3c/Crepis_capillaris_2005.07.10_09.09.34.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/3/3c/Crepis_capillaris_2005.07.10_09.09.34.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/151130085/medium.jpeg"
     ]
   },
   {
@@ -18816,10 +18841,10 @@ window.speciesData = [
       "en": "Photosynthesis.",
       "fr": "Photosynthèse."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Acer_pseudoplatanus_leaves.jpg/960px-Acer_pseudoplatanus_leaves.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Acer_pseudoplatanus_005.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/c/cd/Acer_pseudoplatanus_005.jpg",
       "https://static.inaturalist.org/photos/72573830/medium.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8d/Acer_pseudoplatanus_budding.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/a/a0/Acer_pseudoplatanus_infructescence.jpg"
     ]
   },
@@ -18861,9 +18886,8 @@ window.speciesData = [
       "en": "Photosynthesis.",
       "fr": "Photosynthèse."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Carpinus_betulus_leaves.jpg/960px-Carpinus_betulus_leaves.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Carpinus_betulus_-_Hunsr%C3%BCck_001.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/2/2c/Carpinus_betulus_-_Hunsr%C3%BCck_001.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/3/33/Carpinus_betulus_Sturm33.jpg",
       "https://static.inaturalist.org/photos/46763976/medium.jpeg"
     ]
@@ -18906,9 +18930,8 @@ window.speciesData = [
       "en": "Photosynthesis; edible nuts.",
       "fr": "Photosynthèse; noix comestibles."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kastanie.jpg/960px-Kastanie.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/Castanea_sativa_-_Anatolian_sweet_chestnut_04.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/2/28/Castanea_sativa_-_Anatolian_sweet_chestnut_04.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/9/9d/Chestnuts.jpg",
       "https://static.inaturalist.org/photos/12739074/medium.jpg"
     ]
@@ -18951,9 +18974,8 @@ window.speciesData = [
       "en": "Photosynthesis; edible hazelnuts.",
       "fr": "Photosynthèse; noisettes comestibles."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Corylus_avellana_catkins.jpg/960px-Corylus_avellana_catkins.jpg",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/249644515/medium.jpg",
     "images": [
-      "https://inaturalist-open-data.s3.amazonaws.com/photos/249644515/medium.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/f/f7/Corylus_avellana_flower_hoarfrost_02-20200102-RM-112558.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/b/b0/Katjes_van_een_hazelaar_%28Corylus_avellana%29._26-01-2021._%28actm.%29_02.jpg"
     ]
@@ -19041,9 +19063,8 @@ window.speciesData = [
       "en": "Photosynthesis.",
       "fr": "Photosynthèse."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Fraxinus_excelsior_leaves.jpg/960px-Fraxinus_excelsior_leaves.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/Fraxinus_excelsior_%27Aurea_pendula%27.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/2/28/Fraxinus_excelsior_%27Aurea_pendula%27.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/4/4f/Fraxinus_excelsior.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/0/08/2020_year._Herbarium._Fraxinus._img-006.jpg",
       "https://inaturalist-open-data.s3.amazonaws.com/photos/218128525/medium.jpeg"
@@ -19087,9 +19108,8 @@ window.speciesData = [
       "en": "Photosynthesis; edible fruits.",
       "fr": "Photosynthèse; fruits comestibles."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Prunus_avium_in_bloom.jpg/960px-Prunus_avium_in_bloom.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Fr%C3%BChling_bl%C3%BChender_Kirschenbaum.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/5/57/Fr%C3%BChling_bl%C3%BChender_Kirschenbaum.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/4/49/Prunus_avium_fruit.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/2/24/Prunus_avium_subsp._duracina_Bl%C3%BCten_20150423_02.JPG"
     ]
@@ -19176,9 +19196,8 @@ window.speciesData = [
       "en": "Photosynthesis; berries edible after cooking.",
       "fr": "Photosynthèse; baies comestibles après cuisson."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Sorbus_aucuparia_berries.jpg/960px-Sorbus_aucuparia_berries.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Rowan_tree_20081002b.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/2/26/Rowan_tree_20081002b.jpg",
       "https://inaturalist-open-data.s3.amazonaws.com/photos/10450/medium.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/3/33/2020_year._Herbarium._Sorbus_aucuparia._img-016.jpg"
     ]
@@ -20391,7 +20410,7 @@ window.speciesData = [
       "en": "Photosynthesis from rhizome.",
       "fr": "Photosynthèse à partir du rhizome."
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Convallaria_majalis_10.jpg/960px-Convallaria_majalis_10.jpg",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/129833718/medium.jpeg",
     "images": [
       "https://inaturalist-open-data.s3.amazonaws.com/photos/129833718/medium.jpeg",
       "https://upload.wikimedia.org/wikipedia/commons/7/7a/Convallaria_majalis_%27Albostriata%27_kz01.jpg",
@@ -20437,8 +20456,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Northern_Goshawk_ad_M2.jpg",
+    "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/12651287/medium.jpeg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/61773674/medium.jpg"
+    ]
   },
   {
     "id": "bird_acrocephalus_palustris",
@@ -20478,8 +20500,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/96/Acrocephalus_palustris_Irpin6.JPG",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/7d/Acrocephalus_palustris_%28Marek_Szczepanek%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bc/Marsh_Warbler_%28Acrocephalus_palustris%29_%281%29.jpg"
+    ]
   },
   {
     "id": "bird_acrocephalus_schoenobaenus",
@@ -20519,8 +20544,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/69/Sedge_warbler_%28Acrocephalus_schoenobaenus%29_3.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/54/Acrocephalus_schoenobaenus_1_%28Marek_Szczepanek%29-2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/ab/Acrocephalus_schoenobaenus_-Sweden-8_%281%29.jpg"
+    ]
   },
   {
     "id": "bird_acrocephalus_scirpaceus",
@@ -20560,8 +20588,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/PleidelsheimerWiesentalTeichrohrsaenger.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Eurasian_Reed_Warbler.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8d/Common_Reed_Warbler_%28Acrocephalus_scirpaceus%29.jpg"
+    ]
   },
   {
     "id": "bird_aegolius_funereus",
@@ -20601,8 +20632,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/P%C3%A4rluggla%2C_Varberg%2C_Hallands_L%C3%A4n%2C_Sverige.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/Aegolius-funereus-001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/04/Aegolius_funereus_funereus_%28Tengmalm%27s_Owl%29%2C_Lindberg%2C_Germany_1.jpg"
+    ]
   },
   {
     "id": "bird_anas_acuta",
@@ -20642,8 +20676,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Northern_Pintails_%28Male_%26_Female%29_I_IMG_0911.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/03/Ljubljana_-_Anas_acuta_male.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8a/Male_northern_pintail_in_flight-8276.jpg"
+    ]
   },
   {
     "id": "bird_anas_crecca",
@@ -20683,8 +20720,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Eurasian_teal_%28Anas_crecca_crecca%29_male_Qingshui.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/2015_Cyraneczka_zwyczajna_%28samiec%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/38/Eurasian_teal_%28Anas_crecca%29.jpg"
+    ]
   },
   {
     "id": "bird_anser_albifrons",
@@ -20724,8 +20764,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Greater_white-fronted_goose_in_flight-1413.jpg",
+    "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/393841552/medium.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d9/Greater_white-fronted_goose_in_Central_Park_%2895536%29_%28cropped%29.jpg"
+    ]
   },
   {
     "id": "bird_anser_brachyrhynchus",
@@ -20765,8 +20808,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/2019-03-25_Anser_brachyrhynchus%2C_Killingworth_Lake%2C_Northumberland_1.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e0/2019-04-21_Anser_brachyrhynchus%2C_Killingworth_Lake%2C_Northumberland_1.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/7788733/medium.jpg"
+    ]
   },
   {
     "id": "bird_anthus_trivialis",
@@ -20806,8 +20852,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Tree_pipit_-_Jamnagar_2021-10-16.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/0b/2015-04-21_Anthus_trivialis%2C_Abernethy_Forest_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/1a/Tree_pipit_%28Anthus_trivialis%29.jpg"
+    ]
   },
   {
     "id": "bird_ardea_alba",
@@ -20847,8 +20896,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Ardea_alba4.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d8/Kadalundi_Bird_Sanctuary_Ardea_alba_09138.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/56653891/medium.jpg"
+    ]
   },
   {
     "id": "bird_asio_flammeus",
@@ -20888,8 +20940,12 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Short_Eared_Owl_on_the_Ground.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/1a/Asio_flammeus_-Fazenda_Campo_de_Ouro%2C_Piraju%2C_Sao_Paulo%2C_Brasil-8.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6e/Sumpfohreule_%28Asio_flammeus%29_auf_Spiekeroog_-_Nationalpark_nieders%C3%A4chsisches_Wattenmeer.jpg",
+      "https://static.inaturalist.org/photos/30378889/medium.jpg"
+    ]
   },
   {
     "id": "bird_asio_otus",
@@ -20929,8 +20985,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Long-eared_Owl_-_Kisjuszallas_-_Hungary_S4E0920_%2815671750198%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/3d/Eastern_Screech_Owl.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mal%C3%A9_Ra%C5%A1kovce_long-eared_owl_%28asio_otus%29_perched_and_resting_01_%28March_2006%29.jpg"
+    ]
   },
   {
     "id": "bird_bombycilla_garrulus",
@@ -20970,8 +21029,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Bombycilla_garrulus%2C_Novosibirsk_1.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bombycilla_garrulusII.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/21/Bombycilla_garrulus_CT2.jpg"
+    ]
   },
   {
     "id": "bird_botaurus_stellaris",
@@ -21011,8 +21073,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Botaurus_stellaris_%28Marek_Szczepanek%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/3b/Eurasian_Bittern_-_Torrile_-_Italy_4528_%2815409347121%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Bittern_-_Botaurus_stellaris.jpg"
+    ]
   },
   {
     "id": "bird_branta_canadensis",
@@ -21052,8 +21117,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Canadagoose.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/74/Canada_Goose_%28Branta_canadensis%29_with_goslings.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e4/Canada_goose_flight_cropped_and_NR.jpg"
+    ]
   },
   {
     "id": "bird_bubo_bubo",
@@ -21093,8 +21161,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Bubo_bubo_3_%28Martin_Mecnarowski%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/8d/Bubo_bubo_winter_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bubo_September_2014-5a.jpg"
+    ]
   },
   {
     "id": "bird_calidris_pugnax",
@@ -21134,8 +21205,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Ruff%2C_Philomachus_pugnax%2C_at_Marievale_Nature_Reserve%2C_Gauteng%2C_South_Africa_%2821014304581%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/ec/Philomachus_pugnax_%28no%29.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/7/79/Philomachus_pugnax_s3.jpg"
+    ]
   },
   {
     "id": "bird_caprimulgus_europaeus",
@@ -21175,8 +21249,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/1594673/medium.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/39/Caprimulgus_europaeus_by_tcager.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/00/Nachtzwaluw_-_European_nightjar_-_Caprimulgus_europaeus_2.jpg"
+    ]
   },
   {
     "id": "bird_carduelis_carduelis",
@@ -21216,8 +21293,12 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/072_Wild_European_goldfinch_at_the_Parc_Jura_vaudois_Photo_by_Giles_Laurent.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/b7/Carduelis_tristis_CT2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e7/Carcar.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/384965723/medium.jpg"
+    ]
   },
   {
     "id": "bird_certhia_brachydactyla",
@@ -21257,8 +21338,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Short-toed_treecreeper_%28Certhia_brachydactyla_megarhynchos%29.jpg",
+    "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/6260571/medium.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c4/Certhia_brachydactyla_108308271.jpg"
+    ]
   },
   {
     "id": "bird_chloris_chloris",
@@ -21298,8 +21382,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Chloris_chloris_%28profile%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/be/CarduelisChlorisBerry.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7c/Greenfinch_%28Chloris_chloris_harrisoni%29_male.jpg"
+    ]
   },
   {
     "id": "bird_ciconia_ciconia",
@@ -21339,8 +21426,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/White_stork_%28Ciconia_ciconia%29_Bia%C5%82owieza.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/65/Wei%C3%9Fstorch_Walsrode_2014_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/dd/White_Stork_%28Ciconia_ciconia%29_%285%29.jpg"
+    ]
   },
   {
     "id": "bird_ciconia_nigra",
@@ -21380,8 +21470,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Ciconia_nigra_2_%28Marek_Szczepanek%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/b/ba/Ciconia_nigra_-Kruger_National_Park-8.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c6/Black_stork_%28Ciconia_nigra%29.jpg"
+    ]
   },
   {
     "id": "bird_circus_aeruginosus",
@@ -21421,8 +21514,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Western_Marsh_Harrier-_Bangalore%2C_India.jpg",
+    "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/113786815/medium.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/13/Circus_aeruginosus_-_Western_Marsh_Harrier_01.jpg"
+    ]
   },
   {
     "id": "bird_circus_pygargus",
@@ -21462,8 +21558,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Montagu%27s_harrier_male.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c4/Flickr_-_don_macauley_-_Bird_015.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/25/Circus_pygargus_233992147.jpg"
+    ]
   },
   {
     "id": "bird_clinclus_clinclus",
@@ -21544,8 +21643,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Corvus_frugileus_walking_Dornoch.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/2d/Saatkr%C3%A4he_3.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Corvus_frugilegus%2C_Krak%C3%B3w%2C_20230225_0900_2882.jpg"
+    ]
   },
   {
     "id": "bird_corvus_monedula",
@@ -21585,8 +21687,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Nordic_jackdaw_%2852563242448%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d8/CROP._Corvus_monedula%2C_naakka%2C_Naantalin_hautausmaa%2C_Naantali%2C_8.11.2011..jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ed/Corvus_monedula_on_grass.jpg"
+    ]
   },
   {
     "id": "bird_coturnix_coturnix",
@@ -21626,8 +21731,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Coturnix_coturnix%2C_Fraunberg%2C_Bayern%2C_Deutschland_1%2C_Ausschnitt.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e3/Coturnix_coturnix%2C_Fraunberg%2C_Bayern%2C_Deutschland_2%2C_Ausschnitt.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9e/Coturnix_ypsilophora_-_Sydney_Olympic_Park.jpg"
+    ]
   },
   {
     "id": "bird_delichon_urbicum",
@@ -21667,8 +21775,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mehlschwalbe_Delichon_urbicum.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Delichon_urbica.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/74/Delichon_urbicum_Oulu_20120527_04.JPG"
+    ]
   },
   {
     "id": "bird_dendrocoptes_medius",
@@ -21708,8 +21819,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Middle-spotted_Woodpecker_-_HungaryCS4E4424_%2816224259449%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/5f/%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9_%D0%BF%D1%91%D1%81%D1%82%D1%80%D1%8B%D0%B9_%D0%B4%D1%8F%D1%82%D0%B5%D0%BB_%28Dendrocoptes_medius%29%2C_%D0%91%D0%B8%D1%82%D1%86%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BB%D0%B5%D1%81.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Middle-Spotted_Woodpecker_%28Dendrocopus_medius%29%2C_For%C3%AAt_de_Soignes%2C_Brussels_%2830300015084%29.jpg"
+    ]
   },
   {
     "id": "bird_dryobates_minor",
@@ -21749,8 +21863,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/%D0%9C%D0%B0%D0%BB%D1%8B%D0%B9_%D0%BF%D1%91%D1%81%D1%82%D1%80%D1%8B%D0%B9_%D0%B4%D1%8F%D1%82%D0%B5%D0%BB_%D0%BD%D0%B0_%D1%80%D0%B5%D0%BF%D0%B5%D0%B9%D0%BD%D0%B8%D0%BA%D0%B5_%28Dendrocopos_minor%2C_fem%29%2C_%D0%9A%D1%80%D1%8B%D0%BB%D0%B0%D1%82%D1%81%D0%BA%D0%B8%D0%B5_%D1%85%D0%BE%D0%BB%D0%BC%D1%8B.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/fc/Male_lesser_spotted_woodpecker_%28Dryobates_minor%29.png",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Mali_detli%C4%87_%28Dryobates_minor%29%3B_Lesser_Spotted_Woodpecker.jpg"
+    ]
   },
   {
     "id": "bird_dryocopus_martius",
@@ -21790,8 +21907,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Dryocopus_martius_ssp._martius.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d1/BlackWoods.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/20/%D0%96%D0%B5%D0%BB%D0%BD%D0%B0_%28Dryocopus_martius%2C_fem%29%2C_%C2%AB%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F_%D1%88%D1%83%D0%BC%D0%B0%D1%88%D0%B5%D1%88%D0%B0%D1%8F%C2%BB.jpg"
+    ]
   },
   {
     "id": "bird_egretta_garzetta",
@@ -21831,8 +21951,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Little_egret_%28Egretta_garzetta%29_Photograph_by_Shantanu_Kuveskar.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/03/Egretta_garzetta_flying%2C_Lido_de_Thau_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/Little_egret_%28Egretta_garzetta%29_in_flight.jpg"
+    ]
   },
   {
     "id": "bird_emberiza_calandra",
@@ -21872,8 +21995,12 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Bruant_proyer_Ichkeul018.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/71/Emberiza_calandra_southeast_Turkey.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d2/Corn_bunting_-_Emberiza_calandra_09.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b6/Emberiza_calandra_-_Corn_Bunting%2C_Kahramanmara%C5%9F_2016-11-18_02-3.jpg"
+    ]
   },
   {
     "id": "bird_emberiza_schoeniclus",
@@ -21913,8 +22040,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Reed_Bunting_-_Emberiza_schoeniclus_%2852015951301%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Common_reed_bunting_%28emberiza_schoeniclus%29_male.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7d/Common_reed_bunting_%28Emberiza_schoeniclus%29_male_summer_plumage.jpg"
+    ]
   },
   {
     "id": "bird_eurasian_siskin",
@@ -21954,8 +22084,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Eurasian_siskin_%28Spinus_spinus%29_male_Biebrzanski.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9e/Carduelis_spinus_male.jpg",
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/458846447/medium.jpg"
+    ]
   },
   {
     "id": "bird_eurasian_skylark",
@@ -21995,8 +22128,11 @@ window.speciesData = [
       "en": "Omnivorous or carnivorous",
       "fr": "Omnivore ou carnivore"
     },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Placeholder_bird.jpg/960px-Placeholder_bird.jpg",
-    "images": []
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Eurasian_Skylark_%28Alauda_arvensis%29_%2853470261667%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/22/Alauda_arvensis_Ehedydd.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ea/Alauda_arvensis_-_Skylark_-_Tarlaku%C5%9Fu_04.jpg"
+    ]
   },
   {
     "id": "bird_eurasian_wren",
