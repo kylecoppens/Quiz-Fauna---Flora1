@@ -1332,6 +1332,35 @@ document.addEventListener('DOMContentLoaded', () => {
         window.quizImageNavHandler = handleImageNav;
         document.addEventListener('keydown', handleImageNav);
 
+        // Add button click navigation for images
+        const btnPrevImage = document.getElementById('btn-prev-image');
+        const btnNextImage = document.getElementById('btn-next-image');
+
+        if (btnPrevImage && btnNextImage) {
+            if (allImages.length > 1) {
+                btnPrevImage.style.display = 'flex';
+                btnNextImage.style.display = 'flex';
+            } else {
+                btnPrevImage.style.display = 'none';
+                btnNextImage.style.display = 'none';
+            }
+
+            btnPrevImage.removeEventListener('click', window.quizPrevImageHandler);
+            btnNextImage.removeEventListener('click', window.quizNextImageHandler);
+
+            window.quizPrevImageHandler = () => {
+                window.quizImageIndex = (window.quizImageIndex - 1 + allImages.length) % allImages.length;
+                loadQuizImage();
+            };
+            window.quizNextImageHandler = () => {
+                window.quizImageIndex = (window.quizImageIndex + 1) % allImages.length;
+                loadQuizImage();
+            };
+
+            btnPrevImage.addEventListener('click', window.quizPrevImageHandler);
+            btnNextImage.addEventListener('click', window.quizNextImageHandler);
+        }
+
         // Range map
         if (currentItem.rangeMap) {
             btnRange.classList.remove('hidden');

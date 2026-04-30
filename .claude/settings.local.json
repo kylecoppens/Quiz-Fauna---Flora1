@@ -25,7 +25,8 @@
       "Bash(/tmp/create_excel.py:*)",
       "Bash(__NEW_LINE_4adf7fe315a7c8cf__ python3:*)",
       "Bash(gh pr:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

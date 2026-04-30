@@ -1068,6 +1068,50 @@ p {
     z-index: 10;
 }
 
+.image-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(61, 184, 99, 0.85);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.image-nav-btn:hover {
+    background: rgba(61, 184, 99, 1);
+}
+
+.image-nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.image-nav-btn-left {
+    left: 10px;
+}
+
+.image-nav-btn-right {
+    right: 10px;
+}
+
+@media (max-width: 640px) {
+    .image-nav-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.75rem;
+    }
+}
+
 /* ==========================================================================
    Answer Widgets
    ========================================================================== */
