@@ -249,10 +249,18 @@
             <div class="question-container">
                 <h3 id="question-text">Identify this species</h3>
                 <div class="image-wrapper glass-panel-inner">
-                    <button id="btn-prev-image" class="image-nav-btn image-nav-btn-left" style="display:none;" aria-label="Previous image">←</button>
+                    <button id="btn-prev-image" class="image-nav-btn image-nav-btn-left" style="display:none;" aria-label="Previous image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
                     <img id="question-image" src="" alt="Mystery Species" referrerpolicy="no-referrer"/>
                     <img id="range-image" src="" alt="Species Range" class="hidden" referrerpolicy="no-referrer"/>
-                    <button id="btn-next-image" class="image-nav-btn image-nav-btn-right" style="display:none;" aria-label="Next image">→</button>
+                    <button id="btn-next-image" class="image-nav-btn image-nav-btn-right" style="display:none;" aria-label="Next image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                     <div id="image-loader" class="loader"></div>
                     <div id="image-counter" class="image-counter" style="display:none;">1/1</div>
                     <div class="image-nav-hint" id="image-nav-hint" style="display:none;">← → foto's</div>
