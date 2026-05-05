@@ -32,7 +32,7 @@ body.light-mode .learn-card-info { background: rgba(255,255,255,0.9); }
 body.light-mode .learn-card-title, body.light-mode .learn-card-scientific { color: var(--text-primary); }
 body.light-mode .wrong-answer-card { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); }
 body.light-mode .hero-parallax-container { background: linear-gradient(135deg, #c8e6c9 0%, #e8f5e9 100%); }
-body.light-mode .hero-parallax-inner img { opacity: 0.35; }
+body.light-mode .hero-parallax-inner img { opacity: 0.65; }
 body.light-mode .hero-title-overlay { background: rgba(255,255,255,0.05); }
 body.light-mode .hero-title,
 body.light-mode .hero-description { color: var(--text-primary); }
