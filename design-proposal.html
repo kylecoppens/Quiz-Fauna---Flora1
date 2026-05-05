@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Proposal - Fauna & Flora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0d1810 0%, #1a3a22 100%);
+            color: #ffffff;
+            font-family: 'Sora', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px 0 40px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background elements */
+        .bg-shape {
+            position: fixed;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-shape-1 {
+            width: 40vw; height: 40vw;
+            background: radial-gradient(circle, #225a38 0%, transparent 70%);
+            top: -10%; left: -10%;
+        }
+
+        .bg-shape-2 {
+            width: 50vw; height: 50vw;
+            background: radial-gradient(circle, #c17a4a 0%, transparent 70%);
+            bottom: -20%; right: -10%;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(30px, -50px); }
+            66% { transform: translate(-20px, 20px); }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            position: relative;
+            z-index: 10;
+        }
+
+
+        /* Hero section */
+        .hero {
+            position: relative;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, #1a3d22 0%, #0d2b18 50%, #1c4035 100%);
+            background-size: cover;
+            background-position: center;
+            background-image: url('juncala-forest-homepage.jpg');
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 12px 40px rgba(61, 184, 99, 0.15);
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 24px 32px 24px;
+            z-index: 2;
+        }
+
+        .hero-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .hero-control-group {
+            display: flex;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-control-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .hero-control-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title-highlight {
+            background: linear-gradient(135deg, #3db863 0%, #50d98a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline;
+        }
+
+        .hero-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* SOTD Card */
+        .sotd-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px 8px 24px 16px;
+            padding: 0;
+            overflow: hidden;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .sotd-card:hover {
+            transform: translateY(-8px);
+            backdrop-filter: blur(20px);
+            border-color: rgba(61, 184, 99, 0.4);
+            box-shadow: 0 24px 48px rgba(61, 184, 99, 0.15);
+        }
+
+        .sotd-label {
+            padding: 14px 20px;
+            background: rgba(61, 184, 99, 0.1);
+            border-bottom: 1px solid rgba(61, 184, 99, 0.2);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sotd-body {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .sotd-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .sotd-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .sotd-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: 'Lora', serif;
+        }
+
+        .sotd-scientific {
+            font-size: 0.85rem;
+            color: #3db863;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .sotd-fact {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Action buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 18px 24px;
+            border: none;
+            border-radius: 18px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+            transition: left 0.5s ease-out;
+            pointer-events: none;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3db863 0%, #50d98a 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(61, 184, 99, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(61, 184, 99, 0.35);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .emoji {
+            font-size: 1.3em;
+        }
+
+        .btn-text {
+            font-weight: 600;
+        }
+
+        /* Comparison section */
+        .comparison {
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison h2 {
+            text-align: center;
+            margin-bottom: 32px;
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .design-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .design-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .design-preview {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(61, 184, 99, 0.2) 0%, rgba(193, 122, 74, 0.1) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .design-desc {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .side-by-side {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-image">
+                <div class="hero-overlay">
+                    <div class="hero-controls">
+                        <div class="hero-control-group">
+                            <button class="hero-control-btn" title="Dutch">NL</button>
+                            <div class="hero-control-divider"></div>
+                            <button class="hero-control-btn" title="Dark/Light mode">🌙</button>
+                            <div class="hero-control-divider"></div>
+                            <button class="hero-control-btn" title="Volume">🔊</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="hero-subtitle">Discover Nature</div>
+                        <h1 class="hero-title">
+                            <span style="color: #000; font-weight: 900;">Belg</span><span style="color: #FDDA24; font-weight: 900;">ische</span><br>
+                            <span class="hero-title-highlight">Fauna & Flora</span>
+                        </h1>
+                        <p class="hero-description">Test your knowledge or explore our encyclopedia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Species of the Day Card -->
+        <div class="sotd-card">
+            <div class="sotd-label">
+                🌟 Species of the Day
+                <span style="font-size: 0.75rem; opacity: 0.7;">Tap for details →</span>
+            </div>
+            <div class="sotd-body">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23226a38' width='100' height='100'/%3E%3Ccircle cx='50' cy='40' r='25' fill='%234a8c5e'/%3E%3Cpath d='M30 70 Q50 50 70 70' fill='%237ec860'/%3E%3C/svg%3E" alt="Pine" class="sotd-img">
+                <div class="sotd-info">
+                    <div class="sotd-name">Zwarte den</div>
+                    <div class="sotd-scientific">Pinus nigra</div>
+                    <div class="sotd-fact">Belgian pine native to European forests, symbolizing resilience in harsh climates.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn btn-primary">
+                <span class="emoji">🎮</span>
+                <span class="btn-text">Play Quiz</span>
+            </button>
+            <button class="btn btn-secondary">
+                <span class="emoji">📖</span>
+                <span class="btn-text">Encyclopedia</span>
+            </button>
+            <button class="btn btn-secondary">
+                <span class="emoji">🧬</span>
+                <span class="btn-text">BioGids</span>
+            </button>
+        </div>
+
+        <!-- Design Improvements -->
+        <div class="comparison">
+            <h2>✨ Design Improvements</h2>
+
+            <div class="side-by-side">
+                <div class="design-card">
+                    <div class="design-label">Typography</div>
+                    <div class="design-preview">Aa</div>
+                    <div class="design-desc">Lora serif + Sora sans for elegance</div>
+                </div>
+                <div class="design-card">
+                    <div class="design-label">Colors</div>
+                    <div class="design-preview" style="background: linear-gradient(135deg, #3db863 0%, #c17a4a 100%);"></div>
+                    <div class="design-desc">Added terracotta & sage accents</div>
+                </div>
+            </div>
+
+            <div class="side-by-side">
+                <div class="design-card">
+                    <div class="design-label">Buttons</div>
+                    <div class="design-preview">✨</div>
+                    <div class="design-desc">Gradient + hover animations</div>
+                </div>
+                <div class="design-card">
+                    <div class="design-label">Cards</div>
+                    <div class="design-preview">⬚</div>
+                    <div class="design-desc">Organic shapes & subtle shadows</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 32px 20px; background: rgba(61, 184, 99, 0.1); border-radius: 16px; border: 1px solid rgba(61, 184, 99, 0.2);">
+                <h3 style="margin-bottom: 12px; font-size: 1.3rem;">Wil je deze verbeteringen implementeren?</h3>
+                <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 20px;">Dit voorstel brengt meer elegantie, moderne interacties en professionele polish.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

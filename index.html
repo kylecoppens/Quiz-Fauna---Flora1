@@ -102,39 +102,54 @@
 
                         <!-- Title overlaid on hero -->
                         <div class="hero-title-overlay">
-                            <div class="hero-subtitle" data-i18n="discover">Discover Nature</div>
-                            <h1 class="hero-title" data-i18n="title">Belgian<br><span class="highlight">Fauna &amp; Flora</span></h1>
-                            <p class="hero-description" data-i18n="desc">Test your knowledge or explore the encyclopedia of Belgium's natural wonders.</p>
-                        </div>
-                        <div class="hero-overlay-text">
-                            <span class="hero-badge">🌿 Belgium</span>
+                            <div class="hero-content-top">
+                                <div class="hero-subtitle" data-i18n="discover">Discover Nature</div>
+                                <h1 class="hero-title">
+                                    <span class="belgian-word"><span class="belgian-part-1">Belg</span><span class="belgian-part-2">ische</span></span><br>
+                                    <span class="highlight">Fauna &amp; Flora</span>
+                                </h1>
+                                <p class="hero-description" data-i18n="desc">Test your knowledge or explore the encyclopedia of Belgium's natural wonders.</p>
+                            </div>
+
+                            <!-- Species of the Day in Hero -->
+                            <div id="sotd-card-hero" class="sotd-card-hero hidden">
+                                <div class="sotd-hero-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span></div>
+                                <div class="sotd-hero-body">
+                                    <img id="sotd-img-hero" src="" alt="" referrerpolicy="no-referrer">
+                                    <div class="sotd-hero-info">
+                                        <div id="sotd-name-hero" class="sotd-hero-name"></div>
+                                        <div id="sotd-scientific-hero" class="sotd-hero-scientific"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-action-buttons">
+                                <button id="btn-play-hero" class="btn btn-hero btn-hero-primary">
+                                    <span class="play-svg-target" style="margin-right:8px"></span> <span data-i18n="play">Speel Quiz</span>
+                                </button>
+                                <button id="btn-learn-hero" class="btn btn-hero">
+                                    <span class="learn-svg-target" style="margin-right:8px"></span> <span data-i18n="learn">Encyclopedie</span>
+                                </button>
+                                <button id="btn-biogids-hero" class="btn btn-hero">
+                                    <span class="biogids-svg-target" style="margin-right:8px"></span> <span data-i18n="biogids">BioGids</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="sotd-card" class="sotd-card hidden">
-                    <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span> <span class="sotd-tap-hint" data-i18n="sotdTap">Tik voor details →</span></div>
-                    <div class="sotd-body">
-                        <img id="sotd-img" src="" alt="" referrerpolicy="no-referrer">
-                        <div class="sotd-info">
-                            <div id="sotd-name" class="sotd-name"></div>
-                            <div id="sotd-scientific" class="sotd-scientific"></div>
-                            <div id="sotd-fact" class="sotd-fact"></div>
-                        </div>
-                    </div>
-                </div>
             </header>
 
-            <div class="action-buttons">
-                <button id="btn-play" class="btn btn-primary">
-                    <span class="play-svg-target" style="margin-right:8px"></span> <span data-i18n="play">Speel Quiz</span>
-                </button>
-                <button id="btn-learn" class="btn btn-outline">
-                    <span class="learn-svg-target" style="margin-right:8px"></span> <span data-i18n="learn">Encyclopedie</span>
-                </button>
-                <button id="btn-biogids" class="btn btn-outline">
-                    <span class="biogids-svg-target" style="margin-right:8px"></span> <span data-i18n="biogids">BioGids</span>
-                </button>
+            <div id="sotd-card" class="sotd-card hidden">
+                <div class="sotd-label">🌟 <span data-i18n="sotdLabel">Soort van de dag</span> <span class="sotd-tap-hint" data-i18n="sotdTap">Tik voor details →</span></div>
+                <div class="sotd-body">
+                    <img id="sotd-img" src="" alt="" referrerpolicy="no-referrer">
+                    <div class="sotd-info">
+                        <div id="sotd-name" class="sotd-name"></div>
+                        <div id="sotd-scientific" class="sotd-scientific"></div>
+                        <div id="sotd-fact" class="sotd-fact"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -563,9 +578,9 @@
         </div>
     </div>
 
-    <script src="js/data/species_data.js?v=271"></script>
-    <script src="js/data/biogids_data.js?v=271"></script>
-    <script src="js/app.js?v=271"></script>
+    <script src="js/data/species_data.js?v=274"></script>
+    <script src="js/data/biogids_data.js?v=274"></script>
+    <script src="js/app.js?v=274"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {

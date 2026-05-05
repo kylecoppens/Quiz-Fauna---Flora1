@@ -589,9 +589,9 @@ document.addEventListener('DOMContentLoaded', () => {
         phylo: document.getElementById('screen-phylo'),
     };
 
-    const btnPlay = document.getElementById('btn-play');
-    const btnLearn = document.getElementById('btn-learn');
-    const btnBioGids = document.getElementById('btn-biogids');
+    const btnPlay = document.getElementById('btn-play-hero') || document.getElementById('btn-play');
+    const btnLearn = document.getElementById('btn-learn-hero') || document.getElementById('btn-learn');
+    const btnBioGids = document.getElementById('btn-biogids-hero') || document.getElementById('btn-biogids');
     const btnBacks = document.querySelectorAll('.btn-back, .back-btn');
     const btnStartQuiz = document.getElementById('btn-start-quiz');
     const btnNextQuestion = document.getElementById('btn-next-question');
@@ -668,32 +668,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const dayIndex = (today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate()) % allData.length;
         const species = allData[dayIndex];
 
-        const card = document.getElementById('sotd-card');
-        const img = document.getElementById('sotd-img');
-        const nameEl = document.getElementById('sotd-name');
-        const sciEl = document.getElementById('sotd-scientific');
-        const factEl = document.getElementById('sotd-fact');
+        const cardHero = document.getElementById('sotd-card-hero');
+        const imgHero = document.getElementById('sotd-img-hero');
+        const nameHeroEl = document.getElementById('sotd-name-hero');
+        const sciHeroEl = document.getElementById('sotd-scientific-hero');
 
-        if (!card || !species) return;
+        if (!cardHero || !species) return;
 
         const name = typeof species.name === 'object' ? species.name[currentLang] : species.name;
         const funfact = species.funfact
             ? (typeof species.funfact === 'object' ? species.funfact[currentLang] : species.funfact)
             : (typeof species.description === 'object' ? species.description[currentLang] : species.description);
 
-        img.src = species.image || '';
-        img.alt = name;
-        img.onerror = () => { img.style.display = 'none'; };
+        imgHero.src = species.image || '';
+        imgHero.alt = name;
+        imgHero.onerror = () => { imgHero.style.display = 'none'; };
 
-        nameEl.textContent = name;
-        sciEl.textContent = species.scientific || '';
-        factEl.textContent = funfact || '';
+        nameHeroEl.textContent = name;
+        sciHeroEl.textContent = species.scientific || '';
 
-        card.classList.remove('hidden');
+        cardHero.classList.remove('hidden');
 
         // Make SOTD card clickable — opens species detail modal
-        card.style.cursor = 'pointer';
-        card.onclick = () => openModal(species);
+        cardHero.style.cursor = 'pointer';
+        cardHero.onclick = () => openModal(species);
     }
 
     // --- Language Logic ---
