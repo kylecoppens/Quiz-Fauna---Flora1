@@ -409,7 +409,9 @@ p {
     border: 1px solid rgba(61, 184, 99, 0.35);
     border-radius: 12px;
     padding: 18px 20px;
-    margin: 28px 0 20px 0;
+    margin: 28px auto 20px auto;
+    width: 100%;
+    max-width: 480px;
     backdrop-filter: blur(12px);
     transition: all 0.3s ease;
 }
