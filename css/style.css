@@ -31,6 +31,27 @@ body.light-mode .infobox th, body.light-mode .infobox td { border-color: rgba(0,
 body.light-mode .learn-card-info { background: rgba(255,255,255,0.9); }
 body.light-mode .learn-card-title, body.light-mode .learn-card-scientific { color: var(--text-primary); }
 body.light-mode .wrong-answer-card { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); }
+body.light-mode .hero-parallax-container { background: linear-gradient(135deg, #c8e6c9 0%, #e8f5e9 100%); }
+body.light-mode .hero-parallax-inner img { opacity: 0.35; }
+body.light-mode .hero-title-overlay { background: rgba(255,255,255,0.05); }
+body.light-mode .hero-title,
+body.light-mode .hero-description { color: var(--text-primary); }
+body.light-mode .hero-subtitle { color: var(--text-secondary); }
+body.light-mode .btn-hero {
+    background: rgba(61, 184, 99, 0.25);
+    border-color: rgba(61, 184, 99, 0.5);
+    box-shadow: 0 4px 16px rgba(61, 184, 99, 0.15);
+    color: var(--text-primary);
+}
+body.light-mode .btn-hero:hover {
+    background: rgba(61, 184, 99, 0.4);
+    border-color: rgba(61, 184, 99, 0.65);
+    box-shadow: 0 12px 32px rgba(61, 184, 99, 0.25);
+}
+body.light-mode .sotd-card-hero {
+    background: rgba(61, 184, 99, 0.12);
+    border-color: rgba(61, 184, 99, 0.3);
+}
 
 /* ==========================================================================
    Design System variables
