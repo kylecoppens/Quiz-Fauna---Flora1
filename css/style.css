@@ -422,6 +422,8 @@ p {
     gap: 12px;
     width: 100%;
     max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* SOTD in Hero */
