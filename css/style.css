@@ -759,6 +759,8 @@ p {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    height: 56px;
+    white-space: nowrap;
 }
 
 .btn-hero-primary {
