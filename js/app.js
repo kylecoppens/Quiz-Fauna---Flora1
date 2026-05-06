@@ -610,6 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const categoryChips = document.querySelectorAll('#category-selector .cat-card');
     const difficultyChips = document.querySelectorAll('#difficulty-selector .diff-btn');
+    const difficultyChipsHero = document.querySelectorAll('#difficulty-selector-hero .diff-btn');
     const subCategoryChips = document.querySelectorAll('#category-selector .sub-chip');
     const catAccordions = document.querySelectorAll('#category-selector .cat-accordion');
 
@@ -1068,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Config ---
     function updateConfigPreview() {
         const countEl = document.getElementById('config-species-count');
-        if (!countEl) return;
+        const countElHero = document.getElementById('config-species-count-hero');
         const allData = window.speciesData || [];
         const seen = new Set();
         const uniqueData = allData.filter(item => {
@@ -1087,7 +1088,9 @@ document.addEventListener('DOMContentLoaded', () => {
             en: `${filtered.length} species available`,
             fr: `${filtered.length} esp\u00e8ces disponibles`
         };
-        countEl.textContent = texts[currentLang] || texts.nl;
+        const text = texts[currentLang] || texts.nl;
+        if (countEl) countEl.textContent = text;
+        if (countElHero) countElHero.textContent = text;
     }
 
     function setupChips(chipsList, callback) {
@@ -1134,12 +1137,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     setupChips(difficultyChips, val => { currentDifficulty = val; updateConfigPreview(); });
+    setupChips(difficultyChipsHero, val => {
+        currentDifficulty = val;
+        // Sync with main selector
+        document.querySelectorAll('#difficulty-selector .diff-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector(`#difficulty-selector .diff-btn[data-val="${val}"]`)?.classList.add('active');
+        updateConfigPreview();
+    });
 
     // --- Quiz length selector ---
-    document.querySelectorAll('#length-selector .length-btn').forEach(btn => {
+    const lengthBtns = document.querySelectorAll('#length-selector .length-btn');
+    const lengthBtnsHero = document.querySelectorAll('#length-selector-hero .length-btn');
+
+    lengthBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('#length-selector .length-btn').forEach(b => b.classList.remove('active'));
+            lengthBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            lengthBtnsHero.forEach(b => b.classList.remove('active'));
+            document.querySelector(`#length-selector-hero .length-btn[data-val="${btn.dataset.val}"]`)?.classList.add('active');
+            currentQuizLength = parseInt(btn.dataset.val, 10);
+        });
+    });
+
+    lengthBtnsHero.forEach(btn => {
+        btn.addEventListener('click', () => {
+            lengthBtnsHero.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            lengthBtns.forEach(b => b.classList.remove('active'));
+            document.querySelector(`#length-selector .length-btn[data-val="${btn.dataset.val}"]`)?.classList.add('active');
             currentQuizLength = parseInt(btn.dataset.val, 10);
         });
     });
@@ -1277,6 +1302,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.quizImageIndex = 0;
         window.quizAllImages = allImages;
+        if (window.updateQuizImages) window.updateQuizImages(allImages);
 
         function loadQuizImage() {
             imageLoader.style.display = 'block';
@@ -2216,4 +2242,73 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { passive: true });
     });
+
+    // Full-screen image viewer
+    const imageWrapper = document.querySelector('.image-wrapper');
+    const imageFullscreen = document.getElementById('image-fullscreen');
+    const imageFullscreenImg = document.getElementById('image-fullscreen-img');
+    const imageFullscreenClose = document.querySelector('.image-fullscreen-close');
+    const imageFullscreenPrev = document.querySelector('.image-fullscreen-nav.prev');
+    const imageFullscreenNext = document.querySelector('.image-fullscreen-nav.next');
+
+    if (imageWrapper) {
+        imageWrapper.addEventListener('click', () => {
+            const qImage = document.getElementById('question-image');
+            if (qImage && qImage.src && !qImage.classList.contains('hidden')) {
+                imageFullscreenImg.src = qImage.src;
+                imageFullscreen.classList.add('active');
+                updateFullscreenNavButtons();
+            }
+        });
+    }
+
+    const closeFullscreen = () => {
+        imageFullscreen.classList.remove('active');
+    };
+
+    if (imageFullscreenClose) {
+        imageFullscreenClose.addEventListener('click', closeFullscreen);
+    }
+
+    imageFullscreen.addEventListener('click', (e) => {
+        if (e.target === imageFullscreen) closeFullscreen();
+    });
+
+    const updateFullscreenNavButtons = () => {
+        const allImages = window.quizCurrentImages || [];
+        const hasMultiple = allImages.length > 1;
+        if (imageFullscreenPrev) imageFullscreenPrev.style.display = hasMultiple ? 'flex' : 'none';
+        if (imageFullscreenNext) imageFullscreenNext.style.display = hasMultiple ? 'flex' : 'none';
+    };
+
+    if (imageFullscreenPrev) {
+        imageFullscreenPrev.addEventListener('click', () => {
+            if (window.quizImageIndex !== undefined && window.quizCurrentImages) {
+                window.quizImageIndex = (window.quizImageIndex - 1 + window.quizCurrentImages.length) % window.quizCurrentImages.length;
+                imageFullscreenImg.src = window.quizCurrentImages[window.quizImageIndex];
+            }
+        });
+    }
+
+    if (imageFullscreenNext) {
+        imageFullscreenNext.addEventListener('click', () => {
+            if (window.quizImageIndex !== undefined && window.quizCurrentImages) {
+                window.quizImageIndex = (window.quizImageIndex + 1) % window.quizCurrentImages.length;
+                imageFullscreenImg.src = window.quizCurrentImages[window.quizImageIndex];
+            }
+        });
+    }
+
+    // ESC to close fullscreen
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeFullscreen();
+        }
+    });
+
+    // Store images globally for fullscreen navigation
+    window.updateQuizImages = (images) => {
+        window.quizCurrentImages = images;
+        window.quizImageIndex = 0;
+    };
 });

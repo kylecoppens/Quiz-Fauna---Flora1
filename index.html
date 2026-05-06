@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=283">
+    <link rel="stylesheet" href="css/style.css?v=290">
 </head>
 <body>
     <div class="bg-shape bg-shape-1"></div>
@@ -155,15 +155,86 @@
 
         <!-- ══ 2. QUIZ CONFIG ══════════════════════════════════════════════ -->
         <section id="screen-config" class="screen hidden">
-            <div class="header-content">
-                <button class="icon-btn transition back-btn" data-target="screen-home">
-                    <span class="back-svg-target"></span>
-                </button>
-                <h1 data-i18n="setup">Quiz Instellen</h1>
-            </div>
-            <div class="config-hero">
-                <div class="config-hero-icon"><span class="quiz-svg-target"></span></div>
-                <p class="config-hero-sub" data-i18n="setupDesc">Kies je categorie en moeilijkheidsgraad</p>
+            <!-- Hero Header Section -->
+            <div class="config-hero-header">
+                <div class="config-hero-background">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1280&h=720&fit=crop"
+                         alt="Forest background"
+                         id="config-hero-img"
+                         referrerpolicy="no-referrer"
+                         onerror="this.parentElement.classList.add('hero-fallback')">
+                </div>
+                <div class="config-hero-overlay">
+                    <button class="icon-btn transition back-btn" data-target="screen-home">
+                        <span class="back-svg-target"></span>
+                    </button>
+                    <div class="config-hero-content">
+                        <div class="config-hero-icon"><span class="quiz-svg-target"></span></div>
+                        <h1 data-i18n="setup">Quiz Instellen</h1>
+                        <p class="config-hero-subtitle" data-i18n="setupDesc">Kies je categorie en moeilijkheidsgraad</p>
+                        <div style="height: 20px;"></div>
+                    </div>
+                    <!-- Category cards in hero -->
+                    <div class="config-hero-categories">
+                        <div id="category-selector-hero" class="cat-cards-wrap hero-inline">
+                            <div class="cat-cards-row">
+                                <button class="cat-card active" data-val="all" style="--card-hue:160;--card-color:#3db863">
+                                    <span class="cat-card-icon">🏞️</span>
+                                    <span class="cat-card-label">Alles</span>
+                                </button>
+                                <button class="cat-card" data-val="dieren" style="--card-hue:200;--card-color:#56c4e8">
+                                    <span class="cat-card-icon">🦁</span>
+                                    <span class="cat-card-label">Dieren</span>
+                                </button>
+                            </div>
+                            <div class="cat-cards-row">
+                                <button class="cat-card" data-val="planten" style="--card-hue:110;--card-color:#7ec860">
+                                    <span class="cat-card-icon">🌿</span>
+                                    <span class="cat-card-label">Planten</span>
+                                </button>
+                                <button class="cat-card" data-val="fungi" style="--card-hue:275;--card-color:#c87ef0">
+                                    <span class="cat-card-icon">🍄</span>
+                                    <span class="cat-card-label">Paddenstoelen</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Difficulty in hero -->
+                        <div class="difficulty-bar hero-inline" id="difficulty-selector-hero">
+                            <button class="diff-btn active" data-val="easy">
+                                <span class="diff-stars">★</span>
+                                <span class="diff-label">Gemakkelijk</span>
+                            </button>
+                            <button class="diff-btn" data-val="medium">
+                                <span class="diff-stars">★★</span>
+                                <span class="diff-label">Gemiddeld</span>
+                            </button>
+                            <button class="diff-btn" data-val="hard">
+                                <span class="diff-stars">★★★</span>
+                                <span class="diff-label">Moeilijk</span>
+                            </button>
+                            <button class="diff-btn" data-val="mixed">
+                                <span class="diff-stars">🔀</span>
+                                <span class="diff-label">Willekeurig</span>
+                            </button>
+                        </div>
+
+                        <!-- Quiz Length in hero -->
+                        <div class="length-selector-row hero-inline" id="length-selector-hero">
+                            <button class="length-btn" data-val="5">5</button>
+                            <button class="length-btn active" data-val="10">10</button>
+                            <button class="length-btn" data-val="20">20</button>
+                        </div>
+
+                        <!-- Species count in hero -->
+                        <div id="config-species-count-hero" class="config-species-count-hero"></div>
+
+                        <!-- Start Quiz button in hero -->
+                        <div class="config-hero-start-button">
+                            <button id="btn-start-quiz" class="btn btn-primary w-100">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="config-options">
                 <!-- Category cards -->
@@ -173,7 +244,7 @@
                         <!-- Row 1: Alles + Dieren -->
                         <div class="cat-cards-row">
                             <button class="cat-card active" data-val="all" style="--card-hue:160;--card-color:#3db863">
-                                <span class="cat-card-icon">🌍</span>
+                                <span class="cat-card-icon">🏞️</span>
                                 <span class="cat-card-label">Alles</span>
                             </button>
                             <button class="cat-card" data-val="dieren" style="--card-hue:200;--card-color:#56c4e8">
@@ -294,6 +365,16 @@
                 <button id="btn-next-question" class="btn btn-primary btn-next hidden">
                     <span data-i18n="next">Next</span> →
                 </button>
+            </div>
+
+            <!-- Full-screen image viewer -->
+            <div id="image-fullscreen" class="image-fullscreen">
+                <button class="image-fullscreen-close">✕</button>
+                <button class="image-fullscreen-nav prev" style="display:none;">❮</button>
+                <div class="image-fullscreen-content">
+                    <img id="image-fullscreen-img" src="" alt="Full-screen view" />
+                </div>
+                <button class="image-fullscreen-nav next" style="display:none;">❯</button>
             </div>
         </section>
 
@@ -578,9 +659,9 @@
         </div>
     </div>
 
-    <script src="js/data/species_data.js?v=275"></script>
-    <script src="js/data/biogids_data.js?v=275"></script>
-    <script src="js/app.js?v=275"></script>
+    <script src="js/data/species_data.js?v=291"></script>
+    <script src="js/data/biogids_data.js?v=291"></script>
+    <script src="js/app.js?v=291"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
